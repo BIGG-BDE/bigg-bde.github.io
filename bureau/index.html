@@ -27,8 +27,11 @@
             <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
             <h1>BIGG BDE</h1>
         </a>
+        
+        <!-- Bouton Hamburger -->
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
         <nav>
-            <!-- N'oublie pas de déplacer le class="active" selon la page -->
             <a href="/">Accueil</a>
             <a href="/a-propos/">À propos</a>
             <a href="/bureau/" class="active">Le Bureau</a>
@@ -94,5 +97,10 @@
         </div>
         <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('nav-open');
+        }
+    </script>
 </body>
 </html>
