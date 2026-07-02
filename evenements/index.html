@@ -4,44 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Événements - BIGG BDE</title>
+    <link rel="stylesheet" href="/style.css">
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        header { background-color: #2c3e50; color: white; padding: 1rem 0; text-align: center; }
-        nav { background-color: #34495e; display: flex; justify-content: center; padding: 0.5rem; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
-        main { padding: 2rem; max-width: 800px; margin: 0 auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .event { margin-bottom: 2rem; border-left: 4px solid #34495e; padding-left: 1rem; }
-        footer { text-align: center; padding: 1rem; background-color: #2c3e50; color: white; margin-top: 2rem; }
+        .event-section { margin-bottom: 4rem; }
+        .event-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .event-item { background: var(--white); border-left: 5px solid var(--primary); padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .event-item.past { border-left-color: var(--gray); opacity: 0.9; }
+        .event-date { color: var(--primary); font-weight: bold; font-size: 0.9rem; margin-bottom: 0.3rem; display: block; }
+        .event-item.past .event-date { color: var(--gray); }
+        .event-details h3 { margin: 0 0 0.5rem 0; color: var(--dark); }
+        .event-details p { color: var(--gray); margin: 0; max-width: 600px; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Nos Événements</h1>
+        <a href="/" class="brand">
+            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+            <h1>BIGG BDE</h1>
+        </a>
+        <nav>
+            <!-- N'oublie pas de déplacer le class="active" selon la page -->
+            <a href="/">Accueil</a>
+            <a href="/a-propos/">À propos</a>
+            <a href="/bureau/">Le Bureau</a>
+            <a href="/evenements/" class="active">Événements</a>
+            <a href="/photos/">Photos</a>
+            <a href="/partenariats/">Partenariats</a>
+            <a href="/liens-utiles/">Liens Utiles</a>
+            <a href="/contact/" class="nav-contact-btn">Contact</a>
+        </nav>
     </header>
-    <nav>
-        <a href="/">Accueil</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/bureau/">Le Bureau</a>
-        <a href="/evenements/">Événements</a>
-        <a href="/photos/">Photos</a>
-        <a href="/partenariats/">Partenariats</a>
-        <a href="/liens-utiles/">Liens Utiles</a>
-        <a href="/contact/">Contact</a>
-    </nav>
     <main>
-        <div class="event">
-            <h2>Le Grand Loto du BDE (Juin)</h2>
-            <p>Préparez vos grilles et vos jetons ! Des dizaines de lots incroyables à remporter pour clôturer l'année en beauté.</p>
-        </div>
+        <h2>Agenda des Événements</h2>
 
-        <div class="event">
-            <h2>WEI : Alice au Pays des MerWEI</h2>
-            <p>Le week-end d'intégration mythique du BUT Info. Un voyage de l'autre côté du miroir pour souder les promos.</p>
-        </div>
+        <h3 style="color: var(--primary); margin-bottom: 1.5rem; margin-top: 1rem;">🚀 À Venir</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Automne 2025</span>
+                    <h3 style="margin: 0; color: var(--dark);">WEI : Alice au Pays des MerWEI</h3>
+                    <p style="color: var(--gray); margin: 0;">Le week-end d'intégration mythique. Banquet, activités et surprises de l'autre côté du miroir.</p>
+                    <a href="https://helloasso.com/..." target="_blank" class="btn" style="align-self: flex-start; margin-top: 0.5rem;">Billetterie</a>
+                </div>
+            </div>
+            </div>
+
+        <h3 style="color: var(--gray); margin-bottom: 1.5rem; margin-top: 3rem;">⏪ Événements Passés</h3>
+        <div class="timeline past">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-date">Juin 2026</span>
+                    <h3 style="margin: 0; color: var(--dark);">Le Grand Loto du BDE</h3>
+                    <p style="color: var(--gray); margin: 0;">Une soirée incroyable où des dizaines de lots ont été remportés !</p>
+                    <a href="/photos/" class="btn btn-outline" style="align-self: flex-start; margin-top: 0.5rem;">Voir les photos</a>
+                </div>
+            </div>
+            </div>
     </main>
     <footer>
-        <p>&copy; 2026 BIGG BDE</p>
+        <div class="footer-links">
+            <a href="/mentions-legales/">Mentions Légales</a>
+            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+        </div>
+        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
     </footer>
 </body>
 </html>
