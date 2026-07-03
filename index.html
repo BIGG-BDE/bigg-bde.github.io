@@ -33,6 +33,11 @@
     "url": "https://biggbde.fr"
     }
     </script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('nav-open');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -40,8 +45,6 @@
             <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
             <h1>BIGG BDE</h1>
         </a>
-        
-        <!-- Bouton Hamburger -->
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
         <nav>
@@ -68,7 +71,7 @@
             <a href="/evenements/" class="home-tile">
                 <span class="home-tile-icon">🎉</span>
                 <h3 class="home-tile-title">Nos Événements</h3>
-                <p class="home-tile-text">Ne manque pas nos prochaines soirées, week-ends et tournois.</p>
+                <p class="home-tile-text">Ne manque pas nos prochaines soirées, stands ou événement quelconque !</p>
             </a>
             
             <a href="/partenariats/" class="home-tile">
@@ -79,14 +82,26 @@
 
             <a href="/bureau/" class="home-tile">
                 <span class="home-tile-icon">👋</span>
-                <h3 class="home-tile-title">L'Équipe</h3>
+                <h3 class="home-tile-title">Le Bureau</h3>
                 <p class="home-tile-text">Découvre les membres du bureau prêts à faire vibrer ton année.</p>
             </a>
 
             <a href="/liens-utiles/" class="home-tile">
                 <span class="home-tile-icon">🔗</span>
                 <h3 class="home-tile-title">Outils & Liens</h3>
-                <p class="home-tile-text">Accède rapidement à la billetterie, au Discord et aux ressources de l'IUT.</p>
+                <p class="home-tile-text">Accède rapidement à la billetterie, au Instagram et aux ressources de l'IUT.</p>
+            </a>
+
+            <a href="/faq/" class="home-tile">
+                <span class="home-tile-icon">❓</span>
+                <h3 class="home-tile-title">FAQ</h3>
+                <p class="home-tile-text">Tu te poses des questions sur le BIGG, sur l'IUT ou autre ? Trouve ta réponse ici !</p>
+            </a>
+
+            <a href="/liens-utiles/" class="home-tile">
+                <span class="home-tile-icon">📲</span>
+                <h3 class="home-tile-title">Nous Contacter</h3>
+                <p class="home-tile-text">Accède à nos moyens de communications pour que nous puissions t'aider.</p>
             </a>
         </div>
     </main>
@@ -95,13 +110,9 @@
         <div class="footer-links">
             <a href="/mentions-legales/">Mentions Légales</a>
             <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+            <a href="/faq/">FAQ</a>
         </div>
         <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
     </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
 </body>
 </html>

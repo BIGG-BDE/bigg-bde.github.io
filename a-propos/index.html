@@ -10,11 +10,17 @@
     <link rel="stylesheet" href="/style.css">
     <style>
         .acronym-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .acronym-card { background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center; border-bottom: 4px solid var(--primary); }
+        @media (max-width: 1000px) {.acronym-grid{grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));}}
+        .acronym-card { background: var(--light-red); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center; border-bottom: 4px solid var(--deep-red); }
         .letter { display: block; font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 0.5rem; }
-        .meaning { font-size: 1.2rem; font-weight: bold; color: var(--dark); }
+        .meaning { font-size: 1.2rem; font-weight: bold; color: var(--white); }
         .doc-section { margin-top: 3rem; background: #e9ecef; padding: 2rem; border-radius: var(--border-radius); text-align: center; }
     </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('nav-open');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -23,7 +29,6 @@
             <h1>BIGG BDE</h1>
         </a>
         
-        <!-- Bouton Hamburger -->
         <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
         <nav>
@@ -37,22 +42,36 @@
             <a href="/contact/" class="nav-contact-btn">Contact</a>
         </nav>
     </header>
+
     <main>
         <h2>Notre Histoire & Nos Missions</h2>
         <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 1.5rem;">Fort de 35 ans d'existence, le BIGG BDE est l'association étudiante pilier de l'IUT Lyon 1 sur le campus de Bourg-en-Bresse. Nous rassemblons et fédérons les forces vives de quatre départements majeurs.</p>
-        
+        <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+            <section>
+                <div style="display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3>🤝 Engagement Social</h3>
+                        <p>Nous travaillons en étroite collaboration avec le réseau GAELIS pour défendre les droits des étudiants et promouvoir des initiatives comme l'AGORAé (épicerie solidaire) afin de lutter contre la précarité étudiante.</p>
+                    </div>
+                    <div style="flex: 1; min-width: 300px;">
+                        <h3>🌱 Sensibilisation</h3>
+                        <p>Le BDE s'engage progressivement à intégrer une démarche éco-responsable dans ses événements, en privilégiant les partenaires locaux et en limitant l'usage du plastique lors de nos rassemblements.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
         <div style="background: var(--white); padding: 1.5rem; border-left: 4px solid var(--primary); border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--shadow); margin-bottom: 2rem;">
             <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Nos Missions</h3>
             <p style="color: var(--gray); font-size: 1rem; margin: 0;">
                 Notre objectif principal est de dynamiser la vie étudiante sur le campus. Cela passe par l'organisation d'événements festifs (WEI, soirées, galas), la création de moments de cohésion (Loto, tournois), la gestion de partenariats offrant des avantages exclusifs, et la représentation des étudiants auprès de l'administration et des réseaux comme GAELIS. Nous sommes là pour faire de vos années à l'IUT une expérience inoubliable.
             </p>
         </div>
-
+        
         <div class="acronym-grid">
-            <div class="acronym-card"><span class="letter">B</span><span class="meaning">Bio</span><span style="display:block; color:var(--gray); font-size:0.9rem;">Génie Biologique</span></div>
-            <div class="acronym-card"><span class="letter">I</span><span class="meaning">Info</span><span style="display:block; color:var(--gray); font-size:0.9rem;">Informatique</span></div>
-            <div class="acronym-card"><span class="letter">G</span><span class="meaning">GEA</span><span style="display:block; color:var(--gray); font-size:0.9rem;">Gestion des Entreprises</span></div>
-            <div class="acronym-card"><span class="letter">G</span><span class="meaning">GTE</span><span style="display:block; color:var(--gray); font-size:0.9rem;">MT2E (Génie Thermique)</span></div>
+            <div class="acronym-card"><span class="letter">B</span><span class="meaning">Bio</span><span style="display:block; color:var(--primary); font-size:0.9rem;">Génie Biologique</span></div>
+            <div class="acronym-card"><span class="letter">I</span><span class="meaning">Info</span><span style="display:block; color:var(--primary); font-size:0.9rem;">Informatique</span></div>
+            <div class="acronym-card"><span class="letter">G</span><span class="meaning">GEA</span><span style="display:block; color:var(--primary); font-size:0.9rem;">Gestion des Entreprises</span></div>
+            <div class="acronym-card"><span class="letter">G</span><span class="meaning">GTE</span><span style="display:block; color:var(--primary); font-size:0.9rem;">MT2E (Génie Thermique)</span></div>
         </div>
 
         <div class="doc-section">
@@ -64,6 +83,7 @@
             </div>
         </div>
     </main>
+
     <footer>
         <div class="footer-links">
             <a href="/mentions-legales/">Mentions Légales</a>
@@ -71,10 +91,5 @@
         </div>
         <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
     </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
 </body>
 </html>

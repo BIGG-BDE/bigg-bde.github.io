@@ -6,6 +6,8 @@
     --white: #ffffff;
     --gray: #6c757d;
     --light-gray: #e9ecef;
+    --deep-red: #882525;
+    --light-red: #fec6c673;
     --border-radius: 12px;
     --shadow: 0 8px 24px rgba(0,0,0,0.06);
     --transition: all 0.3s ease;
@@ -206,3 +208,86 @@ footer {
 footer a { color: var(--white); text-decoration: none; font-weight: bold; }
 footer a:hover { text-decoration: underline; }
 .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+
+
+/* --- Témoignages --- */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.testimonial-card {
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.testimonial-text { font-style: italic; color: #555; margin-bottom: 1rem; }
+.testimonial-author { font-weight: 800; color: var(--dark); font-size: 0.9rem; }
+
+/* --- FAQ --- */
+.faq-container { max-width: 800px; margin: 0 auto; }
+
+details.faq-item {
+    background: #ffffff; /* Fond blanc pour contraster avec le fond de page */
+    margin-bottom: 1rem;
+    padding: 1.2rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.08); /* Bordure très fine */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04); /* Petite ombre légère */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+details.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* L'ombre grandit au survol */
+}
+
+details.faq-item[open] {
+    border-left: 4px solid var(--primary); /* Liseré rouge quand c'est ouvert */
+}
+
+details.faq-item summary {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark);
+    list-style: none; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Cache la flèche par défaut sur les navigateurs basés sur WebKit (Chrome, Safari) */
+details.faq-item summary::-webkit-details-marker { display: none; }
+
+/* Ajout d'un beau "+" et "-" animé */
+details.faq-item summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: transform 0.3s ease;
+}
+details.faq-item[open] summary::after {
+    content: '−';
+    transform: rotate(180deg);
+}
+
+details.faq-item p { 
+    margin-top: 1rem; 
+    color: #555; 
+    line-height: 1.6; 
+    border-top: 1px solid #eee; /* Séparateur discret */
+    padding-top: 1rem; 
+}
+
+/* --- Carte du Campus --- */
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 1.5rem;
+}
+.map-container iframe { width: 100%; height: 400px; border: none; }
