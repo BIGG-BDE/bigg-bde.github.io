@@ -1,83 +1,107 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/logos/favicon.png">
-    <title>Nos Événements - BIGG BDE</title>
-    <meta name="description" content="WEI, soirées, loto... Retrouvez le calendrier complet et toutes les informations sur les prochains événements à ne pas manquer sur le campus de Bourg.">
-    <link rel="canonical" href="https://biggbde.fr/evenements/">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .event-section { margin-bottom: 4rem; }
-        .event-list { display: flex; flex-direction: column; gap: 1.5rem; }
-        .event-item { background: var(--white); border-left: 5px solid var(--primary); padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .event-item.past { border-left-color: var(--gray); opacity: 0.9; }
-        .event-date { color: var(--primary); font-weight: bold; font-size: 0.9rem; margin-bottom: 0.3rem; display: block; }
-        .event-item.past .event-date { color: var(--gray); }
-        .event-details h3 { margin: 0 0 0.5rem 0; color: var(--dark); }
-        .event-details p { color: var(--gray); margin: 0; max-width: 600px; }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        
-        <!-- Bouton Hamburger -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../images/logos/favicon.png">
+        <title>Nos Événements - BIGG BDE</title>
+        <meta name="description" content="WEI, soirées, loto... Retrouvez le calendrier complet et toutes les informations sur les prochains événements à ne pas manquer sur le campus de Bourg.">
+        <link rel="canonical" href="https://biggbde.fr/evenements/">
+        <link rel="stylesheet" href="/style.css">
+        <style>
+            .event-section { margin-bottom: 4rem; }
+            .event-list { display: flex; flex-direction: column; gap: 1.5rem; }
+            .event-item { background: var(--white); border-left: 5px solid var(--primary); padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+            .event-item.past { border-left-color: var(--gray); opacity: 0.9; }
+            .event-date { color: var(--primary); font-weight: bold; font-size: 0.9rem; margin-bottom: 0.3rem; display: block; }
+            .event-item.past .event-date { color: var(--gray); }
+            .event-details h3 { margin: 0 0 0.5rem 0; color: var(--dark); }
+            .event-details p { color: var(--gray); margin: 0; max-width: 600px; }
+        </style>
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/">Le Bureau</a>
-            <a href="/evenements/" class="active">Événements</a>
-            <a href="/photos/">Photos</a>
-            <a href="/partenariats/">Partenariats</a>
-            <a href="/liens-utiles/">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Agenda des Événements</h2>
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
-        <h3 style="color: var(--primary); margin-bottom: 1.5rem; margin-top: 1rem;">🚀 À Venir</h3>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">Automne 2025</span>
-                    <h3 style="margin: 0; color: var(--dark);">WEI : Alice au Pays des MerWEI</h3>
-                    <p style="color: var(--gray); margin: 0;">Le week-end d'intégration mythique. Banquet, activités et surprises de l'autre côté du miroir.</p>
-                    <a href="https://helloasso.com/..." target="_blank" class="btn" style="align-self: flex-start; margin-top: 0.5rem;">Billetterie</a>
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/" class="active">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Agenda des Événements</h2>
+
+            <!-- FUTUR -->
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; margin-top: 1rem;">🚀 À Venir</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Du 9 au 11 Octobre 2026</span>
+                        <h3 style="margin: 0; color: var(--dark);">Week-end d'intégration : Alice au Pays des MerWEI</h3>
+                        <p style="color: var(--gray); margin: 0;">Le week-end d'intégration merveilleux. Atelirs de cohésion, piscine et surprises de l'autre côté du miroir.</p>
+                        <a href="https://www.helloasso.com/associations/bigg-bde" target="_blank" class="btn" style="align-self: flex-start; margin-top: 0.5rem;">Billetterie (à venir)</a>
+                    </div>
                 </div>
             </div>
-            </div>
-
-        <h3 style="color: var(--gray); margin-bottom: 1.5rem; margin-top: 3rem;">⏪ Événements Passés</h3>
-        <div class="timeline past">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <span class="timeline-date">Juin 2026</span>
-                    <h3 style="margin: 0; color: var(--dark);">Le Grand Loto du BDE</h3>
-                    <p style="color: var(--gray); margin: 0;">Une soirée incroyable où des dizaines de lots ont été remportés !</p>
-                    <a href="/photos/" class="btn btn-outline" style="align-self: flex-start; margin-top: 0.5rem;">Voir les photos</a>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">5 Septembre 2026</span>
+                        <h3 style="margin: 0; color: var(--dark);">WEI : Alice au Pays des MerWEI</h3>
+                        <p style="color: var(--gray); margin: 0;">Le week-end d'intégration mythique. Banquet, activités et surprises de l'autre côté du miroir.<br><span style="color:var(--details);">Marché Couvert, 01000 Bourg-en-Bresse</span></p>
+                        <a href="https://helloasso.com/..." target="_blank" class="btn" style="align-self: flex-start; margin-top: 0.5rem;">Billetterie</a>
+                    </div>
                 </div>
             </div>
+
+            <!-- PASSE -->
+            <h3 style="color: var(--gray); margin-bottom: 1.5rem; margin-top: 3rem;">⏪ Événements Passés</h3>
+            <div class="timeline past">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Juin 2026</span>
+                        <h3 style="margin: 0; color: var(--dark);">Le Grand Loto du BDE</h3>
+                        <p style="color: var(--gray); margin: 0;">Une soirée incroyable où des dizaines de lots ont été remportés !</p>
+                        <a href="/photos/" class="btn btn-outline" style="align-self: flex-start; margin-top: 0.5rem;">Voir les photos</a>
+                    </div>
+                </div>
             </div>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="/mentions-legales/">Mentions Légales</a>
-            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
-        </div>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</body>
+            <div class="timeline past">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-date">Juin 2026</span>
+                        <h3 style="margin: 0; color: var(--dark);">Le Grand Loto du BDE</h3>
+                        <p style="color: var(--gray); margin: 0;">Une soirée incroyable où des dizaines de lots ont été remportés !</p>
+                        <a href="/photos/" class="btn btn-outline" style="align-self: flex-start; margin-top: 0.5rem;">Voir les photos</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+        </footer>
+    </body>
 </html>
