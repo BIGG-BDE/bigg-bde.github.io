@@ -23,6 +23,11 @@
         .btn-subtle { display: block; width: 100%; padding: 0.5rem; border: 1px solid var(--light-gray); border-radius: 6px; color: var(--gray); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
         .btn-subtle:hover { border-color: var(--primary); color: var(--primary); background: rgba(155, 34, 38, 0.05); }
     </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('nav-open');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -47,64 +52,305 @@
     </header>
     <main>
         <div class="header-bureau">
-            <h2 style="margin: 0;">L'Équipe du BIGG BDE</h2>
+            <h2 style="margin: 0;">Le Bureau du BIGG BDE</h2>
             <a href="#" class="btn btn-outline">Voir les Mandats Précédents (en cours de dév)
             </a>
         </div>
         
         <div class="grid-container">
-            
+        <!-- Il suffit de dupliquer la div sous le commentaire "Membre X" pour ajouter un membre -->
+
+            <!-- Membre 1 -->
             <div class="card member-card">
                 <div class="member-img-wrapper">
-                    <img src="/images/bureau/president.jpg" alt="Photo Présidence" class="member-img">
+                    <img src="/images/bureau/maelys.jpeg" alt="Photo Présidence" class="member-img">
                 </div>
                 <div class="member-info">
-                    <div class="member-name">Prénom Nom</div>
-                    <div class="member-role">Présidence</div>
+                    <div class="member-name">Maëlys BONNET</div>
+                    <div class="member-role">Présidente</div>
                     <div class="member-bio">
-                        <strong>Parcours :</strong> BUT GEA (2ème année)<br>
-                        <strong>Passif Asso :</strong> Chef de projet WEI 2024
-                    </div>
-                    <div class="member-contact">
-                        <a href="mailto:presidence@biggbde.fr">📧 presidence@biggbde.fr</a>
-                        <a href="tel:+33600000000">📞 06 00 00 00 00</a>
+                        <strong>Parcours :</strong> BUT Génie Biologique (1A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> Je souhaite mener à bien les différents projets en cours, 
+                        avoir une première expérience dans le milieu associatif; J'étais déjà impliquée en tant que piou.
                     </div>
                     <a href="mailto:presidence@biggbde.fr" class="btn-subtle">Contacter</a>
                 </div>
             </div>
 
+            <!-- Membre 2 -->
             <div class="card member-card">
                 <div class="member-img-wrapper">
-                    <img src="/images/bureau/antonin.jpg" alt="Antonin" class="member-img">
+                    <img src="/images/bureau/gaspard.jpg" alt="Photo Présidence" class="member-img">
                 </div>
                 <div class="member-info">
-                    <div class="member-name">Antonin</div>
+                    <div class="member-name">Gaspard CLAIN</div>
+                    <div class="member-role">Vice-Président</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Génie Biologique (1A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> Je suis stratège (dixit le renard), je serais plus utile que l'ancien vice-prez et tous les chemins mènent au BIGG.
+                    </div>
+                    <a href="mailto:vice-presidence@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 3 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/antonin.jpeg" alt="Photo Trésorerie" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Antonin TEP</div>
                     <div class="member-role">Trésorier</div>
                     <div class="member-bio">
-                        <strong>Parcours :</strong> BUT Informatique<br>
-                        <strong>Passif Asso :</strong> Développement d'applications (Qt/C++) & Projets Connectés
-                    </div>
-                    <div class="member-contact">
-                        <a href="mailto:tresorerie@biggbde.fr">📧 tresorerie@biggbde.fr</a>
-                        <a href="tel:+33611223344">📞 06 11 22 33 44</a>
+                        <strong>Parcours :</strong> BUT Informatique (1A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> Mettre un pied dans le monde associatif en tant que personne à responsabilités; 
+                        participer à la vie étudiante de l'IUT, et acquérir des compétences sur la gestion des finances d'une association.
                     </div>
                     <a href="mailto:tresorerie@biggbde.fr" class="btn-subtle">Contacter</a>
                 </div>
             </div>
 
+            <!-- Membre 4 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/selena.jpeg" alt="Photo Secrétariat" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Séléna LOMBARDIN</div>
+                    <div class="member-role">Secrétaire</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Génie Biologique (1A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> Je suis une personne organisée et motivée, qui a envie de s'investir dans la vie étudiante, et soutenir le Bureau Restreint au maximum comme je peux.
+                    </div>
+                    <a href="mailto:secretariat@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 5 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/laura.jpeg" alt="Photo VP Event" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Laura SAUNOIS</div>
+                    <div class="member-role">VP Evénementiel</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Informatique (1A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> J'adore aller en soirées donc autant les créer; Je sais ce que les gens veulent et je prends mon rôle au sérieux (sans me prendre au sérieux).
+                    </div>
+                    <a href="mailto:evenementiel@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 6 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/alexandre.jpeg" alt="Photo VP Part" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Alexandre DONFUT ELSENSOHN</div>
+                    <div class="member-role">VP Partenariats</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Informatique (2A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> Pour que le BIGG soit le meilleur BDE de Bourg (c'est déja un peu le cas); 
+                        Je suis sérieux (uniquement quand c'est nécessaire), et je suis beaucoup dans le monde associatif (Musique, Sport, BIGG...)
+                    </div>
+                    <a href="mailto:partenariats@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 7 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/nael.png" alt="Photo VP Réseau" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Naël VALADE</div>
+                    <div class="member-role">VP Réseau</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Génie Biologique (2A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br>Car je veux améliorer nos relations avec le réseau, vu que je serais dedans dans tout les cas.
+                        J'ai déjà fait ce boulot avant et ça aiderait le BIGG.
+                    </div>
+                    <a href="mailto:vp-reseau@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 8 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/melina.jpeg" alt="Photo VP Goodies" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Mélina LEMARTINET</div>
+                    <div class="member-role">VP Goodies</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Génie Biologique (2A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br>Je veux pas quitter le BIGG finalement, et je veux continuer tout ce que j'ai déjà entreprit,
+                        et aider le BR pour l'administratif et les former.
+                    </div>
+                    <a href="mailto:goodies@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 9 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/nina.jpeg" alt="Photo VP Goodies" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Nina ROLLET</div>
+                    <div class="member-role">VP Goodies</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Génie Biologique (2A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> Je veux continuer!!! J'ai encore plein d'idées pour de la visibilité,
+                        et je veux continuer à représenter le BIGG en events.
+                    </div>
+                    <a href="mailto:goodies@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 10 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/ewan.png" alt="Photo VP Comm" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Ewan BESSON</div>
+                    <div class="member-role">VP Communications</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT GEA (1A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> M'investir pour être utile à l'IUT; Mettre ma créativité au service du BDE et faire un max de nouvelles rencontres !
+                    </div>
+                    <a href="mailto:communication@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 11 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/camille.jpeg" alt="Photo Pôle Comm" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Camille COMBALOT</div>
+                    <div class="member-role">Pôle Communications</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT Génie Biologique (2A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br>Je veux encore vous enquiquiner cette année, car je peux pas me passer de vous.
+                        J'adore faire des affiches et je veux mettre à profit l'expérience que j'ai acquise lors de mon précédent mandat.
+                    </div>
+                    <a href="mailto:communication@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
+
+            <!-- Membre 12 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/bureau/yanis.jpg" alt="Photo Admin MT2E" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Yanis VALADE</div>
+                    <div class="member-role">Admin MT2E</div>
+                    <div class="member-bio">
+                        <strong>Parcours :</strong> BUT MT2E (3A)<br>
+                        <strong>Pourquoi le BIGG ? :</strong><br> Je suis pas encore prêt pour le terme "Vieux". Légère envie de flex (4e mandat). Objectifs : dire que c'était mieux avant, et ne rien apporter de pertinent.
+                    </div>
+                    <a href="mailto:yanis.valade@biggbde.fr" class="btn-subtle">Contacter</a>
+                </div>
+            </div>
         </div>
+
+
+        <br><br>
+        <div class="header-bureau">
+            <h2 style="margin: 0;">Les Membres Actifs</h2>
+        </div>
+
+        <div class="grid-container">
+        <!-- Il suffit de dupliquer la div sous le commentaire "Membre X" pour ajouter un membre -->
+            <!-- Membre 1 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/MA/anna.jpeg" alt="Photo MA" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Anna CONSTANTIN</div>
+                </div>
+            </div>
+
+            <!-- Membre 2 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/MA/lydie.jpg" alt="Photo MA" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Lydie VEUJOZ</div>
+                </div>
+            </div>
+
+            <!-- Membre 3 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/MA/paul.jpg" alt="Photo MA" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Paul CHAUTARD</div>
+                </div>
+            </div>
+
+            <!-- Membre 4 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/MA/clery.jpeg" alt="Photo MA" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Clery PEGON</div>
+                </div>
+            </div>
+
+            <!-- Membre 5 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/MA/hugo.png" alt="Photo VP MA" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Hugo RICHIER</div>
+                </div>
+            </div>
+
+            <!-- Membre 6 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/MA/lola.jpeg" alt="Photo MA" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Lola SIMON-NARDI</div>
+                </div>
+            </div>
+
+            <!-- Membre 7 -->
+            <div class="card member-card">
+                <div class="member-img-wrapper">
+                    <img src="/images/MA/loan.jpeg" alt="Photo MA" class="member-img">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Loan GIRERD</div>
+                </div>
+            </div>
+
     </main>
     <footer>
         <div class="footer-links">
             <a href="/mentions-legales/">Mentions Légales</a>
             <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+            <a href="/faq/">FAQ</a>
+        </div>
+        <div class="footer-socials">
+            <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+            <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+            <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
         </div>
         <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
     </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
 </body>
 </html>

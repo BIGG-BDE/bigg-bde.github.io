@@ -208,6 +208,9 @@ footer {
 footer a { color: var(--white); text-decoration: none; font-weight: bold; }
 footer a:hover { text-decoration: underline; }
 .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.footer-socials span {padding:0.5rem;}
+.footer-socials a {color: var(--gray); text-decoration: none; font-weight:normal;}
+.footer-socials a:hover { text-decoration: underline; }
 
 
 /* --- Témoignages --- */
