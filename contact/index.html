@@ -1,115 +1,157 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │  ██████╗ ██╗ ██████╗  ██████╗         ██████╗ ██████╗ ███████╗  │ -->
+<!-- │  ██╔══██╗██║██╔════╝ ██╔════╝         ██╔══██╗██╔══██╗██╔════╝  │ -->
+<!-- │  ██████╔╝██║██║  ███╗██║  ███╗        ██████╔╝██║  ██║█████╗    │ -->
+<!-- │  ██╔══██╗██║██║   ██║██║   ██║        ██╔══██╗██║  ██║██╔══╝    │ -->
+<!-- │  ██████╔╝██║╚██████╔╝╚██████╔╝        ██████╔╝██████╔╝███████╗  │ -->
+<!-- │  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝         ╚═════╝ ╚═════╝ ╚══════╝  │ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/logos/favicon.png">
-    <title>Nous Contacter - BIGG BDE</title>
-    <meta name="description" content="Une question ? Envie de monter un projet ou de signaler un bug ? Contactez l'équipe du BIGG BDE par mail, via les réseaux ou passez directement au bureau.">
-    <link rel="canonical" href="https://biggbde.fr/contact/">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .contact-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-top: 2rem; }
-        @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
-        .contact-info-card { background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); border-top: 5px solid var(--primary); }
-        .dept-list { display: flex; flex-direction: column; gap: 1.5rem; }
-        .dept-item { background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--light-gray); }
-        .dept-title { font-size: 1.2rem; font-weight: bold; color: var(--dark); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-        .mail-link { display: inline-block; background: var(--light); padding: 0.5rem 1rem; border-radius: 6px; color: var(--primary); font-weight: bold; text-decoration: none; margin-top: 1rem; font-family: monospace; font-size: 1.1rem; }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        
-        <!-- Bouton Hamburger -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../images/logos/favicon.png">
+        <title>Nous Contacter - BIGG BDE</title>
+        <meta name="description" content="Une question ? Envie de monter un projet ou de signaler un bug ? Contactez l'équipe du BIGG BDE par mail, via les réseaux ou passez directement au bureau.">
+        <link rel="canonical" href="https://biggbde.fr/contact/">
+        <link rel="stylesheet" href="/style.css">
+        <style>
+            .contact-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-top: 2rem; }
+            @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
+            .contact-info-card { background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); border-top: 5px solid var(--primary); }
+            .dept-list { display: flex; flex-direction: column; gap: 1.5rem; }
+            .dept-item { background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--light-gray); }
+            .dept-title { font-size: 1.2rem; font-weight: bold; color: var(--dark); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
+            .mail-link { display: inline-block; background: var(--light); padding: 0.5rem 1rem; border-radius: 6px; color: var(--primary); font-weight: bold; text-decoration: none; margin-top: 1rem; font-family: monospace; font-size: 1.1rem; }
+        </style>
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/">Le Bureau</a>
-            <a href="/evenements/">Événements</a>
-            <a href="/photos/">Photos</a>
-            <a href="/partenariats/">Partenariats</a>
-            <a href="/liens-utiles/">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Nous Contacter</h2>
-        
-        <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); border-top: 5px solid var(--primary); text-align: center; margin-bottom: 3rem;">
-            <h3 style="margin-bottom: 1rem; color: var(--dark);">Une question rapide ?</h3>
-            <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 1.5rem;">Le plus simple et le plus rapide : pose-nous tes questions directement en DM sur Instagram, on te répondra très vite !</p>
-            <a href="https://instagram.com/biggbde" target="_blank" class="btn" style="font-size: 1.1rem; padding: 0.8rem 2rem;">📱 @biggbde sur Instagram</a>
-        </div>
-
-        <h3 style="margin-bottom: 1.5rem;">Annuaire de l'Association</h3>
-        <p style="color: var(--gray); margin-bottom: 2rem;">Pour une demande spécifique, un partenariat ou un suivi administratif, contactez directement le pôle concerné via nos adresses mail officielles.</p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
             
-            <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">✉️ Secrétariat</div>
-                <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Questions générales, vie asso.</div>
-                <a href="mailto:contact@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">contact@biggbde.fr</a>
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+
+        <main>
+            <h2>Nous Contacter</h2>
+            
+            <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); border-top: 5px solid var(--primary); text-align: center; margin-bottom: 3rem;">
+                <h3 style="margin-bottom: 1rem; color: var(--dark);">Une question rapide ?</h3>
+                <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 1.5rem;">Le plus simple et le plus rapide : pose-nous tes questions directement en DM sur Instagram, on te répondra très vite !</p>
+                <a href="https://instagram.com/biggbde" target="_blank" class="btn" style="font-size: 1.1rem; padding: 0.8rem 2rem;">📱 @biggbde sur Instagram</a>
             </div>
 
-            <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">💰 Trésorerie</div>
-                <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Factures, cautions, remboursements.</div>
-                <a href="mailto:tresorerie@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">tresorerie@biggbde.fr</a>
+            <h3 style="margin-bottom: 1.5rem;">Annuaire de l'Association</h3>
+            <p style="color: var(--gray); margin-bottom: 2rem;">Pour une demande spécifique, un partenariat ou un suivi administratif, contactez directement le pôle concerné via nos adresses mail officielles.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+                
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">✉️ Secrétariat</div>
+                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Questions générales, vie asso.</div>
+                    <a href="mailto:contact@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">contact@biggbde.fr</a>
+                </div>
+
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">💰 Trésorerie</div>
+                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Factures, cautions, remboursements.</div>
+                    <a href="mailto:tresorerie@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">tresorerie@biggbde.fr</a>
+                </div>
+
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">🤝 Partenariats</div>
+                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Sponsoring, propositions commerciales.</div>
+                    <a href="mailto:partenariats@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">partenariats@biggbde.fr</a>
+                </div>
+
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">🎉 Événementiel</div>
+                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Logistique WEI, soirées, prestataires.</div>
+                    <a href="mailto:evenements@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">evenements@biggbde.fr</a>
+                </div>
+
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">👑 Présidence</div>
+                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Représentation légale, relations IUT.</div>
+                    <a href="mailto:presidence@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">presidence@biggbde.fr</a>
+                </div>
+
+                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
+                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">💻 Webmaster</div>
+                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Signalement de bugs, infra web.</div>
+                    <a href="mailto:webmaster@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">webmaster@biggbde.fr</a>
+                </div>
+
             </div>
 
-            <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">🤝 Partenariats</div>
-                <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Sponsoring, propositions commerciales.</div>
-                <a href="mailto:partenariats@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">partenariats@biggbde.fr</a>
+        <!-- Intégration de la carte du campus -->
+            <br>
+            <h3>Où se trouve le local du BDE ?</h3>
+            <p>Viens nous voir ! Notre local se trouve directement sur le campus de l'IUT.</p>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1462.6638256629712!2d5.241316363062743!3d46.215263315804805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f35245b892436b%3A0x6dfdc508a80e26b7!2sBIGG%20BDE!5e0!3m2!1sfr!2sfr!4v1783031462587!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
+        </main>
 
-            <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">🎉 Événementiel</div>
-                <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Logistique WEI, soirées, prestataires.</div>
-                <a href="mailto:evenements@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">evenements@biggbde.fr</a>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="/faq/">FAQ</a>
             </div>
-
-            <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">👑 Présidence</div>
-                <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Représentation légale, relations IUT.</div>
-                <a href="mailto:presidence@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">presidence@biggbde.fr</a>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
             </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
 
-            <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">💻 Webmaster</div>
-                <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Signalement de bugs, infra web.</div>
-                <a href="mailto:webmaster@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">webmaster@biggbde.fr</a>
-            </div>
-
-        </div>
-
-    <!-- Intégration de la carte du campus -->
-        <br>
-        <h3>Où se trouve le local du BDE ?</h3>
-        <p>Viens nous voir ! Notre local se trouve directement sur le campus de l'IUT.</p>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1462.6638256629712!2d5.241316363062743!3d46.215263315804805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f35245b892436b%3A0x6dfdc508a80e26b7!2sBIGG%20BDE!5e0!3m2!1sfr!2sfr!4v1783031462587!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="/mentions-legales/">Mentions Légales</a>
-            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
-        </div>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</body>
+            
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">↑</button>
+            <script>
+                // Gestion de l'affichage du bouton lors du défilement
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    // Affiche le bouton après 300px de scroll
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        scrollBtn.style.display = "block";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                // Fonction pour remonter avec un effet fluide
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            </script>
+        </footer>  
+    </body>
 </html>

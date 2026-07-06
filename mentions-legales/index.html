@@ -1,64 +1,106 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │  ██████╗ ██╗ ██████╗  ██████╗         ██████╗ ██████╗ ███████╗  │ -->
+<!-- │  ██╔══██╗██║██╔════╝ ██╔════╝         ██╔══██╗██╔══██╗██╔════╝  │ -->
+<!-- │  ██████╔╝██║██║  ███╗██║  ███╗        ██████╔╝██║  ██║█████╗    │ -->
+<!-- │  ██╔══██╗██║██║   ██║██║   ██║        ██╔══██╗██║  ██║██╔══╝    │ -->
+<!-- │  ██████╔╝██║╚██████╔╝╚██████╔╝        ██████╔╝██████╔╝███████╗  │ -->
+<!-- │  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝         ╚═════╝ ╚═════╝ ╚══════╝  │ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/logos/favicon.png">
-    <title>Mentions Légales - BIGG BDE</title>
-    <meta name="description" content="Consultez les mentions légales et les informations réglementaires de l'association BIGG BDE, hébergée sur le campus de l'IUT Lyon 1 à Bourg-en-Bresse.">
-    <link rel="canonical" href="https://biggbde.fr/mentions-legales/">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .legal-content h3 { margin-top: 2rem; margin-bottom: 1rem; color: var(--primary); }
-        .legal-content p { color: var(--gray); margin-bottom: 1rem; }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        
-        <!-- Bouton Hamburger -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../images/logos/favicon.png">
+        <title>Mentions Légales - BIGG BDE</title>
+        <meta name="description" content="Consultez les mentions légales et les informations réglementaires de l'association BIGG BDE, hébergée sur le campus de l'IUT Lyon 1 à Bourg-en-Bresse.">
+        <link rel="canonical" href="https://biggbde.fr/mentions-legales/">
+        <link rel="stylesheet" href="/style.css">
+        <style>
+            .legal-content h3 { margin-top: 2rem; margin-bottom: 1rem; color: var(--primary); }
+            .legal-content p { color: var(--gray); margin-bottom: 1rem; }
+        </style>
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/">Le Bureau</a>
-            <a href="/evenements/">Événements</a>
-            <a href="/photos/">Photos</a>
-            <a href="/partenariats/">Partenariats</a>
-            <a href="/liens-utiles/">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    <main class="legal-content">
-        <h2>Mentions Légales</h2>
-        
-        <h3>Éditeur du site</h3>
-        <p>Le présent site est édité par l'association <strong>BIGG BDE</strong>, Bureau des Étudiants de l'IUT Lyon 1 - Campus de Bourg-en-Bresse.<br>
-        Adresse e-mail : contact@biggbde.fr</p>
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
-        <h3>Hébergement</h3>
-        <p>Ce site est hébergé statiquement via le service <strong>GitHub Pages</strong>.<br>
-        Fournisseur : GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis.</p>
-        
-        <h3>Développement et Gestion Technique</h3>
-        <p>L'intégration continue, le paramétrage DNS (domaine biggbde.fr hébergé chez OVHcloud) et la maintenance du site sont assurés par le pôle développement du bureau. Pour signaler un bug, écrivez à webmaster@biggbde.fr.</p>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="/mentions-legales/">Mentions Légales</a>
-            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
-        </div>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</body>
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+
+        <main class="legal-content">
+            <h2>Mentions Légales</h2>
+            
+            <h3>Éditeur du site</h3>
+            <p>Le présent site est édité par l'association <strong>BIGG BDE</strong>, Bureau des Étudiants de l'IUT Lyon 1 - Campus de Bourg-en-Bresse.<br>
+            Adresse e-mail : contact@biggbde.fr</p>
+
+            <h3>Hébergement</h3>
+            <p>Ce site est hébergé statiquement via le service <strong>GitHub Pages</strong>.<br>
+            Fournisseur : GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis.</p>
+            
+            <h3>Développement et Gestion Technique</h3>
+            <p>L'intégration continue, le paramétrage DNS (domaine biggbde.fr hébergé chez OVHcloud) et la maintenance du site sont assurés par le pôle développement du bureau. Pour signaler un bug, écrivez à webmaster@biggbde.fr.</p>
+        </main>
+
+
+        footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+
+            
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">↑</button>
+            <script>
+                // Gestion de l'affichage du bouton lors du défilement
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    // Affiche le bouton après 300px de scroll
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        scrollBtn.style.display = "block";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                // Fonction pour remonter avec un effet fluide
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            </script>
+        </footer>  
+    </body>
 </html>

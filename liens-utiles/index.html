@@ -1,91 +1,131 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │  ██████╗ ██╗ ██████╗  ██████╗         ██████╗ ██████╗ ███████╗  │ -->
+<!-- │  ██╔══██╗██║██╔════╝ ██╔════╝         ██╔══██╗██╔══██╗██╔════╝  │ -->
+<!-- │  ██████╔╝██║██║  ███╗██║  ███╗        ██████╔╝██║  ██║█████╗    │ -->
+<!-- │  ██╔══██╗██║██║   ██║██║   ██║        ██╔══██╗██║  ██║██╔══╝    │ -->
+<!-- │  ██████╔╝██║╚██████╔╝╚██████╔╝        ██████╔╝██████╔╝███████╗  │ -->
+<!-- │  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝         ╚═════╝ ╚═════╝ ╚══════╝  │ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/logos/favicon.png">
-    <title>Liens Utiles & Hub - BIGG BDE</title>
-    <meta name="description" content="Retrouvez tous les raccourcis essentiels du BIGG BDE : adhésions HelloAsso, serveurs Discord, réseaux sociaux et documents administratifs du campus.">
-    <link rel="canonical" href="https://biggbde.fr/links/">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .links-wrapper { display: flex; flex-direction: column; align-items: center; text-align: center; }
-        .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 900px; width: 100%; margin-top: 2rem; }
-        .link-tile { background: var(--white); padding: 2rem 1rem; border-radius: 20px; box-shadow: var(--shadow); text-decoration: none; color: var(--dark); transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 1rem; border: 1px solid var(--light-gray); }
-        .link-tile:hover { transform: translateY(-5px) scale(1.02); border-color: var(--primary); box-shadow: 0 15px 30px rgba(155, 34, 38, 0.15); }
-        .icon { font-size: 3rem; }
-        .link-title { font-weight: 800; font-size: 1.1rem; }
-        .link-desc { font-size: 0.85rem; color: var(--gray); }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        
-        <!-- Bouton Hamburger -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../images/logos/favicon.png">
+        <title>Liens Utiles & Hub - BIGG BDE</title>
+        <meta name="description" content="Retrouvez tous les raccourcis essentiels du BIGG BDE : adhésions HelloAsso, serveurs Discord, réseaux sociaux et documents administratifs du campus.">
+        <link rel="canonical" href="https://biggbde.fr/links/">
+        <link rel="stylesheet" href="/style.css">
+        <style>
+            .links-wrapper { display: flex; flex-direction: column; align-items: center; text-align: center; }
+            .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 900px; width: 100%; margin-top: 2rem; }
+            .link-tile { background: var(--white); padding: 2rem 1rem; border-radius: 20px; box-shadow: var(--shadow); text-decoration: none; color: var(--dark); transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 1rem; border: 1px solid var(--light-gray); }
+            .link-tile:hover { transform: translateY(-5px) scale(1.02); border-color: var(--primary); box-shadow: 0 15px 30px rgba(155, 34, 38, 0.15); }
+            .icon { font-size: 3rem; }
+            .link-title { font-weight: 800; font-size: 1.1rem; }
+            .link-desc { font-size: 0.85rem; color: var(--gray); }
+        </style>
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
+    
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/">Le Bureau</a>
-            <a href="/evenements/">Événements</a>
-            <a href="/photos/">Photos</a>
-            <a href="/partenariats/">Partenariats</a>
-            <a href="/liens-utiles/" class="active">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    <main class="links-wrapper">
-        <h2>Vos Outils Indispensables</h2>
-        <p style="color: var(--gray); max-width: 600px;">Le hub central pour retrouver nos plateformes, réseaux sociaux et ressources IUT.</p>
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/" class="active">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+        <main class="links-wrapper">
+            <h2>Vos Outils Indispensables</h2>
+            <p style="color: var(--gray); max-width: 600px;">Le hub central pour retrouver nos plateformes, réseaux sociaux et ressources IUT.</p>
 
-        <div class="links-grid">
-            <a href="https://helloasso.com" target="_blank" class="link-tile">
-                <span class="icon">🎟️</span>
-                <span class="link-title">Billetterie</span>
-                <span class="link-desc">HelloAsso</span>
-            </a>
-            <a href="https://discord.gg" target="_blank" class="link-tile">
-                <span class="icon">💬</span>
-                <span class="link-title">Discord</span>
-                <span class="link-desc">Serveur Étudiant</span>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="link-tile">
-                <span class="icon">📸</span>
-                <span class="link-title">Instagram</span>
-                <span class="link-desc">@biggbde</span>
-            </a>
-            <a href="https://iut.univ-lyon1.fr" target="_blank" class="link-tile">
-                <span class="icon">🎓</span>
-                <span class="link-title">IUT Lyon 1</span>
-                <span class="link-desc">Intranet & Plannings</span>
-            </a>
-        </div>
-        <div class="card" style="margin-bottom: 0rem; margin-top: 3rem; border-left: 4px solid var(--primary);">
-            <div class="card-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                <div>
-                    <h3 style="margin: 0;">Tu as une question ? 🤔</h3>
-                    <p style="margin: 0; color: #555;">Adhésions, événements, WEI... Les réponses sont sûrement déjà là.</p>
-                </div>
-                <a href="/faq/" class="btn">Consulter la FAQ</a>
+            <div class="links-grid">
+                <a href="https://helloasso.com" target="_blank" class="link-tile">
+                    <span class="icon">🎟️</span>
+                    <span class="link-title">Billetterie</span>
+                    <span class="link-desc">HelloAsso</span>
+                </a>
+                <a href="https://discord.gg" target="_blank" class="link-tile">
+                    <span class="icon">💬</span>
+                    <span class="link-title">Discord</span>
+                    <span class="link-desc">Serveur Étudiant</span>
+                </a>
+                <a href="https://instagram.com" target="_blank" class="link-tile">
+                    <span class="icon">📸</span>
+                    <span class="link-title">Instagram</span>
+                    <span class="link-desc">@biggbde</span>
+                </a>
+                <a href="https://iut.univ-lyon1.fr" target="_blank" class="link-tile">
+                    <span class="icon">🎓</span>
+                    <span class="link-title">IUT Lyon 1</span>
+                    <span class="link-desc">Intranet & Plannings</span>
+                </a>
             </div>
-        </div>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="/mentions-legales/">Mentions Légales</a>
-            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
-        </div>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</body>
+            <div class="card" style="margin-bottom: 0rem; margin-top: 3rem; border-left: 4px solid var(--primary);">
+                <div class="card-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h3 style="margin: 0;">Tu as une question ? 🤔</h3>
+                        <p style="margin: 0; color: #555;">Adhésions, événements, WEI... Les réponses sont sûrement déjà là.</p>
+                    </div>
+                    <a href="/faq/" class="btn">Consulter la FAQ</a>
+                </div>
+            </div>
+        </main>
+
+
+        <footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+
+            
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">↑</button>
+            <script>
+                // Gestion de l'affichage du bouton lors du défilement
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    // Affiche le bouton après 300px de scroll
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        scrollBtn.style.display = "block";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                // Fonction pour remonter avec un effet fluide
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            </script>
+        </footer>  
+    </body>
 </html>

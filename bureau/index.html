@@ -1,56 +1,67 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │  ██████╗ ██╗ ██████╗  ██████╗         ██████╗ ██████╗ ███████╗  │ -->
+<!-- │  ██╔══██╗██║██╔════╝ ██╔════╝         ██╔══██╗██╔══██╗██╔════╝  │ -->
+<!-- │  ██████╔╝██║██║  ███╗██║  ███╗        ██████╔╝██║  ██║█████╗    │ -->
+<!-- │  ██╔══██╗██║██║   ██║██║   ██║        ██╔══██╗██║  ██║██╔══╝    │ -->
+<!-- │  ██████╔╝██║╚██████╔╝╚██████╔╝        ██████╔╝██████╔╝███████╗  │ -->
+<!-- │  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝         ╚═════╝ ╚═════╝ ╚══════╝  │ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/logos/favicon.png">
-    <title>Le Bureau Élu - BIGG BDE</title>
-    <meta name="description" content="Rencontrez l'équipe du BIGG BDE ! Un bureau motivé pour représenter les étudiants et organiser les meilleurs événements de l'année sur le campus.">
-    <link rel="canonical" href="https://biggbde.fr/bureau/">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .header-bureau { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
-        .member-card { padding: 0; text-align: center; }
-        .member-img-wrapper { padding: 1.5rem 1.5rem 0 1.5rem; }
-        .member-img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; background: #e9ecef; }
-        .member-info { padding: 1.5rem; }
-        .member-name { font-size: 1.4rem; font-weight: 800; color: var(--dark); line-height: 1.2; }
-        .member-role { display: inline-block; background: var(--light-gray); color: var(--primary); padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: bold; font-size: 0.85rem; margin: 0.5rem 0 1rem 0; }
-        .member-bio { font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem; text-align: left; background: var(--light); padding: 1rem; border-radius: 8px; }
-        .member-contact { font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1rem; }
-        .member-contact a { color: var(--dark); text-decoration: none; }
-        .member-contact a:hover { color: var(--primary); }
-        .btn-subtle { display: block; width: 100%; padding: 0.5rem; border: 1px solid var(--light-gray); border-radius: 6px; color: var(--gray); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
-        .btn-subtle:hover { border-color: var(--primary); color: var(--primary); background: rgba(155, 34, 38, 0.05); }
-    </style>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        
-        <!-- Bouton Hamburger -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../images/logos/favicon.png">
+        <title>Le Bureau Élu - BIGG BDE</title>
+        <meta name="description" content="Rencontrez l'équipe du BIGG BDE ! Un bureau motivé pour représenter les étudiants et organiser les meilleurs événements de l'année sur le campus.">
+        <link rel="canonical" href="https://biggbde.fr/bureau/">
+        <link rel="stylesheet" href="/style.css">
+        <style>
+            .header-bureau { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+            .member-card { padding: 0; text-align: center; }
+            .member-img-wrapper { padding: 1.5rem 1.5rem 0 1.5rem; }
+            .member-img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px; background: #e9ecef; }
+            .member-info { padding: 1.5rem; }
+            .member-name { font-size: 1.4rem; font-weight: 800; color: var(--dark); line-height: 1.2; }
+            .member-role { display: inline-block; background: var(--light-gray); color: var(--primary); padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: bold; font-size: 0.85rem; margin: 0.5rem 0 1rem 0; }
+            .member-bio { font-size: 0.9rem; color: var(--gray); margin-bottom: 1rem; text-align: left; background: var(--light); padding: 1rem; border-radius: 8px; }
+            .member-contact { font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1rem; }
+            .member-contact a { color: var(--dark); text-decoration: none; }
+            .member-contact a:hover { color: var(--primary); }
+            .btn-subtle { display: block; width: 100%; padding: 0.5rem; border: 1px solid var(--light-gray); border-radius: 6px; color: var(--gray); text-decoration: none; font-size: 0.9rem; transition: var(--transition); }
+            .btn-subtle:hover { border-color: var(--primary); color: var(--primary); background: rgba(155, 34, 38, 0.05); }
+        </style>
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/" class="active">Le Bureau</a>
-            <a href="/evenements/">Événements</a>
-            <a href="/photos/">Photos</a>
-            <a href="/partenariats/">Partenariats</a>
-            <a href="/liens-utiles/">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    <main>
+
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/" class="active">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+        <main>
         <div class="header-bureau">
             <h2 style="margin: 0;">Le Bureau</h2>
             <a href="#" class="btn btn-outline">Voir les Mandats Précédents (en cours de dév)
@@ -337,20 +348,44 @@
                     <div class="member-name">Loan GIRERD</div>
                 </div>
             </div>
+        </main>
 
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="/mentions-legales/">Mentions Légales</a>
-            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
-            <a href="/faq/">FAQ</a>
-        </div>
-        <div class="footer-socials">
-            <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
-            <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
-            <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
-        </div>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
-</body>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+
+            
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">↑</button>
+            <script>
+                // Gestion de l'affichage du bouton lors du défilement
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    // Affiche le bouton après 300px de scroll
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        scrollBtn.style.display = "block";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                // Fonction pour remonter avec un effet fluide
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            </script>
+        </footer>  
+    </body>
 </html>

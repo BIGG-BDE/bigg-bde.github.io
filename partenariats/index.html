@@ -1,117 +1,156 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │  ██████╗ ██╗ ██████╗  ██████╗         ██████╗ ██████╗ ███████╗  │ -->
+<!-- │  ██╔══██╗██║██╔════╝ ██╔════╝         ██╔══██╗██╔══██╗██╔════╝  │ -->
+<!-- │  ██████╔╝██║██║  ███╗██║  ███╗        ██████╔╝██║  ██║█████╗    │ -->
+<!-- │  ██╔══██╗██║██║   ██║██║   ██║        ██╔══██╗██║  ██║██╔══╝    │ -->
+<!-- │  ██████╔╝██║╚██████╔╝╚██████╔╝        ██████╔╝██████╔╝███████╗  │ -->
+<!-- │  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝         ╚═════╝ ╚═════╝ ╚══════╝  │ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="../images/logos/favicon.png">
-    <title>Partenariats & Avantages Étudiants - BIGG BDE</title>
-    <meta name="description" content="Profitez d'avantages exclusifs et de réductions chez nos commerçants partenaires à Bourg-en-Bresse, spécialement négociés pour les étudiants adhérents.">
-    <link rel="canonical" href="https://biggbde.fr/partenariats/">
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .validity { font-size: 0.85rem; color: var(--primary); font-weight: bold; margin-bottom: 1rem; display: block; }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        
-        <!-- Bouton Hamburger -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
-
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/">Le Bureau</a>
-            <a href="/evenements/">Événements</a>
-            <a href="/photos/">Photos</a>
-            <a href="/partenariats/" class="active">Partenariats</a>
-            <a href="/liens-utiles/">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    
-    <main>
-        <h2>Nos Partenaires</h2>
-        
-        <div class="grid-container" id="parts-grid" style="margin-top: 2rem;">
-            
-            <!-- DÉBUT PARTENARIAT -->
-            <div class="card part-item">
-                <div class="card-content">
-                    <h3 style="margin-top: 0;">Fast-Food Local</h3>
-                    <span class="validity">Valable jusqu'au 31/12/2026</span>
-                    <p style="flex-grow: 1; color: var(--gray);">Un menu XXL acheté = un dessert offert. Présente le code ou ta carte BDE en caisse.</p>
-                    <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Fast-Food Local', 'CODE-BIGG-BURGER')">Voir le Code</button>
-                </div>
-            </div>
-            <!-- FIN PARTENARIAT -->
-
-            <!-- DÉBUT PARTENARIAT -->
-            <div class="card part-item">
-                <div class="card-content">
-                    <h3 style="margin-top: 0;">Bowling & Laser</h3>
-                    <span class="validity">Valable sur présentation de la carte</span>
-                    <p style="flex-grow: 1; color: var(--gray);">Tarif étudiant exclusif du lundi au jeudi soir pour tous les adhérents.</p>
-                    <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Bowling & Laser', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
-                </div>
-            </div>
-            <!-- FIN PARTENARIAT -->
-            
-        </div>
-        <!-- Bouton Adhésion très visible -->
-        <div style="background: var(--light); padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; margin-top:2rem;border: 2px dashed var(--primary);">
-            <h3 style="margin-top: 0;">Rejoins l'aventure !</h3>
-            <p>Tu n'es pas encore adhérent ? Profite des réductions partenaires et de tarifs préférentiels sur nos événements.</p>
-            <a href="LIEN_HELLO_ASSO_ICI" target="_blank" class="btn" style="font-size: 1.2rem; padding: 1rem 2rem; margin-top:1rem;">Adhérer au BIGG BDE via HelloAsso</a>
-        </div>
-    </main>
-
-    <!-- Modale Popup (Grisée et Responsive via CSS) -->
-    <div class="modal-overlay" id="partModal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()" aria-label="Fermer">&times;</button>
-            <h3 id="modalTitle" style="color: var(--dark); margin-bottom: 0.5rem;">Titre Partenaire</h3>
-            <p style="color: var(--gray); font-size: 0.95rem;">Présente ce code au partenaire ou utilise-le en ligne pour profiter de ton avantage :</p>
-            <div class="code-display" id="modalCode">CODE</div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="footer-links">
-            <a href="/mentions-legales/">Mentions Légales</a>
-            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
-        </div>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
-
-    <script>
-        // Logique simplifiée pour ouvrir et fermer la modale
-        function openModal(title, code) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalCode').innerText = code;
-            document.getElementById('partModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Empêche le scroll quand la modale est ouverte
-        }
-
-        function closeModal() {
-            document.getElementById('partModal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Réactive le scroll
-        }
-
-        // Fermer la modale si on clique à l'extérieur du bloc blanc
-        document.getElementById('partModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../images/logos/favicon.png">
+        <title>Partenariats & Avantages Étudiants - BIGG BDE</title>
+        <meta name="description" content="Profitez d'avantages exclusifs et de réductions chez nos commerçants partenaires à Bourg-en-Bresse, spécialement négociés pour les étudiants adhérents.">
+        <link rel="canonical" href="https://biggbde.fr/partenariats/">
+        <link rel="stylesheet" href="/style.css">
+        <style>
+            .validity { font-size: 0.85rem; color: var(--primary); font-weight: bold; margin-bottom: 1rem; display: block; }
+        </style>
+        <script>
+            // Logique simplifiée pour ouvrir et fermer la modale
+            function openModal(title, code) {
+                document.getElementById('modalTitle').innerText = title;
+                document.getElementById('modalCode').innerText = code;
+                document.getElementById('partModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Empêche le scroll quand la modale est ouverte
             }
-        });
 
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</body>
+            function closeModal() {
+                document.getElementById('partModal').style.display = 'none';
+                document.body.style.overflow = 'auto'; // Réactive le scroll
+            }
+
+            // Fermer la modale si on clique à l'extérieur du bloc blanc
+            document.getElementById('partModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/" class="active">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+        
+
+        <main>
+            <h2>Nos Partenaires</h2>
+            
+            <div class="grid-container" id="parts-grid" style="margin-top: 2rem;">
+                
+                <!-- DÉBUT PARTENARIAT -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <h3 style="margin-top: 0;">Fast-Food Local</h3>
+                        <span class="validity">Valable jusqu'au 31/12/2026</span>
+                        <p style="flex-grow: 1; color: var(--gray);">Un menu XXL acheté = un dessert offert. Présente le code ou ta carte BDE en caisse.</p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Fast-Food Local', 'CODE-BIGG-BURGER')">Voir le Code</button>
+                    </div>
+                </div>
+                <!-- FIN PARTENARIAT -->
+
+                <!-- DÉBUT PARTENARIAT -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <h3 style="margin-top: 0;">Bowling & Laser</h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">Tarif étudiant exclusif du lundi au jeudi soir pour tous les adhérents.</p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Bowling & Laser', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+                <!-- FIN PARTENARIAT -->
+                
+            </div>
+            <!-- Bouton Adhésion très visible -->
+            <div style="background: var(--light); padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; margin-top:2rem;border: 2px dashed var(--primary);">
+                <h3 style="margin-top: 0;">Rejoins l'aventure !</h3>
+                <p>Tu n'es pas encore adhérent ? Profite des réductions partenaires et de tarifs préférentiels sur nos événements.</p>
+                <a href="LIEN_HELLO_ASSO_ICI" target="_blank" class="btn" style="font-size: 1.2rem; padding: 1rem 2rem; margin-top:1rem;">Adhérer au BIGG BDE via HelloAsso</a>
+            </div>
+        </main>
+
+        <!-- Modale Popup (Grisée et Responsive via CSS) -->
+        <div class="modal-overlay" id="partModal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="closeModal()" aria-label="Fermer">&times;</button>
+                <h3 id="modalTitle" style="color: var(--dark); margin-bottom: 0.5rem;">Titre Partenaire</h3>
+                <p style="color: var(--gray); font-size: 0.95rem;">Présente ce code au partenaire ou utilise-le en ligne pour profiter de ton avantage :</p>
+                <div class="code-display" id="modalCode">CODE</div>
+            </div>
+        </div>
+
+
+        footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+
+            
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">↑</button>
+            <script>
+                // Gestion de l'affichage du bouton lors du défilement
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    // Affiche le bouton après 300px de scroll
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        scrollBtn.style.display = "block";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                // Fonction pour remonter avec un effet fluide
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            </script>
+        </footer>  
+    </body>
 </html>

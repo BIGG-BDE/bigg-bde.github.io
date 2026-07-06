@@ -1,69 +1,113 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │  ██████╗ ██╗ ██████╗  ██████╗         ██████╗ ██████╗ ███████╗  │ -->
+<!-- │  ██╔══██╗██║██╔════╝ ██╔════╝         ██╔══██╗██╔══██╗██╔════╝  │ -->
+<!-- │  ██████╔╝██║██║  ███╗██║  ███╗        ██████╔╝██║  ██║█████╗    │ -->
+<!-- │  ██╔══██╗██║██║   ██║██║   ██║        ██╔══██╗██║  ██║██╔══╝    │ -->
+<!-- │  ██████╔╝██║╚██████╔╝╚██████╔╝        ██████╔╝██████╔╝███████╗  │ -->
+<!-- │  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝         ╚═════╝ ╚═════╝ ╚══════╝  │ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photos - BIGG BDE</title>
-    <link rel="stylesheet" href="/style.css">
-    <style>
-        .photo-card { padding: 0; }
-        .photo-preview { width: 100%; height: 200px; object-fit: cover; }
-        .photo-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--gray); margin-bottom: 1rem; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.5rem; }
-        .photo-card h3 { margin-bottom: 0.5rem; }
-    </style>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        
-        <!-- Bouton Hamburger -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Photos - BIGG BDE</title>
+        <link rel="stylesheet" href="/style.css">
+        <style>
+            .photo-card { padding: 0; }
+            .photo-preview { width: 100%; height: 200px; object-fit: cover; }
+            .photo-meta { display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--gray); margin-bottom: 1rem; border-bottom: 1px solid var(--light-gray); padding-bottom: 0.5rem; }
+            .photo-card h3 { margin-bottom: 0.5rem; }
+        </style>
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
 
-        <nav>
-            <a href="/">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/">Le Bureau</a>
-            <a href="/evenements/">Événements</a>
-            <a href="/photos/" class="active">Photos</a>
-            <a href="/partenariats/">Partenariats</a>
-            <a href="/liens-utiles/">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Galeries Photos</h2>
-        
-        <div class="grid-container" style="margin-top: 2rem;">
-            <!-- DÉBUT ALBUM -->
-            <div class="card photo-card">
-                <img src="https://via.placeholder.com/600x400" alt="Preview WEI" class="photo-preview">
-                <div class="card-content">
-                    <div class="photo-meta">
-                        <span>📅 Automne 2025</span>
-                        <span>📸 Pôle Com'</span>
+
+
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/" class="active">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+
+        <main>
+            <h2>Galeries Photos</h2>
+            
+            <div class="grid-container" style="margin-top: 2rem;">
+                <!-- DÉBUT ALBUM -->
+                <div class="card photo-card">
+                    <img src="https://via.placeholder.com/600x400" alt="Preview WEI" class="photo-preview">
+                    <div class="card-content">
+                        <div class="photo-meta">
+                            <span>📅 Automne 2025</span>
+                            <span>📸 Pôle Com'</span>
+                        </div>
+                        <h3>Alice au Pays des MerWEI</h3>
+                        <p style="flex-grow: 1; color: var(--gray); font-size: 0.9rem;">Toutes les photos du terrier et du banquet du Chapelier Fou.</p>
+                        <a href="#" class="btn" style="margin-top: 1rem; width: 100%;">Accéder au Drive</a>
                     </div>
-                    <h3>Alice au Pays des MerWEI</h3>
-                    <p style="flex-grow: 1; color: var(--gray); font-size: 0.9rem;">Toutes les photos du terrier et du banquet du Chapelier Fou.</p>
-                    <a href="#" class="btn" style="margin-top: 1rem; width: 100%;">Accéder au Drive</a>
                 </div>
+                <!-- FIN ALBUM -->
             </div>
-            <!-- FIN ALBUM -->
-        </div>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="/mentions-legales/">Mentions Légales</a>
-            <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
-        </div>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</body>
+        </main>
+
+
+        footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+
+            
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">↑</button>
+            <script>
+                // Gestion de l'affichage du bouton lors du défilement
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    // Affiche le bouton après 300px de scroll
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        scrollBtn.style.display = "block";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                // Fonction pour remonter avec un effet fluide
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            </script>
+        </footer>  
+    </body>
 </html>
