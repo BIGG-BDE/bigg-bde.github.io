@@ -1,0 +1,90 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │  ██████╗ ██╗ ██████╗  ██████╗         ██████╗ ██████╗ ███████╗  │ -->
+<!-- │  ██╔══██╗██║██╔════╝ ██╔════╝         ██╔══██╗██╔══██╗██╔════╝  │ -->
+<!-- │  ██████╔╝██║██║  ███╗██║  ███╗        ██████╔╝██║  ██║█████╗    │ -->
+<!-- │  ██╔══██╗██║██║   ██║██║   ██║        ██╔══██╗██║  ██║██╔══╝    │ -->
+<!-- │  ██████╔╝██║╚██████╔╝╚██████╔╝        ██████╔╝██████╔╝███████╗  │ -->
+<!-- │  ╚═════╝ ╚═╝ ╚═════╝  ╚═════╝         ╚═════╝ ╚═════╝ ╚══════╝  │ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="../../images/logos/favicon.png">
+        <title>Alice au Pays des MerWEI - BIGG BDE</title>
+        <meta name="description" content="COMPLETER AVEC UNE BREVE DESCRIPTION">
+        <link rel="canonical" href="https://biggbde.fr/evenements/">
+        <link rel="stylesheet" href="../../style.css">
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
+
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="../../images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            
+            <!-- Bouton Hamburger -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <a href="/">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+
+        <main>
+            stand crepes hotdogs en lien avec la bu
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+
+
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">⮝</button>
+            <script>
+                // Gestion de l'affichage du bouton lors du défilement
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    // Affiche le bouton après 300px de scroll
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        scrollBtn.style.display = "block";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                // Fonction pour remonter avec un effet fluide
+                function scrollToTop() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                }
+            </script>
+        </footer>  
+    </body>
+</html>
