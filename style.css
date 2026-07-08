@@ -2,6 +2,7 @@
     --primary: #9b2226;
     --primary-hover: #7b1a1e;
     --dark: #2b2d42;
+    --dark-hover: #1a1c2b;
     --light: #f8f9fa;
     --white: #ffffff;
     --gray: #6c757d;
@@ -134,11 +135,93 @@ h2 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--dark); border-bottom: 
     display: inline-block; background-color: var(--primary); color: var(--white);
     padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 6px;
     font-weight: bold; font-size: 0.9rem; transition: var(--transition);
-    text-align: center; border: none; cursor: pointer;
+    text-align: center; border: 2px solid var(--primary); cursor: pointer;
 }
-.btn:hover { background-color: var(--primary-hover); color: var(--white); }
+.btn:hover { background-color: var(--primary-hover); color: var(--white); border: 2px solid var(--primary-hover)}
 .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
 .btn-outline:hover { background: var(--primary); color: var(--white); }
+
+/* ========================================================= */
+/* --- AUTOMATISATION DES ÉVÉNEMENTS PASSÉS --- */
+/* ========================================================= */
+
+/* 1. Recolorisation automatique des boutons */
+.timeline.past .btn {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: var(--white);
+}
+.timeline.past .btn:hover {
+    background-color: var(--dark-hover);
+    border-color: var(--dark-hover);
+}
+
+.timeline.past .btn.btn-outline {
+    background-color: transparent;
+    border-color: var(--dark);
+    color: var(--dark);
+}
+.timeline.past .btn.btn-outline:hover {
+    background-color: var(--dark);
+    color: var(--white);
+}
+
+/* 2. Style pour la fonctionnalité "Déroulante" (Collapse) */
+.past-event-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.past-event-title:hover {
+    color: var(--primary) !important; /* Le !important permet de surcharger ton style="" en ligne */
+}
+.toggle-arrow {
+    font-size: 0.9rem;
+    color: var(--gray);
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+}
+
+/* Les éléments à cacher par défaut (contrôlé par JS) */
+.timeline.past .timeline-content.is-collapsed p,
+.timeline.past .timeline-content.is-collapsed .event-footer {
+    display: none !important;
+}
+
+/* On tourne la flèche quand c'est ouvert */
+.timeline.past .timeline-content:not(.is-collapsed) .toggle-arrow {
+    transform: rotate(180deg);
+}
+
+/* Le conteneur magique créé par le JS */
+.past-event-body {
+    display: grid;
+    grid-template-rows: 0fr; /* Hauteur à zéro par défaut */
+    transition: grid-template-rows 0.4s ease-out; /* Durée et fluidité de l'animation */
+}
+
+/* On masque tout ce qui dépasse du conteneur fermé */
+.past-event-body-inner {
+    overflow: hidden;
+    padding-top: 0; /* Évite les sauts liés aux marges */
+    transition: padding-top 0.4s ease-out;
+}
+
+/* Quand l'événement est déplié (non-collapsed) */
+.timeline.past .timeline-content:not(.is-collapsed) .past-event-body {
+    grid-template-rows: 1fr; /* Hauteur automatique animée */
+}
+
+.timeline.past .timeline-content:not(.is-collapsed) .past-event-body-inner {
+    padding-top: 1rem; /* Ajoute un peu d'espace entre le titre et le texte une fois ouvert */
+}
+
+
+
+
+
 
 /* Timeline (Événements) */
 .timeline { position: relative; padding-left: 2rem; margin-bottom: 3rem; }
@@ -301,9 +384,17 @@ details.faq-item p {
 .event-footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     margin-top: 1rem;
     width: 100%;
+    gap:1rem;
+}
+
+.event-buttons {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .event-location {
@@ -344,7 +435,7 @@ details.faq-item p {
 }
 
 #scrollTopBtn:hover {
-    background-color: var(--dark);
+    background-color: var(--primary-hover);
     transform: scale(1.1);
 }
 
