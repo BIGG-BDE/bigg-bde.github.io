@@ -8,151 +8,174 @@
 <!-- └─────────────────────────────────────────────────────────────────┘ -->
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse : événements, bons plans et actualités.">
-    <title>BIGG BDE - Bureau des Étudiants IUT Lyon 1 (Bourg-en-Bresse)</title>
-    <link rel="icon" type="image/png" href="images/logos/favicon.png">
-    <link rel="canonical" href="https://biggbde.fr">
-    <link rel="stylesheet" href="style.css">
-    <script type="application/ld+json">
-    {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse : événements, bons plans et actualités.">
+        <title>BIGG BDE - Bureau des Étudiants IUT Lyon 1 (Bourg-en-Bresse)</title>
+        <link rel="icon" type="image/png" href="https://biggbde.fr/images/logos/favicon.png">
+        <link rel="stylesheet" href="https://biggbde.fr/style.css">
+        <meta name="theme-color" content="#9b2226">
+        <!-- Favicon & Version Mobile -->
+        <link rel="icon" type="image/png" href="https://biggbde.fr/images/logos/favicons/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="https://biggbde.fr/images/logos/favicons/favicon.svg" />
+        <link rel="shortcut icon" href="https://biggbde.fr/images/logos/favicons/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/images/logos/favicons/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="BIGG BDE" />
+        <link rel="manifest" href="https://biggbde.fr/images/logos/favicons/site.webmanifest" />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="BIGG BDE">
+        <meta name="twitter:site" content="@https://biggbde.fr">
+        <meta name="twitter:description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse : événements, bons plans et actualités.">
+        <meta name="twitter:image" content="https://biggbde.fr/images/logos/favicons/web-app-manifest-512x512.png">
+        <meta name="twitter:image:alt" content="Logo BIGG BDE">
+        <!-- Open Graph Global -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="BIGG BDE">
+        <meta property="og:url" content="https://biggbde.fr/">
+        <meta property="og:image" content="https://biggbde.fr/images/logos/Logo_BIGG_BDE.PNG">
+        <meta property="og:description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse : événements, bons plans et actualités.">
+        <!-- SEO Schema.org -->
+        <link rel="canonical" href="https://biggbde.fr">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "BIGG BDE",
+            "url": "https://biggbde.fr",
+            "logo": "https://biggbde.fr/images/logos/favicons/favicon.svg",
+            "sameAs": [
+                "https://www.instagram.com/bigg_bde"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "webmaster@biggbde.fr",
+                "contactType": "technical support"
+            }
+        }
+        </script>
+        <script type="application/ld+json">
+        {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "WebSite",
         "name": "BIGG BDE",
-        "url": "https://biggbde.fr",
-        "logo": "https://biggbde.fr/images/logos/favicon.png",
-        "sameAs": [
-            "https://www.instagram.com/bigg_bde"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "email": "webmaster@biggbde.fr",
-            "contactType": "technical support"
+        "url": "https://biggbde.fr"
         }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "BIGG BDE",
-    "url": "https://biggbde.fr"
-    }
-    </script>
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav').classList.toggle('nav-open');
-        }
-    </script>
-</head>
-<body>
-    <header>
-        <a href="/" class="brand">
-            <img src="/images/logos/Logo BIGG BDE.PNG" alt="Logo BIGG BDE">
-            <h1>BIGG BDE</h1>
-        </a>
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+        </script>
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
+    </head>
 
-        <nav>
-            <a href="/" class="active">Accueil</a>
-            <a href="/a-propos/">À propos</a>
-            <a href="/bureau/">Le Bureau</a>
-            <a href="/evenements/">Événements</a>
-            <a href="/photos/">Photos</a>
-            <a href="/partenariats/">Partenariats</a>
-            <a href="/liens-utiles/">Liens Utiles</a>
-            <a href="/contact/" class="nav-contact-btn">Contact</a>
-        </nav>
-    </header>
-    
-    <main>
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <h2>Bienvenue au BIGG BDE</h2>
-            <p style="color: var(--gray); font-size: 1.1rem; max-width: 700px; margin: 1rem auto;">
-                Retrouvez ici toutes les actualités, événements, et bons plans de votre association étudiante sur le campus de l'IUT Lyon 1 de Bourg-en-Bresse.
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="https://biggbde.fr/images/logos/favicons/web-app-manifest-512x512.png" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <a href="/" class="active">Accueil</a>
+                <a href="/a-propos/">À propos</a>
+                <a href="/bureau/">Le Bureau</a>
+                <a href="/evenements/">Événements</a>
+                <a href="/photos/">Photos</a>
+                <a href="/partenariats/">Partenariats</a>
+                <a href="/liens-utiles/">Liens Utiles</a>
+                <a href="/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+        
+        <main>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2>Bienvenue au BIGG BDE</h2>
+                <p style="color: var(--gray); font-size: 1.1rem; max-width: 700px; margin: 1rem auto;">
+                    Retrouvez ici toutes les actualités, événements, et bons plans de votre association étudiante sur le campus de l'IUT Lyon 1 de Bourg-en-Bresse.
+                </p>
+            </div>
+
+            <div class="home-grid">
+                <a href="/evenements/" class="home-tile">
+                    <span class="home-tile-icon">🎉</span>
+                    <h3 class="home-tile-title">Nos Événements</h3>
+                    <p class="home-tile-text">Ne manque pas nos prochaines soirées, stands ou événement quelconque !</p>
+                </a>
+                
+                <a href="/partenariats/" class="home-tile">
+                    <span class="home-tile-icon">🤝</span>
+                    <h3 class="home-tile-title">Bons Plans</h3>
+                    <p class="home-tile-text">Profite de réductions exclusives chez nos partenaires locaux.</p>
+                </a>
+
+                <a href="/bureau/" class="home-tile">
+                    <span class="home-tile-icon">👋</span>
+                    <h3 class="home-tile-title">Le Bureau</h3>
+                    <p class="home-tile-text">Découvre les membres du bureau prêts à faire vibrer ton année.</p>
+                </a>
+
+                <a href="/liens-utiles/" class="home-tile">
+                    <span class="home-tile-icon">🔗</span>
+                    <h3 class="home-tile-title">Outils & Liens</h3>
+                    <p class="home-tile-text">Accède rapidement à la billetterie, au Instagram et aux ressources de l'IUT.</p>
+                </a>
+
+                <a href="/faq/" class="home-tile">
+                    <span class="home-tile-icon">❓</span>
+                    <h3 class="home-tile-title">FAQ</h3>
+                    <p class="home-tile-text">Tu te poses des questions sur le BIGG, sur l'IUT ou autre ? Trouve ta réponse ici !</p>
+                </a>
+
+                <a href="/liens-utiles/" class="home-tile">
+                    <span class="home-tile-icon">📲</span>
+                    <h3 class="home-tile-title">Nous Contacter</h3>
+                    <p class="home-tile-text">Accède à nos moyens de communications pour que nous puissions t'aider.</p>
+                </a>
+            </div>
+
+            <br>
+            <p>L'engagement du BIGG BDE dépasse largement les murs de l'IUT pour s'inscrire durablement dans le paysage burgien. En tissant des liens étroits avec les <strong>
+                commerçants de proximité</strong>, nous participons activement au dynamisme économique de Bourg-en-Bresse. Ces collaborations permettent non seulement d'offrir 
+                des tarifs préférentiels aux étudiants, mais elles favorisent aussi une véritable synergie entre la jeunesse et les boutiques du centre-ville. 
+                Chaque partenariat est pensé pour soutenir le savoir-faire local tout en facilitant le quotidien de notre communauté.
+            </p><br>
+            <p>Notre association se veut être un pont entre le monde universitaire et la cité. C'est pourquoi nous organisons régulièrement des <strong>événements ouverts</strong> 
+                à un public plus large, incluant les autres BDE. Qu'il s'agisse de tournois sportifs, de collectes solidaires 
+                ou de rencontres culturelles, ces moments de partage renforcent notre <i>ancrage territorial</i>. Cette ouverture d'esprit transforme le campus en un lieu d'échange 
+                vivant, où chaque habitant peut percevoir l'énergie positive de la vie étudiante.</p><p>Cette présence constante sur le terrain assoit la légitimité du BDE comme un 
+                interlocuteur incontournable de la vie locale. En valorisant les circuits courts et les initiatives burgiennes, nous cultivons un sentiment d'appartenance fort.
+                Le BIGG BDE n'est pas qu'une simple structure interne ; il agit comme un véritable <strong>moteur social</strong> pour toute la ville. 
+                Rejoindre nos projets, c'est donc contribuer au rayonnement de notre belle région tout en profitant d'un cadre de vie épanouissant.
             </p>
-        </div>
-
-        <div class="home-grid">
-            <a href="/evenements/" class="home-tile">
-                <span class="home-tile-icon">🎉</span>
-                <h3 class="home-tile-title">Nos Événements</h3>
-                <p class="home-tile-text">Ne manque pas nos prochaines soirées, stands ou événement quelconque !</p>
-            </a>
-            
-            <a href="/partenariats/" class="home-tile">
-                <span class="home-tile-icon">🤝</span>
-                <h3 class="home-tile-title">Bons Plans</h3>
-                <p class="home-tile-text">Profite de réductions exclusives chez nos partenaires locaux.</p>
-            </a>
-
-            <a href="/bureau/" class="home-tile">
-                <span class="home-tile-icon">👋</span>
-                <h3 class="home-tile-title">Le Bureau</h3>
-                <p class="home-tile-text">Découvre les membres du bureau prêts à faire vibrer ton année.</p>
-            </a>
-
-            <a href="/liens-utiles/" class="home-tile">
-                <span class="home-tile-icon">🔗</span>
-                <h3 class="home-tile-title">Outils & Liens</h3>
-                <p class="home-tile-text">Accède rapidement à la billetterie, au Instagram et aux ressources de l'IUT.</p>
-            </a>
-
-            <a href="/faq/" class="home-tile">
-                <span class="home-tile-icon">❓</span>
-                <h3 class="home-tile-title">FAQ</h3>
-                <p class="home-tile-text">Tu te poses des questions sur le BIGG, sur l'IUT ou autre ? Trouve ta réponse ici !</p>
-            </a>
-
-            <a href="/liens-utiles/" class="home-tile">
-                <span class="home-tile-icon">📲</span>
-                <h3 class="home-tile-title">Nous Contacter</h3>
-                <p class="home-tile-text">Accède à nos moyens de communications pour que nous puissions t'aider.</p>
-            </a>
-        </div>
-
-        <br>
-        <p>L'engagement du BIGG BDE dépasse largement les murs de l'IUT pour s'inscrire durablement dans le paysage burgien. En tissant des liens étroits avec les <strong>
-            commerçants de proximité</strong>, nous participons activement au dynamisme économique de Bourg-en-Bresse. Ces collaborations permettent non seulement d'offrir 
-            des tarifs préférentiels aux étudiants, mais elles favorisent aussi une véritable synergie entre la jeunesse et les boutiques du centre-ville. 
-            Chaque partenariat est pensé pour soutenir le savoir-faire local tout en facilitant le quotidien de notre communauté.
-        </p><br>
-        <p>Notre association se veut être un pont entre le monde universitaire et la cité. C'est pourquoi nous organisons régulièrement des <strong>événements ouverts</strong> 
-            à un public plus large, incluant les autres BDE. Qu'il s'agisse de tournois sportifs, de collectes solidaires 
-            ou de rencontres culturelles, ces moments de partage renforcent notre <i>ancrage territorial</i>. Cette ouverture d'esprit transforme le campus en un lieu d'échange 
-            vivant, où chaque habitant peut percevoir l'énergie positive de la vie étudiante.</p><p>Cette présence constante sur le terrain assoit la légitimité du BDE comme un 
-            interlocuteur incontournable de la vie locale. En valorisant les circuits courts et les initiatives burgiennes, nous cultivons un sentiment d'appartenance fort.
-            Le BIGG BDE n'est pas qu'une simple structure interne ; il agit comme un véritable <strong>moteur social</strong> pour toute la ville. 
-            Rejoindre nos projets, c'est donc contribuer au rayonnement de notre belle région tout en profitant d'un cadre de vie épanouissant.
-        </p>
 
 
 
-<!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">⮝</button>
-            <script>
-                // Gestion de l'affichage du bouton lors du défilement
-                let scrollBtn = document.getElementById("scrollTopBtn");
-                window.addEventListener("scroll", function() {
-                    // Affiche le bouton après 300px de scroll
-                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        scrollBtn.style.display = "block";
-                    } else {
-                        scrollBtn.style.display = "none";
-                    }
-                });
-                // Fonction pour remonter avec un effet fluide
-                function scrollToTop() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
+    <!-- Bouton Remonter -->
+                <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">⮝</button>
+                <script>
+                    // Gestion de l'affichage du bouton lors du défilement
+                    let scrollBtn = document.getElementById("scrollTopBtn");
+                    window.addEventListener("scroll", function() {
+                        // Affiche le bouton après 300px de scroll
+                        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                            scrollBtn.style.display = "block";
+                        } else {
+                            scrollBtn.style.display = "none";
+                        }
                     });
-                }
-            </script>
+                    // Fonction pour remonter avec un effet fluide
+                    function scrollToTop() {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                </script>
 
-    </main>
+        </main>
     
         <footer>
             <div class="footer-links">
