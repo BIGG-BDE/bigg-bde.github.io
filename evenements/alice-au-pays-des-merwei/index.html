@@ -12,10 +12,63 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="https://biggbde.fr/images/logos/favicon.png">
-        <title>Alice au Pays des MerWEI - BIGG BDE</title>
-        <meta name="description" content="COMPLETER AVEC UNE BREVE DESCRIPTION">
+        <title>Alice au pays des MerWEI - BIGG BDE</title>
+        <meta name="description" content="Que tu viennes d'arriver en première année, ou que tu sois un.e habitué.e de l'universitaire, ce WEI est l'évènement immanquable de l'année ! ">
         <link rel="canonical" href="https://biggbde.fr/evenements/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
+        <link rel="stylesheet" href="../style.css">
+
+        <meta name="theme-color" content="#9b2226">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/images/logos/favicon.png">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/images/logos/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="https://biggbde.fr/images/logos/favicons/favicon.svg">
+        <link rel="shortcut icon" href="https://biggbde.fr/images/logos/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/images/logos/favicons/apple-touch-icon.png">
+        <meta name="apple-mobile-web-app-title" content="BIGG BDE">
+        <link rel="manifest" href="https://biggbde.fr/images/logos/favicons/site.webmanifest">
+
+        <!-- Twitter Card -->
+        <meta name="description" content="">
+        <meta name="twitter:title" content="Alice au pays des merWEI - BIGG BDE">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:image" content="https://biggbde.fr/images/logos/favicons/web-app-manifest-512x512.png">
+        <meta name="twitter:image:alt" content="Logo BIGG BDE">
+        <meta name="twitter:url" content="https://biggbde.fr/evenements/alice-au-pays-des-merwei/">
+        <meta name="twitter:description" content="Que tu viennes d'arriver en première année, ou que tu sois un.e habitué.e de l'universitaire, ce WEI est l'évènement immanquable de l'année !">
+
+        <!-- Open Graph Global -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Alice au pays des merWEI - BIGG BDE">
+        <meta property="og:image" content="https://biggbde.fr/images/logos/favicons/web-app-manifest-512x512.png">
+        <meta property="og:url" content="https://biggbde.fr/evenements/alice-au-pays-des-merwei/">
+        <meta property="og:description" content="Que tu viennes d'arriver en première année, ou que tu sois un.e habitué.e de l'universitaire, ce WEI est l'évènement immanquable de l'année !">
+
+        <!-- SEO Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "BIGG BDE",
+            "url": "https://biggbde.fr",
+            "logo": "https://biggbde.fr/images/logos/favicons/favicon.svg",
+            "sameAs": [
+                "https://www.instagram.com/bigg_bde"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "webmaster@biggbde.fr",
+                "contactType": "technical support"
+            }
+        }
+        </script>
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BIGG BDE",
+        "url": "https://biggbde.fr"
+        }
+        </script>
         <script>
             function toggleMenu() {
                 document.querySelector('nav').classList.toggle('nav-open');
@@ -53,7 +106,7 @@
         <footer>
             <div class="footer-links">
                 <a href="https://biggbde.fr/mentiones-legales/">Mentions Légales</a>
-                <a href="mailto:webmaster@biggbde.fr">Faire un retour sur le site</a>
+                <a href="mailto:webmaster@biggbde.fr?subject=Retour%20sur%20le%20site%20web%20du%20BIGG&body=Bonjour%20Antonin%2C%0A%0AJe%20pense%20que%20ton%20site%20est%20vraiment%20trop%20bien.">Review du site</a>
                 <a href="https://biggbde.fr/faq/">FAQ</a>
             </div>
             <div class="footer-socials">
@@ -65,7 +118,7 @@
 
 
             <!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">⮝</button>
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">&#11165;</button>
             <script>
                 // Gestion de l'affichage du bouton lors du défilement
                 let scrollBtn = document.getElementById("scrollTopBtn");

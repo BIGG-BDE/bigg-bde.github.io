@@ -1,0 +1,19 @@
+/* --- GESTION DE LA FLÈCHE RETOUR EN HAUT (PC vs MOBILE) --- */
+
+/* 1. Configuration par défaut (Ordinateur / Grand écran) */
+#scrollTopBtn .arrow-desktop {
+    display: inline-block;
+}
+#scrollTopBtn .arrow-mobile {
+    display: none; /* On cache la flèche mobile sur PC */
+}
+
+/* 2. Configuration pour Téléphone (Écrans de moins de 768px) */
+@media (max-width: 768px) {
+    #scrollTopBtn .arrow-desktop {
+        display: none; /* On cache la flèche PC sur mobile */
+    }
+    #scrollTopBtn .arrow-mobile {
+        display: inline-block; /* On affiche la flèche mobile */
+    }
+}
