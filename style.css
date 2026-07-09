@@ -1,3 +1,10 @@
+/*
+=================  ATTRIBUTS PAR DEFAUT  =================
+*/
+
+
+
+
 :root {
     --primary: #9b2226;
     --primary-hover: #7b1a1e;
@@ -17,6 +24,8 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+
+
 body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
@@ -26,6 +35,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
+
 
 /* Navbar */
 header {
@@ -39,10 +50,26 @@ header {
     position: relative;
 }
 
+
+
+
+
+
+
 .brand { display: flex; align-items: center; gap: 1rem; text-decoration: none; transition: transform 0.2s ease; }
 .brand:hover { transform: scale(1.02); }
 .brand img { height: 50px; width: auto; border-radius: 50%; background: white; padding: 2px; }
 .brand h1 { font-size: 1.6rem; font-weight: 800; color: var(--white); margin: 0; }
+
+
+
+
+
+
+
+
+
+
 
 nav { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
 nav a {
@@ -58,7 +85,7 @@ nav a.nav-contact-btn {
 }
 nav a.nav-contact-btn:hover { background-color: var(--dark); color: var(--white); transform: translateY(-2px); }
 
-/* --- Menu Mobile (Hamburger) --- */
+/* --- Menu Mobile --- */
 .menu-toggle {
     display: none;
     background: none;
@@ -101,34 +128,23 @@ nav a.nav-contact-btn:hover { background-color: var(--dark); color: var(--white)
     }
 }
 
+
+
+
+
+
+
 /* Layout & Tuiles Classiques */
 main { flex: 1; padding: 3rem 2rem; max-width: 1200px; margin: 0 auto; width: 100%; }
 h2 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--dark); border-bottom: 3px solid var(--primary); display: inline-block; padding-bottom: 0.5rem; }
 
-.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
-.card {
-    background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow);
-    transition: var(--transition); border: 1px solid var(--light-gray);
-    overflow: hidden; display: flex; flex-direction: column;
-}
-.card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
-.card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
 
-/* Nouvelles Tuiles Accueil */
-.home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.home-tile {
-    background: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius);
-    text-align: center; text-decoration: none; color: var(--dark);
-    border: 1px solid var(--light-gray); box-shadow: var(--shadow);
-    transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 1rem;
-}
-.home-tile:hover {
-    transform: translateY(-8px); border-color: var(--primary);
-    box-shadow: 0 15px 35px rgba(155,34,38,0.15);
-}
-.home-tile-icon { font-size: 3.5rem; }
-.home-tile-title { font-size: 1.4rem; font-weight: 800; margin: 0; }
-.home-tile-text { font-size: 0.95rem; color: var(--gray); margin: 0; }
+
+
+
+
+
+
 
 /* Boutons génériques */
 .btn {
@@ -141,148 +157,12 @@ h2 { font-size: 2.2rem; margin-bottom: 2rem; color: var(--dark); border-bottom: 
 .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
 .btn-outline:hover { background: var(--primary); color: var(--white); }
 
-/* ========================================================= */
-/* --- AUTOMATISATION DES ÉVÉNEMENTS PASSÉS --- */
-/* ========================================================= */
-
-/* 1. Recolorisation automatique des boutons */
-.timeline.past .btn {
-    background-color: var(--dark);
-    border-color: var(--dark);
-    color: var(--white);
-}
-.timeline.past .btn:hover {
-    background-color: var(--dark-hover);
-    border-color: var(--dark-hover);
-}
-
-.timeline.past .btn.btn-outline {
-    background-color: transparent;
-    border-color: var(--dark);
-    color: var(--dark);
-}
-.timeline.past .btn.btn-outline:hover {
-    background-color: var(--dark);
-    color: var(--white);
-}
-
-/* 2. Style pour la fonctionnalité "Déroulante" (Collapse) */
-.past-event-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-.past-event-title:hover {
-    color: var(--primary) !important; /* Le !important permet de surcharger ton style="" en ligne */
-}
-.toggle-arrow {
-    font-size: 0.9rem;
-    color: var(--gray);
-    transition: transform 0.3s ease;
-    margin-left: 1rem;
-}
-
-/* Les éléments à cacher par défaut (contrôlé par JS) */
-.timeline.past .timeline-content.is-collapsed p,
-.timeline.past .timeline-content.is-collapsed .event-footer {
-    display: none !important;
-}
-
-/* On tourne la flèche quand c'est ouvert */
-.timeline.past .timeline-content:not(.is-collapsed) .toggle-arrow {
-    transform: rotate(180deg);
-}
-
-/* Le conteneur magique créé par le JS */
-.past-event-body {
-    display: grid;
-    grid-template-rows: 0fr; /* Hauteur à zéro par défaut */
-    transition: grid-template-rows 0.4s ease-out; /* Durée et fluidité de l'animation */
-}
-
-/* On masque tout ce qui dépasse du conteneur fermé */
-.past-event-body-inner {
-    overflow: hidden;
-    padding-top: 0; /* Évite les sauts liés aux marges */
-    transition: padding-top 0.4s ease-out;
-}
-
-/* Quand l'événement est déplié (non-collapsed) */
-.timeline.past .timeline-content:not(.is-collapsed) .past-event-body {
-    grid-template-rows: 1fr; /* Hauteur automatique animée */
-}
-
-.timeline.past .timeline-content:not(.is-collapsed) .past-event-body-inner {
-    padding-top: 1rem; /* Ajoute un peu d'espace entre le titre et le texte une fois ouvert */
-}
 
 
 
 
 
 
-/* Timeline (Événements) */
-.timeline { position: relative; padding-left: 2rem; margin-bottom: 3rem; }
-.timeline::before { content: ''; position: absolute; left: 0.4rem; top: 0; bottom: 0; width: 4px; background: var(--primary); border-radius: 2px; }
-.timeline.past::before { background: var(--gray); }
-.timeline-item { position: relative; margin-bottom: 2.5rem; }
-.timeline-item::before {
-    content: ''; position: absolute; left: -2.35rem; top: 3.4rem; width: 1.2rem; height: 1.2rem; background: var(--white);
-    border: 4px solid var(--primary); border-radius: 50%; z-index: 1;
-}
-.timeline.past .timeline-item::before { border-color: var(--gray); }
-.timeline-content { background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow); border: 1px solid var(--light-gray); display: flex; flex-direction: column; gap: 0.5rem; }
-.timeline-date { font-weight: bold; color: var(--primary); font-size: 0.9rem; }
-.timeline.past .timeline-date { color: var(--gray); }
-
-/* --- Grille Bureau (4 par ligne) --- */
-.bureau-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 par ligne */
-    gap: 1.5rem;
-}
-@media (max-width: 1024px) { .bureau-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 600px) { .bureau-grid { grid-template-columns: 1fr; } }
-
-/* Modale (Nouveau Design) */
-.modal-overlay {
-    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); /* Arrière plan grisé et flouté */
-    display: none; justify-content: center; align-items: center; z-index: 9999;
-    padding: 1rem;
-}
-.modal-content {
-    background: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius);
-    max-width: 100%; width: 450px; text-align: center; position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2); animation: modalIn 0.3s ease-out;
-}
-@keyframes modalIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.modal-close {
-    position: absolute; top: 1rem; right: 1rem; background: var(--light-gray);
-    border: none; width: 32px; height: 32px; border-radius: 50%;
-    font-size: 1.2rem; cursor: pointer; color: var(--dark);
-    display: flex; align-items: center; justify-content: center; transition: var(--transition);
-}
-.modal-close:hover { background: var(--primary); color: var(--white); }
-.code-display {
-    font-size: 1.4rem; font-family: 'Courier New', Courier, monospace; font-weight: bold;
-    letter-spacing: 2px; color: var(--white); background: var(--dark);
-    padding: 1.2rem; border-radius: 8px; margin: 1.5rem 0;
-    user-select: all; /* Permet de copier facilement en un clic */
-    word-break: break-all;
-}
-/* --- Images Partenaires (Vif et propre) --- */
-.part-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    border: 3px solid var(--light);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
 
 /* Footer */
 footer {
@@ -297,122 +177,11 @@ footer a:hover { text-decoration: underline; }
 .footer-socials a:hover { text-decoration: underline; }
 
 
-/* --- Témoignages --- */
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-.testimonial-card {
-    background: var(--light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--primary);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-.testimonial-text { font-style: italic; color: #555; margin-bottom: 1rem; }
-.testimonial-author { font-weight: 800; color: var(--dark); font-size: 0.9rem; }
-
-/* --- FAQ --- */
-.faq-container { max-width: 800px; margin: 0 auto; }
-
-details.faq-item {
-    background: #ffffff; /* Fond blanc pour contraster avec le fond de page */
-    margin-bottom: 1rem;
-    padding: 1.2rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    border: 1px solid rgba(0,0,0,0.08); /* Bordure très fine */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.04); /* Petite ombre légère */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-details.faq-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* L'ombre grandit au survol */
-}
-
-details.faq-item[open] {
-    border-left: 4px solid var(--primary); /* Liseré rouge quand c'est ouvert */
-}
-
-details.faq-item summary {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--dark);
-    list-style: none; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Cache la flèche par défaut sur les navigateurs basés sur WebKit (Chrome, Safari) */
-details.faq-item summary::-webkit-details-marker { display: none; }
-
-/* Ajout d'un beau "+" et "-" animé */
-details.faq-item summary::after {
-    content: '+';
-    font-size: 1.5rem;
-    color: var(--primary);
-    transition: transform 0.3s ease;
-}
-details.faq-item[open] summary::after {
-    content: '−';
-    transform: rotate(180deg);
-}
-
-details.faq-item p { 
-    margin-top: 1rem; 
-    color: #555; 
-    line-height: 1.6; 
-    border-top: 1px solid #eee; /* Séparateur discret */
-    padding-top: 1rem; 
-}
-
-/* --- Carte du Campus --- */
-.map-container {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-top: 1.5rem;
-}
-.map-container iframe { width: 100%; height: 400px; border: none; }
 
 
-/* --- Alignement Bouton & Lieu (Timeline) --- */
-.event-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 1rem;
-    width: 100%;
-    gap:1rem;
-}
 
-.event-buttons {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    align-items: center;
-}
 
-.event-location {
-    color: var(--details);
-    text-align: right;
-    font-size: 0.9rem;
-}
 
-@media (max-width: 768px) {
-    .event-footer {
-        flex-direction: column-reverse; /* Place le lieu au-dessus du bouton */
-        align-items: flex-start; /* Aligne le contenu à gauche sur mobile */
-        gap: 0.8rem;
-    }
-    .event-location {
-        text-align: left;
-    }
-}
 
 /* --- Bouton Remonter --- */
 #scrollTopBtn {
@@ -464,3 +233,73 @@ details.faq-item p {
         display: inline-block; /* On affiche la flèche mobile */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+=================  ATTRIBUTS DE CARTE  =================
+Photos; Parts; Bureau; Liens Utiles
+*/
+
+
+.grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; }
+.card {
+    background: var(--white); border-radius: var(--border-radius); box-shadow: var(--shadow);
+    transition: var(--transition); border: 1px solid var(--light-gray);
+    overflow: hidden; display: flex; flex-direction: column;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+.card-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+=================  PROPRE A LA PAGE ACCUEIL  =================
+*/
+
+
+/* Nouvelles Tuiles Accueil */
+.home-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; }
+.home-tile {
+    background: var(--white); padding: 2.5rem 2rem; border-radius: var(--border-radius);
+    text-align: center; text-decoration: none; color: var(--dark);
+    border: 1px solid var(--light-gray); box-shadow: var(--shadow);
+    transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 1rem;
+}
+.home-tile:hover {
+    transform: translateY(-8px); border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(155,34,38,0.15);
+}
+.home-tile-icon { font-size: 3.5rem; }
+.home-tile-title { font-size: 1.4rem; font-weight: 800; margin: 0; }
+.home-tile-text { font-size: 0.95rem; color: var(--gray); margin: 0; }
