@@ -34,6 +34,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 80px; /* À ajuster selon la vraie hauteur de ton menu (environ 80-90px) */
 }
 
 
@@ -47,7 +48,19 @@ header {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    position: relative;
+    
+    /* Nouvelles propriétés pour le scroll */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out; /* Animation fluide */
+}
+
+/* Classe ajoutée dynamiquement par le JS pour cacher le menu */
+.header-hidden {
+    transform: translateY(-100%);
 }
 
 

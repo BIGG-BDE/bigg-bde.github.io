@@ -136,6 +136,41 @@
                 function scrollToTop() {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
+            
+                let lastScrollTop = 0;
+                const header = document.querySelector('header');
+                const nav = document.querySelector('nav'); // On cible la balise nav pour vérifier son état
+                
+                window.addEventListener('scroll', () => {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // On vérifie si le menu mobile est ouvert (si la balise nav a la classe 'nav-open')
+                    const isMenuOpen = nav.classList.contains('nav-open');
+                    
+                    // Si le menu est ouvert, on s'assure que le header reste visible et on coupe court au script
+                    if (isMenuOpen) {
+                        header.classList.remove('header-hidden');
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                        return; 
+                    }
+
+                    // --- Logique normale (quand le menu mobile est fermé) ---
+                    if (scrollTop > 80) {
+                        if (scrollTop > lastScrollTop) {
+                            // Scroll vers le BAS : on cache le header
+                            header.classList.add('header-hidden');
+                        } else {
+                            // Scroll vers le HAUT : on réaffiche le header
+                            header.classList.remove('header-hidden');
+                        }
+                    } else {
+                        // Toujours afficher le header quand on est tout en haut
+                        header.classList.remove('header-hidden');
+                    }
+                    
+                    // Met à jour l'ancienne position pour la prochaine vérification
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+                });
             </script>
         </footer>  
     </body>
