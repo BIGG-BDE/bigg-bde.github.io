@@ -418,24 +418,23 @@
 
             
             <!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">⮝</button>
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
+                <span class="arrow-desktop">⮝</span>
+                <span class="arrow-mobile">↑</span>
+            </button>
+
             <script>
-                // Gestion de l'affichage du bouton lors du défilement
+                // Ton script actuel reste STRICTEMENT LE MÊME, aucun changement ici !
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
-                    // Affiche le bouton après 300px de scroll
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                         scrollBtn.style.display = "block";
                     } else {
                         scrollBtn.style.display = "none";
                     }
                 });
-                // Fonction pour remonter avec un effet fluide
                 function scrollToTop() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             </script>
         </footer>  

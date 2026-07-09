@@ -444,5 +444,23 @@ details.faq-item p {
         bottom: 20px;
         right: 20px;
         font-size: 2.5rem;
+        padding-bottom:0.7rem;
+    }
+}
+
+/* --- GESTION DE LA FLÈCHE RETOUR EN HAUT (PC vs MOBILE) --- */
+#scrollTopBtn .arrow-desktop {
+    display: inline-block;
+}
+#scrollTopBtn .arrow-mobile {
+    display: none; /* On cache la flèche mobile sur PC */
+}
+
+@media (max-width: 768px) {
+    #scrollTopBtn .arrow-desktop {
+        display: none; /* On cache la flèche PC sur mobile */
+    }
+    #scrollTopBtn .arrow-mobile {
+        display: inline-block; /* On affiche la flèche mobile */
     }
 }
