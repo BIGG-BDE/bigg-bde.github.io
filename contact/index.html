@@ -68,15 +68,6 @@
         "url": "https://biggbde.fr"
         }
         </script>
-        <style>
-            .contact-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; margin-top: 2rem; }
-            @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
-            .contact-info-card { background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); border-top: 5px solid var(--primary); }
-            .dept-list { display: flex; flex-direction: column; gap: 1.5rem; }
-            .dept-item { background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); border: 1px solid var(--light-gray); }
-            .dept-title { font-size: 1.2rem; font-weight: bold; color: var(--dark); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; }
-            .mail-link { display: inline-block; background: var(--light); padding: 0.5rem 1rem; border-radius: 6px; color: var(--primary); font-weight: bold; text-decoration: none; margin-top: 1rem; font-family: monospace; font-size: 1.1rem; }
-        </style>
         <script>
             function toggleMenu() {
                 document.querySelector('nav').classList.toggle('nav-open');
@@ -106,7 +97,6 @@
             </nav>
         </header>
 
-
         <main>
             <h2>Nous Contacter</h2>
             
@@ -116,62 +106,52 @@
                 <a href="https://instagram.com/biggbde" target="_blank" class="btn" style="font-size: 1.1rem; padding: 0.8rem 2rem;">📱 @biggbde sur Instagram</a>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem;">Annuaire de l'Association</h3>
-            <p style="color: var(--gray); margin-bottom: 2rem;">Pour une demande spécifique, un partenariat ou un suivi administratif, contactez directement le pôle concerné via nos adresses mail officielles.</p>
+            <h3 style="margin-bottom: 1.5rem; text-align: center;">Annuaire de l'Association</h3>
+            <p style="color: var(--gray); margin-bottom: 2rem; text-align: center;">Pour une demande spécifique, un partenariat ou un suivi administratif, contactez directement le pôle concerné via nos adresses mail officielles.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+            <div class="contact-layout">
+                <!-- Liste minimaliste des e-mails -->
+                <div class="email-directory-minimal">
+                    <a href="mailto:presidence@biggbde.fr" class="email-link-minimal">presidence@biggbde.fr</a>
+                    <a href="mailto:vice-presidence@biggbde.fr" class="email-link-minimal">vice-presidence@biggbde.fr</a>
+                    <a href="mailto:secretariat@biggbde.fr" class="email-link-minimal">secretariat@biggbde.fr</a>
+                    <a href="mailto:tresorerie@biggbde.fr" class="email-link-minimal">tresorerie@biggbde.fr</a>
+                    <a href="mailto:evenementiel@biggbde.fr" class="email-link-minimal">evenementiel@biggbde.fr</a>
+                    <a href="mailto:partenariats@biggbde.fr" class="email-link-minimal">partenariats@biggbde.fr</a>
+                    <a href="mailto:communication@biggbde.fr" class="email-link-minimal">communication@biggbde.fr</a>
+                    <a href="mailto:goodies@biggbde.fr" class="email-link-minimal">goodies@biggbde.fr</a>
+                    <a href="mailto:vp-reseau@biggbde.fr" class="email-link-minimal">vp-reseau@biggbde.fr</a>
+                    <a href="mailto:contact@biggbde.fr" class="email-link-minimal">contact@biggbde.fr</a>
+                </div>
                 
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">✉️ Secrétariat</div>
-                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Questions générales, vie asso.</div>
-                    <a href="mailto:contact@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">contact@biggbde.fr</a>
+                <!-- Section Avertissement Spams -->
+                <div class="spam-alert-container">
+                    <div class="spam-alert-deco">📩</div>
+                    <div class="spam-alert-icon">⚠️</div>
+                    <h4 class="spam-alert-title">Attention aux courriers indésirables !</h4>
+                    <p class="spam-alert-text">
+                        Il arrive fréquemment que les réponses de nos différents pôles se glissent dans votre dossier de <strong>spams (ou courriers indésirables)</strong>. <br>
+                        Pensez à les vérifier pour ne rater aucune information importante concernant vos demandes.
+                    </p>
+                    <a href="tuto-mails-bigg/index.html" class="btn spam-alert-btn">
+                        👉 Voir le tuto pour nos mails
+                    </a>
                 </div>
-
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">💰 Trésorerie</div>
-                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Factures, cautions, remboursements.</div>
-                    <a href="mailto:tresorerie@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">tresorerie@biggbde.fr</a>
-                </div>
-
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">🤝 Partenariats</div>
-                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Sponsoring, propositions commerciales.</div>
-                    <a href="mailto:partenariats@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">partenariats@biggbde.fr</a>
-                </div>
-
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">🎉 Événementiel</div>
-                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Logistique WEI, soirées, prestataires.</div>
-                    <a href="mailto:evenements@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">evenements@biggbde.fr</a>
-                </div>
-
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">👑 Présidence</div>
-                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Représentation légale, relations IUT.</div>
-                    <a href="mailto:presidence@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">presidence@biggbde.fr</a>
-                </div>
-
-                <div style="background: var(--white); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--light-gray);">
-                    <div style="font-size: 1.2rem; font-weight: bold; margin-bottom: 0.5rem;">💻 Webmaster</div>
-                    <div style="font-size: 0.85rem; color: var(--gray); margin-bottom: 1rem;">Signalement de bugs, infra web.</div>
-                    <a href="mailto:webmaster@biggbde.fr" style="color: var(--primary); font-family: monospace; font-size: 1.1rem; text-decoration: none; font-weight: bold;">webmaster@biggbde.fr</a>
-                </div>
-
             </div>
 
-        <!-- Intégration de la carte du campus -->
+
+            <!-- Intégration de la carte du campus -->
             <br>
-            <h3>Où se trouve le local du BDE ?</h3>
-            <p>Viens nous voir ! Notre local se trouve directement sur le campus de l'IUT.</p>
+            <h3 style="text-align: center;">Où se trouve le local du BDE ?</h3>
+            <p style="text-align: center;">Viens nous voir ! Notre local se trouve directement sur le campus de l'IUT.</p>
             <div class="map-container">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1462.6638256629712!2d5.241316363062743!3d46.215263315804805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f35245b892436b%3A0x6dfdc508a80e26b7!2sBIGG%20BDE!5e0!3m2!1sfr!2sfr!4v1783031462587!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
         </main>
 
-
         <footer>
             <div class="footer-links">
-                <a href="https://biggbde.fr/mentiones-legales/">Mentions Légales</a>
+                <a href="https://biggbde.fr/mentions-legales/">Mentions Légales</a>
                 <a href="mailto:webmaster@biggbde.fr?subject=Retour%20sur%20le%20site%20web%20du%20BIGG&body=Bonjour%20Antonin%2C%0A%0AJe%20pense%20que%20ton%20site%20est%20vraiment%20trop%20bien." target="_blank">Review du site</a>
                 <a href="https://biggbde.fr/faq/">FAQ</a>
             </div>
@@ -182,7 +162,6 @@
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
 
-            
             <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <span class="arrow-desktop">⮝</span>
@@ -190,7 +169,6 @@
             </button>
 
             <script>
-                // Ton script actuel reste STRICTEMENT LE MÊME, aucun changement ici !
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -205,36 +183,29 @@
             
                 let lastScrollTop = 0;
                 const header = document.querySelector('header');
-                const nav = document.querySelector('nav'); // On cible la balise nav pour vérifier son état
+                const nav = document.querySelector('nav'); 
                 
                 window.addEventListener('scroll', () => {
                     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    // On vérifie si le menu mobile est ouvert (si la balise nav a la classe 'nav-open')
                     const isMenuOpen = nav.classList.contains('nav-open');
                     
-                    // Si le menu est ouvert, on s'assure que le header reste visible et on coupe court au script
                     if (isMenuOpen) {
                         header.classList.remove('header-hidden');
                         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
                         return; 
                     }
 
-                    // --- Logique normale (quand le menu mobile est fermé) ---
                     if (scrollTop > 80) {
                         if (scrollTop > lastScrollTop) {
-                            // Scroll vers le BAS : on cache le header
                             header.classList.add('header-hidden');
                         } else {
-                            // Scroll vers le HAUT : on réaffiche le header
                             header.classList.remove('header-hidden');
                         }
                     } else {
-                        // Toujours afficher le header quand on est tout en haut
                         header.classList.remove('header-hidden');
                     }
                     
-                    // Met à jour l'ancienne position pour la prochaine vérification
                     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
                 });
             </script>
