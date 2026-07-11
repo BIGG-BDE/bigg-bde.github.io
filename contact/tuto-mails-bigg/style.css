@@ -31,9 +31,9 @@
     margin-bottom: 1.5rem;
 }
 
-.download-section {
+.download-section{
     text-align: center;
-    margin: 2.5rem 0;
+    padding-bottom: 1rem;
 }
 
 .btn-download {
