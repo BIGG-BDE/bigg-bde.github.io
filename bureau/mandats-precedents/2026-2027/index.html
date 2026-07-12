@@ -69,7 +69,66 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-    </footer>
+            <div class="footer-links">
+                <a href="https://biggbde.fr/mentions-legales/">Mentions Légales</a>
+                <a href="mailto:webmaster@biggbde.fr?subject=Retour%20sur%20le%20site%20web%20du%20BIGG&body=Bonjour%20Antonin%2C%0A%0AJe%20pense%20que%20ton%20site%20est%20vraiment%20trop%20bien." target="_blank">Review du site</a>
+                <a href="https://biggbde.fr/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde" target="_blank">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651" target="_blank">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
+
+            
+            <!-- Bouton Remonter -->
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
+                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
+            </button>
+
+            <script>
+                let scrollBtn = document.getElementById("scrollTopBtn");
+                window.addEventListener("scroll", function() {
+                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
+                        scrollBtn.style.display = "flex";
+                    } else {
+                        scrollBtn.style.display = "none";
+                    }
+                });
+                
+                function scrollToTop() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                let lastScrollTop = 0;
+                const header = document.querySelector('header');
+                const nav = document.querySelector('nav');
+                
+                window.addEventListener('scroll', () => {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const isMenuOpen = nav.classList.contains('nav-open');
+                    
+                    if (isMenuOpen) {
+                        header.classList.remove('header-hidden');
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                        return; 
+                    }
+
+                    if (scrollTop > 80) {
+                        if (scrollTop > lastScrollTop) {
+                            header.classList.add('header-hidden');
+                        } else {
+                            header.classList.remove('header-hidden');
+                        }
+                    } else {
+                        header.classList.remove('header-hidden');
+                    }
+                    
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+                });
+            </script>
+        </footer> 
 </body>
 </html>
