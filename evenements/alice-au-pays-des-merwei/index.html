@@ -100,41 +100,103 @@
 
 
         <main class="container event-page">
-            <div class="event-header">
-                <span class="event-tag tag-termine">Terminé</span>
+            <!-- En-tête avec titre et tag alignés -->
+            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
                 <h2 class="event-title">Alice au pays des Merwei</h2>
+                <span class="event-tag tag-avenir">A venir</span>
             </div>
 
-            <div class="event-content">
-                <div class="event-sidebar">
-                    <img src="https://picsum.photos/400/500?random=11" alt="Affiche Alice" class="event-poster">
-                    <div class="event-details">
-                        <p>📍 <strong>Lieu :</strong> Salle des Fêtes locale</p>
-                        <p>📅 <strong>Date :</strong> Février 2026</p>
-                        <p>👥 <strong>Orga :</strong> Bureau 2025-2026</p>
-                    </div>
+            <!-- Contenu principal : Description (gauche) et Tuile Info (droite) -->
+            <div class="event-content" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
+                
+                <!-- Colonne Description & Boutons -->
+                <div class="event-main" style="flex: 2 1 500px;">
+                    <h3>L'événement en quelques mots</h3>
+                    <p>
+                        Plongez dans le terrier du lapin blanc ! Pour cette édition exceptionnelle, le BIGG BDE a transformé le lieu en un véritable pays des merveilles (ou plutôt "Merwei"). Entre des décors hallucinants faits sur-mesure, des jeux de lumières mystiques et une ambiance digne du chapelier fou, les étudiants ont pu s'évader le temps d'une nuit magique. 
+                    </p>
+                    <p>
+                        Des costumes extravagants aux potions servies au bar, tout a été pensé pour vous faire perdre la tête sur le dancefloor. Une soirée inoubliable rythmée par nos DJs résidents jusqu'aux premières lueurs du jour !
+                    </p>
+
+
+                    <!-- Boutons sous la description -->
                     <div class="event-actions">
-                        <a href="#" class="btn btn-primary disabled">Billetterie fermée</a>
-                        <a href="#galerie" class="btn btn-secondary">Voir l'album complet</a>
+                        <a href="#billetterie" class="btn btn-primary disabled">Billetterie fermée</a>
+                        <a href="#galerie" class="btn btn-secondary">📸 Voir l'album photo</a>
                     </div>
                 </div>
-                <div class="event-main">
-                    <h3>Description</h3>
-                    <p>Plongez dans le terrier du lapin blanc ! Notre soirée à thème a transformé le campus en un véritable pays des merveilles (ou "Merwei"). Des décors hallucinants, des costumes incroyables et une ambiance magique jusqu'au bout de la nuit.</p>
-                </div>
+
+                <!-- Colonne Tuile d'Informations -->
+                <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
+                    <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Infos Pratiques</h3>
+                    <div class="event-details">
+                        <p>📍 <strong>Lieu :</strong> Salle des Fêtes de Bourg-en-Bresse</p>
+                        <p>📅 <strong>Date :</strong> Jeudi 12 Février 2026</p>
+                        <p>⏰ <strong>Horaires :</strong> 22h30 - 04h00</p>
+                        <p>👥 <strong>Organisateurs :</strong> Pôle Event (Bureau 25-26)</p>
+                    </div>
+                </aside>
             </div>
 
+            <!-- Carrousel Photos -->
             <div id="galerie" class="event-gallery">
                 <h3>Souvenirs de la soirée</h3>
                 <div class="photo-carousel">
                     <div class="carousel-track">
-                        <!-- Les 5 photos -->
-                        <img src="https://picsum.photos/400/300?random=1"><img src="https://picsum.photos/400/300?random=2"><img src="https://picsum.photos/400/300?random=3"><img src="https://picsum.photos/400/300?random=4"><img src="https://picsum.photos/400/300?random=5">
-                        <!-- Copie exacte des 5 photos pour la boucle fluide -->
-                        <img src="https://picsum.photos/400/300?random=1"><img src="https://picsum.photos/400/300?random=2"><img src="https://picsum.photos/400/300?random=3"><img src="https://picsum.photos/400/300?random=4"><img src="https://picsum.photos/400/300?random=5">
+                        <!-- Les 5 photos (avec la classe carousel-img pour le clic) -->
+                        <img src="https://picsum.photos/800/600?random=1" class="carousel-img" alt="Souvenir 1">
+                        <img src="https://picsum.photos/800/600?random=2" class="carousel-img" alt="Souvenir 2">
+                        <img src="https://picsum.photos/800/600?random=3" class="carousel-img" alt="Souvenir 3">
+                        <img src="https://picsum.photos/800/600?random=4" class="carousel-img" alt="Souvenir 4">
+                        <img src="https://picsum.photos/800/600?random=5" class="carousel-img" alt="Souvenir 5">
+                        <!-- Copie pour la boucle infinie -->
+                        <img src="https://picsum.photos/800/600?random=1" class="carousel-img" alt="Souvenir 1">
+                        <img src="https://picsum.photos/800/600?random=2" class="carousel-img" alt="Souvenir 2">
+                        <img src="https://picsum.photos/800/600?random=3" class="carousel-img" alt="Souvenir 3">
+                        <img src="https://picsum.photos/800/600?random=4" class="carousel-img" alt="Souvenir 4">
+                        <img src="https://picsum.photos/800/600?random=5" class="carousel-img" alt="Souvenir 5">
                     </div>
                 </div>
             </div>
+
+            <!-- Modale Pop-in pour l'image en grand (cachée par défaut) -->
+            <div id="lightbox" class="lightbox-modal">
+                <span class="close-lightbox">&times;</span>
+                <img class="lightbox-content" id="lightbox-img" src="">
+            </div>
+
+            <!-- Script pour faire fonctionner la pop-in -->
+            <script>
+                const lightbox = document.getElementById("lightbox");
+                const lightboxImg = document.getElementById("lightbox-img");
+                const images = document.querySelectorAll(".carousel-img");
+                const closeBtn = document.querySelector(".close-lightbox");
+
+                // Ouvrir la lightbox au clic sur une image
+                images.forEach(img => {
+                    img.addEventListener("click", () => {
+                        lightbox.style.display = "flex";
+                        lightboxImg.src = img.src; // Récupère la source HD de l'image cliquée
+                    });
+                });
+
+                // Fonction pour fermer
+                const closeLightbox = () => {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = "";
+                };
+
+                // Fermer au clic sur la croix
+                closeBtn.addEventListener("click", closeLightbox);
+                
+                // Fermer au clic dans le fond noir (en dehors de l'image)
+                lightbox.addEventListener("click", (e) => {
+                    if (e.target !== lightboxImg) {
+                        closeLightbox();
+                    }
+                });
+            </script>
         </main>
 
         <footer>
@@ -152,25 +214,51 @@
 
 
             <!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">&#11165;</button>
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
+                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
+            </button>
+
             <script>
-                // Gestion de l'affichage du bouton lors du défilement
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
-                    // Affiche le bouton après 300px de scroll
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        scrollBtn.style.display = "block";
+                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
+                        scrollBtn.style.display = "flex";
                     } else {
                         scrollBtn.style.display = "none";
                     }
                 });
-                // Fonction pour remonter avec un effet fluide
+                
                 function scrollToTop() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
+
+                let lastScrollTop = 0;
+                const header = document.querySelector('header');
+                const nav = document.querySelector('nav');
+                
+                window.addEventListener('scroll', () => {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const isMenuOpen = nav.classList.contains('nav-open');
+                    
+                    if (isMenuOpen) {
+                        header.classList.remove('header-hidden');
+                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                        return; 
+                    }
+
+                    if (scrollTop > 80) {
+                        if (scrollTop > lastScrollTop) {
+                            header.classList.add('header-hidden');
+                        } else {
+                            header.classList.remove('header-hidden');
+                        }
+                    } else {
+                        header.classList.remove('header-hidden');
+                    }
+                    
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+                });
             </script>
         </footer>  
     </body>

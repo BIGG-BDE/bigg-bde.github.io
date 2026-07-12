@@ -99,38 +99,103 @@
 
 
         <main class="container event-page">
-            <div class="event-header">
+            <!-- En-tête avec titre et tag alignés -->
+            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
+                <h2 class="event-title">Alice au pays des Merwei</h2>
                 <span class="event-tag tag-termine">Terminé</span>
-                <h2 class="event-title">Soirée "Les 7 Péchés Capitaux"</h2>
             </div>
 
-            <div class="event-content">
-                <div class="event-sidebar">
-                    <img src="https://picsum.photos/400/500?random=16" alt="Affiche Péchés" class="event-poster">
-                    <div class="event-details">
-                        <p>📍 <strong>Lieu :</strong> Boîte de nuit partenaire</p>
-                        <p>📅 <strong>Date :</strong> Novembre 2025</p>
-                        <p>👥 <strong>Orga :</strong> Pôle Événementiel</p>
-                    </div>
+            <!-- Contenu principal : Description (gauche) et Tuile Info (droite) -->
+            <div class="event-content" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
+                
+                <!-- Colonne Description & Boutons -->
+                <div class="event-main" style="flex: 2 1 500px;">
+                    <h3>L'événement en quelques mots</h3>
+                    <p>
+                        Plongez dans le terrier du lapin blanc ! Pour cette édition exceptionnelle, le BIGG BDE a transformé le lieu en un véritable pays des merveilles (ou plutôt "Merwei"). Entre des décors hallucinants faits sur-mesure, des jeux de lumières mystiques et une ambiance digne du chapelier fou, les étudiants ont pu s'évader le temps d'une nuit magique. 
+                    </p>
+                    <p>
+                        Des costumes extravagants aux potions servies au bar, tout a été pensé pour vous faire perdre la tête sur le dancefloor. Une soirée inoubliable rythmée par nos DJs résidents jusqu'aux premières lueurs du jour !
+                    </p>
+
+                    
+                    <!-- Boutons sous la description -->
                     <div class="event-actions">
-                        <a href="#" class="btn btn-primary disabled">Billetterie fermée</a>
+                        <a href="#billetterie" class="btn btn-primary disabled">Billetterie fermée</a>
+                        <a href="#galerie" class="btn btn-secondary">📸 Voir l'album photo</a>
                     </div>
                 </div>
-                <div class="event-main">
-                    <h3>Description</h3>
-                    <p>Gourmandise au bar, orgueil sur le dress-code, et luxure sur le dancefloor. Une soirée thématique où chaque étudiant devait représenter un péché. Un événement mémorable qui a mis le feu à la piste.</p>
-                </div>
+
+                <!-- Colonne Tuile d'Informations -->
+                <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
+                    <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Infos Pratiques</h3>
+                    <div class="event-details">
+                        <p>📍 <strong>Lieu :</strong> Salle des Fêtes de Bourg-en-Bresse</p>
+                        <p>📅 <strong>Date :</strong> Jeudi 12 Février 2026</p>
+                        <p>⏰ <strong>Horaires :</strong> 22h30 - 04h00</p>
+                        <p>👥 <strong>Organisateurs :</strong> Pôle Event (Bureau 25-26)</p>
+                    </div>
+                </aside>
             </div>
 
-            <div class="event-gallery">
-                <h3>Galerie des pécheurs</h3>
+            <!-- Carrousel Photos -->
+            <div id="galerie" class="event-gallery">
+                <h3>Souvenirs de la soirée</h3>
                 <div class="photo-carousel">
                     <div class="carousel-track">
-                        <img src="https://picsum.photos/400/300?random=21"><img src="https://picsum.photos/400/300?random=22"><img src="https://picsum.photos/400/300?random=23"><img src="https://picsum.photos/400/300?random=24"><img src="https://picsum.photos/400/300?random=25">
-                        <img src="https://picsum.photos/400/300?random=21"><img src="https://picsum.photos/400/300?random=22"><img src="https://picsum.photos/400/300?random=23"><img src="https://picsum.photos/400/300?random=24"><img src="https://picsum.photos/400/300?random=25">
+                        <!-- Les 5 photos (avec la classe carousel-img pour le clic) -->
+                        <img src="https://picsum.photos/800/600?random=1" class="carousel-img" alt="Souvenir 1">
+                        <img src="https://picsum.photos/800/600?random=2" class="carousel-img" alt="Souvenir 2">
+                        <img src="https://picsum.photos/800/600?random=3" class="carousel-img" alt="Souvenir 3">
+                        <img src="https://picsum.photos/800/600?random=4" class="carousel-img" alt="Souvenir 4">
+                        <img src="https://picsum.photos/800/600?random=5" class="carousel-img" alt="Souvenir 5">
+                        <!-- Copie pour la boucle infinie -->
+                        <img src="https://picsum.photos/800/600?random=1" class="carousel-img" alt="Souvenir 1">
+                        <img src="https://picsum.photos/800/600?random=2" class="carousel-img" alt="Souvenir 2">
+                        <img src="https://picsum.photos/800/600?random=3" class="carousel-img" alt="Souvenir 3">
+                        <img src="https://picsum.photos/800/600?random=4" class="carousel-img" alt="Souvenir 4">
+                        <img src="https://picsum.photos/800/600?random=5" class="carousel-img" alt="Souvenir 5">
                     </div>
                 </div>
             </div>
+
+            <!-- Modale Pop-in pour l'image en grand (cachée par défaut) -->
+            <div id="lightbox" class="lightbox-modal">
+                <span class="close-lightbox">&times;</span>
+                <img class="lightbox-content" id="lightbox-img" src="">
+            </div>
+
+            <!-- Script pour faire fonctionner la pop-in -->
+            <script>
+                const lightbox = document.getElementById("lightbox");
+                const lightboxImg = document.getElementById("lightbox-img");
+                const images = document.querySelectorAll(".carousel-img");
+                const closeBtn = document.querySelector(".close-lightbox");
+
+                // Ouvrir la lightbox au clic sur une image
+                images.forEach(img => {
+                    img.addEventListener("click", () => {
+                        lightbox.style.display = "flex";
+                        lightboxImg.src = img.src; // Récupère la source HD de l'image cliquée
+                    });
+                });
+
+                // Fonction pour fermer
+                const closeLightbox = () => {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = "";
+                };
+
+                // Fermer au clic sur la croix
+                closeBtn.addEventListener("click", closeLightbox);
+                
+                // Fermer au clic dans le fond noir (en dehors de l'image)
+                lightbox.addEventListener("click", (e) => {
+                    if (e.target !== lightboxImg) {
+                        closeLightbox();
+                    }
+                });
+            </script>
         </main>
 
         <footer>

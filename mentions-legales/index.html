@@ -162,7 +162,7 @@
         <footer>
             <div class="footer-links">
                 <a href="https://biggbde.fr/mentions-legales/">Mentions Légales</a>
-                <a href="mailto:webmaster@biggbde.fr?subject=Retour%20sur%20le%20site%20web%20du%20BIGG&body=Bonjour%2C%0A%0AJe%20pense%20que%20le%20site%20est%20vraiment%20trop%20bien." target="_blank">Review du site</a>
+                <a href="mailto:webmaster@biggbde.fr?subject=Retour%20sur%20le%20site%20web%20du%20BIGG&body=Bonjour%20Antonin%2C%0A%0AJe%20pense%20que%20ton%20site%20est%20vraiment%20trop%20bien." target="_blank">Review du site</a>
                 <a href="https://biggbde.fr/faq/">FAQ</a>
             </div>
             <div class="footer-socials">
@@ -172,25 +172,27 @@
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
 
+
             <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <span class="arrow-desktop">⮝</span>
-                <span class="arrow-mobile">↑</span>
+                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
 
             <script>
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        scrollBtn.style.display = "block";
+                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
+                        scrollBtn.style.display = "flex";
                     } else {
                         scrollBtn.style.display = "none";
                     }
                 });
+                
                 function scrollToTop() {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
-            
+
                 let lastScrollTop = 0;
                 const header = document.querySelector('header');
                 const nav = document.querySelector('nav');
