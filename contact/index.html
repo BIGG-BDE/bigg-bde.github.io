@@ -164,30 +164,30 @@
 
             <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <span class="arrow-desktop">⮝</span>
-                <span class="arrow-mobile">↑</span>
+                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
 
             <script>
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        scrollBtn.style.display = "block";
+                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
+                        scrollBtn.style.display = "flex";
                     } else {
                         scrollBtn.style.display = "none";
                     }
                 });
+                
                 function scrollToTop() {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
-            
+
                 let lastScrollTop = 0;
                 const header = document.querySelector('header');
-                const nav = document.querySelector('nav'); 
+                const nav = document.querySelector('nav');
                 
                 window.addEventListener('scroll', () => {
                     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    
                     const isMenuOpen = nav.classList.contains('nav-open');
                     
                     if (isMenuOpen) {

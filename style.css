@@ -204,56 +204,52 @@ footer a:hover { text-decoration: underline; }
 
 
 
-/* --- Bouton Remonter --- */
 #scrollTopBtn {
-    display: none; /* Caché par défaut */
+    display: none; /* Passe en 'flex' via le JS */
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 1000;
-    font-size: 2.5rem;
-    border: none;
-    outline: none;
-    background-color: var(--primary);
-    color: white;
-    cursor: pointer;
-    width: 70px;
-    height: 70px;
+    bottom: 25px;
+    right: 25px;
+    z-index: 99;
+    
+    /* Taille et forme du bouton */
+    width: 4.5rem;
+    height: 4.5rem;
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    padding: 0; /* Essentiel pour ne pas décaler l'image */
+    
+    /* Centrage absolu de l'image SVG */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: var(--primary); 
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.25s ease;
 }
 
-#scrollTopBtn:hover {
-    background-color: var(--primary-hover);
-    transform: scale(1.1);
+/* Redimensionnement et comportement de ton SVG */
+.scroll-icon {
+    width: 3rem; /* Écrase le width="100" natif de ton SVG */
+    height: auto; /* Garde le ratio natif */
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease;
 }
 
-@media (max-width: 768px) {
-    #scrollTopBtn {
-        bottom: 20px;
-        right: 20px;
-        font-size: 3.5rem;
-        padding-bottom:0.7rem;
+/* Animation au survol (PC) */
+@media (hover: hover) {
+    #scrollTopBtn:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    }
+    
+    #scrollTopBtn:hover .scroll-icon {
+        transform: translateY(-2px); /* L'icône monte légèrement dans le bouton */
     }
 }
 
-/* --- GESTION DE LA FLÈCHE RETOUR EN HAUT (PC vs MOBILE) --- */
-#scrollTopBtn .arrow-desktop {
-    display: inline-block;
-}
-#scrollTopBtn .arrow-mobile {
-    display: none; /* On cache la flèche mobile sur PC */
-}
-
-@media (max-width: 768px) {
-    #scrollTopBtn .arrow-desktop {
-        display: none; /* On cache la flèche PC sur mobile */
-    }
-    #scrollTopBtn .arrow-mobile {
-        display: inline-block; /* On affiche la flèche mobile */
-    }
-}
 
 
 

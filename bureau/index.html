@@ -15,7 +15,7 @@
         <title>Le Bureau Élu - BIGG BDE</title>
         <meta name="description" content="Faites connaissance avec l'équipe du bureau (Présidence, Trésorerie, Communication...) qui gère le BIGG BDE au quotidien.">
         <link rel="canonical" href="https://biggbde.fr/bureau/">
-        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="https://biggbde.fr/style.css">
         <link rel="stylesheet" href="style.css">
         
         <meta name="theme-color" content="#9b2226">
@@ -419,56 +419,48 @@
             
             <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <span class="arrow-desktop">⮝</span>
-                <span class="arrow-mobile"><img src="../assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" height="87" width="100"/></span>
+                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
 
             <script>
-                // Ton script actuel reste STRICTEMENT LE MÊME, aucun changement ici !
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        scrollBtn.style.display = "block";
+                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
+                        scrollBtn.style.display = "flex";
                     } else {
                         scrollBtn.style.display = "none";
                     }
                 });
+                
                 function scrollToTop() {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
-            
+
                 let lastScrollTop = 0;
                 const header = document.querySelector('header');
-                const nav = document.querySelector('nav'); // On cible la balise nav pour vérifier son état
+                const nav = document.querySelector('nav');
                 
                 window.addEventListener('scroll', () => {
                     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    
-                    // On vérifie si le menu mobile est ouvert (si la balise nav a la classe 'nav-open')
                     const isMenuOpen = nav.classList.contains('nav-open');
                     
-                    // Si le menu est ouvert, on s'assure que le header reste visible et on coupe court au script
                     if (isMenuOpen) {
                         header.classList.remove('header-hidden');
                         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
                         return; 
                     }
 
-                    // --- Logique normale (quand le menu mobile est fermé) ---
                     if (scrollTop > 80) {
                         if (scrollTop > lastScrollTop) {
-                            // Scroll vers le BAS : on cache le header
                             header.classList.add('header-hidden');
                         } else {
-                            // Scroll vers le HAUT : on réaffiche le header
                             header.classList.remove('header-hidden');
                         }
                     } else {
-                        // Toujours afficher le header quand on est tout en haut
                         header.classList.remove('header-hidden');
                     }
                     
-                    // Met à jour l'ancienne position pour la prochaine vérification
                     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
                 });
             </script>
