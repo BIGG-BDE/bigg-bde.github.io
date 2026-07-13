@@ -124,6 +124,8 @@
 
 /* --- Responsive : On passe l'image au-dessus ou en dessous sur mobile --- */
 @media (max-width: 768px) {
+    main {padding: 3rem 1rem;}
+
     .event-split {
         flex-direction: column;
     }
@@ -141,14 +143,21 @@
 
 
 
+.event-section { margin-bottom: 4rem; }
+.event-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.event-item { background: var(--white); border-left: 5px solid var(--primary); padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.event-item.past { border-left-color: var(--gray); opacity: 0.9; }
+.event-date { color: var(--primary); font-weight: bold; font-size: 0.9rem; margin-bottom: 0.3rem; display: block; }
+.event-item.past .event-date { color: var(--gray); }
+.event-details h3 { margin: 0 0 0.5rem 0; color: var(--dark); }
+.event-details p { color: var(--gray); margin: 0; max-width: 600px; }
 
 
 
-
-
-
-
-
+/* Cache l'image quand l'événement est fermé */
+.timeline-content.is-collapsed .event-image-side {
+    display: none;
+}
 
 
 

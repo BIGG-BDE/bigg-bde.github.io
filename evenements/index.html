@@ -67,16 +67,6 @@
         "url": "https://biggbde.fr"
         }
         </script>
-        <style>
-            .event-section { margin-bottom: 4rem; }
-            .event-list { display: flex; flex-direction: column; gap: 1.5rem; }
-            .event-item { background: var(--white); border-left: 5px solid var(--primary); padding: 1.5rem; border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--shadow); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-            .event-item.past { border-left-color: var(--gray); opacity: 0.9; }
-            .event-date { color: var(--primary); font-weight: bold; font-size: 0.9rem; margin-bottom: 0.3rem; display: block; }
-            .event-item.past .event-date { color: var(--gray); }
-            .event-details h3 { margin: 0 0 0.5rem 0; color: var(--dark); }
-            .event-details p { color: var(--gray); margin: 0; max-width: 600px; }
-        </style>
         <script>
             function toggleMenu() {
                 document.querySelector('nav').classList.toggle('nav-open');
@@ -105,6 +95,7 @@
                 <a href="https://biggbde.fr/contact/" class="nav-contact-btn">Contact</a>
             </nav>
         </header>
+        
         <main>
             <h2>Agenda des Événements</h2>
 
@@ -143,31 +134,36 @@
                             <div class="event-image-side">
                                 <img src="/assets/images/events/loto.jpg" alt="Affiche du Grand Loto de Rentrée">
                             </div>
-
                         </div> <!-- Fin de .event-split -->
-                        
                     </div>
                 </div>
 
                 <!-- Evénement 2 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <!-- DATE --> <span class="timeline-date">Du 9 au 11 Octobre 2026</span>
-                        <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">Week-end d'intégration : Alice au Pays des MerWEI</h3>
-                        <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Que tu viennes d'arriver en première année, ou que tu sois un.e 
-                            habitué.e de l'universitaire, ce WEI est l'évènement immanquable de l'année ! <br>C'est l'occasion parfaite pour vous souder entre 1A, 
-                            avec toutes les promos et les exté.e.s autour d'un week-end merveilleux ! 👥</p>
-                        <div class="event-footer">
-                            <div class="event-buttons">
-                                <!-- DETAILS --> <a href="alice-au-pays-des-merwei/" class="btn btn-ou">Voir plus</a>
-                                <!-- BILLETERIE --> <!-- <a href="#" class="btn btn-outline">Billetterie</a> -->
-                                <!-- PHOTOS -->
+                        <div class="event-split">
+                            <!-- COLONNE TEXTE (2/3) -->
+                            <div class="event-text-side">
+                                <!-- DATE --> <span class="timeline-date">Du 9 au 11 Octobre 2026</span>
+                                <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">Week-end d'intégration : Alice au Pays des MerWEI</h3>
+                                <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Que tu viennes d'arriver en première année, ou que tu sois un.e 
+                                    habitué.e de l'universitaire, ce WEI est l'évènement immanquable de l'année ! <br>C'est l'occasion parfaite pour vous souder entre 1A, 
+                                    avec toutes les promos et les exté.e.s autour d'un week-end merveilleux ! 👥</p>
+                                <div class="event-footer">
+                                    <div class="event-buttons">
+                                        <!-- DETAILS --> <a href="alice-au-pays-des-merwei/" class="btn btn-ou">Voir plus</a>
+                                    </div>
+                                    <!-- LE LIEU --><span class="event-location">Marché Couvert, 01000 Bourg-en-Bresse</span>
+                                </div>
                             </div>
-                            <!-- LE LIEU --><span class="event-location">Domaine de Bens / Ecurie du Sappey</span>
-                        </div>
+                                <!-- COLONNE IMAGE (1/3) -->
+                            <div class="event-image-side">
+                                <img src="/assets/images/preview-images/preview-LOTO.jpg" alt="Affiche du Grand Loto de Rentrée">
+                            </div>
+                        </div> <!-- Fin de .event-split -->
                     </div>
                 </div>
-                
+
             </div>
 
 
@@ -185,19 +181,27 @@
                 <!-- Evénement 1 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <!-- DATE --> <span class="timeline-date">25 Juin 2026</span> 
-                        <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">Soirée "BIGG PUNCH PARTY"</h3>
-                        <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Venez célébrer la fin d'année lors de cette soirée de clôture. Mais attention elle ne sera pas de tout
-                            repos, car en ces fortes chaleurs c'est bien-sûr une bataille d'eau qui s'impose ! <br>Préparez les maillots de bains et venez boire le superbe PUNCH proposé par Jérome 
-                            (avec ou sans alcool). 
-                        </p>
-                        <div class="event-footer">
-                            <div class="event-buttons">
-                                <!-- DETAILS --> <a href="bigg-punch-party/" class="btn btn-past-dark">Voir plus</a>
-                                <!-- PHOTOS --> <a href="https://drive.google.com/drive/folders/1_KZfVQRlpnwuEHgwVVxMSxeNueh2C9EJ?usp=sharing" target="_blank" class="btn btn-outline">Photos</a>
+                        <div class="event-split">
+                            <!-- COLONNE TEXTE (2/3) -->
+                            <div class="event-text-side">
+                                <!-- DATE --> <span class="timeline-date">25 Juin 2026</span>
+                                <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">Soirée "BIGG PUNCH PARTY"</h3>
+                                <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Venez célébrer la fin d'année lors de cette soirée de clôture. Mais attention elle ne sera pas de tout
+                                repos, car en ces fortes chaleurs c'est bien-sûr une bataille d'eau qui s'impose ! <br>Préparez les maillots de bains et venez boire le superbe PUNCH proposé par Jérome 
+                                (avec ou sans alcool). 
+                                </p>
+                                <div class="event-footer">
+                                    <div class="event-buttons">
+                                        <!-- DETAILS --> <a href="bigg-punch-party/" class="btn btn-ou">Voir plus</a>
+                                    </div>
+                                    <!-- LE LIEU --><span class="event-location">"The Bootlegger Bar" - 2 Rue de la République, 01000 Bourg-en-Bresse</span>
+                                </div>
                             </div>
-                            <!-- LE LIEU --><span class="event-location">"The Bootlegger Bar" - 2 Rue de la République, 01000 Bourg-en-Bresse</span>
-                        </div>
+                                <!-- COLONNE IMAGE (1/3) -->
+                            <div class="event-image-side">
+                                <img src="/assets/images/preview-images/preview-BIGG-PUNCH.jpg" alt="Affiche de la BIGG PUNCH PARTY">
+                            </div>
+                        </div> <!-- Fin de .event-split -->
                     </div>
                 </div>
 
@@ -211,7 +215,6 @@
                         <div class="event-footer">
                             <div class="event-buttons">
                                 <!-- DETAILS -->
-                                <!-- PHOTOS -->
                             </div>
                             <!-- LE LIEU --><span class="event-location">Parvis de l'IUT Lyon 1, site de Bourg-en-Bresse</span>
                         </div>
@@ -229,7 +232,6 @@
                         <div class="event-footer">
                             <div class="event-buttons">
                                 <!-- DETAILS --> <a href="soiree-7-peches-principaux/" class="btn btn-past-dark">Voir plus</a>
-                                <!-- PHOTOS -->
                             </div>
                             <!-- LE LIEU --><span class="event-location">"The Bootlegger Bar" - 2 Rue de la République, 01000 Bourg-en-Bresse</span>
                         </div>
@@ -248,7 +250,6 @@
                         <div class="event-footer">
                             <div class="event-buttons">
                                 <!-- DETAILS --> <a href="passation-2026-2027-et-barathon/" class="btn btn-past-dark">Voir plus</a>
-                                <!-- PHOTOS -->
                             </div>
                             <!-- LE LIEU --><span class="event-location">IUT Lyon 1 - Amphi. Bresse Revermont <br> Pl. Edgar Quinet, 01000 Bourg-en-Bresse <br>
                                 "Le Noty" - 39 Rue de la République, 01000 Bourg-en-Bresse</span>
@@ -259,19 +260,26 @@
                 <!-- Evénement 5 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <!-- DATE --> <span class="timeline-date">27 Février 2026</span> 
-                        <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">GALA du BIGG BDE 2026 - "Bal Masqué Vénitien"</h3>
-                        <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Le plus gros événement de l'année ! Venez passer une superbe soirée dansante entre amis masqués. 
-                            Playlist dans le thème, alors soyez-le aussi ! <br>Le bar saura vous rafraîchir et la gigantesque salle vous permettra d'enflammer le dancefloor. 
-                        </p>
-                        <div class="event-footer">
-                            <div class="event-buttons">
-                                <!-- DETAILS --> <a href="gala-2025-2026/" class="btn btn-past-dark">Voir plus</a>
-                                <!-- PHOTOS --> <a href="https://photos.app.goo.gl/wtP4W9Jhe1QD4y8v9" target="_blank" class="btn btn-outline">Photos #1</a>
-                                <!-- PHOTOS --> <a href="https://drive.google.com/drive/folders/1JHZvrBbZBnmsDUrJ2Y3ovBeA6VaAs1GF?usp=drive_link" target="_blank" class="btn btn-outline">Photos #2</a>
+                        <div class="event-split">
+                            <!-- COLONNE TEXTE (2/3) -->
+                            <div class="event-text-side">
+                                <!-- DATE --> <span class="timeline-date">27 Février 2026</span>
+                                <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">GALA du BIGG BDE 2026 - "Bal Masqué Vénitien"</h3>
+                                <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Le plus gros événement de l'année ! Venez passer une superbe soirée dansante entre amis masqués. 
+                                Playlist dans le thème, alors soyez-le aussi ! <br>Le bar saura vous rafraîchir et la gigantesque salle vous permettra d'enflammer le dancefloor. 
+                                </p>
+                                <div class="event-footer">
+                                    <div class="event-buttons">
+                                        <!-- DETAILS --> <a href="gala-2025-2026/" class="btn btn-ou">Voir plus</a>
+                                    </div>
+                                    <!-- LE LIEU --><span class="event-location">Salle des fêtes, 01000 Bourg-en-Bresse</span>
+                                </div>
                             </div>
-                            <!-- LE LIEU --><span class="event-location">Salle des fêtes, 01000 Bourg-en-Bresse </span>
-                        </div>
+                                <!-- COLONNE IMAGE (1/3) -->
+                            <div class="event-image-side">
+                                <img src="/assets/images/preview-images/preview-GALA-2026-1.jpg" alt="Affiche du GALA du BIGG BDE 2026">
+                            </div>
+                        </div> <!-- Fin de .event-split -->
                     </div>
                 </div>
 
@@ -305,7 +313,6 @@
                         <div class="event-footer">
                             <div class="event-buttons">
                                 <!-- DETAILS -->
-                                <!-- PHOTOS -->
                             </div>
                             <!-- LE LIEU --><span class="event-location">Foyer de l'IUT Lyon 1, site de Bourg-en-Bresse</span>
                         </div>
@@ -315,21 +322,28 @@
                 <!-- Evénement 8 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <!-- DATE --> <span class="timeline-date">14 Décembre 2025</span> 
-                        <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">Soirée "Les Etudiants font du Ski"</h3>
-                        <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Venez mettre à l'épreuves vos meilleures tenues de ski pour cette soirée enneigée :
-                            Cocktail spécialement réalisé pour l'occasion ! <br>Prenez part au concours de la meilleure tenue hivernale pour tenter de gagner une bouteille de votre choix !
-                        </p>
-                        <div class="event-footer">
-                            <div class="event-buttons">
-                                <!-- DETAILS --> <a href="soiree-les-etudiants-font-du-ski/" class="btn btn-past-dark">Voir plus</a>
-                                <!-- PHOTOS --> <a href="https://public.joomeo.com/albums/693da2c2ae108" target="_blank" class="btn btn-outline">Photos</a>
+                        <div class="event-split">
+                            <!-- COLONNE TEXTE (2/3) -->
+                            <div class="event-text-side">
+                                <!-- DATE --> <span class="timeline-date">14 Décembre 2025</span>
+                                <!-- TITRE --> <h3 style="margin: 0; color: var(--dark);">Soirée "Les Etudiants font du Ski"</h3>
+                                <!-- DESCRIPTION --> <p style="color: var(--gray); margin: 0;">Venez mettre à l'épreuves vos meilleures tenues de ski pour cette soirée enneigée :
+                                Cocktail spécialement réalisé pour l'occasion ! <br>Prenez part au concours de la meilleure tenue hivernale pour tenter de gagner une bouteille de votre choix !
+                                </p>
+                                <div class="event-footer">
+                                    <div class="event-buttons">
+                                        <!-- DETAILS --> <a href="soiree-les-etudiants-font-du-ski/" class="btn btn-ou">Voir plus</a>
+                                    </div>
+                                    <!-- LE LIEU --><span class="event-location">"The Bootlegger Bar" - 2 Rue de la République, 01000 Bourg-en-Bresse</span>
+                                </div>
                             </div>
-                            <!-- LE LIEU --><span class="event-location">"The Bootlegger Bar" - 2 Rue de la République, 01000 Bourg-en-Bresse</span>
-                        </div>
+                                <!-- COLONNE IMAGE (1/3) -->
+                            <div class="event-image-side">
+                                <img src="/assets/images/preview-images/preview-Etu-SKI.jpg" alt="Affiche de Soirée "Les Etudiants font du Ski"">
+                            </div>
+                        </div> <!-- Fin de .event-split -->
                     </div>
                 </div>
-
 
                 <!-- Evénement 9 -->
                 <div class="timeline-item">
@@ -342,7 +356,6 @@
                         <div class="event-footer">
                             <div class="event-buttons">
                                 <!-- DETAILS --> <a href="soiree-halloween-2025/" class="btn btn-past-dark">Voir plus</a>
-                                <!-- PHOTOS -->
                             </div>
                             <!-- LE LIEU --><span class="event-location">"The Bootlegger Bar" - 2 Rue de la République, 01000 Bourg-en-Bresse</span>
                         </div>
@@ -364,7 +377,6 @@
                                 <!-- DETAILS --> <a href="https://www.ligue-cancer.net/octobre-rose" class="btn btn-past-dark" target="_blank"
                                 style="background-color: #ff20b5; border-color: #bd1b87;"
                                 onMouseOver="this.style.backgroundColor='#cc1b91'" onMouseOut="this.style.backgroundColor='#ff20b5'">En savoir plus</a>
-                                <!-- PHOTOS -->
                             </div>
                             <!-- LE LIEU --><span class="event-location">Restaurant Universitaire de l'IUT Lyon 1, site de Bourg-en-Bresse</span>
                         </div>
@@ -471,7 +483,7 @@
                         
                         // On assemble la boîte et on l'ajoute à l'événement
                         bodyWrapper.appendChild(bodyInner);
-                        content.appendChild(bodyWrapper);
+                        title.parentNode.appendChild(bodyWrapper);
 
                         // 4. Préparation du titre avec la flèche
                         title.classList.add('past-event-title');
