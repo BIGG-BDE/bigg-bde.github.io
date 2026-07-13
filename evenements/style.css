@@ -283,8 +283,8 @@
 
 .btn-primary { background: var(--primary, #9b2226); color: white; }
 .btn-primary:hover { background: #7a1a1e; }
-.btn-primary.disabled { background: #ccc; cursor: not-allowed; }
-.btn-secondary { background: #333; color: white; }
+.btn-primary.disabled {cursor: not-allowed; }
+.btn-secondary { background: #333; color: white; border-color: var(--dark-hover);}
 .btn-secondary:hover { background: #111; }
 
 .event-main {
@@ -336,9 +336,10 @@
 .carousel-track {
     display: flex;
     gap: 15px;
+    padding-right: 15px;
     width: max-content;
     /* Animation infinie (les images sont dupliquées dans le HTML) */
-    animation: scroll-carousel 25s linear infinite;
+    animation: scroll-carousel 50s linear infinite;
 }
 
 .carousel-track:hover {
