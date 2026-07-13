@@ -1,0 +1,250 @@
+/* =========================================
+   VARIABLES GLOBALES (Couleurs BIGG BDE)
+========================================= */
+:root {
+    --primary-color: #9b2226; /* À adapter avec ton rouge exact */
+    --dark-color: #2c3e50;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --bg-light: #f8f9fa;
+    --bg-support: #eef2f5;
+}
+
+/* =========================================
+   MISE EN PAGE DES ARTICLES (Page Ewan & Nouveau Site)
+========================================= */
+.article-page {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.article-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.article-header h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: var(--dark-color);
+}
+
+.article-meta {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.article-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--text-main);
+}
+
+.article-content h3 {
+    margin-top: 2.5rem;
+    color: var(--primary-color);
+}
+
+.article-content ul {
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.article-content li {
+    margin-bottom: 10px;
+}
+
+/* Citation d'Aurore */
+.quote-block {
+    border-left: 5px solid var(--primary-color);
+    background: var(--bg-light);
+    padding: 2rem;
+    margin: 2.5rem 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+}
+
+.quote-block p:first-child {
+    margin-top: 0;
+}
+
+.quote-block p:last-of-type {
+    margin-bottom: 0;
+}
+
+.quote-author {
+    display: block;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Image de couverture (Nouveau Site) */
+.cover-image-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.cover-image-container img {
+    width: 100%;
+    display: block;
+}
+
+.action-center {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    background: var(--primary-color);
+    color: white;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #7a1a1e;
+}
+
+/* =========================================
+   HUB DES ACTUALITÉS (Page d'accueil des actus)
+========================================= */
+.news-hub {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.news-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.card-image-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 200px;
+    background: var(--bg-support);
+    text-decoration: none;
+}
+
+.card-image-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-image-placeholder {
+    font-size: 3rem;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-meta {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card-date {
+    color: #888;
+    font-size: 0.85rem;
+    margin-left: 10px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px 0;
+}
+
+.card-content h3 a {
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.card-content h3 a:hover {
+    color: var(--primary-color);
+}
+
+.card-excerpt {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.card-read-more {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-read-more:hover {
+    text-decoration: underline;
+}
+
+/* Étiquettes (Tags) pour les catégories d'articles */
+.tag {
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+}
+
+.tag-hommage { background-color: #1a1a1a; }
+.tag-nouveaute { background-color: var(--primary-color); }
+.tag-event { background-color: #e07a5f; }
+.tag-info { background-color: #3d5a80; }
