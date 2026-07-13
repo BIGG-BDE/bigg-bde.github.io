@@ -179,7 +179,7 @@
             <div class="timeline past">
             
                 <!-- Evénement 1 -->
-                <div class="timeline-item">
+                <div class="timeline-item has-pictures">
                     <div class="timeline-content">
                         <div class="event-split">
                             <!-- COLONNE TEXTE (2/3) -->
@@ -258,7 +258,7 @@
                 </div>
 
                 <!-- Evénement 5 -->
-                <div class="timeline-item">
+                <div class="timeline-item has-pictures">
                     <div class="timeline-content">
                         <div class="event-split">
                             <!-- COLONNE TEXTE (2/3) -->
@@ -320,7 +320,7 @@
                 </div>
 
                 <!-- Evénement 8 -->
-                <div class="timeline-item">
+                <div class="timeline-item has-pictures">
                     <div class="timeline-content">
                         <div class="event-split">
                             <!-- COLONNE TEXTE (2/3) -->
@@ -456,49 +456,55 @@
         </footer>  
 
         <script>
-            // --- Automatisation des Événements Passés Dépliables (Avec Animation) ---
-            document.addEventListener("DOMContentLoaded", function() {
-                // On cible uniquement les événements dans la section "past"
-                const pastContents = document.querySelectorAll('.timeline.past .timeline-content');
+        // --- Automatisation des Événements Passés Dépliables (Avec Animation) ---
+        document.addEventListener("DOMContentLoaded", function() {
+            // 1. On cible les événements .no-pictures ET .has-pictures dans la section "past"
+            const pastContents = document.querySelectorAll(
+                '.timeline.past .timeline-content, .timeline.past .has-pictures .timeline-content'
+            );
 
-                pastContents.forEach(content => {
-                    const title = content.querySelector('h3');
+            pastContents.forEach(content => {
+                const title = content.querySelector('h3');
 
-                    if (title) {
-                        // 1. Initialiser l'état fermé
+                if (title) {
+                    // On vérifie si l'événement actuel appartient à un bloc avec des images
+                    const hasPictures = content.closest('.has-pictures');
+
+                    // 2. Initialiser l'état : fermé par défaut UNIQUEMENT s'il n'y a pas de photos
+                    if (!hasPictures) {
                         content.classList.add('is-collapsed');
-                        
-                        // 2. Création de la boîte animable (Wrapper)
-                        const bodyWrapper = document.createElement('div');
-                        bodyWrapper.className = 'past-event-body';
-                        
-                        const bodyInner = document.createElement('div');
-                        bodyInner.className = 'past-event-body-inner';
-                        
-                        // 3. On déplace TOUT le contenu (après le titre) dans notre boîte
-                        // Cela inclut la description, le footer, les boutons, etc.
-                        while (title.nextSibling) {
-                            bodyInner.appendChild(title.nextSibling);
-                        }
-                        
-                        // On assemble la boîte et on l'ajoute à l'événement
-                        bodyWrapper.appendChild(bodyInner);
-                        title.parentNode.appendChild(bodyWrapper);
-
-                        // 4. Préparation du titre avec la flèche
-                        title.classList.add('past-event-title');
-                        const arrow = document.createElement('span');
-                        arrow.className = 'toggle-arrow';
-                        arrow.innerHTML = '▼';
-                        title.appendChild(arrow);
-
-                        // 5. Au clic sur le titre, on déclenche l'animation
-                        title.addEventListener('click', () => {
-                            content.classList.toggle('is-collapsed');
-                        });
                     }
-                });
+                    
+                    // 3. Création de la boîte animable (Wrapper)
+                    const bodyWrapper = document.createElement('div');
+                    bodyWrapper.className = 'past-event-body';
+                    
+                    const bodyInner = document.createElement('div');
+                    bodyInner.className = 'past-event-body-inner';
+                    
+                    // 4. On déplace TOUT le contenu (après le titre) dans notre boîte
+                    while (title.nextSibling) {
+                        bodyInner.appendChild(title.nextSibling);
+                    }
+                    
+                    // On assemble la boîte et on l'ajoute à l'événement
+                    bodyWrapper.appendChild(bodyInner);
+                    title.parentNode.appendChild(bodyWrapper);
+
+                    // 5. Préparation du titre avec la flèche
+                    title.classList.add('past-event-title');
+                    const arrow = document.createElement('span');
+                    arrow.className = 'toggle-arrow';
+                    arrow.innerHTML = '▼';
+                    title.appendChild(arrow);
+
+                    // 6. Au clic sur le titre, on bascule l'état (ouvre/ferme)
+                    title.addEventListener('click', () => {
+                        content.classList.toggle('is-collapsed');
+                    });
+                }
             });
+        });
         </script>
     </body>
 </html>

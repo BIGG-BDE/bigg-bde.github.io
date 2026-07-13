@@ -179,7 +179,9 @@
     gap: 0.8rem;
     flex-wrap: wrap;
     align-items: center;
+    flex-shrink: 0;
 }
+
 
 .event-location {
     color: var(--details);
@@ -195,6 +197,8 @@
     }
     .event-location {
         text-align: left;
+        flex-shrink: 1;
+        word-wrap: break-word;
     }
 }
 
@@ -290,6 +294,8 @@
     transition: 0.2s;
 }
 
+
+.btn {white-space: nowrap;}
 .btn-primary { background: var(--primary, #9b2226); color: white; }
 .btn-primary:hover { background: #7a1a1e; }
 .btn-primary.disabled {cursor: not-allowed; }
@@ -442,3 +448,6 @@
     from { transform: scale(0.9); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
 }
+
+
+
