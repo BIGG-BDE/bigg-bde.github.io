@@ -252,6 +252,9 @@
 .card-theme-green { border-top-color: #548830; }
 .card-theme-blue { border-top-color: #2980b9; }
 .card-theme-yellow { border-top-color: #f39c12; }
+.card-theme-purple { border-top-color: #8a18f5; }
+.card-theme-pink { border-top-color: #f312bb; }
+.card-theme-red { border-top-color: #f31212; }
 
 .directory-card-header {
     display: flex;
@@ -316,11 +319,31 @@
     color: #f39c12; 
 }
 
-.btn-directory-icon {
-    color: #a0a0a0;
-    transition: color 0.2s ease;
+.card-theme-purple .btn-directory:hover { 
+    border-color: #8a18f5; 
+    color:#8a18f5;
+}
+.card-theme-pink .btn-directory:hover { 
+    border-color: #f312bb; 
+    color:#f312bb;
+}
+.card-theme-red .btn-directory:hover { 
+    border-color: #f31212; 
+    color:#f31212;
 }
 
-.btn-directory:hover .btn-directory-icon {
-    color: inherit; 
+/* --- Gestion des icônes SVG dans les en-têtes de tes sections --- */
+.directory-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;  /* Taille proportionnelle à ton titre <h2> */
+    height: 2.2rem;
+    flex-shrink: 0; /* Empêche l'icône de s'écraser si le titre est long */
+}
+
+.directory-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Garde les proportions de ton SVG intactes */
 }
