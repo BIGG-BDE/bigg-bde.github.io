@@ -1,4 +1,4 @@
-# <img src="https://biggbde.fr/assets/logos/favicons/favicon-96x96.png" height="35" style="vertical-align: middle;"> BIGG BDE - Site Officiel 
+# <img src="https://biggbde.fr/assets/favicons/favicon-96x96.png" height="35" style="vertical-align: middle;"> BIGG BDE - Site Officiel 
 
 Bienvenue sur le dépôt officiel du **BIGG BDE**, le Bureau des Étudiants de l'IUT Lyon 1 (Campus de Bourg-en-Bresse). 
 Cette plateforme centralise la vie étudiante des départements **Bio, Info, GEA et MT2E**.

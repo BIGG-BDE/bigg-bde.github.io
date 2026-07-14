@@ -11,7 +11,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/logos/favicons/favicon.svg">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon.svg">
         <title>Liens Utiles & Hub - BIGG BDE</title>
         <meta name="description" content="Accédez rapidement aux ressources pratiques et liens importants pour votre vie étudiante à l'IUT.">
         <link rel="canonical" href="https://biggbde.fr/liens-utiles/">
@@ -19,16 +19,19 @@
         <link rel="stylesheet" href="style.css">
         
         <meta name="theme-color" content="#9b2226">
-        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/logos/favicons/favicon.svg">
-        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/logos/favicons/favicon-96x96.png" sizes="96x96">
-        <link rel="icon" type="image/svg+xml" href="https://biggbde.fr/assets/logos/favicons/favicon.svg">
-        <link rel="shortcut icon" href="https://biggbde.fr/assets/logos/favicons/favicon.ico">
-        <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/assets/logos/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon.svg">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-180x180.png" sizes="180x180">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-192x192.png" sizes="192x192">
+        
+        <link rel="icon" type="image/svg+xml" href="https://biggbde.fr/assets/favicons/favicon.svg">
+        <link rel="shortcut icon" href="https://biggbde.fr/assets/favicons/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/assets/favicons/apple-touch-icon.png">
         <meta name="apple-mobile-web-app-title" content="BIGG BDE">
-        <link rel="manifest" href="https://biggbde.fr/assets/logos/favicons/site.webmanifest">
+        <link rel="manifest" href="https://biggbde.fr/assets/favicons/site.webmanifest">
         <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
-        <meta name="twitter:image" content="https://biggbde.fr/assets/logos/favicons/web-app-manifest-512x512.png">
+        <meta name="twitter:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
         <meta name="twitter:image:alt" content="Logo BIGG BDE">
         <meta name="twitter:title" content="Liens Utiles - BIGG BDE">
         <meta name="twitter:site" content="@https://biggbde.fr/liens-utiles/">
@@ -38,7 +41,7 @@
         <meta property="og:title" content="Liens Utiles - BIGG BDE">
         <meta property="og:url" content="https://biggbde.fr/liens-utiles/">
         <meta property="og:type" content="website">
-        <meta property="og:image" content="https://biggbde.fr/assets/logos/favicons/web-app-manifest-512x512.png">
+        <meta property="og:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
         <meta property="og:description" content="Accédez rapidement aux ressources pratiques et liens importants pour votre vie étudiante à l'IUT.">
         <!-- SEO Schema.org -->
         <script type="application/ld+json">
@@ -47,7 +50,7 @@
             "@type": "Organization",
             "name": "BIGG BDE",
             "url": "https://biggbde.fr",
-            "logo": "https://biggbde.fr/assets/logos/favicons/favicon.svg",
+            "logo": "https://biggbde.fr/assets/favicons/favicon.svg",
             "sameAs": [
                 "https://www.instagram.com/bigg_bde"
             ],
@@ -85,7 +88,7 @@
     <body>
         <header>
             <a href="/" class="brand">
-                <img src="https://biggbde.fr/assets/logos/favicons/web-app-manifest-512x512.png" alt="Logo BIGG BDE">
+                <img src="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png" alt="Logo BIGG BDE">
                 <h1>BIGG BDE</h1>
             </a>
             
@@ -103,40 +106,127 @@
                 <a href="https://biggbde.fr/contact/" class="nav-contact-btn">Contact</a>
             </nav>
         </header>
-        <main class="links-wrapper">
-            <h2>Vos Outils Indispensables</h2>
-            <p style="color: var(--gray); max-width: 600px;">Le hub central pour retrouver nos plateformes, réseaux sociaux et ressources IUT.</p>
 
-            <div class="links-grid">
-                <a href="https://helloasso.com" target="_blank" class="link-tile">
-                    <span class="icon">🎟️</span>
-                    <span class="link-title">Billetterie</span>
-                    <span class="link-desc">HelloAsso</span>
+        <main class="container useful-links-page">
+
+            <h1>Navigation & Liens Utiles</h1>
+            <p>Retrouvez ici tous les raccourcis vers les services du BDE, de l'IUT et de nos fédérations partenaires.</p><br><br>
+
+            <!-- 1. GRILLE D'ACCÈS RAPIDE (Les boutons) -->
+            <section class="quick-access-grid">
+                <!-- Billetterie -->
+                <a href="/billetterie" class="quick-link-card">
+                    <span class="quick-link-icon">🎟️</span>
+                    <h3>Billetterie</h3>
+                    <p>Tous les événements en cours</p>
                 </a>
-                <a href="https://discord.gg" target="_blank" class="link-tile">
-                    <span class="icon">💬</span>
-                    <span class="link-title">Discord</span>
-                    <span class="link-desc">Serveur Étudiant</span>
+
+                <!-- Photos -->
+                <a href="/photos" class="quick-link-card">
+                    <span class="quick-link-icon">📸</span>
+                    <h3>Galeries Photos</h3>
+                    <p>Revivez nos meilleurs moments</p>
                 </a>
-                <a href="https://instagram.com" target="_blank" class="link-tile">
-                    <span class="icon">📸</span>
-                    <span class="link-title">Instagram</span>
-                    <span class="link-desc">@biggbde</span>
+
+                <!-- FAQ -->
+                <a href="/faq" class="quick-link-card">
+                    <span class="quick-link-icon">❓</span>
+                    <h3>F.A.Q</h3>
+                    <p>Vos questions, nos réponses</p>
                 </a>
-                <a href="https://iut.univ-lyon1.fr" target="_blank" class="link-tile">
-                    <span class="icon">🎓</span>
-                    <span class="link-title">IUT Lyon 1</span>
-                    <span class="link-desc">Intranet & Plannings</span>
+
+                <!-- Réseaux -->
+                <a href="/reseaux" class="quick-link-card">
+                    <span class="quick-link-icon">📱</span>
+                    <h3>Nos Réseaux</h3>
+                    <p>Insta, TikTok, Facebook...</p>
                 </a>
-            </div>
-            <div class="card" style="margin-bottom: 0rem; margin-top: 3rem; border-left: 4px solid var(--primary);">
-                <div class="card-content" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                    <div>
-                        <h3 style="margin: 0;">Tu as une question ? 🤔</h3>
-                        <p style="margin: 0; color: #555;">Adhésions, événements, WEI... Les réponses sont sûrement déjà là.</p>
+
+                <!-- Fédérations -->
+                <a href="#federations" class="quick-link-card">
+                    <span class="quick-link-icon">🤝</span>
+                    <h3>Fédérations</h3>
+                    <p>GAELIS & FEDIUT</p>
+                </a>
+
+                <!-- Université -->
+                <a href="/universite" class="quick-link-card">
+                    <span class="quick-link-icon">🎓</span>
+                    <h3>Université Lyon 1</h3>
+                    <p>Infos scolarité & IUT</p>
+                </a>
+            </section>
+
+            <!-- 2. SECTIONS DÉTAILLÉES (Blabla et articles) -->
+            <h2 id="federations" class="section-title">Engagements & Fédérations</h2>
+            
+            <div class="detailed-links-container">
+                
+                <!-- CARTE : GAELIS (Thème Vert) -->
+                <article class="partner-card theme-green">
+                    <div class="partner-image">
+                        <!-- Remplace par le logo officiel de GAELIS -->
+                        <img src="https://picsum.photos/300/150?random=30" alt="Logo GAELIS">
                     </div>
-                    <a href="https://biggbde.fr/faq/" class="btn">Consulter la FAQ</a>
-                </div>
+                    <div class="partner-content">
+                        <h3>GAELIS</h3>
+                        <p>
+                            <strong>Le Groupement des Associations Étudiantes de Lyon Indépendantes et Solidaires.</strong> 
+                            Parce que la vie étudiante ne s'arrête pas aux portes de l'amphi, GAELIS est là pour vous accompagner. Ils gèrent notamment les <em>AGORAé</em> (les épiceries solidaires étudiantes), organisent des formations pour les élus, et portent la voix des étudiants auprès du CROUS et de l'Université de Lyon.
+                        </p>
+                        <p>
+                            Le BIGG BDE travaille en étroite collaboration avec eux pour vous garantir des événements sûrs et une représentation de qualité pour Bourg-en-Bresse.
+                        </p>
+                        <div class="partner-actions">
+                            <a href="https://gaelis.fr" target="_blank" class="btn-theme">Découvrir GAELIS</a>
+                            <a href="https://gaelis.fr/agorae-2/" class="btn-theme" style="background: white; color: var(--theme-color); border: 1px solid var(--theme-color);">AGORAé : l'épicerie solidaire</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARTE : FEDIUT (Thème Jaune) -->
+                <article class="partner-card theme-yellow">
+                    <div class="partner-image">
+                        <!-- Remplace par le logo officiel de la FEDIUT -->
+                        <img src="https://picsum.photos/300/150?random=31" alt="Logo FEDIUT">
+                    </div>
+                    <div class="partner-content">
+                        <h3>FEDIUT</h3>
+                        <p>
+                            <strong>La Fédération Nationale des Étudiants en IUT.</strong> 
+                            Vous êtes en BUT, et vous n'êtes pas les seuls ! La FEDIUT rassemble les BDE d'IUT de toute la France. Leur but ? Défendre le modèle des IUT, garantir la qualité de la formation professionnelle universitaire, et créer un immense réseau d'entraide entre les différents bureaux.
+                        </p>
+                        <p>
+                            Grâce à eux, nous participons à des congrès nationaux pour échanger nos meilleures idées de soirées, de gestion de budget et de vie de campus.
+                        </p>
+                        <div class="partner-actions">
+                            <a href="https://fediut.org/" target="_blank" class="btn-theme">Site Officiel</a>
+                            <a href="https://etu.univ-lyon1.fr/activites/associations-etudiantes/fed-iut-federation-des-etudiants-et-diplomes-en-iut" class="btn-theme" style="background: white; color: var(--theme-color); border: 1px solid var(--theme-color);">Présentation de la fédération</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARTE : DON DU SANG (Thème Bleu) -->
+                <article class="partner-card theme-blue">
+                    <div class="partner-image">
+                        <!-- Remplace par un visuel EFS / Don du sang -->
+                        <img src="https://picsum.photos/300/150?random=32" alt="Visuel Don du Sang">
+                    </div>
+                    <div class="partner-content">
+                        <h3>Don du Sang (EFS)</h3>
+                        <p>
+                            <strong>1 don sauve 3 vies.</strong> La solidarité, c'est aussi ça. L'Établissement Français du Sang (EFS) organise régulièrement des collectes sur Bourg-en-Bresse ou directement sur le campus. 
+                        </p>
+                        <p>
+                            En tant qu'étudiants, nous sommes une force vive indispensable pour les réserves de sang. Ça prend 45 minutes, c'est encadré par des professionnels super sympas, et on a même droit à une super collation à la fin (parfait pour caler un creux entre deux cours de C++ ou de bases de données !).
+                        </p>
+                        <div class="partner-actions">
+                            <a href="https://dondesang.efs.sante.fr/" target="_blank" class="btn-theme">Prendre RDV pour un don</a>
+                            <a href="/faq#don-du-sang" class="btn-theme" style="background: white; color: var(--theme-color); border: 1px solid var(--theme-color);">Puis-je donner ?</a>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </main>
 

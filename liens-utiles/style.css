@@ -1,0 +1,176 @@
+/* =========================================
+   PAGE LIENS UTILES & HUB DE NAVIGATION
+========================================= */
+.useful-links-page {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.useful-links-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.useful-links-header h1 {
+    font-size: 2.5rem;
+    color: var(--dark-color, #2c3e50);
+    margin-bottom: 10px;
+}
+
+.useful-links-header p {
+    color: var(--text-muted, #666);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Grille des Boutons Rapides --- */
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.quick-link-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-main, #333);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid transparent;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary-color, #9b2226);
+}
+
+.quick-link-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.quick-link-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--dark-color, #2c3e50);
+}
+
+.quick-link-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted, #666);
+    margin: 5px 0 0 0;
+}
+
+/* --- Sections Détaillées (GAELIS, FEDIUT, Don du sang) --- */
+.section-title {
+    font-size: 2rem;
+    color: var(--dark-color, #2c3e50);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.detailed-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.partner-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 8px solid var(--theme-color);
+}
+
+@media (min-width: 768px) {
+    .partner-card {
+        flex-direction: row;
+    }
+}
+
+.partner-image {
+    flex: 0 0 300px;
+    background-color: var(--theme-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.partner-image img {
+    max-width: 100%;
+    max-height: 150px;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Utile si les logos ont un fond blanc */
+}
+
+.partner-content {
+    padding: 2rem;
+    flex-grow: 1;
+    background-color: var(--theme-bg-light);
+}
+
+.partner-content h3 {
+    margin-top: 0;
+    color: var(--theme-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.partner-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.partner-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.btn-theme {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: var(--theme-color);
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.btn-theme:hover {
+    opacity: 0.85;
+}
+
+/* --- Les Thèmes de Couleurs --- */
+.theme-green {
+    --theme-color: #27ae60;
+    --theme-bg: #eafaf1;
+    --theme-bg-light: #f8fdfa;
+}
+
+.theme-yellow {
+    --theme-color: #f39c12;
+    --theme-bg: #fef5e7;
+    --theme-bg-light: #fffcf8;
+}
+
+.theme-blue {
+    /* Tu peux remplacer #2980b9 par ta variable de navbar si besoin : var(--primary-color) */
+    --theme-color: #2980b9; 
+    --theme-bg: #ebf5fb;
+    --theme-bg-light: #f4f9fd;
+}
