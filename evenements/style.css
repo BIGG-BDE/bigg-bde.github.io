@@ -246,6 +246,7 @@
     font-size: 0.85rem;
     font-weight: bold;
     text-transform: uppercase;
+    white-space: nowrap;
 }
 
 .tag-avenir { background-color: #28a745; color: white; }
