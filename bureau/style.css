@@ -6,3 +6,11 @@
 }
 @media (max-width: 1024px) { .bureau-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .bureau-grid { grid-template-columns: 1fr; } }
+
+@media (max-width:753px) {
+    .grid-container.bureau {
+        padding-left: 0rem; 
+        padding-right: 0rem;
+    }
+    
+}
