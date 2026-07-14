@@ -16,7 +16,7 @@
         <meta name="description" content="Que tu viennes d'arriver en première année, ou que tu sois un.e habitué.e de l'universitaire, ce WEI est l'évènement immanquable de l'année ! ">
         <link rel="canonical" href="https://biggbde.fr/actualites/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
 
         <meta name="theme-color" content="#9b2226">
         <link rel="icon" type="image/png" href="https://biggbde.fr/assets/logos/favicons/favicon.svg">
@@ -91,7 +91,7 @@
                 <a href="https://biggbde.fr/a-propos/">À propos</a>
                 <a href="https://biggbde.fr/bureau/">Le Bureau</a>
                 <a href="https://biggbde.fr/evenements/">Événements</a>
-                <a href="https://biggbde.fr/actualites/">Actualités</a>
+                <a href="https://biggbde.fr/actualites/" class="active">Actualités</a>
                 <a href="https://biggbde.fr/partenariats/">Partenariats</a>
                 <a href="https://biggbde.fr/liens-utiles/">Liens Utiles</a>
                 <a href="https://biggbde.fr/contact/" class="nav-contact-btn">Contact</a>
@@ -99,52 +99,102 @@
         </header>
 
 
-        <main class="container news-hub" style="margin-top: 2rem; margin-bottom: 4rem;">
-            <!-- Titre de la page -->
-            <div class="page-header" style="text-align: center; margin-bottom: 3rem;">
-                <h1 style="font-size: 2.5rem; color: var(--dark, #2c3e50); margin-bottom: 10px;">Actualités du BDE</h1>
-                <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
-                    Restez informés de la vie associative, des dernières annonces et des moments forts du campus de Bourg-en-Bresse.
+        <main class="container news-hub">
+            <div class="page-header">
+                <h1>Actualités du BDE</h1>
+                <p class="page-subtitle">
+                    Restez informés de la vie associative, des dernières annonces et des événements du campus de Bourg-en-Bresse.
                 </p>
             </div>
 
-            <!-- Grille des articles -->
-            <div class="news-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
+            <div class="news-grid">
                 
-                <!-- CARTE 1 : Nouveau site -->
-                <article class="news-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; display: flex; flex-direction: column;">
-                    <a href="le-nouveau-site/" style="display: block; overflow: hidden; height: 200px;">
-                        <img src="https://picsum.photos/600/400?random=11" alt="Code informatique" style="width: 100%; height: 100%; object-fit: cover;">
+                <!-- CARTE : WEI -->
+                <article class="news-card">
+                    <a href="https://biggbde.fr/evenements/alice-au-pays-des-merwei/" class="card-image-link">
+                        <img src="https://i.postimg.cc/HsPs2bqh/geralt-crowd-2045498.jpg" alt="Teasing WEI">
                     </a>
-                    <div class="card-content" style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
-                        <div style="margin-bottom: 10px;">
-                            <span style="background: var(--primary, #9b2226); color: white; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">Nouveauté</span>
-                            <span style="color: #888; font-size: 0.85rem; margin-left: 10px;">15 Juil 2026</span>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag tag-event">Événement</span>
+                            <span class="card-date">9-11 Octobre 2026</span>
                         </div>
-                        <h3 style="margin: 0 0 10px 0;"><a href="le-nouveau-site/" style="color: var(--dark, #2c3e50); text-decoration: none;">Bienvenue sur le nouveau site du BIGG BDE !</a></h3>
-                        <p style="color: #555; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
-                            Découvrez toutes les fonctionnalités de notre nouvelle plateforme : agenda, billetterie, galeries photos et bien plus encore, conçu par et pour les étudiants.
+                        <h3><a href="https://biggbde.fr/evenements/alice-au-pays-des-merwei/">Le Week-End d'Intégration approche !</a></h3>
+                        <p class="card-excerpt">
+                            Préparez-vous pour le meilleur week-end de votre année. L'ouverture de la billetterie seront bientôt annoncés. Tenez-vous prêts !
                         </p>
-                        <a href="le-nouveau-site/" style="color: var(--primary, #9b2226); font-weight: bold; text-decoration: none;">Lire l'article &rarr;</a>
+                        <a href="https://biggbde.fr/evenements/alice-au-pays-des-merwei/" class="card-read-more">En savoir plus &rarr;</a>
                     </div>
                 </article>
 
-                <!-- CARTE 2 : Hommage à Ewan -->
-                <article class="news-card" style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; display: flex; flex-direction: column;">
-                    <a href="ewan/" style="display: block; overflow: hidden; height: 200px; background: #eef2f5; display: flex; align-items: center; justify-content: center;">
-                        <!-- Placeholder d'image sobre -->
-                        <span style="font-size: 3rem;">🕊️</span>
+                <!-- CARTE : LOTO -->
+                <article class="news-card">
+                    <a href="https://biggbde.fr/evenements/le-grand-loto-de-rentree/" class="card-image-link">
+                        <img src="https://i.postimg.cc/02mPphCj/abbiefyregraphics-pool-7318132.jpg" alt="Loto du BDE">
                     </a>
-                    <div class="card-content" style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
-                        <div style="margin-bottom: 10px;">
-                            <span style="background: #1a1a1a; color: white; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold;">Hommage</span>
-                            <span style="color: #888; font-size: 0.85rem; margin-left: 10px;">12 Juil 2026</span>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag tag-event">Événement</span>
+                            <span class="card-date">5 Septembre 2026</span>
                         </div>
-                        <h3 style="margin: 0 0 10px 0;"><a href="ewan/" style="color: var(--dark, #2c3e50); text-decoration: none;">À la mémoire d'Ewan</a></h3>
-                        <p style="color: #555; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
-                            Le bureau souhaite rendre hommage à Ewan, étudiant en BUT Informatique, en partageant les mots touchants de l'infirmière de l'IUT.
+                        <h3><a href="https://biggbde.fr/evenements/le-grand-loto-de-rentree/">Le Grand Loto du BIGG BDE</a></h3>
+                        <p class="card-excerpt">
+                            Venez tenter votre chance et passer une excellente soirée ! De nombreux lots exceptionnels (High-Tech, bons d'achat, goodies) sont à gagner cette année.
                         </p>
-                        <a href="ewan/" style="color: var(--primary, #9b2226); font-weight: bold; text-decoration: none;">Lire l'article &rarr;</a>
+                        <a href="https://biggbde.fr/evenements/le-grand-loto-de-rentree/" class="card-read-more">En savoir plus &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- CARTE : Nouveaux mails & Tuto Spam -->
+                <article class="news-card">
+                    <a href="https://biggbde.fr/contact" class="card-image-link" style="background: #eef2f5;">
+                        <img src="https://i.postimg.cc/kgZ0zG4D/elf-moondance-email-6993266.png" alt="Code informatique">
+                    </a>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag tag-info">Info Pratique</span>
+                        </div>
+                        <h3><a href="https://biggbde.fr/contact">Nos nouvelles adresses mails + Tuto anti-spam</a></h3>
+                        <p class="card-excerpt">
+                            Le BDE fait peau neuve numériquement ! Découvrez comment nous contacter. <strong>Attention :</strong> Lisez notre tuto rapide pour éviter que nos réponses ne finissent dans vos spams.
+                        </p>
+                        <a href="https://biggbde.fr/contact" class="card-read-more">Découvrir nos emails &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- CARTE : Nouveau site -->
+                <article class="news-card">
+                    <a href="le-nouveau-site/" class="card-image-link">
+                        <img src="https://i.postimg.cc/jdDv9XJB/skylarvision-https-3344700.jpg" alt="Code informatique">
+                    </a>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag tag-nouveaute">Nouveauté</span>
+                            <span class="card-date">15 Juillet 2026</span>
+                        </div>
+                        <h3><a href="le-nouveau-site/">Bienvenue sur le nouveau site du BIGG BDE !</a></h3>
+                        <p class="card-excerpt">
+                            Découvrez toutes les fonctionnalités de notre nouvelle plateforme : agenda, billetterie, galeries photos et bien plus encore, conçu par et pour les étudiants.
+                        </p>
+                        <a href="le-nouveau-site/" class="card-read-more">Découvrir le site &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- CARTE : Hommage à Ewan -->
+                <article class="news-card">
+                    <a href="ewan/" class="card-image-link">
+                        <span class="card-image-placeholder">🕊️</span>
+                    </a>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="tag tag-hommage">Hommage</span>
+                            <span class="card-date">6 Juillet 2026</span>
+                        </div>
+                        <h3><a href="ewan/">À la mémoire d'Ewan</a></h3>
+                        <p class="card-excerpt">
+                            Le bureau souhaite rendre hommage à Ewan, étudiant en BUT GEA, en partageant les mots touchants de l'infirmière de l'IUT.
+                        </p>
+                        <a href="ewan/" class="card-read-more">Lire l'article &rarr;</a>
                     </div>
                 </article>
 
