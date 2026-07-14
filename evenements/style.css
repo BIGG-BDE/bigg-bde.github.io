@@ -378,6 +378,7 @@
 /* Responsivité du carrousel */
 @media (max-width: 768px) {
     .carousel-track img { height: 180px; }
+    .header-event {margin-bottom: 2rem;}
 }
 
 
@@ -452,3 +453,5 @@
 
 
 
+.header-event { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 0rem; flex-wrap: wrap; gap: 1rem; }
+@media (max-width: 768px) {.header-event {margin-bottom: 2rem;}}
