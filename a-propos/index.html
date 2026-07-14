@@ -107,45 +107,91 @@
             </nav>
         </header>
 
-        <main>
-            <h2>Notre Histoire & Nos Missions</h2>
-            <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 1.5rem;">Fort de 35 ans d'existence, le BIGG BDE est l'association étudiante pilier de l'IUT Lyon 1 sur le campus de Bourg-en-Bresse. Nous rassemblons et fédérons les forces vives de quatre départements majeurs.</p>
-            <div style="display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
-                <section>
-                    <div style="display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                        <div style="flex: 1; min-width: 300px;">
-                            <h3>🤝 Engagement Social</h3>
-                            <p>Nous travaillons en étroite collaboration avec le réseau GAELIS pour défendre les droits des étudiants et promouvoir des initiatives comme l'AGORAé (épicerie solidaire) afin de lutter contre la précarité étudiante.</p>
-                        </div>
-                        <div style="flex: 1; min-width: 300px;">
-                            <h3>🌱 Sensibilisation</h3>
-                            <p>Le BDE s'engage progressivement à intégrer une démarche éco-responsable dans ses événements, en privilégiant les partenaires locaux et en limitant l'usage du plastique lors de nos rassemblements.</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            <div style="background: var(--white); padding: 1.5rem; border-left: 4px solid var(--primary); border-radius: 0 var(--border-radius) var(--border-radius) 0; box-shadow: var(--shadow); margin-bottom: 2rem;">
-                <h3 style="margin-bottom: 0.5rem; color: var(--dark);">Nos Missions</h3>
-                <p style="color: var(--gray); font-size: 1rem; margin: 0;">
-                    Notre objectif principal est de dynamiser la vie étudiante sur le campus. Cela passe par l'organisation d'événements festifs (WEI, soirées, galas), la création de moments de cohésion (Loto, tournois), la gestion de partenariats offrant des avantages exclusifs, et la représentation des étudiants auprès de l'administration et des réseaux comme GAELIS. Nous sommes là pour faire de vos années à l'IUT une expérience inoubliable.
-                </p>
-            </div>
-            
-            <div class="acronym-grid">
-                <div class="acronym-card"><span class="letter">B</span><span class="meaning">Bio</span><span style="display:block; color:var(--primary); font-size:0.9rem;">Génie Biologique</span></div>
-                <div class="acronym-card"><span class="letter">I</span><span class="meaning">Info</span><span style="display:block; color:var(--primary); font-size:0.9rem;">Informatique</span></div>
-                <div class="acronym-card"><span class="letter">G</span><span class="meaning">GEA</span><span style="display:block; color:var(--primary); font-size:0.9rem;">Gestion des Entreprises</span></div>
-                <div class="acronym-card"><span class="letter">G</span><span class="meaning">GTE</span><span style="display:block; color:var(--primary); font-size:0.9rem;">Désormais MT2E<span></div>
-            </div>
+        <main class="container about-page">
+            <!-- En-tête de la page -->
+            <section class="about-header">
+                <h2>Notre Histoire & Notre Vocation</h2>
+                <p>Fort de ses 35 ans d'existence, le <strong>BIGG BDE</strong> est l'association étudiante de référence de l'IUT Lyon 1, implantée sur le campus de Bourg-en-Bresse.
+                    Véritable pilier de la vie universitaire, notre association a pour vocation première de rassembler, représenter et fédérer les forces vives issues de nos quatre 
+                    départements d'enseignement.</p>
+            </section>
 
-            <div class="doc-section">
-                <h3 style="margin-bottom: 1rem;">Transparence & Documents Officiels</h3>
-                <p style="margin-bottom: 1.5rem; color: var(--gray);">Consultez à tout moment les statuts qui régissent notre association ainsi que le règlement intérieur applicable à nos événements.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="documents/statuts.pdf" target="_blank" class="btn">Lire les Statuts</a>
-                    <a href="documents/reglement_interieur.pdf" target="_blank" class="btn btn-outline">Règlement Intérieur</a>
+            <!-- Section des Missions (Sous forme de tuiles thématiques) -->
+            <section class="missions-section">
+                <div class="missions-intro">
+                    <h3>Nos Missions Principales</h3>
+                    <p>Notre objectif est simple : faire de vos années à l'IUT une expérience enrichissante et inoubliable, tant sur le plan humain que festif ou solidaire.
+                        Nous assurons la liaison entre les étudiants, le corps enseignant et l'administration.</p>
                 </div>
-            </div>
+                
+                <div class="missions-grid">
+                    <!-- Carte 1 : Événementiel -->
+                    <article class="mission-card card-theme-red">
+                        <span class="mission-icon">
+                            <img src="/assets/svg/cohesion.svg" alt="" aria-hidden="true">
+                        </span>
+                        <h4>Dynamisme & Cohésion</h4>
+                        <p>Nous animons le campus au quotidien par l'organisation d'événements majeurs (Week-End d'Intégration, Nuits de l'IUT, Galas) et de moments de partage (Lotos, tournois sportifs, afterworks). Nous négocions également des partenariats exclusifs pour vous offrir les meilleurs avantages locaux.</p>
+                    </article>
+
+                    <!-- Carte 2 : Social -->
+                    <article class="mission-card card-theme-blue">
+                        <span class="mission-icon" id="social">
+                            <img src="/assets/svg/social.svg" alt="" aria-hidden="true">
+                        </span>
+                        <h4>Engagement Social</h4>
+                        <p>En étroite collaboration avec le réseau des fédérations étudiantes (GAELIS, FEDIUT), nous défendons vos droits. Nous soutenons activement des initiatives majeures telles que l'<strong>AGORAé</strong> (épicerie solidaire étudiante) pour lutter efficacement contre la précarité étudiante.</p>
+                    </article>
+
+                    <!-- Carte 3 : Écologie -->
+                    <article class="mission-card card-theme-green">
+                        <span class="mission-icon">
+                            <img src="/assets/svg/eco-respo.svg" alt="" aria-hidden="true">
+                        </span>
+                        <h4>Éco-responsabilité</h4>
+                        <p>Le Bureau s'engage dans une démarche de transition écologique progressive. Nous repensons l'organisation de nos événements en privilégiant les circuits courts, les partenaires locaux de Bourg-en-Bresse, et en réduisant drastiquement l'usage des plastiques à usage unique.</p>
+                    </article>
+                </div>
+            </section>
+            
+            <!-- Section Acronyme -->
+            <section class="acronym-section">
+                <h3>Que signifie BIGG ?</h3>
+                <p>Notre nom est le symbole de l'union des quatre départements historiques de l'IUT de Bourg-en-Bresse :</p>
+                <div class="acronym-grid">
+                    <a href="https://iut.univ-lyon1.fr/iut/organisation-et-contacts/genie-biologique-bourg" target="_blank" class="acronym-card">
+                        <span class="letter">B</span>
+                        <span class="meaning">Bio</span>
+                        <span class="department-name">Génie Biologique</span>
+                    </a>
+                    <a href="https://iut.univ-lyon1.fr/iut/organisation-et-contacts/informatique-bourg" target="_blank" class="acronym-card">
+                        <span class="letter">I</span>
+                        <span class="meaning">Info</span>
+                        <span class="department-name">Informatique</span>
+                    </a>
+                    <a href="https://iut.univ-lyon1.fr/iut/organisation-et-contacts/gestion-des-entreprises-et-des-administrations" target="_blank" class="acronym-card">
+                        <span class="letter">G</span>
+                        <span class="meaning">GEA</span>
+                        <span class="department-name">Gestion des Entreprises</span>
+                    </a>
+                    <a href="https://iut.univ-lyon1.fr/formation/but/but-metiers-de-la-transition-et-de-lefficacite-energetique" target="_blank" class="acronym-card">
+                        <span class="letter">G</span>
+                        <span class="meaning">GTE</span>
+                        <span class="department-name">Désormais MT2E</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Section Documents Officiels & Transparence -->
+            <section class="documents-section">
+                <h3>Transparence & Documents Officiels</h3>
+                <p>En tant qu'association de loi 1901, la gestion de notre fonctionnement interne et de nos finances repose sur une totale transparence envers nos adhérents et nos
+                    partenaires. Consultez librement les règles qui régissent notre bureau.</p>
+                <div class="documents-actions">
+                    <a href="https://biggbde.fr/a-propos/documents/statuts.pdf" target="_blank" class="btn-theme btn-solid">Consulter les Statuts</a>
+                    <a href="https://biggbde.fr/a-propos/documents/reglement_interieur.pdf" target="_blank" class="btn-theme btn-outline">Règlement Intérieur</a>
+                </div>
+            </section>
         </main>
 
         <footer>
