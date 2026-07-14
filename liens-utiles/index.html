@@ -69,15 +69,6 @@
         "url": "https://biggbde.fr"
         }
         </script>
-        <style>
-            .links-wrapper { display: flex; flex-direction: column; align-items: center; text-align: center; }
-            .links-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; max-width: 900px; width: 100%; margin-top: 2rem; }
-            .link-tile { background: var(--white); padding: 2rem 1rem; border-radius: 20px; box-shadow: var(--shadow); text-decoration: none; color: var(--dark); transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 1rem; border: 1px solid var(--light-gray); }
-            .link-tile:hover { transform: translateY(-5px) scale(1.02); border-color: var(--primary); box-shadow: 0 15px 30px rgba(155, 34, 38, 0.15); }
-            .icon { font-size: 3rem; }
-            .link-title { font-weight: 800; font-size: 1.1rem; }
-            .link-desc { font-size: 0.85rem; color: var(--gray); }
-        </style>
         <script>
             function toggleMenu() {
                 document.querySelector('nav').classList.toggle('nav-open');
@@ -109,53 +100,164 @@
 
         <main class="container useful-links-page">
 
-            <h1>Navigation & Liens Utiles</h1>
-            <p>Retrouvez ici tous les raccourcis vers les services du BDE, de l'IUT et de nos fédérations partenaires.</p><br><br>
+            <div class="useful-links-header">
+                <h1>Navigation & Liens Utiles</h1>
+                <p>Retrouvez ici tous les raccourcis vers les services du BDE, de l'IUT et de nos fédérations partenaires.</p>
+            </div>
 
-            <!-- 1. GRILLE D'ACCÈS RAPIDE (Les boutons) -->
-            <section class="quick-access-grid">
-                <!-- Billetterie -->
-                <a href="/billetterie" class="quick-link-card">
-                    <span class="quick-link-icon">🎟️</span>
-                    <h3>Billetterie</h3>
-                    <p>Tous les événements en cours</p>
-                </a>
-
-                <!-- Photos -->
-                <a href="/photos" class="quick-link-card">
-                    <span class="quick-link-icon">📸</span>
-                    <h3>Galeries Photos</h3>
-                    <p>Revivez nos meilleurs moments</p>
-                </a>
-
-                <!-- FAQ -->
-                <a href="/faq" class="quick-link-card">
-                    <span class="quick-link-icon">❓</span>
-                    <h3>F.A.Q</h3>
-                    <p>Vos questions, nos réponses</p>
-                </a>
-
-                <!-- Réseaux -->
-                <a href="/reseaux" class="quick-link-card">
-                    <span class="quick-link-icon">📱</span>
-                    <h3>Nos Réseaux</h3>
-                    <p>Insta, TikTok, Facebook...</p>
-                </a>
-
-                <!-- Fédérations -->
-                <a href="#federations" class="quick-link-card">
-                    <span class="quick-link-icon">🤝</span>
-                    <h3>Fédérations</h3>
-                    <p>GAELIS & FEDIUT</p>
-                </a>
-
-                <!-- Université -->
-                <a href="/universite" class="quick-link-card">
-                    <span class="quick-link-icon">🎓</span>
-                    <h3>Université Lyon 1</h3>
-                    <p>Infos scolarité & IUT</p>
-                </a>
-            </section>
+            <!-- 1. GRILLE D'ACCÈS RAPIDE (Les tuiles) -->
+            <div class="directory-grid">
+                
+                <!-- SECTION 1 : BILLETTERIE (Active) -->
+                <section class="directory-card">
+                    <div class="directory-card-header">
+                        <span class="directory-icon">🎟️</span>
+                        <h2>Billetteries Actives</h2>
+                    </div>
+                    <div class="directory-links">
+                        <a href="https://www.helloasso.com/associations/bigg-bde/evenements/le-grand-loto-de-rentree" target="_blank" class="btn-directory">
+                            <span>Grand Loto de Rentrée</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                        <!--<a href="https://biggbde.fr/evenements/alice-au-pays-des-merwei/" class="btn-directory">
+                            <span>Alice au Pays des MerWei</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>-->
+                        <a href="https://www.helloasso.com/associations/bigg-bde/adhesions/adhesion-biggbde-2" target="_blank" class="btn-directory">
+                            <span>Adhésion au BIGG BDE</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                        <a href="https://www.helloasso.com/associations/bigg-bde/evenements/pins-1" target="_blank" class="btn-directory">
+                            <span>Acheter les Pin's</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                    </div>
+                </section>
+        
+                <!-- SECTION 2 : AIDES SOCIALES & DÉMARCHES (Thème Bleu) -->
+                <section class="directory-card card-theme-blue">
+                    <div class="directory-card-header">
+                        <span class="directory-icon">🆘</span>
+                        <h2>Aides & Démarches</h2>
+                    </div>
+                    <div class="directory-links">
+                        <a href="https://mesaides.universite-lyon.fr/me-nourrir/restauration-sociale-et-solidaire" target="_blank" class="btn-directory">
+                            <span>Aides pour se nourrir (Resto U & Épiceries)</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://mesaides.universite-lyon.fr/me-loger/me-loger-tous-les-dispositifs-307400.kjsp" target="_blank" class="btn-directory">
+                            <span>Aides pour se loger</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://wwwd.caf.fr/wps/portal/caffr/aidesetdemarches/mesdemarches/faireunesimulation/lelogement#/preparation" target="_blank" class="btn-directory">
+                            <span>CAF - Simulation d'éligibilité</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F12006" target="_blank" class="btn-directory">
+                            <span>Connaître ses droits étudiants</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                    </div>
+                </section>
+        
+                <!-- SECTION 3 : UNIVERSITÉ & ACCOMPAGNEMENT -->
+                <section class="directory-card card-theme-green">
+                    <div class="directory-card-header">
+                        <span class="directory-icon">🎓</span>
+                        <h2>Université & Scolarité</h2>
+                    </div>
+                    <div class="directory-links">
+                        <a href="https://www.univ-lyon1.fr/" target="_blank" class="btn-directory">
+                            <span>Portail Lyon 1</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://www.univ-lyon1.fr/" target="_blank" class="btn-directory">
+                            <span>qqch</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://www.univ-lyon1.fr/formation/inscription-et-scolarite/handicap-trouble-de-sante-accident-maladie" target="_blank" class="btn-directory">
+                            <span>Mission Handicap Lyon 1</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://www.alumniut-lyon1.fr/" target="_blank" class="btn-directory">
+                            <span>Association Alumn'IUT</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        
+                    </div>
+                </section>
+        
+                <!-- SECTION 4 : FÉDÉRATIONS (Thème Jaune) -->
+                <section class="directory-card card-theme-yellow">
+                    <div class="directory-card-header">
+                        <span class="directory-icon">🤝</span>
+                        <h2>Nos Fédérations</h2>
+                    </div>
+                    <div class="directory-links">
+                        <a href="https://gaelis.fr" target="_blank" class="btn-directory">
+                            <span>GAELIS (Campus de Lyon)</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://fediut.fr" target="_blank" class="btn-directory">
+                            <span>FEDIUT (Réseau national)</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                    </div>
+                </section>
+        
+                <!-- SECTION 5 : MÉDIAS & INFOS BDE -->
+                <section class="directory-card">
+                    <div class="directory-card-header">
+                        <span class="directory-icon">📸</span>
+                        <h2>Médias & Pratique</h2>
+                    </div>
+                    <div class="directory-links">
+                        <a href="https://biggbde.fr/photos" class="btn-directory">
+                            <span>Galeries Photos des événements</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                        <a href="https://biggbde.fr/faq" class="btn-directory">
+                            <span>Foire Aux Questions (F.A.Q)</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                        <a href="https://biggbde.fr/contact/tuto-mails-bigg/" class="btn-directory">
+                            <span>Tuto anti-spam pour nos mails</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                        <a href="https://biggbde.fr/mentions-legales/" class="btn-directory">
+                            <span>Mentions légales</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                    </div>
+                </section>
+        
+                <!-- SECTION 6 : RÉSEAUX & CONTACTS -->
+                <section class="directory-card">
+                    <div class="directory-card-header">
+                        <span class="directory-icon">📱</span>
+                        <h2>Réseaux & Contacts</h2>
+                    </div>
+                    <div class="directory-links">
+                        <a href="https://instagram.com/bigg_bde" target="_blank" class="btn-directory">
+                            <span>Instagram</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://tiktok.com/@biggbde" target="_blank" class="btn-directory">
+                            <span>TikTok</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://facebook.com/biggbde" target="_blank" class="btn-directory">
+                            <span>Facebook</span>
+                            <span class="btn-directory-icon">↗</span>
+                        </a>
+                        <a href="https://biggbde.fr/contact#emails" class="btn-directory">
+                            <span>Nous contacter par mail</span>
+                            <span class="btn-directory-icon">&rarr;</span>
+                        </a>
+                    </div>
+                </section>
+        
+            </div><br><br>
 
             <!-- 2. SECTIONS DÉTAILLÉES (Blabla et articles) -->
             <h2 id="federations" class="section-title">Engagements & Fédérations</h2>
@@ -165,8 +267,7 @@
                 <!-- CARTE : GAELIS (Thème Vert) -->
                 <article class="partner-card theme-green">
                     <div class="partner-image">
-                        <!-- Remplace par le logo officiel de GAELIS -->
-                        <img src="https://picsum.photos/300/150?random=30" alt="Logo GAELIS">
+                        <img src="https://i.postimg.cc/mkQKKWkr/GAELIS.png" alt="Logo GAELIS">
                     </div>
                     <div class="partner-content">
                         <h3>GAELIS</h3>
@@ -179,7 +280,7 @@
                         </p>
                         <div class="partner-actions">
                             <a href="https://gaelis.fr" target="_blank" class="btn-theme">Découvrir GAELIS</a>
-                            <a href="https://gaelis.fr/agorae-2/" class="btn-theme" style="background: white; color: var(--theme-color); border: 1px solid var(--theme-color);">AGORAé : l'épicerie solidaire</a>
+                            <a href="https://gaelis.fr/agorae-2/" target="_blank" class="btn-theme btn-theme-outline">AGORAé : l'épicerie solidaire</a>
                         </div>
                     </div>
                 </article>
@@ -187,8 +288,7 @@
                 <!-- CARTE : FEDIUT (Thème Jaune) -->
                 <article class="partner-card theme-yellow">
                     <div class="partner-image">
-                        <!-- Remplace par le logo officiel de la FEDIUT -->
-                        <img src="https://picsum.photos/300/150?random=31" alt="Logo FEDIUT">
+                        <img src="https://i.postimg.cc/0ytFTfkC/fediut.jpg" alt="Logo FEDIUT">
                     </div>
                     <div class="partner-content">
                         <h3>FEDIUT</h3>
@@ -201,7 +301,7 @@
                         </p>
                         <div class="partner-actions">
                             <a href="https://fediut.org/" target="_blank" class="btn-theme">Site Officiel</a>
-                            <a href="https://etu.univ-lyon1.fr/activites/associations-etudiantes/fed-iut-federation-des-etudiants-et-diplomes-en-iut" class="btn-theme" style="background: white; color: var(--theme-color); border: 1px solid var(--theme-color);">Présentation de la fédération</a>
+                            <a href="https://etu.univ-lyon1.fr/activites/associations-etudiantes/fed-iut-federation-des-etudiants-et-diplomes-en-iut" target="_blank" class="btn-theme btn-theme-outline">Présentation de la fédération</a>
                         </div>
                     </div>
                 </article>
@@ -209,27 +309,25 @@
                 <!-- CARTE : DON DU SANG (Thème Bleu) -->
                 <article class="partner-card theme-blue">
                     <div class="partner-image">
-                        <!-- Remplace par un visuel EFS / Don du sang -->
-                        <img src="https://picsum.photos/300/150?random=32" alt="Visuel Don du Sang">
+                        <img src="https://i.postimg.cc/Nft0Fg1C/sh-BQp-DE3-400x400.png" alt="Visuel Don du Sang">
                     </div>
                     <div class="partner-content">
                         <h3>Don du Sang (EFS)</h3>
                         <p>
-                            <strong>1 don sauve 3 vies.</strong> La solidarité, c'est aussi ça. L'Établissement Français du Sang (EFS) organise régulièrement des collectes sur Bourg-en-Bresse ou directement sur le campus. 
+                            <strong>1 don sauve 3 vies.</strong> La solidarité, c'est aussi ça. L'Établissement Français du Sang (EFS) organise régulièrement des collectes sur Bourg-en-Bresse ou directement sur le campus de l'IUT Lyon 1. 
                         </p>
                         <p>
-                            En tant qu'étudiants, nous sommes une force vive indispensable pour les réserves de sang. Ça prend 45 minutes, c'est encadré par des professionnels super sympas, et on a même droit à une super collation à la fin (parfait pour caler un creux entre deux cours de C++ ou de bases de données !).
+                            En tant qu'étudiants, nous sommes une force vive indispensable pour les réserves de sang. Ça prend 45 minutes, c'est encadré par des professionnels super sympas, et on a même droit à une super collation à la fin !
                         </p>
                         <div class="partner-actions">
                             <a href="https://dondesang.efs.sante.fr/" target="_blank" class="btn-theme">Prendre RDV pour un don</a>
-                            <a href="/faq#don-du-sang" class="btn-theme" style="background: white; color: var(--theme-color); border: 1px solid var(--theme-color);">Puis-je donner ?</a>
+                            <a href="https://dondesang.efs.sante.fr/quiz" target="_blank" class="btn-theme btn-theme-outline">Puis-je donner ?</a>
                         </div>
                     </div>
                 </article>
 
             </div>
         </main>
-
 
         <footer>
             <div class="footer-links">
@@ -247,12 +345,6 @@
             
             <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <span class="arrow-desktop">⮝</span>
-                <span class="arrow-mobile">↑</span>
-            </button>
-
-            <!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
 
@@ -260,7 +352,6 @@
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
                         scrollBtn.style.display = "flex";
                     } else {
                         scrollBtn.style.display = "none";
