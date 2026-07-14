@@ -3,13 +3,13 @@
   "short_name": "BIGG",
   "icons": [
     {
-      "src": "https://biggbde.fr/assets/logos/favicons/web-app-manifest-192x192.png",
+      "src": "https://biggbde.fr/assets/favicons/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "https://biggbde.fr/assets/logos/favicons/web-app-manifest-512x512.png",
+      "src": "https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
