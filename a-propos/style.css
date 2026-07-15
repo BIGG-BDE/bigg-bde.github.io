@@ -150,54 +150,54 @@
     font-size: 1.1rem;
 }
 
-/* Grille responsive de l'acronyme */
+/* --- Style exact pour les tuiles BIGG --- */
 .acronym-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Ajuste le minmax pour que ça reste 4 colonnes sur PC et que ça s'adapte sur mobile */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
+    margin: 2rem 0;
 }
 
 .acronym-card {
-    background: var(--bg-light, #f8f9fa);
-    padding: 2.5rem 1.5rem;
-    border-radius: 16px;
-    border: 1px solid #eef2f5;
-    transition: all 0.3s ease;
-    
-    /* Nouvelles propriétés pour le lien */
-    text-decoration: none; 
-    display: block; /* S'assure que tout l'espace de la carte est cliquable */
+    background: #fce8e8; /* Le fond rose très clair de ta capture */
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    /* Ombre très subtile en bas pour donner l'aspect "tuile" */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-bottom: 4px solid #a42c2c; /* La bordure rouge foncée en bas */
+    transition: transform 0.2s ease;
 }
 
-
 .acronym-card:hover {
-    background: #ffffff;
-    border-color: var(--primary-color, #9b2226);
-    box-shadow: 0 8px 25px rgba(155, 34, 38, 0.08);
+    transform: translateY(-5px);
 }
 
 .acronym-card .letter {
     display: block;
-    font-size: 4.5rem;
+    font-size: 5rem; /* Très grande taille pour la lettre */
     font-weight: 900;
-    color: var(--primary-color, #9b2226);
+    color: #a42c2c; /* Rouge bordeaux */
     line-height: 1;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
 }
 
 .acronym-card .meaning {
     display: block;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--dark-color, #2c3e50);
-    margin-bottom: 0.4rem;
+    font-size: 1.5rem; /* Taille moyenne */
+    font-weight: 800;
+    color: #2c3e50; /* Bleu sombre (ton texte sur fond clair) */
+    margin-bottom: 0.3rem;
 }
 
 .acronym-card .department-name {
     display: block;
-    font-size: 0.95rem;
-    color: var(--text-muted, #777);
-    font-weight: 500;
+    font-size: 1rem;
+    color: #6a7c8c; /* Gris bleuté pour le texte du bas */
+    font-weight: 600;
 }
 
 /* --- Section Documents Officiels --- */
