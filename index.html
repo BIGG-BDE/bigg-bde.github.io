@@ -13,32 +13,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse : événements, bons plans et actualités.">
         <title>BIGG BDE - Bureau des Étudiants IUT Lyon 1 (Bourg-en-Bresse)</title>
-        <link rel="icon" type="image/png" href="htpps://biggbde.fr/assets/logos/favicon.png">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/logos/favicon.png">
         <link rel="stylesheet" href="/style.css">
         <link rel="stylesheet" href="style.css">
         <meta name="theme-color" content="#9b2226">
         <meta name="postimage-verification" content="933d8e6b5ae529d5498019e50fcf0026">
-        <!-- Favicon & Version Mobile -->
         <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="https://biggbde.fr/assets/favicons/favicon.svg" />
         <link rel="shortcut icon" href="https://biggbde.fr/assets/favicons/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/assets/favicons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="BIGG BDE" />
         <link rel="manifest" href="https://biggbde.fr/assets/favicons/site.webmanifest" />
-        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:title" content="BIGG BDE">
         <meta name="twitter:site" content="@https://biggbde.fr">
         <meta name="twitter:description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse : événements, bons plans et actualités.">
         <meta name="twitter:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
         <meta name="twitter:image:alt" content="Logo BIGG BDE">
-        <!-- Open Graph Global -->
         <meta property="og:type" content="website">
         <meta property="og:title" content="BIGG BDE - Accueil">
         <meta property="og:url" content="https://biggbde.fr/">
         <meta property="og:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
         <meta property="og:description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse.">
-        <!-- SEO Schema.org -->
         <link rel="canonical" href="https://biggbde.fr">
         <script type="application/ld+json">
         {
@@ -92,116 +88,158 @@
             </nav>
         </header>
         
-        <main>
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h2>Bienvenue au BIGG BDE</h2>
-                <p style="color: var(--gray); font-size: 1.1rem; max-width: 700px; margin: 1rem auto;">
-                    Retrouvez ici toutes les actualités, événements, et bons plans de votre association étudiante sur le campus de l'IUT Lyon 1 de Bourg-en-Bresse.
-                </p>
-            </div>
-
-            <div class="home-grid">
-                <a href="/evenements/" class="home-tile">
-                    <span class="home-tile-icon">🎉</span>
-                    <h3 class="home-tile-title">Nos Événements</h3>
-                    <p class="home-tile-text">Ne manque pas nos prochaines soirées, stands ou événement quelconque !</p>
-                </a>
+        <main class="home-page">
+        <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Bienvenue au BIGG BDE</h2>
+                    <p>Retrouvez ici toutes les actualités, événements, et bons plans de votre association étudiante sur le campus de l'IUT Lyon 1 de Bourg-en-Bresse.</p>
+                </div>
                 
-                <a href="/partenariats/" class="home-tile">
-                    <span class="home-tile-icon">🤝</span>
-                    <h3 class="home-tile-title">Bons Plans</h3>
-                    <p class="home-tile-text">Profite de réductions exclusives chez nos partenaires locaux.</p>
-                </a>
+                <div class="hero-actions">
+                    <a href="https://biggbde.fr/actualites/nouveaux-emails/" class="btn-action primary-action">
+                        <div class="action-icon">
+                            <img src="https://biggbde.fr/assets/svg/news.svg" alt="" aria-hidden="true">
+                        </div>
+                        <div class="action-text">
+                            <span class="badge">À la une</span>
+                            <span class="title">Nouveaus emails dédiés !</span>
+                        </div>
+                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
 
-                <a href="/bureau/" class="home-tile">
-                    <span class="home-tile-icon">👋</span>
-                    <h3 class="home-tile-title">Le Bureau</h3>
-                    <p class="home-tile-text">Découvre les membres du bureau prêts à faire vibrer ton année.</p>
-                </a>
+                    <a href="https://biggbde.fr/evenements/le-grand-loto-de-rentree/" class="btn-action secondary-action">
+                        <div class="action-icon">
+                            <img src="https://biggbde.fr/assets/svg/billeterie.svg" alt="" aria-hidden="true">
+                        </div>
+                        <div class="action-text">
+                            <span class="badge badge-yellow">En ce moment</span>
+                            <span class="title">Le Grand Loto de Rentrée : Billetterie ouverte !</span>
+                        </div>
+                        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </section>
 
-                <a href="/liens-utiles/" class="home-tile">
-                    <span class="home-tile-icon">🔗</span>
-                    <h3 class="home-tile-title">Outils & Liens</h3>
-                    <p class="home-tile-text">Accède rapidement à la billetterie, au Instagram et aux ressources de l'IUT.</p>
-                </a>
+            <section class="explore-section">
+                <div class="explore-header">
+                    <h3>Explorez votre BDE</h3>
+                    <p>Au-delà des soirées, le BIGG est là pour vous accompagner au quotidien. Découvrez notre fonctionnement et profitez de nos réseaux.</p>
+                </div>
+                
+                <div class="explore-grid">
+                    <a href="https://biggbde.fr/a-propos" class="explore-card">
+                        <span class="explore-icon">
+                            <img src="https://biggbde.fr/assets/svg/histoire.svg" alt="" aria-hidden="true">
+                        </span>
+                        <h4>Notre Histoire</h4>
+                        <p>Découvrez les valeurs, les missions et le fonctionnement de l'association.</p>
+                    </a>
+                    <a href="https://biggbde.fr/bureau/" class="explore-card">
+                        <span class="explore-icon">
+                            <img src="https://biggbde.fr/assets/svg/le-bureau.svg" alt="" aria-hidden="true">
+                        </span>
+                        <h4>Le Bureau</h4>
+                        <p>Rencontrez l'équipe d'étudiants élus qui travaillent pour vous faire vibrer.</p>
+                    </a>
+                    <a href="https://biggbde.fr/partenariats/" class="explore-card">
+                        <span class="explore-icon">
+                            <img src="https://biggbde.fr/assets/svg/bon-plans.svg" alt="" aria-hidden="true">
+                        </span>
+                        <h4>Bons Plans</h4>
+                        <p>Accédez à toutes les réductions exclusives chez nos commerçants partenaires.</p>
+                    </a>
+                </div>
+            </section>
 
-                <a href="https://biggbde.fr/faq/" class="home-tile">
-                    <span class="home-tile-icon">❓</span>
-                    <h3 class="home-tile-title">FAQ</h3>
-                    <p class="home-tile-text">Tu te poses des questions sur le BIGG, sur l'IUT ou autre ? Trouve ta réponse ici !</p>
-                </a>
+            <section class="carousel-section">
+                <div class="photo-carousel">
+                    <div class="carousel-track">
+                        <img src="https://i.postimg.cc/bvvGG3kZ/BIGG-PUNCH-PARTY-(12-sur-307).jpg" class="carousel-img" alt="Souvenir 1" loading="lazy">
+                        <img src="https://i.postimg.cc/yNxNXkGb/bureau-2026-2027.jpg" class="carousel-img" alt="Souvenir 2" loading="lazy">
+                        <img src="https://i.postimg.cc/5tj09jWR/GALA-1010118.jpg" class="carousel-img" alt="Souvenir 3" loading="lazy">
+                        <img src="https://i.postimg.cc/gchx6wXs/BIGG-PUNCH-PARTY-(65-sur-307).jpg" class="carousel-img" alt="Souvenir 4" loading="lazy">
+                        <img src="https://i.postimg.cc/V6CkMT67/GALA-1010129.jpg" class="carousel-img" alt="Souvenir 5" loading="lazy">
+                        <img src="https://i.postimg.cc/ydCr7QDt/8A5A9558.jpg" class="carousel-img" alt="Souvenir 6" loading="lazy">
+                        <img src="https://i.postimg.cc/133RM4Xz/GALA-1010152.jpg" class="carousel-img" alt="Souvenir 7" loading="lazy">
+                        <img src="https://i.postimg.cc/NjFYmVCr/PRE-GALA-1010093.jpg" class="carousel-img" alt="Souvenir 8" loading="lazy">
+                        <img src="https://i.postimg.cc/FsZsj0rv/BIGG-PUNCH-PARTY-(134-sur-307).jpg" class="carousel-img" alt="Souvenir 9" loading="lazy">
+                        <img src="https://i.postimg.cc/1RDz3Lbz/GALA-1010142.jpg" class="carousel-img" alt="Souvenir 10" loading="lazy">
+                        <img src="https://i.postimg.cc/vHqwYh81/BIGG-PUNCH-PARTY-(256-sur-307).jpg" class="carousel-img" alt="Souvenir 11" loading="lazy">
+                        <img src="https://i.postimg.cc/DydmBtcQ/BIGG-PUNCH-PARTY-(89-sur-307).jpg" class="carousel-img" alt="Souvenir 12" loading="lazy">
+                        <img src="https://i.postimg.cc/pdjwBtfx/BIGG-PUNCH-PARTY-(286-sur-307).jpg" class="carousel-img" alt="Souvenir 13" loading="lazy">
+                        <img src="https://i.postimg.cc/76rQqsCk/8A5A9171.jpg" class="carousel-img" alt="Souvenir 14" loading="lazy">
+                        <img src="https://i.postimg.cc/rFFL23kJ/BIGG-PUNCH-PARTY-(237-sur-307).jpg" class="carousel-img" alt="Souvenir 15" loading="lazy">
+                        <img src="https://i.postimg.cc/05G8s7Kh/GALA-1010187.jpg" class="carousel-img" alt="Souvenir 16" loading="lazy">
+                        <img src="https://i.postimg.cc/Bb2tWy9V/BIGG-PUNCH-PARTY-(52-sur-307).jpg" class="carousel-img" alt="Souvenir 17" loading="lazy">
+                        <img src="https://i.postimg.cc/tCHYdXF4/DSC04419.jpg" class="carousel-img" alt="Souvenir 18" loading="lazy">
+                        <img src="https://i.postimg.cc/fLh62gCc/BIGG-PUNCH-PARTY-(300-sur-307).jpg" class="carousel-img" alt="Souvenir 19" loading="lazy">
+                        <img src="https://i.postimg.cc/vH3b1Mhm/DSC04513.jpg" class="carousel-img" alt="Souvenir 20" loading="lazy">
+                        <!-- dupli pour carousel -->
+                        <img src="https://i.postimg.cc/bvvGG3kZ/BIGG-PUNCH-PARTY-(12-sur-307).jpg" class="carousel-img" alt="Souvenir 1" loading="lazy">
+                        <img src="https://i.postimg.cc/yNxNXkGb/bureau-2026-2027.jpg" class="carousel-img" alt="Souvenir 2" loading="lazy">
+                        <img src="https://i.postimg.cc/5tj09jWR/GALA-1010118.jpg" class="carousel-img" alt="Souvenir 3" loading="lazy">
+                        <img src="https://i.postimg.cc/gchx6wXs/BIGG-PUNCH-PARTY-(65-sur-307).jpg" class="carousel-img" alt="Souvenir 4" loading="lazy">
+                        <img src="https://i.postimg.cc/V6CkMT67/GALA-1010129.jpg" class="carousel-img" alt="Souvenir 5" loading="lazy">
+                        <img src="https://i.postimg.cc/ydCr7QDt/8A5A9558.jpg" class="carousel-img" alt="Souvenir 6" loading="lazy">
+                        <img src="https://i.postimg.cc/133RM4Xz/GALA-1010152.jpg" class="carousel-img" alt="Souvenir 7" loading="lazy">
+                        <img src="https://i.postimg.cc/NjFYmVCr/PRE-GALA-1010093.jpg" class="carousel-img" alt="Souvenir 8" loading="lazy">
+                        <img src="https://i.postimg.cc/FsZsj0rv/BIGG-PUNCH-PARTY-(134-sur-307).jpg" class="carousel-img" alt="Souvenir 9" loading="lazy">
+                        <img src="https://i.postimg.cc/1RDz3Lbz/GALA-1010142.jpg" class="carousel-img" alt="Souvenir 10" loading="lazy">
+                        <img src="https://i.postimg.cc/vHqwYh81/BIGG-PUNCH-PARTY-(256-sur-307).jpg" class="carousel-img" alt="Souvenir 11" loading="lazy">
+                        <img src="https://i.postimg.cc/DydmBtcQ/BIGG-PUNCH-PARTY-(89-sur-307).jpg" class="carousel-img" alt="Souvenir 12" loading="lazy">
+                        <img src="https://i.postimg.cc/pdjwBtfx/BIGG-PUNCH-PARTY-(286-sur-307).jpg" class="carousel-img" alt="Souvenir 13" loading="lazy">
+                        <img src="https://i.postimg.cc/76rQqsCk/8A5A9171.jpg" class="carousel-img" alt="Souvenir 14" loading="lazy">
+                        <img src="https://i.postimg.cc/rFFL23kJ/BIGG-PUNCH-PARTY-(237-sur-307).jpg" class="carousel-img" alt="Souvenir 15" loading="lazy">
+                        <img src="https://i.postimg.cc/05G8s7Kh/GALA-1010187.jpg" class="carousel-img" alt="Souvenir 16" loading="lazy">
+                        <img src="https://i.postimg.cc/Bb2tWy9V/BIGG-PUNCH-PARTY-(52-sur-307).jpg" class="carousel-img" alt="Souvenir 17" loading="lazy">
+                        <img src="https://i.postimg.cc/tCHYdXF4/DSC04419.jpg" class="carousel-img" alt="Souvenir 18" loading="lazy">
+                        <img src="https://i.postimg.cc/fLh62gCc/BIGG-PUNCH-PARTY-(300-sur-307).jpg" class="carousel-img" alt="Souvenir 19" loading="lazy">
+                        <img src="https://i.postimg.cc/vH3b1Mhm/DSC04513.jpg" class="carousel-img" alt="Souvenir 20" loading="lazy">
+                    </div>
+                </div>
+            </section>
 
-                <a href="/liens-utiles/" class="home-tile">
-                    <span class="home-tile-icon">📲</span>
-                    <h3 class="home-tile-title">Nous Contacter</h3>
-                    <p class="home-tile-text">Accède à nos moyens de communications pour que nous puissions t'aider.</p>
-                </a>
+            <div id="lightbox" class="lightbox-modal">
+                <span class="close-lightbox">&times;</span>
+                <img class="lightbox-content" id="lightbox-img" src="">
             </div>
-
-            <br>
-            <p>L'engagement du BIGG BDE dépasse largement les murs de l'IUT pour s'inscrire durablement dans le paysage burgien. En tissant des liens étroits avec les <strong>
-                commerçants de proximité</strong>, nous participons activement au dynamisme économique de Bourg-en-Bresse. Ces collaborations permettent non seulement d'offrir 
-                des tarifs préférentiels aux étudiants, mais elles favorisent aussi une véritable synergie entre la jeunesse et les boutiques du centre-ville. 
-                Chaque partenariat est pensé pour soutenir le savoir-faire local tout en facilitant le quotidien de notre communauté.
-            </p><br>
-            <p>Notre association se veut être un pont entre le monde universitaire et la cité. C'est pourquoi nous organisons régulièrement des <strong>événements ouverts</strong> 
-                à un public plus large, incluant les autres BDE. Qu'il s'agisse de tournois sportifs, de collectes solidaires 
-                ou de rencontres culturelles, ces moments de partage renforcent notre <i>ancrage territorial</i>. Cette ouverture d'esprit transforme le campus en un lieu d'échange 
-                vivant, où chaque habitant peut percevoir l'énergie positive de la vie étudiante.</p><p>Cette présence constante sur le terrain assoit la légitimité du BDE comme un 
-                interlocuteur incontournable de la vie locale. En valorisant les circuits courts et les initiatives burgiennes, nous cultivons un sentiment d'appartenance fort.
-                Le BIGG BDE n'est pas qu'une simple structure interne ; il agit comme un véritable <strong>moteur social</strong> pour toute la ville. 
-                Rejoindre nos projets, c'est donc contribuer au rayonnement de notre belle région tout en profitant d'un cadre de vie épanouissant.
-            </p>
-
-
-
-            <!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
-            </button>
 
             <script>
-                let scrollBtn = document.getElementById("scrollTopBtn");
-                window.addEventListener("scroll", function() {
-                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
-                        scrollBtn.style.display = "flex";
-                    } else {
-                        scrollBtn.style.display = "none";
-                    }
+                const lightbox = document.getElementById("lightbox");
+                const lightboxImg = document.getElementById("lightbox-img");
+                const images = document.querySelectorAll(".carousel-img");
+                const closeBtn = document.querySelector(".close-lightbox");
+
+                // Ouvrir la pop-in
+                images.forEach(img => {
+                    img.addEventListener("click", () => {
+                        lightbox.style.display = "flex";
+                        lightboxImg.src = img.src; 
+                    });
                 });
-                
-                function scrollToTop() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
 
-                let lastScrollTop = 0;
-                const header = document.querySelector('header');
-                const nav = document.querySelector('nav');
-                
-                window.addEventListener('scroll', () => {
-                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const isMenuOpen = nav.classList.contains('nav-open');
-                    
-                    if (isMenuOpen) {
-                        header.classList.remove('header-hidden');
-                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-                        return; 
-                    }
+                // Fermer la pop-in
+                const closeLightbox = () => {
+                    lightbox.style.display = "none";
+                    lightboxImg.src = "";
+                };
 
-                    if (scrollTop > 80) {
-                        if (scrollTop > lastScrollTop) {
-                            header.classList.add('header-hidden');
-                        } else {
-                            header.classList.remove('header-hidden');
-                        }
-                    } else {
-                        header.classList.remove('header-hidden');
+                closeBtn.addEventListener("click", closeLightbox);
+                
+                lightbox.addEventListener("click", (e) => {
+                    if (e.target !== lightboxImg) {
+                        closeLightbox();
                     }
-                    
-                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
                 });
             </script>
+
+            <section class="text-content-section">
+                <p>L'engagement du BIGG BDE dépasse largement les murs de l'IUT pour s'inscrire durablement dans le paysage burgien. En tissant des liens étroits avec les <strong>commerçants de proximité</strong>, nous participons activement au dynamisme économique de Bourg-en-Bresse. Ces collaborations permettent non seulement d'offrir des tarifs préférentiels aux étudiants, mais elles favorisent aussi une véritable synergie entre la jeunesse et les boutiques du centre-ville. Chaque partenariat est pensé pour soutenir le savoir-faire local tout en facilitant le quotidien de notre communauté.</p>
+                
+                <p>Notre association se veut être un pont entre le monde universitaire et la cité. C'est pourquoi nous organisons régulièrement des <strong>événements ouverts</strong> à un public plus large, incluant les autres BDE. Qu'il s'agisse de tournois sportifs, de collectes solidaires ou de rencontres culturelles, ces moments de partage renforcent notre <i>ancrage territorial</i>. Cette ouverture d'esprit transforme le campus en un lieu d'échange vivant, où chaque habitant peut percevoir l'énergie positive de la vie étudiante.</p>
+                
+                <p>Cette présence constante sur le terrain assoit la légitimité du BDE comme un interlocuteur incontournable de la vie locale. En valorisant les circuits courts et les initiatives burgiennes, nous cultivons un sentiment d'appartenance fort. Le BIGG BDE n'est pas qu'une simple structure interne ; il agit comme un véritable <strong>moteur social</strong> pour toute la ville. Rejoindre nos projets, c'est donc contribuer au rayonnement de notre belle région tout en profitant d'un cadre de vie épanouissant.</p>
+            </section>
 
         </main>
     
@@ -212,9 +250,9 @@
                 <a href="https://biggbde.fr/faq/">FAQ</a>
             </div>
             <div class="footer-socials">
-                <span><a href="https://www.instagram.com/bigg_bde" target="_b">Instagram</a></span>
-                <span><a href="https://www.facebook.com/profile.php?id=61569855328651">Facebook</a></span>
-                <span><a href="https://www.tiktok.com/@biggbde">Tiktok</a></span>
+                <span><a href="https://www.instagram.com/bigg_bde" target="_blank">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651" target="_blank">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
         </footer>  
