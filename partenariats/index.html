@@ -29,7 +29,6 @@
         <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/assets/favicons/apple-touch-icon.png">
         <meta name="apple-mobile-web-app-title" content="BIGG BDE">
         <link rel="manifest" href="https://biggbde.fr/assets/favicons/site.webmanifest">
-        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
         <meta name="twitter:image:alt" content="Logo BIGG BDE">
@@ -37,13 +36,11 @@
         <meta name="twitter:site" content="@https://biggbde.fr/partenariats/">
         <meta name="twitter:description" content="Découvrez tous les bons plans et réductions exclusifs offerts par les partenaires du BIGG BDE.">
 
-        <!-- Open Graph Global -->
         <meta property="og:title" content="Partenariats & Avantages Étudiants - BIGG BDE">
         <meta property="og:url" content="https://biggbde.fr/partenariats/">
         <meta property="og:type" content="website">
         <meta property="og:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
         <meta property="og:description" content="Découvrez tous les bons plans et réductions exclusifs offerts par les partenaires du BIGG BDE.">
-        <!-- SEO Schema.org -->
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -70,25 +67,18 @@
         }
         </script>
         <script>
-            // Logique simplifiée pour ouvrir et fermer la modale
+            // Fonctions pour la Modale
             function openModal(title, code) {
                 document.getElementById('modalTitle').innerText = title;
                 document.getElementById('modalCode').innerText = code;
                 document.getElementById('partModal').style.display = 'flex';
-                document.body.style.overflow = 'hidden'; // Empêche le scroll quand la modale est ouverte
+                document.body.style.overflow = 'hidden'; 
             }
 
             function closeModal() {
                 document.getElementById('partModal').style.display = 'none';
-                document.body.style.overflow = 'auto'; // Réactive le scroll
+                document.body.style.overflow = 'auto'; 
             }
-
-            // Fermer la modale si on clique à l'extérieur du bloc blanc
-            document.getElementById('partModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeModal();
-                }
-            });
 
             function toggleMenu() {
                 document.querySelector('nav').classList.toggle('nav-open');
@@ -103,7 +93,6 @@
                 <h1>BIGG BDE</h1>
             </a>
             
-            <!-- Bouton Hamburger -->
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
             <nav>
@@ -118,47 +107,159 @@
             </nav>
         </header>
         
-
         <main>
             <h2>Nos Partenaires</h2>
             
+            <div class="info-banner">
+                <strong>🏖️ Info de rentrée</strong>
+                <p>Les partenariats présentés ci-dessous sont en cours de mise à jour. Avec les vacances d'été, certains avantages doivent encore être re-validés avec nos commerçants et de nouveaux vont bientôt arriver ! On vous tient au courant très vite avec la liste officielle pour l'année, donc pas de panique si un code est capricieux d'ici là.</p>
+            </div>
+            
             <div class="grid-container" id="parts-grid" style="margin-top: 2rem;">
                 
-                <!-- DÉBUT PARTENARIAT -->
                 <div class="card part-item">
                     <div class="card-content">
-                        <h3 style="margin-top: 0;">The Bootlegger Bar</h3>
+                        <img src="https://i.postimg.cc/C1CNghGs/bootlegger.jpg" alt="The Bootlegger Bar" class="part-img">
+                        <h3 style="margin-top: 0;">
+                            <a href="LIEN_BOOTLEGGER" target="_blank" class="part-title-link">The Bootlegger Bar</a>
+                        </h3>
                         <span class="validity">Valable sur présentation de la carte</span>
-                        <p style="flex-grow: 1; color: var(--gray);">- Cocktails à 6€ toute la semaine<br>- Softs à 2€ pour les adhérents<br>- Bouteilles de shots exclusives BIGG</p>
+                        <p style="flex-grow: 1; color: var(--gray);">
+                            - Cocktails à 6€ toute la semaine<br>
+                            - Softs à 2€ pour les adhérents<br>
+                            - Bouteilles de shots exclusives BIGG<br><br>
+                            <a href="LIEN_BOOTLEGGER" target="_blank">Le site du partenaire</a>
+                        </p>
                         <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('The Bootlegger Bar', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
                     </div>
                 </div>
-                <!-- FIN PARTENARIAT -->
-
-                <!-- DÉBUT PARTENARIAT -->
                 <div class="card part-item">
                     <div class="card-content">
-                        <h3 style="margin-top: 0;">Eve & Co</h3>
+                        <img src="https://i.postimg.cc/Kz7N2GPr/eve-and-co-image-officielle.webp" alt="Eve & Co" class="part-img">
+                        <h3 style="margin-top: 0;">
+                            <a href="https://eve-and-co.com/" target="_blank" class="part-title-link">Eve & Co</a>
+                        </h3>
                         <span class="validity">Valable jusqu'au 31/05/2027</span>
-                        <p style="flex-grow: 1; color: var(--gray);">-25% cumulables sur tout le site<br><a href="https://eve-and-co.com/" targt="_blank">La boutique en ligne</a></p>
+                        <p style="flex-grow: 1; color: var(--gray);">
+                            -25% cumulables sur tout le site<br><br>
+                            <a href="https://eve-and-co.com/" target="_blank">Le site du partenaire</a>
+                        </p>
                         <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Eve & Co', 'BIGGBDE25')">Voir le Code</button>
                     </div>
                 </div>
-                <!-- FIN PARTENARIAT -->
 
-                <!-- DÉBUT PARTENARIAT -->
+                <!-- Bacchus -->
                 <div class="card part-item">
                     <div class="card-content">
-                        <h3 style="margin-top: 0;">CONCEPT SON</h3>
-                        <span class="validity">Valable sur présentation de la carte</span>
-                        <p style="flex-grow: 1; color: var(--gray);">-20% sur tout le catalogue<br><a href="https://concept-son.fr" targt="_blank">La boutique en ligne</a></p>
-                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('CONCEPT SON', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                        <img src="https://i.postimg.cc/vHBV09zL/bacchus.jpg" alt="Bacchus" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://www.bacchus-pub.fr/" target="_blank" class="part-title-link">Bacchus</a></h3>
+                        <span class="validity">Valable lors des soirées étudiantes</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Pinte à 4€<br>- Mètre de shot à 10€<br>- Cocktails à 5€<br><br><a href="https://www.bacchus-pub.fr/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Bacchus', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
                     </div>
                 </div>
-                <!-- FIN PARTENARIAT -->
+
+                <!-- Bonjour Tristesse -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/BQ6KmDgT/279558450-958944078125221-2421649306539968687-n.jpg" alt="Bonjour Tristesse" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://www.instagram.com/bonjour_tristesse_01/" target="_blank" class="part-title-link">Bonjour Tristesse</a></h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Réduction de 10% sur les tatouages<br><br><a href="https://www.instagram.com/bonjour_tristesse_01/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Bonjour Tristesse', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- Concept Son -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/3N4xGRLQ/concept-son-contact.png" alt="Concept Son" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://www.concept-son.fr/" target="_blank" class="part-title-link">Concept Son</a></h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Réduction de 20% sur tout le catalogue<br><br><a href="https://www.concept-son.fr/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Concept Son', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- JL Bourg -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/TYwDtm9g/JL-communique.jpg" alt="JL Bourg" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://www.jlbourg-basket.com/" target="_blank" class="part-title-link">JL Bourg</a></h3>
+                        <span class="validity">Via un lien partagé sur nos réseaux</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Tarifs étudiants sur certains matchs<br><br><a href="https://www.jlbourg-basket.com/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('JL Bourg', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- L'Appart Fitness -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/15tqv6HN/lappart.jpg" alt="L'Appart Fitness" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://clubs.lappartfitness.com/6-l-appart-fitness-bourg-en-bresse/" target="_blank" class="part-title-link">L'Appart Fitness</a></h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Aucun frais d'inscription<br>- 5€ de réduction par mois<br><br><a href="https://clubs.lappartfitness.com/6-l-appart-fitness-bourg-en-bresse/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('L\'Appart Fitness', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- Noty -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/NfMHdT4X/noty.jpg" alt="Noty" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://www.instagram.com/notyclub_discotheque/" target="_blank" class="part-title-link">Noty</a></h3>
+                        <span class="validity">Valable uniquement lors des soirées BIGG</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Punch gratuit de 23h à 00h30<br>- File prioritaire à l'entrée<br><br><a href="https://www.instagram.com/notyclub_discotheque/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Noty', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- Rod's -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/TYwDtm9w/rods.png" alt="Rod's" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://rod-s.fr/" target="_blank" class="part-title-link">Rod's</a></h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Réduction de 5% sur toutes commandes<br>- Drive-in<br><br><a href="https://rod-s.fr/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Rod\'s', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- Scène Nationale -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/5N0Csv3y/scene-Bourg.jpg" alt="Scène Nationale" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://www.theatre-bourg.fr/" target="_blank" class="part-title-link">Scène Nationale (Bourg)</a></h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Place à 8€<br><br><a href="https://www.theatre-bourg.fr/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Scène Nationale', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- Steel On Skin -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/653vMR0Q/steelonskin.jpg" alt="Steel On Skin" class="part-img">
+                        <h3 style="margin-top: 0;"><a href="https://www.instagram.com/steel_on_skin/" target="_blank" class="part-title-link">Steel On Skin</a></h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Réduction de 5 à 10€ sur tous les piercings<br><br><a href="https://www.instagram.com/steel_on_skin/" target="_blank">Le site du partenaire</a></p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Steel On Skin', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
+
+                <!-- Electra Festival -->
+                <div class="card part-item">
+                    <div class="card-content">
+                        <img src="https://i.postimg.cc/ZKRdw3c6/3c5d74-be4038772014488883138fe8adb42d23-mv2.png" alt="Electra Festival" class="part-img">
+                        <h3 style="margin-top: 0;"><span class="part-title-link">Electra Festival</span></h3>
+                        <span class="validity">Valable sur présentation de la carte</span>
+                        <p style="flex-grow: 1; color: var(--gray);">- Tarif préférentiel pour les étudiants<br><br>Site web indisponible</p>
+                        <button class="btn" style="width: 100%; margin-top: 1rem;" onclick="openModal('Electra Festival', 'SUR PRÉSENTATION CARTE')">Voir le Code</button>
+                    </div>
+                </div>
             </div>
+            
             <br>
-            <!-- Bouton Adhésion très visible -->
             <div style="background: var(--light); padding: 2rem; border-radius: 12px; text-align: center; margin-bottom: 2rem; margin-top:2rem;border: 2px dashed var(--primary);">
                 <h3 style="margin-top: 0;">Rejoins l'aventure !</h3>
                 <p>Tu n'es pas encore adhérent ? Profite des réductions partenaires et de tarifs préférentiels sur nos évènements.</p>
@@ -166,8 +267,7 @@
             </div>
         </main>
 
-        <!-- Modale Popup (Grisée et Responsive via CSS) -->
-        <div class="modal-overlay" id="partModal">
+        <div class="modal-overlay" id="partModal" onclick="if(event.target === this) closeModal()">
             <div class="modal-content">
                 <button class="modal-close" onclick="closeModal()" aria-label="Fermer">&times;</button>
                 <h3 id="modalTitle" style="color: var(--dark); margin-bottom: 0.5rem;">Titre Partenaire</h3>
@@ -175,7 +275,6 @@
                 <div class="code-display" id="modalCode">CODE</div>
             </div>
         </div>
-
 
         <footer>
             <div class="footer-links">
@@ -190,23 +289,14 @@
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
 
-            
-            <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <span class="arrow-desktop">⮝</span>
-                <span class="arrow-mobile">↑</span>
-            </button>
-
-            <!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
+                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG" class="scroll-icon" />
             </button>
 
             <script>
                 let scrollBtn = document.getElementById("scrollTopBtn");
                 window.addEventListener("scroll", function() {
                     if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
                         scrollBtn.style.display = "flex";
                     } else {
                         scrollBtn.style.display = "none";
