@@ -765,3 +765,91 @@ Photos; Parts; Bureau; Liens Utiles
 .secondary-action:hover .arrow {
     color: #f39c12;
 }
+
+
+
+
+/* Section Témoignages */
+.testimonials {
+    padding: 3rem 1rem;
+    background-color: var(--light, #f8f9fa);
+    margin-top:-5rem;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--dark);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testi-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Photo ronde */
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary);
+}
+
+.testi-info { margin-bottom: 1rem; }
+
+.testi-info h4 {
+    margin: 0;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.testi-info .role {
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: bold;
+    margin-top: 0.25rem;
+}
+
+.testi-text {
+    font-style: italic;
+    color: var(--gray);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Bouton d'ajout d'avis --- */
+.testimonial-cta {
+    text-align: center;
+    margin-top: 2rem; /* Crée un bel espace avec la grille d'avis au-dessus */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.testimonial-cta p {
+    color: var(--gray); /* Utilise ta variable pour s'intégrer au design */
+    font-size: 1.1rem;
+    margin: 0;
+    max-width: 600px; /* Évite que le texte ne s'étire trop sur grand écran */
+}
