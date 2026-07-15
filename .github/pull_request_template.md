@@ -8,7 +8,7 @@ Ferme #
 
 ## Type de changement
 <!-- Coche la ou les cases appropriées avec un 'x' : [x] -->
-- [ ] **Contenu associatif** (Ajout d'un évènement, nouveau membre au trombinoscope, nouveau partenaire)
+- [ ] **Contenu associatif** (Ajout d'un événement, nouveau membre au trombinoscope, nouveau partenaire)
 - [ ] **Correction de bug** (Modification qui ne casse pas le site et corrige un problème d'affichage/fonctionnalité)
 - [ ] **Nouvelle fonctionnalité** (Ajout d'une nouvelle page, section ou mécanique)
 - [ ] **Mise à jour du design** (CSS, animations, remplacement d'images)
