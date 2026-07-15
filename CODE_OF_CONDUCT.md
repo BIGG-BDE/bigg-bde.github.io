@@ -30,7 +30,7 @@ Les dirigeants ont le droit et la responsabilité de supprimer, modifier ou reje
 
 ## Champ d'Application
 
-Ce Code de Conduite s'applique dans tous les espaces de la communauté (dépôt GitHub, Discord, serveurs, etc.), ainsi que lorsqu'un individu représente officiellement la communauté dans des espaces publics. Les exemples de représentation de notre communauté incluent l'utilisation d'une adresse e-mail officielle, la publication via un compte de réseau social officiel, ou le rôle de représentant désigné lors d'un événement en ligne ou hors ligne.
+Ce Code de Conduite s'applique dans tous les espaces de la communauté (dépôt GitHub, Discord, serveurs, etc.), ainsi que lorsqu'un individu représente officiellement la communauté dans des espaces publics. Les exemples de représentation de notre communauté incluent l'utilisation d'une adresse e-mail officielle, la publication via un compte de réseau social officiel, ou le rôle de représentant désigné lors d'un évènement en ligne ou hors ligne.
 
 ## Application
 

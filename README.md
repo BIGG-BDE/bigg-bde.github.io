@@ -11,9 +11,9 @@ Cette plateforme centralise la vie étudiante des départements **Bio, Info, GEA
 ## 📌 Présentation
 Ce site a pour vocation de :
 - Présenter les membres du bureau (Trombinoscope).
-- Diffuser l'agenda et la billetterie des événements associatifs (soirées étudiantes, séjours d'intégration, activités ponctuelles).
+- Diffuser l'agenda et la billetterie des évènements associatifs (soirées étudiantes, séjours d'intégration, activités ponctuelles).
 - Recenser des avantages exclusifs via nos partenaires locaux et nationaux.
-- Permettre de facilement retrouver les photos de nos événements.
+- Permettre de facilement retrouver les photos de nos évènements.
 - Centraliser les liens utiles (HelloAsso, Discord, Instagram).
 - Permettre de facilement contacter le bureau.
 
@@ -40,7 +40,7 @@ Le site est conçu de manière statique pour garantir performance et sécurité,
 - `style.css` : Feuille de style générique.
 
 ## 🚀 Maintenance & Mise à jour (pour les pious qui reprendront le site)
-Pour ajouter un membre ou un nouvel événement, il suffit de dupliquer les dossiers et blocs HTML commentés dans les fichiers respectifs. L'architecture modulaire permet de créer de nouvelles pages d'événements en conservant facilement les standards SEO et graphiques du site. (On vous expliquera tqt)
+Pour ajouter un membre ou un nouvel évènement, il suffit de dupliquer les dossiers et blocs HTML commentés dans les fichiers respectifs. L'architecture modulaire permet de créer de nouvelles pages d'évènements en conservant facilement les standards SEO et graphiques du site. (On vous expliquera tqt)
 
 ### Déploiement automatique
 Le site utilise **GitHub Actions**. Toute modification poussée (`git push`) sur la branche `main` déclenche automatiquement une mise à jour du site en ligne sous 30s à 2 minutes (selon la taille du push, typiquement si vous uploader des photos, ça prendra plus de temps).

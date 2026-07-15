@@ -86,3 +86,43 @@ details.faq-item p {
 }
 .testimonial-text { font-style: italic; color: #555; margin-bottom: 1rem; }
 .testimonial-author { font-weight: 800; color: var(--dark); font-size: 0.9rem; }
+
+
+
+
+
+
+
+
+
+
+
+/* --- Titres de Catégories FAQ (Avec SVG) --- */
+.faq-category-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid rgba(155, 34, 38, 0.1); /* Ligne décorative discrète sous le titre */
+    padding-bottom: 0.5rem;
+}
+
+.faq-category-title h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 1.4rem;
+}
+
+.category-icon {
+    width: 28px;
+    height: 28px;
+    /* Si tes SVG sont noirs et que tu veux qu'ils prennent la couleur primary (--primary) : 
+       Tu peux utiliser un filtre CSS ou t'assurer que tes SVG utilisent "fill: currentColor" */
+    object-fit: contain;
+}
+
+/* Ajustement de la marge de la première catégorie pour éviter un trop grand espace en haut */
+.faq-container .faq-category-title:first-child {
+    margin-top: 1rem;
+}

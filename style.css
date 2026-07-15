@@ -409,7 +409,7 @@ Photos; Parts; Bureau; Liens Utiles
     gap: 15px;
     padding-right: 15px;
     width: max-content;
-    /* On reprend l'animation infinie de tes événements */
+    /* On reprend l'animation infinie de tes évènements */
     animation: scroll-carousel 80s linear infinite; /* 80s pour 20 photos*/
 }
 
