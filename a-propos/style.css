@@ -1,1 +1,243 @@
-.about-page {margin-top: 2rem;margin-bottom: 4rem;display: flex;flex-direction: column;gap: 4.5rem}.about-header {text-align: center;max-width: 850px;margin: 0 auto}.about-header h2 {font-size: 2.5rem;color: var(--dark-color, #2c3e50);margin-bottom: 1.2rem}.about-header p {font-size: 1.15rem;color: var(--text-muted, #555);line-height: 1.7}.missions-section {display: flex;flex-direction: column;gap: 2.5rem}.missions-intro {text-align: center;max-width: 750px;margin: 0 auto}.missions-intro h3 {font-size: 2.2rem;color: var(--primary-color, #9b2226);margin-bottom: 1rem}.missions-intro p {font-size: 1.1rem;color: var(--text-muted, #666);line-height: 1.6}.missions-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));gap: 2rem}.mission-card {background: #ffffff;border-radius: 16px;padding: 2.5rem 2rem;box-shadow: 0 4px 20px rgba(0,0,0,0.05);border-top: 5px solid transparent;transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;display: flex;flex-direction: column;align-items: center;text-align: center}.mission-card:hover {transform: translateY(-8px);box-shadow: 0 12px 30px rgba(0,0,0,0.08)}.mission-card.card-theme-red { border-top-color: #9b2226 }.mission-card.card-theme-blue { border-top-color: #2980b9 }.mission-card.card-theme-green { border-top-color: #548830 }.mission-icon {font-size: 3rem;margin-bottom: 1.2rem}.mission-card h4 {font-size: 1.4rem;color: var(--dark-color, #2c3e50);margin-bottom: 1rem;font-weight: 700}.mission-card p {font-size: 0.95rem;color: var(--text-muted, #555);line-height: 1.6;margin: 0}.mission-icon {display: inline-flex;align-items: center;justify-content: center;width: 6.5rem;height: 6.5rem;margin-bottom: 2rem;margin-top: -0.8rem;;flex-shrink: 0}.mission-icon img {width: 100%;height: 100%;object-fit: contain;transition: transform 0.3s ease}.mission-icon#social {width: 7.5rem;height: 7.5rem;margin-bottom: 1rem}.mission-card:hover .mission-icon img {transform: scale(1.15)}.acronym-section {text-align: center}.acronym-section h3 {font-size: 2.2rem;color: var(--dark-color, #2c3e50);margin-bottom: 0.8rem}.acronym-section p {color: var(--text-muted, #666);margin-bottom: 2.5rem;font-size: 1.1rem}.acronym-grid {display: grid;grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));gap: 1.5rem;margin: 2rem 0}.acronym-card {background: #fce8e8;padding: 2rem;border-radius: 12px;text-align: center;text-decoration: none;display: block;box-shadow: 0 4px 6px rgba(0,0,0,0.1);border-bottom: 4px solid #a42c2c;transition: transform 0.2s ease}.acronym-card:hover {transform: translateY(-5px)}.acronym-card .letter {display: block;font-size: 5rem;font-weight: 900;color: #a42c2c;line-height: 1;margin-bottom: 0.5rem}.acronym-card .meaning {display: block;font-size: 1.5rem;font-weight: 800;color: #2c3e50;margin-bottom: 0.3rem}.acronym-card .department-name {display: block;font-size: 1rem;color: #6a7c8c;font-weight: 600}.documents-section {background: var(--bg-light, #f8f9fa);padding: 3.5rem 2rem;border-radius: 16px;text-align: center;border: 1px solid #eef2f5}.documents-section h3 {font-size: 2rem;color: var(--dark-color, #2c3e50);margin-bottom: 1.2rem}.documents-section p {color: var(--text-muted, #555);max-width: 650px;margin: 0 auto 2.5rem auto;line-height: 1.6;font-size: 1.05rem}.documents-actions {display: flex;gap: 1.5rem;justify-content: center;flex-wrap: wrap}.btn-theme {padding: 14px 28px;border-radius: 8px;text-decoration: none;font-weight: 700;transition: all 0.2s ease;font-size: 1.05rem;display: inline-block}.btn-solid {background-color: var(--primary-color, #9b2226);color: white;border: 2px solid var(--primary-color, #9b2226)}.btn-solid:hover {background-color: transparent;color: var(--primary-color, #9b2226);transform: translateY(-2px)}.btn-outline {background-color: transparent;color: var(--primary-color, #9b2226);border: 2px solid var(--primary-color, #9b2226)}.btn-outline:hover {background-color: var(--primary-color, #9b2226);color: white;transform: translateY(-2px)}
+.about-page {
+	margin-top: 2rem;
+	margin-bottom: 4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 4.5rem
+}
+.about-header {
+	text-align: center;
+	max-width: 850px;
+	margin: 0 auto
+}
+.about-header h2 {
+	font-size: 2.5rem;
+	color: var(--dark-color, #2c3e50);
+	margin-bottom: 1.2rem
+}
+.about-header p {
+	font-size: 1.15rem;
+	color: var(--text-muted, #555);
+	line-height: 1.7
+}
+.missions-section {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem
+}
+.missions-intro {
+	text-align: center;
+	max-width: 750px;
+	margin: 0 auto
+}
+.missions-intro h3 {
+	font-size: 2.2rem;
+	color: var(--primary-color, #9b2226);
+	margin-bottom: 1rem
+}
+.missions-intro p {
+	font-size: 1.1rem;
+	color: var(--text-muted, #666);
+	line-height: 1.6
+}
+.missions-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem
+}
+.mission-card {
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 2.5rem 2rem;
+	box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+	border-top: 5px solid transparent;
+	transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center
+}
+.mission-card:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 12px 30px rgba(0,0,0,0.08)
+}
+.mission-card.card-theme-red {
+	border-top-color: #9b2226 
+}
+.mission-card.card-theme-blue {
+	border-top-color: #2980b9 
+}
+.mission-card.card-theme-green {
+	border-top-color: #548830 
+}
+.mission-icon {
+	font-size: 3rem;
+	margin-bottom: 1.2rem
+}
+.mission-card h4 {
+	font-size: 1.4rem;
+	color: var(--dark-color, #2c3e50);
+	margin-bottom: 1rem;
+	font-weight: 700
+}
+.mission-card p {
+	font-size: 0.95rem;
+	color: var(--text-muted, #555);
+	line-height: 1.6;
+	margin: 0
+}
+.mission-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 6.5rem;
+	height: 6.5rem;
+	margin-bottom: 2rem;
+	margin-top: -0.8rem;
+	;
+	flex-shrink: 0
+}
+.mission-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: transform 0.3s ease
+}
+.mission-icon#social {
+	width: 7.5rem;
+	height: 7.5rem;
+	margin-bottom: 1rem
+}
+.mission-card:hover .mission-icon img {
+	transform: scale(1.15)
+}
+.acronym-section {
+	text-align: center
+}
+.acronym-section h3 {
+	font-size: 2.2rem;
+	color: var(--dark-color, #2c3e50);
+	margin-bottom: 0.8rem
+}
+.acronym-section p {
+	color: var(--text-muted, #666);
+	margin-bottom: 2.5rem;
+	font-size: 1.1rem
+}
+.acronym-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.5rem;
+	margin: 2rem 0
+}
+.acronym-card {
+	background: #fce8e8;
+	padding: 2rem;
+	border-radius: 12px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+	border-bottom: 4px solid #a42c2c;
+	transition: transform 0.2s ease
+}
+.acronym-card:hover {
+	transform: translateY(-5px)
+}
+.acronym-card .letter {
+	display: block;
+	font-size: 5rem;
+	font-weight: 900;
+	color: #a42c2c;
+	line-height: 1;
+	margin-bottom: 0.5rem
+}
+.acronym-card .meaning {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 800;
+	color: #2c3e50;
+	margin-bottom: 0.3rem
+}
+.acronym-card .department-name {
+	display: block;
+	font-size: 1rem;
+	color: #000000;
+	font-weight: 600
+}
+.acronym-card.bio {
+    background: #8efb9e;
+    border-bottom: 4px solid #4eb35d;
+    .letter {color: #4eb35d;}
+}
+.acronym-card.info {
+    background: #93c4ff;
+    border-bottom: 4px solid #4f79ac;
+    .letter {color: #4f79ac;}
+}
+.acronym-card.gea {
+    background: #ff8484;
+    border-bottom: 4px solid #c05454;
+    .letter {color: #c05454;}
+}
+.acronym-card.mt2e {
+    background: #e293ff;
+    border-bottom: 4px solid #a660c0;
+    .letter {color: #a660c0;}
+}
+
+
+.documents-section {
+	background: var(--bg-light, #f8f9fa);
+	padding: 3.5rem 2rem;
+	border-radius: 16px;
+	text-align: center;
+	border: 1px solid #eef2f5
+}
+.documents-section h3 {
+	font-size: 2rem;
+	color: var(--dark-color, #2c3e50);
+	margin-bottom: 1.2rem
+}
+.documents-section p {
+	color: var(--text-muted, #555);
+	max-width: 650px;
+	margin: 0 auto 2.5rem auto;
+	line-height: 1.6;
+	font-size: 1.05rem
+}
+.documents-actions {
+	display: flex;
+	gap: 1.5rem;
+	justify-content: center;
+	flex-wrap: wrap
+}
+.btn-theme {
+	padding: 14px 28px;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 700;
+	transition: all 0.2s ease;
+	font-size: 1.05rem;
+	display: inline-block
+}
+.btn-solid {
+	background-color: var(--primary-color, #9b2226);
+	color: white;
+	border: 2px solid var(--primary-color, #9b2226)
+}
+.btn-solid:hover {
+	background-color: transparent;
+	color: var(--primary-color, #9b2226);
+	transform: translateY(-2px)
+}
+.btn-outline {
+	background-color: transparent;
+	color: var(--primary-color, #9b2226);
+	border: 2px solid var(--primary-color, #9b2226)
+}
+.btn-outline:hover {
+	background-color: var(--primary-color, #9b2226);
+	color: white;
+	transform: translateY(-2px)
+}

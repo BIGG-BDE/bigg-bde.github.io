@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
         <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
         <link rel="stylesheet" href="style.css">
+        <script src="https://biggbde.fr/script.js"></script>
+
         <meta name="theme-color" content="#9b2226">
         <!-- Favicon & Mobile App -->
         <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon.svg">
@@ -68,11 +70,6 @@
         "url": "https://biggbde.fr"
         }
         </script>
-        <script>
-            function toggleMenu() {
-                document.querySelector('nav').classList.toggle('nav-open');
-            }
-        </script>
     </head>
 
 
@@ -92,7 +89,7 @@
                 <a href="https://biggbde.fr/a-propos/">À propos</a>
                 <a href="https://biggbde.fr/bureau/">Le Bureau</a>
                 <a href="https://biggbde.fr/evenements/">Événements</a>
-                <a href="https://biggbde.fr/photos/" class="active">Photos</a>
+                <a href="https://biggbde.fr/actualites/">Photos</a>
                 <a href="https://biggbde.fr/partenariats/">Partenariats</a>
                 <a href="https://biggbde.fr/liens-utiles/">Liens Utiles</a>
                 <a href="https://biggbde.fr/contact/" class="nav-contact-btn">Contact</a>
@@ -288,57 +285,8 @@
             
             <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
-                <span class="arrow-desktop">⮝</span>
-                <span class="arrow-mobile">↑</span>
-            </button>
-
-            <!-- Bouton Remonter -->
-            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
-
-            <script>
-                let scrollBtn = document.getElementById("scrollTopBtn");
-                window.addEventListener("scroll", function() {
-                    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                        // IMPORTANT : On affiche en "flex" pour que l'image reste centrée
-                        scrollBtn.style.display = "flex";
-                    } else {
-                        scrollBtn.style.display = "none";
-                    }
-                });
-                
-                function scrollToTop() {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-
-                let lastScrollTop = 0;
-                const header = document.querySelector('header');
-                const nav = document.querySelector('nav');
-                
-                window.addEventListener('scroll', () => {
-                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                    const isMenuOpen = nav.classList.contains('nav-open');
-                    
-                    if (isMenuOpen) {
-                        header.classList.remove('header-hidden');
-                        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-                        return; 
-                    }
-
-                    if (scrollTop > 80) {
-                        if (scrollTop > lastScrollTop) {
-                            header.classList.add('header-hidden');
-                        } else {
-                            header.classList.remove('header-hidden');
-                        }
-                    } else {
-                        header.classList.remove('header-hidden');
-                    }
-                    
-                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-                });
-            </script>
         </footer>  
     </body>
 </html>
