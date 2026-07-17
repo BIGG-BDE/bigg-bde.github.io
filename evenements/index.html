@@ -17,8 +17,9 @@
         <link rel="canonical" href="https://biggbde.fr/evenements/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
         <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
-
-        <link rel="script" href="https://biggbde.fr/evenements/script-event.js">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://biggbde.fr/script.js"></script>
+        <script src="https://biggbde.fr/script-event.js"></script>
 
         
         <meta name="theme-color" content="#9b2226">
@@ -73,7 +74,11 @@
         "url": "https://biggbde.fr"
         }
         </script>
-
+        <script>
+            function toggleMenu() {
+                document.querySelector('nav').classList.toggle('nav-open');
+            }
+        </script>
     </head>
 
     <body>
