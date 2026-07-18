@@ -8,9 +8,8 @@ jobs:
   purge-cache:
     runs-on: ubuntu-latest
     steps:
-      - name: Purge Cloudflare Cache
-        uses: louisbrulenaudet/cloudflare-cache-purge-action@v1
+      - name: Purge Cloudflare cache
+        uses: nathanvaughn/actions-cloudflare-purge@v4.0.0
         with:
-          api_token: ${{ secrets.CF_API_TOKEN }}
-          zone_id: ${{ secrets.CF_ZONE_ID }}
-          purge_everything: "true"
+          cf_zone: ${{ secrets.CF_ZONE_ID }}
+          cf_auth: ${{ secrets.CF_API_TOKEN }}
