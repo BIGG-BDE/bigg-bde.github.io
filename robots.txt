@@ -1,0 +1,47 @@
+# ==========================================
+# Règles pour les robots (Crawlers & IA)
+# ==========================================
+
+# 1. Signaux de contenu (Refuser l'entraînement IA, autoriser la recherche)
+Content-Signal: ai-train=no, search=yes, ai-input=no
+
+# 2. Bloquer les robots d'IA spécifiques (Protection contre l'entraînement)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: OAI-SearchBot
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+# 3. Bloquer l'indexation des images (Google Images, Bing Images, etc.)
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: msnbot-media
+Disallow: /
+
+# 4. Règles générales (Autoriser l'indexation SEO de toutes les pages HTML)
+User-agent: *
+# Interdire le scan direct des fichiers images
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.gif$
+Disallow: /*.webp$
+Disallow: /*.svg$
+# Autoriser expressément tout le reste du site
+Allow: /
+
+# 5. Aider les moteurs de recherche à indexer le site (Sitemap)
+Sitemap: https://biggbde.fr/sitemap.xml
