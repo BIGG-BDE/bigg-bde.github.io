@@ -1,7 +1,7 @@
-// --- script.js ---
+// après load total du html
 document.addEventListener("DOMContentLoaded", function() {
     
-    // 1. GESTION DU SCROLL (Bouton remonter & Header)
+    // 1. Gestion du scroll
     let scrollBtn = document.getElementById("scrollTopBtn");
     let lastScrollTop = 0;
     const header = document.querySelector('header');
@@ -10,14 +10,15 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", function() {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         scrollBtn.style.display = "none";
-        // Le bouton s'affiche après 600px de défilement (plus bas qu'avant)
+        // Min. 600px de scroll pour afficher le bouton
         if (scrollTop > 600) {
             scrollBtn.style.display = "flex";
         } else {
             scrollBtn.style.display = "none";
         }
 
-        // Cacher/Montrer le header au scroll
+        // Affichage dynamique du header selon scroll haut/bas 
+        // ca evite de devoir remonter tout en haut d'une page pour le header (notamment en responsive)
         const isMenuOpen = nav && nav.classList.contains('nav-open');
         
         if (isMenuOpen) {
