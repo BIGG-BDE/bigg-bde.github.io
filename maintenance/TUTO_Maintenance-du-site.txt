@@ -1,0 +1,21 @@
+=============================
+ Mise en maintenance du site
+=============================
+
+1. Se connecter à https://dash.cloudflare.com/
+
+2. Sélectionner le domaine 'biggbde.fr'
+
+3. Dans l'onglet de gauche, naviguer vers "Règles", puis "Vue d'ensemble"
+
+4. Activer la règle de redirection nommée "Maintenance du site"
+
+5. Toutes les pages du domaine (et sous domaines) redirigent désormais vers la page de maintenance 
+
+	--> https://biggbde.fr/maintenance/
+
+6. Pour désactiver la maintenance, il suffit de désactiver cette même règle.
+
+======================
+ Tuto par Antonin TEP
+======================
