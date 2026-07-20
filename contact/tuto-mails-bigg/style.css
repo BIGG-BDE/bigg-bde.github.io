@@ -26,20 +26,21 @@
 }
 .download-section{
 	text-align: center;
-	padding-bottom: 1rem
+	padding-bottom: 1rem;
+	display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem;
 }
 .btn-download {
 	display: inline-block;
-	background-color: var(--primary);
+	background-color: var(--dark);
 	color: white;
 	padding: 1rem 2rem;
 	text-decoration: none;
 	border-radius: 5px;
-	font-weight: bold;
-	transition: background-color 0.3s
+	transition: background-color 0.3s;
+	span {font-weight: bold;};
 }
 .btn-download:hover {
-	filter: brightness(0.9)
+	background-color: #1a2d5c;
 }
 .note-box {
 	background-color: #f1f1f1;
