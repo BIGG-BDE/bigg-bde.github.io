@@ -97,11 +97,41 @@
         <main>
             <h2>Nous Contacter</h2>
             
-            <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center; margin-bottom: 3rem;">
-                <h3 style="margin-bottom: 1rem; color: var(--dark);">Une question rapide ?</h3>
-                <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 1.5rem;">Le plus simple et le plus rapide : pose-nous tes questions directement en DM sur Instagram, on te répondra au plus vite !</p>
-                <a href="https://instagram.com/bigg_bde" target="_blank" class="btn" style="font-size: 1.1rem; padding: 0.8rem 2rem;">@bigg_bde sur Instagram</a>
+            <!-- Nouveau layout pour le formulaire et Insta -->
+            <div class="contact-form-layout">
+                
+                <!-- Colonne Gauche : Insta + Motif -->
+                <div class="contact-methods">
+                    <!-- Bloc Insta -->
+                    <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center; margin-bottom: 1.5rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--dark);">Une question rapide ?</h3>
+                        <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 1.5rem;">Le plus simple et le plus rapide : pose-nous tes questions directement en DM sur Instagram, on te répondra au plus vite !</p>
+                        <a href="https://instagram.com/bigg_bde" target="_blank" class="btn" style="font-size: 1.1rem; padding: 0.8rem 2rem;">@bigg_bde sur Insta</a>
+                    </div>
+                    
+                    <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center;">
+                        <h3 style="margin-bottom: 1rem; color: var(--dark);">Sinon, prends le temps de nous écrire un mail !</h3>
+                        <p style="color: var(--gray); font-size: 1.1rem;">Remplis simplement le formulaire ci-contre avec ce que tu veux nous dire, ton prénom et ton email, et nous répondrons dans les meilleurs délais possibles !</p>
+                    </div>
+                </div>
+
+                <!-- Colonne Droite : Le formulaire -->
+                <div class="form-wrapper">
+                    <form action="https://formsubmit.co/el/nipeva" method="POST" class="contact-form">
+                        <input type="text" name="name" required placeholder="Votre Nom" class="form-control">
+                        <input type="email" name="email" placeholder="Adresse Email" required class="form-control">
+                        <input type="hidden" name="_subject" value="Nouvelle prise de contact via le formulaire du site web !">
+                        <input type="hidden" name="_template" value="box">
+                        <input type="text" id="subject" name="subject" class="form-control" required placeholder="Objet">
+                        <textarea name="message" required placeholder="Le contenu de votre mail..." class="form-control form-textarea"></textarea>
+                        <input type="hidden" name="_next" value="https://biggbde.fr/contact/confirmation-email/">
+                        <button type="submit" class="btn submit-btn">Envoyer le message</button>
+                    </form>
+                </div>
+                
             </div>
+            <br><br>
+
             <h3 style="margin-bottom: 1.5rem; text-align: center;" id="emails">Annuaire de l'Association</h3>
             <p style="color: var(--gray); margin-bottom: 2rem; text-align: center;">Pour une demande spécifique, un partenariat ou un suivi administratif, contactez directement le pôle concerné via nos adresses mail officielles.</p>
 
