@@ -117,11 +117,13 @@
 
                 <!-- Colonne Droite : Le formulaire -->
                 <div class="form-wrapper">
-                    <form action="https://formsubmit.co/contact@biggbde.fr" method="POST" class="contact-form">
+                    <!-- Bouton basique de contact dispo aussi : ttps://formsubmit.co/el/nipeva --> 
+                    <form action="https://formsubmit.co/9e1d42299c9eb0c4df71787303f1b299" method="POST" class="contact-form">
                         <input type="text" name="name" required placeholder="Votre Nom" class="form-control">
                         <input type="email" name="email" placeholder="Adresse Email" required class="form-control">
                         <input type="hidden" name="_subject" value="Nouvelle prise de contact via le formulaire du site web !">
                         <input type="hidden" name="_template" value="box">
+                        <!-- <input type="hidden" name="_captcha" value="false"> POUR PAS FAIRE PASSER UN CAPTCHA -->
                         <input type="text" id="subject" name="subject" class="form-control" required placeholder="Objet">
                         <textarea name="message" required placeholder="Le contenu de votre mail..." class="form-control form-textarea"></textarea>
                         <input type="hidden" name="_next" value="https://biggbde.fr/contact/confirmation-email/">
