@@ -1,46 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-// 2. AUTOMATISATION DES EVENEMENTS PASSES DEPLIABLES
-    const pastContents = document.querySelectorAll(
-        '.timeline.past .timeline-content, .timeline.past .has-pictures .timeline-content'
-    );
-
-    pastContents.forEach(content => {
-        const title = content.querySelector('h3');
-
-        if (title) {
-            const hasPictures = content.closest('.has-pictures');
-            if (!hasPictures) {
-                content.classList.add('is-collapsed');
-            }
-            
-            const bodyWrapper = document.createElement('div');
-            bodyWrapper.className = 'past-event-body';
-            
-            const bodyInner = document.createElement('div');
-            bodyInner.className = 'past-event-body-inner';
-            
-            while (title.nextSibling) {
-                bodyInner.appendChild(title.nextSibling);
-            }
-            
-            bodyWrapper.appendChild(bodyInner);
-            title.parentNode.appendChild(bodyWrapper);
-
-            title.classList.add('past-event-title');
-            const arrow = document.createElement('span');
-            arrow.className = 'toggle-arrow';
-            arrow.innerHTML = '▼';
-            title.appendChild(arrow);
-
-            title.addEventListener('click', () => {
-                content.classList.toggle('is-collapsed');
-            });
-        }
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", function() {
     
     // 1. GESTION DES FILTRES PAR MANDAT
     const filterBtns = document.querySelectorAll('.filter-btn');
