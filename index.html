@@ -196,56 +196,162 @@
             </section>
 
             <section class="testimonials">
-                <div class="container">
-                    <h2>Avis sur le BIGG</h2>
-                    <div class="testimonials-grid">
-                        
-                        <!-- Témoignage 1 -->
-                        <div class="testimonial-card">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="testi-img" viewBox="120 0 400 550"><path fill="rgb(155, 34, 38)" d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z"/></svg>
-                            <div class="testi-info">
-                                <h4>Malo</h4>
-                                <p class="role">BUT3 Informatique</p>
-                            </div>
-                            <p class="testi-text">"Le BIGG sont un peu des goats, leurs soirées sont bon délire, et leur influence sur la vie étudiante est bonne globalement (pour ceux qui sortent de chez eux)."</p>
-                        </div>
+                <div class="testimonials-carousel">
+                    <button class="testi-arrow prev-arrow hidden" id="prevTestimonial" aria-label="Avis précédents">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
 
-                        <!-- Témoignage 2 -->
-                        <div class="testimonial-card">
-                            <img src="https://i.postimg.cc/vHLD3pvq/DSC04429.jpg" alt="Photo de profil Nina GAELIS" class="testi-img">
-                            <div class="testi-info">
-                                <h4>Nina</h4>
-                                <p class="role">GAELIS • BUT3 Bio</p>
-                            </div>
-                            <p class="testi-text">"Une asso qui veut être présente pour les étudiants et qui veut faire plein de trucs. Leurs partenariats sont Top! et Divers "vers" !<br> 
-                                Mais on vous voit plus comme des soirées que de l'aide aux étudiants (droits, etc)."</p>
-                        </div>
+                    <!-- 3 elts/page, ajouter des pages selon nb d'avis recensé -->
+                    <div class="testimonials-viewport">
+                        <div class="testimonials-track" id="testimonialsTrack">
+                            
+                            <!-- (Page 1) -->
+                            <div class="testi-page">
+                                <div class="testimonial-card">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="testi-img" viewBox="120 0 400 550"><path fill="rgb(155, 34, 38)" d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z"/></svg>
+                                    <div class="testi-info">
+                                        <h4>Malo</h4>
+                                        <p class="role">BUT3 Informatique</p>
+                                    </div>
+                                    <p class="testi-text">"Le BIGG sont un peu des goats, leurs soirées sont bon délire, et leur influence sur la vie étudiante est bonne globalement (pour ceux qui sortent de chez eux)."</p>
+                                </div>
 
-                        <!-- Témoignage 3 -->
-                        <div class="testimonial-card">
-                            <img src="https://i.postimg.cc/DydmBtcQ/BIGG-PUNCH-PARTY-(89-sur-307).jpg" alt="Photo de profil Florian QUILLON" class="testi-img">
-                            <div class="testi-info">
-                                <h4>QUILLON Florian</h4>
-                                <p class="role">Trésorier & Vice-Président Général de la Student Club • BUT3 Informatique</p>
+                                <div class="testimonial-card">
+                                    <img src="https://i.postimg.cc/1tN52bsm/nina.jpg" alt="Photo de profil Nina GAELIS" class="testi-img">
+                                    <div class="testi-info">
+                                        <h4>Nina</h4>
+                                        <p class="role">GAELIS • BUT3 Bio</p>
+                                    </div>
+                                    <p class="testi-text">"Une asso qui veut être présente pour les étudiants et qui veut faire plein de trucs. Leurs partenariats sont Top! et Divers "vers" !<br>Mais on vous voit plus comme des soirées que de l'aide aux étudiants (droits, etc)."</p>
+                                </div>
+
+                                <div class="testimonial-card">
+                                    <img src="https://i.postimg.cc/DydmBtcQ/BIGG-PUNCH-PARTY-(89-sur-307).jpg" alt="Photo de profil Florian QUILLON" class="testi-img">
+                                    <div class="testi-info">
+                                        <h4>QUILLON Florian</h4>
+                                        <p class="role">Trésorier & Vice-Président Général de la Student Club • BUT3 Informatique</p>
+                                    </div>
+                                    <p class="testi-text">"Bonne asso même si la stud est mieux.<br> Leurs parts sont bien mais pas aussi bien que ceux de la stud.<br>Et leur goodies sont bien aussi mais pas aussi bien que ceux de la stud"</p>
+                                </div>
                             </div>
-                            <p class="testi-text">"Bonne asso même si la stud est mieux.<br> Leurs parts sont bien mais pas aussi bien que ceux de la stud.<br>Et leur goodies 
-                                sont bien aussi mais pas aussi bien que ceux de la stud"</p>
+
+                            <!-- (Page 2) -->
+                            <div class="testi-page">
+                                <div class="testimonial-card">
+                                    <img src="https://i.postimg.cc/J0d65KS8/1000085352.jpg" alt="Photo de profil Noah ROSSI" class="testi-img">
+                                    <div class="testi-info">
+                                        <h4>ROSSI Noah</h4>
+                                        <p class="role">Student Club • BUT3 Informatique</p>
+                                    </div>
+                                    <p class="testi-text">Il y a une grosse diversité d'événements, les coms que vous produisez donnent un bon avant goût.<br>L'utilisation de votre charte graphique met en valeur le rouge majestueusement.</p>
+                                </div>
+
+                                <div class="testimonial-card">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="testi-img" viewBox="120 0 400 550"><path fill="rgb(155, 34, 38)" d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z"/></svg>
+                                    <div class="testi-info">
+                                        <h4>Milo</h4>
+                                        <p class="role">BDE Info • BUT2 Informatique</p>
+                                    </div>
+                                    <p class="testi-text">J'adore 12/12.</p>
+                                </div>
+
+                                <div class="testimonial-card">
+                                    <img src="https://i.postimg.cc/FK6HPh59/alexandre.jpg" alt="Photo de profil alexandre donfut elsensohn" class="testi-img">
+                                    <div class="testi-info">
+                                        <h4>DONFUT ELSENSOHN Alexandre</h4>
+                                        <p class="role">RP Parts du BIGG BDE • BUT3 Informatique</p>
+                                    </div>
+                                    <p class="testi-text">C'est vraiment le meilleur BDE de Bourg-en-Bresse !!!</p>
+                                </div>
+                            </div>
+
                         </div>
-                        
                     </div>
+                    <button class="testi-arrow next-arrow" id="nextTestimonial" aria-label="Avis suivants">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
                 </div>
-                <!-- Appel à l'action Formulaire -->
+                <!-- CTA -->
                 <div class="testimonial-cta">
-                    <p>Vous voulez partager votre avis sur le BIGG BDE ? Prenez part au formulaire prévu à cet effet ci-dessous :</p>
+                    <p>Vous voulez vous aussi partager votre avis sur le BIGG BDE ? <br>Il suffit de prendre 5min pour répondre au formulaire ci-dessous :</p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwOabxiQWwSiXuGcPlf83p1Aej71nrBqA6dnzM5bfAcumgTw/viewform" target="_blank" class="btn btn-outline">Remplir le formulaire</a>
+                    <p>(A noter que les avis troll/pas sérieux ne seront pas pris en compte/affichés.)</p>
                 </div>
+                <!-- Script pour défilement des avis -->
+                <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                    const track = document.getElementById('testimonialsTrack');
+                    const pages = document.querySelectorAll('.testi-page');
+                    const prevBtn = document.getElementById('prevTestimonial');
+                    const nextBtn = document.getElementById('nextTestimonial');
+                    const viewport = document.querySelector('.testimonials-viewport');
+                    
+                    if (!track || pages.length === 0) return; // Sécurité
+                    
+                    let currentPage = 0;
+                    const totalPages = pages.length;
+
+                    function updateCarousel() {
+                        if (window.innerWidth > 900) {
+                            // PC : Défilement horizontal
+                            track.style.transform = `translateX(-${currentPage * 100}%)`;
+                            viewport.style.height = 'auto'; // Laisse la hauteur naturelle
+                        } else {
+                            // MOBILE : Défilement vertical
+                            // On calcule la hauteur totale des pages précédentes pour savoir de combien glisser
+                            let yOffset = 0;
+                            for(let i = 0; i < currentPage; i++) {
+                                yOffset += pages[i].offsetHeight;
+                            }
+                            track.style.transform = `translateY(-${yOffset}px)`;
+                            
+                            // On ajuste la fenêtre pile à la taille de la page actuelle (pour cacher le reste)
+                            viewport.style.height = `${pages[currentPage].offsetHeight}px`;
+                        }
+
+                        // Afficher ou cacher les flèches
+                        if (currentPage === 0) {
+                            prevBtn.classList.add('hidden');
+                        } else {
+                            prevBtn.classList.remove('hidden');
+                        }
+
+                        if (currentPage === totalPages - 1) {
+                            nextBtn.classList.add('hidden');
+                        } else {
+                            nextBtn.classList.remove('hidden');
+                        }
+                    }
+
+                    prevBtn.addEventListener('click', () => {
+                        if (currentPage > 0) {
+                            currentPage--;
+                            updateCarousel();
+                        }
+                    });
+
+                    nextBtn.addEventListener('click', () => {
+                        if (currentPage < totalPages - 1) {
+                            currentPage++;
+                            updateCarousel();
+                        }
+                    });
+
+                    // Mettre à jour si la fenêtre change de taille (passage PC à Mobile)
+                    window.addEventListener('resize', updateCarousel);
+                    
+                    // Attendre que les images/polices chargent pour que les hauteurs soient exactes sur mobile
+                    window.addEventListener('load', updateCarousel);
+                    setTimeout(updateCarousel, 150); 
+                });
+                </script>
             </section>
 
             <div id="lightbox" class="lightbox-modal">
                 <span class="close-lightbox">&times;</span>
                 <img class="lightbox-content" id="lightbox-img" src="">
             </div>
-
+            <!-- Script pour pop in des images du carousel -->
             <script>
                 const lightbox = document.getElementById("lightbox");
                 const lightboxImg = document.getElementById("lightbox-img");
@@ -275,12 +381,65 @@
                 });
             </script>
 
-            <section class="text-content-section" style="margin-top: -5rem;">
-                <div class="">
-                    <h3>Mots du Bureau</h3>
-                    <p>Disponible prochainement...</p>
+            <section class="board-words">
+            <div class="container">
+                <h2>Les petits mots du bureau</h2>
+                
+                <div class="quotes-masonry">
+                    
+                    <div class="quote-card">
+                        <p>"On est fun et on ne mord pas, alors n'ayez pas peur et rejoignez-nous ;)"</p>
+                        <div class="quote-author">Camille</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"Si vous avez du temps ou êtes juste curieux, n'hésitez pas à nous contacter."</p>
+                        <div class="quote-author">Nina</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"C'est un super moyen de faire des rencontres et de découvrir de nouvelles choses."</p>
+                        <div class="quote-author">Mel</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"On va avoir besoin de pious pour le prochain mandat, venez nous rejoindre ! (C'est cool, on vous apprendra le Make a Moove.)"</p>
+                        <div class="quote-author">Maëlys</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"Croyez en vous et ne lâchez rien, on est là pour vous aider !"</p>
+                        <div class="quote-author">Séléna</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"Merci beaucoup à tous ceux qui participent ou nous écoutent. Nous sommes là pour vous et le serons toujours. Soutenez votre BDE pour qu'il vous soutienne encore plus !"</p>
+                        <div class="quote-author">Naël</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"Cette année, on compte bien vous faire sortir de votre chambre, alors n'hésitez pas à venir nous voir, participer à nos événements et faire vivre le BIGG avec nous. On a vraiment hâte de partager cette aventure avec vous. Faut qu'on soit meilleurs que la Stud svp 🙏"</p>
+                        <div class="quote-author">Laura</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"Rejoignez-nous, le poulet du BIGG vous prendra sous son aile !"</p>
+                        <div class="quote-author">Gaspard</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"Profitez pleinement de vos études, mais toujours avec modération."</p>
+                        <div class="quote-author">Alex</div>
+                    </div>
+
+                    <div class="quote-card">
+                        <p>"On dit souvent que le BDE c'est juste des soirées, mais c'est surtout des responsabilités et des gens motivés pour vous offrir une expérience de vie étudiante marquante. Pour moi, c'est une opportunité en or pour en apprendre plus sur le monde associatif, sur la gestion du travail en équipe, etc. Mieux vaut essayer que regretter, n'est-ce pas ?"</p>
+                        <div class="quote-author">Antonin <span class="role-tag">• Trésorier</span></div>
+                    </div>
+
                 </div>
-            </section>
+            </div>
+        </section>
 
         </main>
     
