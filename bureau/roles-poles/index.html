@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
         <link rel="stylesheet" href="style.css">
         <script src="https://biggbde.fr/script.js"></script>
+        <script src="script.js"></script>
         <meta name="description" content="Découvrer les rôles et missions du bureau restreint, des différents pôles (event, comm, parts, goodies), de le reprez et des MA.">
         <link rel="canonical" href="https://biggbde.fr/mandats-precedents/">
 
@@ -66,20 +67,280 @@
             </nav>
         </header>
 
-        <main class="container">
-            <div class="roles-header">
-                <h2>Les Rôles et Missions du Bureau</h2>
-                <p>Découvrer les differents rôles et leurs missions au sein du bureau du BIGG BDE. Que vous voulez prétendre à ce poste lors du prochain mandat,
-                    ou que vous vouliez simplement en savoir plus, vous trouverez réponses à vos questions sur cette page !
-                </p>
-            </div>
+        <div class="page-roles-container">
+            
+            <!-- sommaire -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <span class="sidebar-title">Sommaire</span>
+                    <span class="sidebar-toggle">masquer</span>
+                </div>
+                <ul class="sidebar-list">
+                    <li class="sidebar-item font-bold"><a href="#intro">Début</a></li>
+                    
+                    <li class="sidebar-item has-children font-bold">
+                        <a href="#bureau">Bureau Restreint</a>
+                        <ul class="sidebar-sublist">
+                            <li><a href="#president">Président.e</a></li>
+                            <li><a href="#vp">Vice-Président.e (VP)</a></li>
+                            <li><a href="#tresorier">Trésorier.e</a></li>
+                            <li><a href="#secretaire">Secrétaire</a></li>
+                        </ul>
+                    </li>
 
-            foo
+                    <li class="sidebar-item has-children font-bold">
+                        <a href="#poles">Les Pôles (RP)</a>
+                        <ul class="sidebar-sublist">
+                            <li><a href="#rp-event">RP Événementiel</a></li>
+                            <li><a href="#rp-com">RP Communication</a></li>
+                            <li><a href="#rp-goodies">RP Goodies</a></li>
+                            <li><a href="#rp-partenariats">RP Partenariats</a></li>
+                            <li><a href="#rp-reseau">RP Réseau</a></li>
+                        </ul>
+                    </li>
 
-            <div style="text-align: center; margin-top: 3rem;">
-            <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour</a>
-            </div>
-        </main>
+                    <li class="sidebar-item has-children font-bold">
+                        <a href="#autres">Autres Statuts</a>
+                        <ul class="sidebar-sublist">
+                            <li><a href="#membre-actif">Membre Actif (MA)</a></li>
+                            <!-- <li><a href="#ca">Conseil d'Administration</a></li> -->
+                            <li><a href="#vieux">Les "Vieux"</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="roles-content">  
+                <div id="intro" class="page-intro">
+                    <h1>Les Rôles et Pôles</h1>
+                    <p>Ici on vous explique qui fait quoi dans l'asso. Pas de blabla, juste la réalité du terrain pour faire tourner le BDE au quotidien.</p>
+                </div>
+
+                <!-- BR -->
+                <h2 id="bureau" class="section-title">Bureau Restreint</h2>
+
+                <article id="president" class="role-card">
+                    <h3>Président.e</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Représenter l'asso de manière officielle et s'assurer que tout le monde avance dans la même direction sans s'entretuer.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Trancher quand y'a des embrouilles dans l'équipe, faire tampon avec la direction de l'IUT (la scolarité, les profs), signer les papiers officiels, et surtout checker que personne n'est sous l'eau dans ses tâches.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Sang-froid, écoute, et savoir prendre des décisions, même quand ça fait pas plaisir à tout le monde.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="vp" class="role-card">
+                    <h3>Vice-Président.e (VP)</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>C'est le couteau suisse du bureau. Épauler la présidence et faire le lien permanent entre tous les pôles.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Gérer les plannings, relancer ceux qui lâchent des "vus" sur WhatsApp pour que les projets avancent, et boucher les trous quand il manque quelqu'un quelque part à la dernière minute.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Une grosse orga, de la diplomatie, et de la patience pour relancer l'équipe sans être trop lourd.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="tresorier" class="role-card">
+                    <h3>Trésorier.e</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Gérer la thune de l'asso et s'assurer qu'on ne finit pas dans le rouge à la fin du mandat.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Comparer les devis (genre la sono ou les bus pour le WEI), courir après les factures parce que sans reçu la compta est morte, rembourser ceux qui ont avancé les courses, et tenir les tableaux Excel à jour pour savoir ce qui rentre et ce qui sort.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Être super carré, honnête, et ne pas avoir peur de dire : "Non, on n'a pas le budget pour ça".</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="secretaire" class="role-card">
+                    <h3>Secrétaire</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Gérer toute la paperasse et garder une trace de tout ce qui se dit et se décide.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Taper les comptes-rendus (PV) des réunions pour ceux qui n'étaient pas là, s'occuper des déclarations reloues en préfecture, gérer les assurances des soirées, et tenir à jour la liste des adhérents.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Réactivité, orthographe solide, et savoir synthétiser un débat d'une heure en trois phrases.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- RP -->
+                <h2 id="poles" class="section-title">Les Pôles (RP)</h2>
+
+                <article id="rp-event" class="role-card">
+                    <h3>RP Événementiel</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Penser et organiser les soirées, les afterworks et les activités de l'asso de A à Z.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Chercher des salles, remplir les dossiers FSDIE ou de sécurité, faire les plannings de staff (qui tient le bar à quelle heure), et courir partout le jour J pour gérer les livreurs, les fûts, la SACEM et les imprévus.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Résistance au stress, débrouillardise, et grosse capacité d'adaptation quand un plan tombe à l'eau.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="rp-com" class="role-card">
+                    <h3>RP Communication</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Gérer l'image du BIGG et s'assurer que les infos arrivent bien jusqu'aux étudiants.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Pondre des visuels et des affiches, programmer les posts Insta à la bonne heure, modérer les commentaires, mettre à jour le site web, et spammer (gentiment) les groupes de promo pour ramener du monde.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Créativité, maîtrise des codes des réseaux sociaux, et savoir utiliser des logiciels de design (ou très bien gérer Canva).</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="rp-goodies" class="role-card">
+                    <h3>RP Goodies</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Créer les produits dérivés de l'asso et de la promo (pulls, t-shirts, ecocups...).</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Chercher des fournisseurs pas trop chers, lancer des sondages pour les couleurs, gérer les précommandes, trier les cartons énormes à la livraison, et organiser les permanences pour distribuer tout ça sans perdre de commandes.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Bon relationnel pour négocier avec les fournisseurs, et une rigueur logistique de fou.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="rp-partenariats" class="role-card">
+                    <h3>RP Partenariats</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Démarcher les commerces du coin pour gratter les meilleurs avantages possibles pour les étudiants.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Faire le tour des bars de Bourg-en-Bresse, des banques ou des fast-foods. Négocier les tarifs, signer les conventions, et repasser voir les partenaires pour s'assurer qu'ils jouent le jeu avec notre carte étudiante.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Avoir de la tchatche, ne pas avoir peur de se prendre des râteaux, et un côté commercial.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article id="rp-reseau" class="role-card">
+                    <h3>RP Réseau (Lien GAELIS)</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Les missions</span>
+                            <p>Représenter le BIGG à l'extérieur et faire le lien avec la fédération territoriale.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Se taper les Assemblées Générales de GAELIS, récupérer les bons plans (prévention, subventions), et faire remonter nos galères étudiantes à un niveau plus haut pour qu'ils nous défendent.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Aimer débattre, être mobile pour bouger aux réunions, et savoir faire des retours clairs à l'équipe.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Autres rôles -->
+                <h2 id="autres" class="section-title">Les autres rôles</h2>
+
+                <article id="membre-actif" class="role-card">
+                    <h3>Membre Actif (MA)</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Le rôle</span>
+                            <p>C'est la force de frappe de l'asso. Venir filer un coup de main directement sur le terrain.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Aider à monter les tonnelles pour un event, tenir le vestiaire pendant 2h contre une conso gratuite, ou gérer l'entrée aux soirées. Zéro charge mentale de l'orga en amont ni de réunions obligatoires.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Pourquoi le faire ?</span>
+                            <p>Idéal pour se faire des potes, voir comment tourne le BDE de l'intérieur, et tâter le terrain avant de se présenter au bureau l'année suivante.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- <article id="ca" class="role-card">
+                    <h3>Conseil d'Administration (CA)</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Le rôle</span>
+                            <p>C'est l'organe qui valide la direction globale de l'asso (Bureau + RP).</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le fonctionnement</span>
+                            <p>Se réunir de temps en temps pour voter les gros trucs : le budget global d'un projet, le lancement d'un nouvel event, ou un changement dans les statuts de l'asso.</p>
+                        </div>
+                        <div class="col">
+                        </div>
+                    </div>
+                </article> -->
+
+                <article id="vieux" class="role-card">
+                    <h3>Les "Vieux"</h3>
+                    <div class="card-columns">
+                        <div class="col">
+                            <span class="col-title">Le rôle</span>
+                            <p>Anciens membres du bureau. Ils n'ont plus de pouvoir de décision, ils sont juste la mémoire de l'asso.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Le quotidien</span>
+                            <p>Lâcher des conseils en mode "faites gaffe avec ce fournisseur, il est toujours en retard", filer les anciens mots de passe oubliés, et aider quand les nouveaux sont dans le jus.</p>
+                        </div>
+                        <div class="col">
+                            <span class="col-title">Qualités nécessaires</span>
+                            <p>Avoir du recul et accepter de laisser la place aux jeunes.</p>
+                        </div>
+                    </div>
+                </article>
+
+            </main>
+        </div>
 
         <footer>
             <div class="footer-links">
