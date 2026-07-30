@@ -14,8 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Bienvenue sur le site officiel du BIGG BDE ! Découvrez toute la vie étudiante du campus de Bourg-en-Bresse : événements, bons plans et actualités.">
         <title>BIGG BDE - Bureau des Étudiants IUT Lyon 1 (Bourg-en-Bresse)</title>
-        <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://biggbde.fr/style.css">
         <script src="https://biggbde.fr/script.js"></script>
         <meta name="theme-color" content="#9b2226">
         <meta name="postimage-verification" content="933d8e6b5ae529d5498019e50fcf0026">
@@ -205,7 +204,7 @@
                     <div class="testimonials-viewport">
                         <div class="testimonials-track" id="testimonialsTrack">
                             
-                            <!-- (Page 1) -->
+                            <!-- p1 -->
                             <div class="testi-page">
                                 <div class="testimonial-card">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="testi-img" viewBox="120 0 400 550"><path fill="rgb(155, 34, 38)" d="M320 312C386.3 312 440 258.3 440 192C440 125.7 386.3 72 320 72C253.7 72 200 125.7 200 192C200 258.3 253.7 312 320 312zM290.3 368C191.8 368 112 447.8 112 546.3C112 562.7 125.3 576 141.7 576L498.3 576C514.7 576 528 562.7 528 546.3C528 447.8 448.2 368 349.7 368L290.3 368z"/></svg>
@@ -235,7 +234,7 @@
                                 </div>
                             </div>
 
-                            <!-- (Page 2) -->
+                            <!-- p2 -->
                             <div class="testi-page">
                                 <div class="testimonial-card">
                                     <img src="https://i.postimg.cc/J0d65KS8/1000085352.jpg" alt="Photo de profil Noah ROSSI" class="testi-img">
@@ -271,13 +270,13 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                     </button>
                 </div>
-                <!-- CTA -->
+
                 <div class="testimonial-cta">
                     <p>Vous voulez vous aussi partager votre avis sur le BIGG BDE ? <br>Il suffit de prendre 5min pour répondre au formulaire ci-dessous :</p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdwOabxiQWwSiXuGcPlf83p1Aej71nrBqA6dnzM5bfAcumgTw/viewform" target="_blank" class="btn btn-outline">Remplir le formulaire</a>
                     <p>(A noter que les avis troll/pas sérieux ne seront pas pris en compte/affichés.)</p>
                 </div>
-                <!-- Script pour défilement des avis -->
+                <!-- défilement des avis -->
                 <script>
                     document.addEventListener('DOMContentLoaded', () => {
                     const track = document.getElementById('testimonialsTrack');
@@ -351,7 +350,7 @@
                 <span class="close-lightbox">&times;</span>
                 <img class="lightbox-content" id="lightbox-img" src="">
             </div>
-            <!-- Script pour pop in des images du carousel -->
+            <!-- pop in images du carousel -->
             <script>
                 const lightbox = document.getElementById("lightbox");
                 const lightboxImg = document.getElementById("lightbox-img");
@@ -456,7 +455,7 @@
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
 
-            <!-- Bouton Remonter -->
+            
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>

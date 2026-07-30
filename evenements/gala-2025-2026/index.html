@@ -16,7 +16,7 @@
         <meta name="description" content="COMPLETER AVEC UNE BREVE DESCRIPTION">
         <link rel="canonical" href="https://biggbde.fr/evenements/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
-        <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
+        <link rel="stylesheet" href="/style.css"> 
 
         <link rel="stylesheet" href="../style.css">
         
@@ -85,7 +85,7 @@
                 <h1>BIGG BDE</h1>
             </a>
             
-            <!-- Bouton Hamburger -->
+            
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
             <nav>
@@ -102,17 +102,14 @@
 
 
         <main class="container event-page">
-            <!-- En-tête avec titre et tag alignés -->
-            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
+                            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
                 <h2 class="event-title">Gala du BIGG BDE - 2026</h2>
                 <span class="event-tag tag-termine">Terminé</span>
             </div>
 
-            <!-- Contenu principal : Description (gauche) et Tuile Info (droite) -->
             <div class="event-content" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
                 
-                <!-- Description -->
-                <div class="event-main" style="flex: 2 1 500px;">
+                             <div class="event-main" style="flex: 2 1 500px;">
                     <h3>L'événement en quelques mots</h3><br>
                     <p>L'événement le plus prestigieux de l'année pour clôturer ce chapitre en beauté ! <br>
                         Le Grand Gala rassemble étudiants, anciens et équipe pédagogique pour célébrer la fin d'une belle année universitaire dans un cadre d'exception. Le thème ? <strong>Bal Masqué Vénitien</strong>.<br><br>
@@ -120,16 +117,14 @@
                         Une nuit magique pour graver des souvenirs impérissables avant la coupure estivale.</p>
 
                     
-                    <!-- Boutons -->
-                    <div class="event-actions">
+                                 <div class="event-actions">
                         <a href="#billetterie" class="btn btn-primary disabled">Billetterie fermée</a>
                         <a href="https://photos.app.goo.gl/wtP4W9Jhe1QD4y8v9" target="_blank" class="btn btn-secondary">📸 Voir l'album photo #1</a>
                         <a href="https://drive.google.com/drive/folders/1JHZvrBbZBnmsDUrJ2Y3ovBeA6VaAs1GF?usp=drive_link" target="_blank" class="btn btn-secondary">📸 Voir l'album photo #2</a>
                     </div>
                 </div>
 
-                <!-- Informations -->
-                <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
+                             <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
                     <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Infos Pratiques</h3>
                     <div class="event-details">
                         <p>📍 <strong>Lieu :</strong> Salle des Fêtes de Bourg-en-Bresse</p>
@@ -141,13 +136,11 @@
                 </aside>
             </div>
 
-            <!-- Carrousel Photos -->
-            <div id="galerie" class="event-gallery">
+                         <div id="galerie" class="event-gallery">
                 <h3>Souvenirs de la soirée</h3>
                 <div class="photo-carousel">
                     <div class="carousel-track">
-                        <!-- Les 5 photos (avec la classe carousel-img pour le clic) -->
-                        <img src="https://i.postimg.cc/MTJrzPc2/8A5A9121.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 1">
+                                     <img src="https://i.postimg.cc/MTJrzPc2/8A5A9121.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 1">
                         <img src="https://i.postimg.cc/76rQqsCk/8A5A9171.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 2">
                         <img src="https://i.postimg.cc/j5632Hf1/8A5A9291.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 3">
                         <img src="https://i.postimg.cc/V6CkMT67/GALA-1010129.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 4">
@@ -157,7 +150,7 @@
                         <img src="https://i.postimg.cc/SRmbstzk/GALA-1010238.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 8">
                         <img src="https://i.postimg.cc/tTGm9Ssr/8A5A9531.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 9">
                         <img src="https://i.postimg.cc/nrxpmhNx/PRE-GALA-1010067.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 10">
-                        <!-- Copie pour la boucle infinie -->
+                        <!-- dupli pour carousel -->
                         <img src="https://i.postimg.cc/MTJrzPc2/8A5A9121.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 1">
                         <img src="https://i.postimg.cc/76rQqsCk/8A5A9171.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 2">
                         <img src="https://i.postimg.cc/j5632Hf1/8A5A9291.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : GALA 2026 3">
@@ -172,47 +165,37 @@
                 </div>
             </div>
 
-            <!-- Modale Pop-in pour l'image en grand (cachée par défaut) -->
             <div id="lightbox" class="lightbox-modal">
                 <span class="close-lightbox">&times;</span>
                 <img class="lightbox-content" id="lightbox-img" src="">
             </div>
-
-            <!-- Script pour faire fonctionner la pop-in -->
+            <br>
+            <div style="text-align: left;">
+                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
+            </div>
+            
             <script>
                 const lightbox = document.getElementById("lightbox");
                 const lightboxImg = document.getElementById("lightbox-img");
                 const images = document.querySelectorAll(".carousel-img");
                 const closeBtn = document.querySelector(".close-lightbox");
-
-                // Ouvrir la lightbox au clic sur une image
                 images.forEach(img => {
                     img.addEventListener("click", () => {
                         lightbox.style.display = "flex";
-                        lightboxImg.src = img.src; // Récupère la source HD de l'image cliquée
+                        lightboxImg.src = img.src;
                     });
                 });
-
-                // Fonction pour fermer
                 const closeLightbox = () => {
                     lightbox.style.display = "none";
                     lightboxImg.src = "";
                 };
-
-                // Fermer au clic sur la croix
                 closeBtn.addEventListener("click", closeLightbox);
-                
-                // Fermer au clic dans le fond noir (en dehors de l'image)
                 lightbox.addEventListener("click", (e) => {
                     if (e.target !== lightboxImg) {
                         closeLightbox();
                     }
                 });
             </script>
-<br>
-            <div style="text-align: left;">
-                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
-            </div>
         </main>
 
         <footer>
@@ -227,14 +210,10 @@
                 <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-
-
-            <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
-
-<script src="https://biggbde.fr/script.js"></script>
+            <script src="https://biggbde.fr/script.js"></script>
         </footer>  
     </body>
 </html>

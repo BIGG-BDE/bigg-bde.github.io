@@ -16,7 +16,7 @@
         <meta name="description" content="C'est l'heure de la relève ! Participe à la soirée de passation 2026-2027 suivie de notre traditionnel Barathon dans le centre-ville.">
         <link rel="canonical" href="https://biggbde.fr/evenements/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
-        <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
+        <link rel="stylesheet" href="/style.css"> 
 
         <link rel="stylesheet" href="../style.css">
         
@@ -85,7 +85,7 @@
                 <h1>BIGG BDE</h1>
             </a>
             
-            <!-- Bouton Hamburger -->
+            
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
             <nav>
@@ -102,17 +102,14 @@
 
 
         <main class="container event-page">
-            <!-- En-tête avec titre et tag alignés -->
-            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
+                            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
                 <h2 class="event-title">Passation 2026-2027 et Barathon</h2>
                 <span class="event-tag tag-termine">Terminé</span>
             </div>
 
-            <!-- Contenu principal : Description (gauche) et Tuile Info (droite) -->
             <div class="event-content" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
                 
-                <!-- Description -->
-                <div class="event-main" style="flex: 2 1 500px;">
+                             <div class="event-main" style="flex: 2 1 500px;">
                     <h3>L'événement en quelques mots</h3><br>
                     <p>Le passage de flambeau officiel dans la pure tradition étudiante ! <br>
                         L'ancien bureau tire sa révérence avec émotion et laisse les clés du camion à la toute nouvelle équipe pour 2026-2027. <br><br>
@@ -120,8 +117,7 @@
                         Une soirée de célébration, de rencontres et de transmission pour marquer le début d'une nouvelle ère pour le BDE !</p>
                 </div>
 
-                <!-- Informations -->
-                <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
+                             <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
                     <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Infos Pratiques</h3>
                     <div class="event-details">
                         <p>📍 <strong>Lieu :</strong> Amphi. Bresse Revermont ; Place Edgar Quinet, Bourg-en-Bresse</p>
@@ -135,47 +131,37 @@
             <!-- Photo du bureau lors de la passation-->
             <a href="https://biggbde.fr/assets/images/events/bureau-2026-2027.jpg"><img src="https://biggbde.fr/assets/images/events/bureau-2026-2027.jpg" width="100%"></a>
 
-            <!-- Modale Pop-in pour l'image en grand (cachée par défaut) -->
             <div id="lightbox" class="lightbox-modal">
                 <span class="close-lightbox">&times;</span>
                 <img class="lightbox-content" id="lightbox-img" src="">
             </div>
-
-            <!-- Script pour faire fonctionner la pop-in -->
+            <br>
+            <div style="text-align: left;">
+                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
+            </div>
+            
             <script>
                 const lightbox = document.getElementById("lightbox");
                 const lightboxImg = document.getElementById("lightbox-img");
                 const images = document.querySelectorAll(".carousel-img");
                 const closeBtn = document.querySelector(".close-lightbox");
-
-                // Ouvrir la lightbox au clic sur une image
                 images.forEach(img => {
                     img.addEventListener("click", () => {
                         lightbox.style.display = "flex";
-                        lightboxImg.src = img.src; // Récupère la source HD de l'image cliquée
+                        lightboxImg.src = img.src;
                     });
                 });
-
-                // Fonction pour fermer
                 const closeLightbox = () => {
                     lightbox.style.display = "none";
                     lightboxImg.src = "";
                 };
-
-                // Fermer au clic sur la croix
                 closeBtn.addEventListener("click", closeLightbox);
-                
-                // Fermer au clic dans le fond noir (en dehors de l'image)
                 lightbox.addEventListener("click", (e) => {
                     if (e.target !== lightboxImg) {
                         closeLightbox();
                     }
                 });
             </script>
-<br>
-            <div style="text-align: left;">
-                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
-            </div>
         </main>
 
         <footer>
@@ -190,14 +176,10 @@
                 <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-
-
-            <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
-
-<script src="https://biggbde.fr/script.js"></script>
+            <script src="https://biggbde.fr/script.js"></script>
         </footer>  
     </body>
 </html>

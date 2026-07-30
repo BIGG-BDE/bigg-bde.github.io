@@ -16,7 +16,7 @@
         <meta name="description" content="Ambiance station de ski garantie ! Enfile ta meilleure combinaison pour une soirée givrée. Tartiflette et bonne humeur au programme.">
         <link rel="canonical" href="https://biggbde.fr/evenements/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
-        <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
+        <link rel="stylesheet" href="/style.css"> 
 
         <link rel="stylesheet" href="../style.css">
         
@@ -85,7 +85,7 @@
                 <h1>BIGG BDE</h1>
             </a>
             
-            <!-- Bouton Hamburger -->
+            
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
             <nav>
@@ -102,17 +102,14 @@
 
 
         <main class="container event-page">
-            <!-- En-tête avec titre et tag alignés -->
-            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
+                            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
                 <h2 class="event-title">Les Etudiants font du Ski</h2>
                 <span class="event-tag tag-termine">Terminé</span>
             </div>
 
-            <!-- Contenu principal : Description (gauche) et Tuile Info (droite) -->
             <div class="event-content" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
                 
-                <!-- Description -->
-                <div class="event-main" style="flex: 2 1 500px;">
+                             <div class="event-main" style="flex: 2 1 500px;">
                     <h3>L'événement en quelques mots</h3><br>
                     <p>Pas besoin de partir à la montagne pour chausser les Moon Boots ! <br>
                         En plein cœur de l'hiver, le BDE a ramené l'ambiance des stations de ski directement en ville. <br><br>
@@ -121,14 +118,12 @@
                         
 
                     
-                    <!-- Boutons -->
-                    <div class="event-actions">
+                                 <div class="event-actions">
                         <a href="https://public.joomeo.com/albums/693da2c2ae108" target="_blank" class="btn btn-secondary">📸 Voir l'album photo</a>
                     </div>
                 </div>
 
-                <!-- Informations -->
-                <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
+                             <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
                     <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Infos Pratiques</h3>
                     <div class="event-details">
                         <p>📍 <strong>Lieu :</strong> The Bootlegger Bar</p>
@@ -140,13 +135,11 @@
                 </aside>
             </div>
 
-            <!-- Carrousel Photos -->
-            <div id="galerie" class="event-gallery">
+                         <div id="galerie" class="event-gallery">
                 <h3>Souvenirs de la soirée</h3>
                 <div class="photo-carousel">
                     <div class="carousel-track">
-                        <!-- Les 5 photos (avec la classe carousel-img pour le clic) -->
-                        <img src="https://i.postimg.cc/4ypnCMRJ/DSC04405.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 1">
+                                     <img src="https://i.postimg.cc/4ypnCMRJ/DSC04405.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 1">
                         <img src="https://i.postimg.cc/qq2gfYH6/DSC04408.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 2">
                         <img src="https://i.postimg.cc/rFLKG85L/DSC04417.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 3">
                         <img src="https://i.postimg.cc/Prh5pSkv/DSC04464.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 4">
@@ -156,7 +149,7 @@
                         <img src="https://i.postimg.cc/QMRXXbbd/DSC04479.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 8">
                         <img src="https://i.postimg.cc/QdCs1PYg/DSC04518.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 9">
                         <img src="https://i.postimg.cc/GpsCSD1f/DSC04523.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 10">
-                        <!-- Copie pour la boucle infinie -->
+                        <!-- dupli pour carousel -->
                         <img src="https://i.postimg.cc/4ypnCMRJ/DSC04405.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 1">
                         <img src="https://i.postimg.cc/qq2gfYH6/DSC04408.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 2">
                         <img src="https://i.postimg.cc/rFLKG85L/DSC04417.jpg" class="carousel-img" alt="Photo souvenir de l'evenement : Les Etudiants font du Ski 3">
@@ -171,47 +164,37 @@
                 </div>
             </div>
 
-            <!-- Modale Pop-in pour l'image en grand (cachée par défaut) -->
             <div id="lightbox" class="lightbox-modal">
                 <span class="close-lightbox">&times;</span>
                 <img class="lightbox-content" id="lightbox-img" src="">
             </div>
-
-            <!-- Script pour faire fonctionner la pop-in -->
+            <br>
+            <div style="text-align: left;">
+                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
+            </div>
+            
             <script>
                 const lightbox = document.getElementById("lightbox");
                 const lightboxImg = document.getElementById("lightbox-img");
                 const images = document.querySelectorAll(".carousel-img");
                 const closeBtn = document.querySelector(".close-lightbox");
-
-                // Ouvrir la lightbox au clic sur une image
                 images.forEach(img => {
                     img.addEventListener("click", () => {
                         lightbox.style.display = "flex";
-                        lightboxImg.src = img.src; // Récupère la source HD de l'image cliquée
+                        lightboxImg.src = img.src;
                     });
                 });
-
-                // Fonction pour fermer
                 const closeLightbox = () => {
                     lightbox.style.display = "none";
                     lightboxImg.src = "";
                 };
-
-                // Fermer au clic sur la croix
                 closeBtn.addEventListener("click", closeLightbox);
-                
-                // Fermer au clic dans le fond noir (en dehors de l'image)
                 lightbox.addEventListener("click", (e) => {
                     if (e.target !== lightboxImg) {
                         closeLightbox();
                     }
                 });
             </script>
-<br>
-            <div style="text-align: left;">
-                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
-            </div>
         </main>
 
         <footer>
@@ -226,14 +209,10 @@
                 <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-
-
-            <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
-
-<script src="https://biggbde.fr/script.js"></script>
+            <script src="https://biggbde.fr/script.js"></script>
         </footer>  
     </body>
 </html>

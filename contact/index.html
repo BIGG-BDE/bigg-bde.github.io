@@ -16,7 +16,7 @@
         <meta name="description" content="Une question ? Besoin d'information ? Contactez facilement l'équipe du BIGG BDE de Bourg-en-Bresse.">
         <link rel="canonical" href="https://biggbde.fr/contact/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
-        <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
+        <link rel="stylesheet" href="/style.css"> 
         <link rel="stylesheet" href="style.css">
         <script src="https://biggbde.fr/script.js"></script>
         <meta name="theme-color" content="#9b2226">
@@ -79,7 +79,7 @@
                 <h1>BIGG BDE</h1>
             </a>
             
-            <!-- Bouton Hamburger -->
+            
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
             <nav>
@@ -96,13 +96,8 @@
 
         <main>
             <h2>Nous Contacter</h2>
-            
-            <!-- Nouveau layout pour le formulaire et Insta -->
             <div class="contact-form-layout">
-                
-                <!-- Colonne Gauche : Insta + Motif -->
                 <div class="contact-methods">
-                    <!-- Bloc Insta -->
                     <div style="background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); text-align: center; margin-bottom: 1.5rem;">
                         <h3 style="margin-bottom: 1rem; color: var(--dark);">Une question rapide ?</h3>
                         <p style="color: var(--gray); font-size: 1.1rem; margin-bottom: 1.5rem;">Le plus simple et le plus rapide : pose-nous tes questions directement en DM sur Instagram, on te répondra au plus vite !</p>
@@ -115,9 +110,8 @@
                     </div>
                 </div>
 
-                <!-- Colonne Droite : Le formulaire -->
                 <div class="form-wrapper">
-                    <!-- Bouton basique de contact dispo aussi : ttps://formsubmit.co/el/nipeva --> 
+                    <!-- Bouton basique de contact dispo aussi : href="https://formsubmit.co/el/nipeva" --> 
                     <form action="https://formsubmit.co/9e1d42299c9eb0c4df71787303f1b299" method="POST" class="contact-form">
                         <input type="text" name="name" required placeholder="Votre Nom" class="form-control">
                         <input type="email" name="email" placeholder="Adresse Email" required class="form-control">
@@ -138,7 +132,6 @@
             <p style="color: var(--gray); margin-bottom: 2rem; text-align: center;">Pour une demande spécifique, un partenariat ou un suivi administratif, contactez directement le pôle concerné via nos adresses mail officielles.</p>
 
             <div class="contact-layout">
-                <!-- Liste minimaliste des e-mails -->
                 <div class="email-directory-minimal">
                     <a href="mailto:presidence@biggbde.fr" class="email-link-minimal">presidence@biggbde.fr</a>
                     <a href="mailto:vice-presidence@biggbde.fr" class="email-link-minimal">vice-presidence@biggbde.fr</a>
@@ -152,7 +145,6 @@
                     <a href="mailto:contact@biggbde.fr" class="email-link-minimal">contact@biggbde.fr</a>
                 </div>
                 
-                <!-- Section Avertissement Spams -->
                 <div class="spam-alert-container">
                     <div class="spam-alert-icon">⚠️</div>
                     <h4 class="spam-alert-title">Faites attention aux spams !</h4>
@@ -167,7 +159,6 @@
             </div>
 
 
-            <!-- Intégration de la carte du campus -->
             <br>
             <h3 style="text-align: center;">Où se trouve le local du BDE ?</h3>
             <p style="text-align: center;">Viens nous voir ! Notre local se trouve directement sur le campus de l'IUT.</p>
@@ -188,13 +179,10 @@
                 <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-
-            <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
-
-<script src="https://biggbde.fr/script.js"></script>
+            <script src="https://biggbde.fr/script.js"></script>
         </footer>  
     </body>
 </html>

@@ -1,224 +1,177 @@
-/* --- LAYOUT GLOBAL --- */
-/* Scroll fluide pour les ancres du sommaire */
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth
 }
-
 .page-roles-container {
-    display: flex;
-    max-width: 1300px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    gap: 3rem;
-    align-items: flex-start; /* Important pour que la sidebar reste collée en haut */
+	display: flex;
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	gap: 3rem;
+	align-items: flex-start
 }
-
-/* --- SIDEBAR WIKIPEDIA STYLE --- */
 .sidebar {
-    position: sticky;
-    top: 2rem; /* S'accroche à 2rem du haut de l'écran */
-    width: 250px;
-    flex-shrink: 0;
-    background: transparent;
-    font-size: 0.95rem;
+	position: sticky;
+	top: 2rem;
+	width: 170px;
+	flex-shrink: 0;
+	background: transparent;
+	font-size: 0.95rem
 }
-
 .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem
 }
-
 .sidebar-title {
-    font-weight: bold;
-    font-size: 1.1rem;
+	font-weight: 700;
+	font-size: 1.1rem
 }
-
-.sidebar-toggle {   
-    font-size: 0.8rem;
-    color: #ad0606;
-    cursor: pointer;
-    background: #f8f9fa;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    border: 1px solid #ccc;
+.sidebar-toggle {
+	font-size: 0.8rem;
+	color: #ad0606;
+	cursor: pointer;
+	background: #f8f9fa;
+	padding: 0.2rem 0.5rem;
+	border-radius: 3px;
+	border: 1px solid #ccc
 }
-
 .sidebar-list, .sidebar-sublist {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+	list-style: none;
+	padding: 0;
+	margin: 0
 }
-
 .sidebar-item {
-    margin-bottom: 0.5rem;
-    position: relative;
+	margin-bottom: 0.5rem;
+	position: relative
 }
-
 .sidebar-item.has-children::before {
-    content: '›';
-    position: absolute;
-    left: -15px;
-    top: -1px;
-    color: #666;
-    font-size: 1.2rem;
+	content: '›';
+	position: absolute;
+	left: -15px;
+	top: -1px;
+	color: #666;
+	font-size: 1.2rem
 }
-
 .font-bold > a {
-    font-weight: bold;
-    color: #202122;
+	font-weight: 700;
+	color: #202122
 }
-
 .sidebar-sublist {
-    padding-left: 1rem;
-    margin-top: 0.5rem;
-    border-left: 1px solid #eaecf0;
+	padding-left: 1rem;
+	margin-top: 0.5rem;
+	border-left: 1px solid #eaecf0
 }
-
 .sidebar-sublist li {
-    margin-bottom: 0.4rem;
+	margin-bottom: 0.4rem
 }
-
 .sidebar a {
-    text-decoration: none;
-    color: #801010; /* Le bleu classique des liens */
-    transition: color 0.2s;
+	text-decoration: none;
+	color: #801010;
+	transition: color 0.2s
 }
-
 .sidebar a:hover {
-    text-decoration: underline;
+	text-decoration: underline
 }
-
-/* --- CONTENU PRINCIPAL --- */
 .roles-content {
-    flex: 1;
-    min-width: 0; /* Évite que le flex déborde sur petits écrans */
+	flex: 1;
+	min-width: 0
 }
-
 .page-intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #111;
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	color: #111
 }
-
 .page-intro p {
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.5;
-    margin-bottom: 3rem;
+	font-size: 1.1rem;
+	color: #444;
+	line-height: 1.5;
+	margin-bottom: 3rem
 }
-
-/* Titres de sections (Bureau, Pôles, Autres) */
 .section-title {
-    font-size: 1.8rem;
-    color: #111;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 0.5rem;
-    margin: 4rem 0 2rem 0;
-    scroll-margin-top: 2rem; /* Laisse un espace au dessus quand on clique sur l'ancre */
+	font-size: 1.8rem;
+	color: #111;
+	border-bottom: 2px solid #ddd;
+	padding-bottom: 0.5rem;
+	margin: 4rem 0 2rem 0;
+	scroll-margin-top: 2rem
 }
-
-/* Les tuiles (simples et nettes) */
 .role-card {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 2.5rem;
-    margin-bottom: 2rem;
-    scroll-margin-top: 2rem; /* Pareil, évite que le titre soit collé en haut de l'écran après le clic */
+	background: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 2.5rem;
+	margin-bottom: 2rem;
+	scroll-margin-top: 2rem
 }
-
 .role-card h3 {
-    font-size: 1.5rem;
-    margin: 0 0 1.5rem 0;
-    color: #111;
+	font-size: 1.5rem;
+	margin: 0 0 1.5rem 0;
+	color: #111
 }
-
-/* Colonnes des cartes */
 .card-columns {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
+	display: flex;
+	gap: 2rem;
+	align-items: flex-start
 }
-
 .col {
-    flex: 1;
+	flex: 1
 }
-
 .col-title {
-    display: block;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    color: rgb(155, 34, 38);
-    margin-bottom: 0.8rem;
+	display: block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	letter-spacing: 1px;
+	color: rgb(155, 34, 38);
+	margin-bottom: 0.8rem
 }
-
 .col p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #333;
-    margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: #333;
+	margin: 0
 }
-
-/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
-    .page-roles-container {
-        flex-direction: column;
-    }
-    
-    .sidebar {
-        position: static;
-        width: 100%;
-        margin-bottom: 2rem;
-        background: #f8f9fa;
-        padding: 1.5rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-    }
-
-    .sidebar-item.has-children::before {
-        display: none; /* On enlève la flèche sur mobile pour simplifier */
-    }
-
-    .card-columns {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .role-card {
-        padding: 1.5rem;
-    }
+	.page-roles-container {
+		flex-direction: column
 }
-
-/* --- INTERACTIONS SIDEBAR --- */
-
-/* Quand la liste principale est masquée */
+	.sidebar {
+		position: static;
+		width: 100%;
+		margin-bottom: 2rem;
+		background: #f8f9fa;
+		padding: 1.5rem;
+		border: 1px solid #ddd;
+		border-radius: 8px
+}
+	.sidebar-item.has-children::before {
+		display: none
+}
+	.card-columns {
+		flex-direction: column;
+		gap: 1.5rem
+}
+	.role-card {
+		padding: 1.5rem
+}
+}
 .sidebar-list.hidden {
-    display: none;
+	display: none
 }
-
-/* Style lorsque la catégorie est repliée via la flèche */
 .sidebar-item.has-children.collapsed .sidebar-sublist {
-    display: none;
+	display: none
 }
-
-/* Rotation de la flèche (›) quand c'est replié */
 .sidebar-item.has-children.collapsed::before {
-    transform: rotate(-90deg);
-    transition: transform 0.2s ease;
+	transform: rotate(-90deg);
+	transition: transform 0.2s ease
 }
-
 .sidebar-item.has-children::before {
-    transition: transform 0.2s ease;
-    display: inline-block;
+	transition: transform 0.2s ease;
+	display: inline-block
 }
-
-/* Curseur pointer pour indiquer que les titres de catégories sont cliquables pour plier */
 .sidebar-item.has-children > a {
-    cursor: pointer;
+	cursor: pointer
 }

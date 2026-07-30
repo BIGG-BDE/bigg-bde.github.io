@@ -16,7 +16,7 @@
         <meta name="description" content="Tremblez étudiants... Le BIGG BDE vous donne rendez-vous pour sa terrifiante Soirée d'Halloween. Sortez vos costumes les plus effrayants !">
         <link rel="canonical" href="https://biggbde.fr/evenements/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
-        <link rel="stylesheet" href="/style.css"> <!-- Accès CSS local pour codage du site en offline -->
+        <link rel="stylesheet" href="/style.css"> 
 
         <link rel="stylesheet" href="../style.css">
         
@@ -85,7 +85,7 @@
                 <h1>BIGG BDE</h1>
             </a>
             
-            <!-- Bouton Hamburger -->
+            
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
 
             <nav>
@@ -102,25 +102,21 @@
 
 
         <main class="container event-page">
-            <!-- En-tête avec titre et tag alignés -->
-            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
+                            <div class="event-header" style="display: flex; align-items: center; gap: 15px;">
                 <h2 class="event-title">Soirée Halloween 2025</h2>
                 <span class="event-tag tag-termine">Terminé</span>
             </div>
 
-            <!-- Contenu principal : Description (gauche) et Tuile Info (droite) -->
             <div class="event-content" style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
                 
-                <!-- Description -->
-                <div class="event-main" style="flex: 2 1 500px;">
+                             <div class="event-main" style="flex: 2 1 500px;">
                     <h3>L'événement en quelques mots</h3><br>
                     <p>Tremblez, pauvres mortels ! Pour cette édition 2025 d'Halloween, le BDE a mis les petits plats dans les grands pour vous glacer le sang. <br><br>
                         Décors terrifiants, toiles d'araignées géantes, potions fumantes au bar et une ambiance horrifique dès l'entrée ont transformé la soirée en véritable cauchemar (dans le meilleur sens du terme). 
                         <br><br>Mention spéciale au concours du meilleur costume qui a réuni des créations aussi effrayantes qu'incroyables. Une nuit monstrueusement réussie !</p>
                 </div>
 
-                <!-- Informations -->
-                <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
+                             <aside class="event-sidebar" style="flex: 1 1 300px; background: #f9f9f9; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); height: fit-content;">
                     <h3 style="margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Infos Pratiques</h3>
                     <div class="event-details">
                         <p>📍 <strong>Lieu :</strong> The Bootlegger Bar</p>
@@ -131,47 +127,37 @@
                 </aside>
             </div>
 
-            <!-- Modale Pop-in pour l'image en grand (cachée par défaut) -->
             <div id="lightbox" class="lightbox-modal">
                 <span class="close-lightbox">&times;</span>
                 <img class="lightbox-content" id="lightbox-img" src="">
             </div>
-
-            <!-- Script pour faire fonctionner la pop-in -->
+            <br>
+            <div style="text-align: left;">
+                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
+            </div>
+            
             <script>
                 const lightbox = document.getElementById("lightbox");
                 const lightboxImg = document.getElementById("lightbox-img");
                 const images = document.querySelectorAll(".carousel-img");
                 const closeBtn = document.querySelector(".close-lightbox");
-
-                // Ouvrir la lightbox au clic sur une image
                 images.forEach(img => {
                     img.addEventListener("click", () => {
                         lightbox.style.display = "flex";
-                        lightboxImg.src = img.src; // Récupère la source HD de l'image cliquée
+                        lightboxImg.src = img.src;
                     });
                 });
-
-                // Fonction pour fermer
                 const closeLightbox = () => {
                     lightbox.style.display = "none";
                     lightboxImg.src = "";
                 };
-
-                // Fermer au clic sur la croix
                 closeBtn.addEventListener("click", closeLightbox);
-                
-                // Fermer au clic dans le fond noir (en dehors de l'image)
                 lightbox.addEventListener("click", (e) => {
                     if (e.target !== lightboxImg) {
                         closeLightbox();
                     }
                 });
             </script>
-<br>
-            <div style="text-align: left;">
-                <a href="../" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Retour aux événements</a>
-            </div>
         </main>
 
         <footer>
@@ -186,14 +172,10 @@
                 <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
             </div>
             <p>&copy; 2026 BIGG BDE - Hébergé sur GitHub Pages</p>
-
-
-            <!-- Bouton Remonter -->
             <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
                 <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
             </button>
-
-<script src="https://biggbde.fr/script.js"></script>
+            <script src="https://biggbde.fr/script.js"></script>
         </footer>  
     </body>
 </html>
