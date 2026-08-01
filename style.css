@@ -1218,7 +1218,7 @@ footer a:hover {
  }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 500px) {
  nav {
  align-items: flex-start
  }
