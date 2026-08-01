@@ -72,11 +72,6 @@
         "url": "https://biggbde.fr"
         }
         </script>
-        <script>
-            function toggleMenu() {
-                document.querySelector('nav').classList.toggle('nav-open');
-            }
-        </script>
     </head>
 
     <body>
@@ -85,15 +80,32 @@
                 <img src="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png" alt="Logo BIGG BDE">
                 <h1>BIGG BDE</h1>
             </a>
-            
-            
             <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
-
             <nav>
                 <a href="https://biggbde.fr/">Accueil</a>
-                <a href="https://biggbde.fr/a-propos/">À propos</a>
-                <a href="https://biggbde.fr/bureau/">Le Bureau</a>
-                <a href="https://biggbde.fr/evenements/" class="active">Événements</a>
+                <div class="nav-item has-dropdown">
+                    <a href="https://biggbde.fr/a-propos/" class="dropdown-toggle">À propos</a>
+                    <div class="dropdown-menu">
+                        <a href="https://biggbde.fr/a-propos/#objectifs">Nos Objectifs</a>
+                        <a href="https://biggbde.fr/a-propos/#documents">Nos Documents</a>
+                    </div>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="https://biggbde.fr/bureau/" class="dropdown-toggle">Le Bureau</a>
+                    <div class="dropdown-menu">
+                        <a href="https://biggbde.fr/bureau/">Le Trombinoscope</a>
+                        <a href="https://biggbde.fr/bureau/roles-poles">Les Rôles & Pôles</a>
+                        <a href="https://biggbde.fr/bureau/#">Anciens Mandats</a>
+                    </div>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="https://biggbde.fr/evenements/" class="dropdown-toggle active">Événements</a>
+                    <div class="dropdown-menu">
+                        <a href="https://biggbde.fr/evenements/#a-venir">À venir</a>
+                        <a href="https://biggbde.fr/evenements/#passes">Passés</a>
+                        <a href="https://biggbde.fr/photos/">Les Photos</a>
+                    </div>
+                </div>
                 <a href="https://biggbde.fr/actualites/">Actualités</a>
                 <a href="https://biggbde.fr/partenariats/">Partenariats</a>
                 <a href="https://biggbde.fr/liens-utiles/">Liens Utiles</a>
