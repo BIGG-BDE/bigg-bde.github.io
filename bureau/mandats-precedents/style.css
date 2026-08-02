@@ -111,3 +111,13 @@
  font-size: 0.85rem;
  margin-top: 6px
 }
+
+div#retour {
+    text-align: center; 
+    margin-top: 3rem;
+    a {
+        color: var(--primary); 
+        text-decoration: none; 
+        font-weight: bold
+    }
+}
