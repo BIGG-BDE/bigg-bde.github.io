@@ -54,7 +54,7 @@ function initAuthListener() {
 // Charger le profil utilisateur depuis la table "profils"
 async function loadUserProfile(userId) {
     try {
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('profils')
             .select('*')
             .eq('id', userId)
