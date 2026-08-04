@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (error) throw error; // On déclenche l'erreur pour aller dans le catch
 
                 // 4. Si tout est bon, redirection
-                console.log("Connexion réussie !")
+                console.log("Connexion réussie en tant que :", email)
                 window.location.href = 'https://biggbde.fr/dashboard/';
                 
             } catch (err) {
