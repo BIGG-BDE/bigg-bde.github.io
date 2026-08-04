@@ -7,7 +7,7 @@
 const SUPABASE_URL = 'https://qchyaljicwhdeouajlbx.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjaHlhbGppY3doZGVvdWFqbGJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NTMwNTQsImV4cCI6MjEwMTQyOTA1NH0.i1NcSHYwj_gmP6MyjQexZJieV1lWTyYVxVsM5DlmRmY';
 
-const supabaseClient = window.supabaseClient.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Variables de session
 let currentUser = null;
@@ -54,7 +54,7 @@ function initAuthListener() {
 // Charger le profil utilisateur depuis la table "profils"
 async function loadUserProfile(userId) {
     try {
-        const { data, error } = await supabaseClient
+        const { data, error } = await supabase
             .from('profils')
             .select('*')
             .eq('id', userId)
