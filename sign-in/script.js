@@ -1,8 +1,6 @@
 // On attend que la page soit bien chargée
 document.addEventListener('DOMContentLoaded', () => {
-    
     const form = document.getElementById('login-form');
-    
     // On met l'écouteur d'événement en TOUT PREMIER
     if (form) {
         form.addEventListener('submit', async (e) => {
@@ -28,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (error) throw error; // On déclenche l'erreur pour aller dans le catch
 
                 // 4. Si tout est bon, redirection
+                console.log("Connexion réussie !")
                 window.location.href = 'https://biggbde.fr/dashboard/';
                 
             } catch (err) {
