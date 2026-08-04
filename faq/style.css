@@ -93,3 +93,7 @@ details.faq-item p {
 .faq-container .faq-category-title:first-child {
 	margin-top: 1rem
 }
+
+h2.faq-title {
+	text-align: center; margin-bottom: 2rem;
+}
