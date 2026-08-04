@@ -7,7 +7,7 @@
 const SUPABASE_URL = 'https://qchyaljicwhdeouajlbx.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjaHlhbGppY3doZGVvdWFqbGJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODU4NTMwNTQsImV4cCI6MjEwMTQyOTA1NH0.i1NcSHYwj_gmP6MyjQexZJieV1lWTyYVxVsM5DlmRmY';
 
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabaseClient.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // Variables de session
 let currentUser = null;
@@ -34,7 +34,7 @@ function initContainerStructure() {
 
 // Écoute de l'état d'authentification Supabase
 function initAuthListener() {
-    supabase.auth.onAuthStateChange(async (event, session) => {
+    supabaseClient.auth.onAuthStateChange(async (event, session) => {
         if (session && session.user) {
             currentUser = session.user;
             await loadUserProfile(session.user.id);
@@ -54,7 +54,7 @@ function initAuthListener() {
 // Charger le profil utilisateur depuis la table "profils"
 async function loadUserProfile(userId) {
     try {
-        const { data, error } = await supabase
+        const { data, error } = await supabaseClient
             .from('profils')
             .select('*')
             .eq('id', userId)
@@ -134,7 +134,7 @@ function updateUserBarUI() {
 
 async function handleLogout() {
     try {
-        await supabase.auth.signOut();
+        await supabaseClient.auth.signOut();
         // La redirection vers /sign-in se fera automatiquement grâce à initAuthListener()
     } catch (err) {
         showToast("Erreur lors de la déconnexion.", "error");
@@ -155,7 +155,7 @@ function setupFormListeners() {
 // Fonction générique d'insertion dans Supabase
 async function insertData(tableName, payload, formElement) {
     try {
-        const { error } = await supabase
+        const { error } = await supabaseClient
             .from(tableName)
             .insert([payload]);
 
