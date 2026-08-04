@@ -358,3 +358,7 @@ hr {
         gap: 0.8rem;
     }
 }
+
+.hidden {
+    display: none !important;
+}

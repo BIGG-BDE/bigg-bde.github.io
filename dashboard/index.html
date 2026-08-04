@@ -77,7 +77,6 @@
             <!-- BANDEAU COMPTE UTILISATEUR -->
             <div class="user-bar" id="user-bar">
                 <div class="user-info">
-                    <div class="user-avatar" id="user-avatar-initial">U</div>
                     <div class="user-details">
                         <span class="user-name" id="user-display-name">Chargement...</span>
                         <span class="user-email" id="user-display-email">...</span>
@@ -88,10 +87,10 @@
                     <button id="btn-logout" class="btn-logout">Déconnexion</button>
                 </div>
             </div>
-            <p>Gérez les contenus du site. Vos droits d'accès dépendent de votre rôle (RLS Supabase).</p>
+            <p>Gérez les contenus du site. Vos droits d'accès dépendent de votre rôle (RLS Supabase).</p><br>
 
             <!-- FORMULAIRE : ÉVÉNEMENTS (Pôle Event / Admin) -->
-            <section class="admin-section" id="gestion-evenements">
+            <section class="admin-section hidden" id="section-events">
                 <h2>Créer / Modifier un Événement</h2>
                 <form id="form-evenement" class="admin-form">
                     <div class="form-group">
@@ -152,7 +151,7 @@
             <hr>
 
             <!-- FORMULAIRE : ACTUALITÉS (Pôle Comm / Admin) -->
-            <section class="admin-section" id="gestion-actus">
+            <section class="admin-section hidden" id="section-actus">
                 <h2>Créer / Modifier une Actualité</h2>
                 <form id="form-actus" class="admin-form">
                     <div class="form-row">
@@ -214,7 +213,7 @@
             <hr>
 
             <!-- FORMULAIRE : BILLETTERIE (Trésorerie / Admin) -->
-            <section class="admin-section" id="gestion-billeterie">
+            <section class="admin-section hidden" id="section-treso">
                 <h2>Gestion de la Billetterie</h2>
                 <form id="form-billeterie" class="admin-form">
                     <div class="form-row">
@@ -256,7 +255,7 @@
             <hr>
 
             <!-- FORMULAIRE : PARTENARIATS (Pôle Partenariats / Admin) -->
-            <section class="admin-section" id="gestion-partenariats">
+            <section class="admin-section hidden" id="section-parts">
                 <h2>Créer / Modifier un Partenariat</h2>
                 <form id="form-partenariats" class="admin-form">
                     <div class="form-row">
@@ -341,7 +340,7 @@
             <hr>
 
             <!-- FORMULAIRE : PROFIL (Mon Compte / Admin) -->
-            <section class="admin-section" id="gestion-profil">
+            <section class="admin-section hidden" id="section-profils">
                 <h2>Mon Profil Membre</h2>
                 <form id="form-profil" class="admin-form">
                     <div class="form-row">
@@ -368,7 +367,6 @@
                     <button type="submit" class="btn-submit">Mettre à jour mon profil</button>
                 </form>
             </section>
-
         </main>
 
         <footer>

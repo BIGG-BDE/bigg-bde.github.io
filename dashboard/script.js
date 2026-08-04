@@ -410,3 +410,46 @@ function showToast(message, type = 'success') {
         toast.remove();
     }, 4500);
 }
+
+
+
+document.addEventListener('DOMContentLoaded', async () => {
+    // 1. Vérifier si l'utilisateur est bien connecté
+    const { data: { session } } = await supabase.auth.getSession();
+
+    if (!session) {
+        // Si non connecté, on le renvoie vers la page de login
+        window.location.href = 'https://biggbde.fr/sign-in';
+        return;
+    }
+
+    const user = session.user;
+    
+    // 2. Récupération du rôle
+    // Hypothèse : le rôle est stocké dans les métadonnées de l'utilisateur sur Supabase
+    const userRole = user.user_metadata?.role || 'invite'; 
+
+    // 3. Logique d'affichage selon le rôle
+    if (userRole === 'admin') {
+        document.getElementById('section-events').classList.remove('hidden');
+        document.getElementById('section-actus').classList.remove('hidden');
+        document.getElementById('section-treso').classList.remove('hidden');
+        document.getElementById('section-parts').classList.remove('hidden');
+        document.getElementById('section-profils').classList.remove('hidden');
+    } 
+    else if (userRole === 'tresorerie') {
+        document.getElementById('section-treso').classList.remove('hidden');
+    }
+    else if (userRole === 'partenariats') {
+        document.getElementById('section-parts').classList.remove('hidden');
+    }
+    else if (userRole === 'evenementiel') {
+        document.getElementById('section-events').classList.remove('hidden');
+    }
+    else if (userRole === 'communication') {
+        document.getElementById('section-actus').classList.remove('hidden');
+    }
+    
+    // Le RLS de Supabase fera le reste du travail en bloquant 
+    // les requêtes réseau si quelqu'un modifie le DOM à la main via la console.
+});
