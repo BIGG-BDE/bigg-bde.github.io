@@ -236,6 +236,61 @@
     </header>
 
     <main>
+        <div id="liste-evenements">
+            <!-- C'est ici que les événements vont apparaître -->
+            <p>Chargement des événements...</p>
+        </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('liste-evenements');
+
+            try {
+                // 1. On va lire le fichier JSON généré automatiquement
+                // Le chemin dépend de l'endroit où tu te trouves dans ton arborescence
+                const response = await fetch('/assets/json/data-events.json');
+                
+                if (!response.ok) throw new Error("Fichier introuvable");
+                
+                const events = await response.json();
+
+                // 2. On vide le message de chargement
+                container.innerHTML = '';
+
+                // 3. S'il n'y a pas d'événements
+                if (events.length === 0) {
+                    container.innerHTML = '<p>Aucun événement prévu pour le moment.</p>';
+                    return;
+                }
+
+                // 4. On génère le HTML pour chaque événement
+                events.forEach(event => {
+                    // Optionnel : formater la date proprement
+                    const dateStr = new Date(event.date_event).toLocaleDateString('fr-FR', {
+                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                    });
+
+                    container.innerHTML += `
+                        <article class="event-card">
+                            ${event.image_url ? `<img src="${event.image_url}" alt="${event.titre}">` : ''}
+                            <div class="event-content">
+                                <h3>${event.titre}</h3>
+                                <p class="event-date">${dateStr}</p>
+                                <p class="event-desc">${event.description}</p>
+                            </div>
+                        </article>
+                    `;
+                });
+
+            } catch (error) {
+                console.error("Erreur :", error);
+                container.innerHTML = '<p>Impossible de charger les événements.</p>';
+            }
+        });
+        </script>
+
+
+
         <div class="header-event">
             <h2>Agenda des Événements</h2>
             <a href="https://biggbde.fr/photos/" class="btn btn-outline">VOIR LES PHOTOS
