@@ -148,8 +148,121 @@ function setupFormListeners() {
     const logoutBtn = document.getElementById('btn-logout');
     if (logoutBtn) logoutBtn.addEventListener('click', handleLogout);
 
-    // Les écouteurs d'événements pour tes autres formulaires (actus, events...) restent ici.
-    // (J'ai conservé cette logique identique à celle de base)
+    // 1. Formulaire Événements
+    const formEvenement = document.getElementById('form-evenement');
+    if (formEvenement) {
+        formEvenement.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(formEvenement);
+            const payload = {
+                titre: formData.get('titre'),
+                date_event: formData.get('date_event'),
+                heure_debut: formData.get('heure_debut') || null,
+                heure_fin: formData.get('heure_fin') || null,
+                lieu: formData.get('lieu') || null,
+                description: formData.get('description'),
+                image_url: formData.get('image_url') || null,
+                organisateurs: parseCommaList(formData.get('organisateurs')),
+                photographes: parseCommaList(formData.get('photographes')),
+                a_venir: formData.get('a_venir') === 'on',
+                est_publie: formData.get('est_publie') === 'on'
+            };
+            await insertData('evenements', payload, formEvenement);
+        });
+    }
+
+    // 2. Formulaire Actualités
+    const formActus = document.getElementById('form-actus');
+    if (formActus) {
+        formActus.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(formActus);
+            const payload = {
+                titre: formData.get('titre'),
+                slug: formData.get('slug'),
+                contenu: formData.get('contenu'),
+                image_url: formData.get('image_url') || null,
+                image_alt: formData.get('image_alt') || null,
+                auteur: formData.get('auteur') || null,
+                categorie: formData.get('categorie') || null,
+                date_publication: formData.get('date_publication') || null,
+                tags: parseCommaList(formData.get('tags')),
+                est_publie: formData.get('est_publie') === 'on',
+                est_en_une: formData.get('est_en_une') === 'on'
+            };
+            await insertData('actus', payload, formActus);
+        });
+    }
+
+    // 3. Formulaire Billetterie
+    const formBilleterie = document.getElementById('form-billeterie');
+    if (formBilleterie) {
+        formBilleterie.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(formBilleterie);
+            const payload = {
+                titre: formData.get('titre'),
+                slug: formData.get('slug'),
+                description: formData.get('description') || null,
+                url_achat: formData.get('url_achat'),
+                image_url: formData.get('image_url') || null,
+                est_disponible: formData.get('est_disponible') === 'on',
+                est_publie: formData.get('est_publie') === 'on'
+            };
+            await insertData('billeterie', payload, formBilleterie);
+        });
+    }
+
+    // 4. Formulaire Partenariats
+    const formPartenariats = document.getElementById('form-partenariats');
+    if (formPartenariats) {
+        formPartenariats.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(formPartenariats);
+        const payload = {
+                nom: formData.get('nom'),
+                slug: formData.get('slug'),
+                description: formData.get('description') || null,
+                offres: formData.get('offres'),
+                conditions: formData.get('conditions') || null,
+                logo_url: formData.get('logo_url') || null,
+                categorie: formData.get('categorie') || null,
+                site_web: formData.get('site_web') || null,
+                adresse: formData.get('adresse') || null,
+                telephone: formData.get('telephone') || null,
+                email: formData.get('email') || null,
+                date_debut: formData.get('date_debut') || null,
+                date_fin: formData.get('date_fin') || null,
+                est_actif: formData.get('est_actif') === 'on',
+                est_publie: formData.get('est_publie') === 'on'
+            };
+            await insertData('partenariats', payload, formPartenariats);
+        });
+    }
+
+    // 5. Formulaire Profil (Mise à jour spécifique)
+    const formProfil = document.getElementById('form-profil');
+    if (formProfil) {
+        formProfil.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(formProfil);
+            try {
+                const { error } = await supabaseClient
+                    .from('profils')
+                    .update({
+                        nom: formData.get('nom'),
+                        prenom: formData.get('prenom')
+                    })
+                    .eq('id', currentUser.id);
+
+                if (error) throw error;
+                showToast("Profil mis à jour avec succès !", "success");
+            } catch (err) {
+                console.error("Erreur mise à jour profil :", err);
+                showToast("Erreur : " + err.message, "error");
+            }
+        });
+    }
 }
 
 // Fonction générique d'insertion dans Supabase
