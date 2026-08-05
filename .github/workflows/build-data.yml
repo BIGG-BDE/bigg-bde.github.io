@@ -1,46 +1,41 @@
-# Fichier : .github/workflows/build-data.yml
-name: "Génération des données Supabase"
-permissions:
-  contents: write
-# Ce workflow se déclenche quand :
-# 1. Tu l'appelles via Webhook (repository_dispatch)
-# 2. Tu le lances manuellement depuis GitHub (workflow_dispatch)
+name: "Génération et Déploiement des données Supabase"
+
 on:
   repository_dispatch:
     types: [update-data]
   workflow_dispatch:
 
-jobs:
-  build-and-commit:
-    runs-on: ubuntu-latest
+# Permissions requises pour le déploiement natif GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-      # 1. Récupère le code de ton dépôt
       - name: Checkout du code
         uses: actions/checkout@v4
 
-      # 2. Installe Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      # 3. Installe juste le client Supabase (pas besoin de package.json lourd)
-      - name: Installer les dépendances
-        run: npm install @supabase/supabase-js
+      - name: Installation des dépendances
+        run: npm install
 
-      # 4. Lance ton script en lui passant les clés secrètes
       - name: Générer les fichiers JSON
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: node scripts/generate-data.js
 
-      # 5. Commit et push les nouveaux JSON sur ton dépôt
-      - name: Push des nouvelles données
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add assets/json/*.json
-          # S'il y a des changements, on commit. Sinon, on ne fait rien.
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update: Nouvelles données Supabase" && git push)
+      - name: Préparer l'artefact pour GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Déployer sur GitHub Pages
+        uses: actions/deploy-pages@v4
