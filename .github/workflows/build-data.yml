@@ -1,6 +1,7 @@
 # Fichier : .github/workflows/build-data.yml
 name: "Génération des données Supabase"
-
+permissions:
+  contents: write
 # Ce workflow se déclenche quand :
 # 1. Tu l'appelles via Webhook (repository_dispatch)
 # 2. Tu le lances manuellement depuis GitHub (workflow_dispatch)
