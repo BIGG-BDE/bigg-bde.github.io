@@ -23,8 +23,10 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Installation des dépendances
-        run: npm install
+      - name: Installation de Supabase
+        run: |
+          npm init -y
+          npm install @supabase/supabase-js
 
       - name: Générer les fichiers JSON
         env:
