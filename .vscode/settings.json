@@ -1,6 +1,0 @@
-{
-    "github-actions.workflows.pinned.workflows": [
-        ".github/workflows/static.yml",
-        ".github/workflows/build-data.yml"
-    ]
-}
