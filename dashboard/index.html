@@ -1,0 +1,382 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │..██████╗.██╗.██████╗..██████╗.........██████╗.██████╗.███████╗..│ -->
+<!-- │..██╔══██╗██║██╔════╝.██╔════╝.........██╔══██╗██╔══██╗██╔════╝..│ -->
+<!-- │..██████╔╝██║██║..███╗██║..███╗..2026..██████╔╝██║..██║█████╗....│ -->
+<!-- │..██╔══██╗██║██║...██║██║...██║...--...██╔══██╗██║..██║██╔══╝....│ -->
+<!-- │..██████╔╝██║╚██████╔╝╚██████╔╝..2027..██████╔╝██████╔╝███████╗..│ -->
+<!-- │..╚═════╝.╚═╝.╚═════╝..╚═════╝.........╚═════╝.╚═════╝.╚══════╝..│ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon.svg">
+        <title>Administration - BIGG BDE</title>
+        <meta name="description" content="Panneau d'administration du BIGG BDE.">        
+        <link rel="stylesheet" href="https://biggbde.fr/style.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://biggbde.fr/script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script src="script.js" defer></script>
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="theme-color" content="#9b2226">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-180x180.png" sizes="180x180">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-256x256.png" sizes="256x256">
+        <link rel="icon" type="image/svg+xml" href="https://biggbde.fr/assets/favicons/favicon.svg">
+        <link rel="shortcut icon" href="https://biggbde.fr/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/assets/favicons/apple-touch-icon.png">
+        <meta name="apple-mobile-web-app-title" content="BIGG BDE">
+        <link rel="manifest" href="https://biggbde.fr/assets/favicons/site.webmanifest">
+    </head>
+    
+    <body>
+        <header>
+            <a href="/" class="brand">
+                <img src="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png" alt="Logo BIGG BDE">
+                <h1>BIGG BDE</h1>
+            </a>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+            <nav>
+                <a href="https://biggbde.fr/">Accueil</a>
+                <div class="nav-item has-dropdown">
+                    <a href="https://biggbde.fr/a-propos/" class="dropdown-toggle">À propos</a>
+                    <div class="dropdown-menu">
+                        <a href="https://biggbde.fr/a-propos/#objectifs">Nos Objectifs</a>
+                        <a href="https://biggbde.fr/a-propos/#documents">Nos Documents</a>
+                    </div>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="https://biggbde.fr/bureau/" class="dropdown-toggle">Le Bureau</a>
+                    <div class="dropdown-menu">
+                        <a href="https://biggbde.fr/bureau/">Le Trombinoscope</a>
+                        <a href="https://biggbde.fr/bureau/roles-poles">Les Rôles & Pôles</a>
+                        <a href="https://biggbde.fr/bureau/#">Anciens Mandats</a>
+                    </div>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="https://biggbde.fr/evenements/" class="dropdown-toggle">Événements</a>
+                    <div class="dropdown-menu">
+                        <a href="https://biggbde.fr/evenements/#a-venir">À venir</a>
+                        <a href="https://biggbde.fr/evenements/#passes">Passés</a>
+                        <a href="https://biggbde.fr/photos/">Les Photos</a>
+                    </div>
+                </div>
+                <a href="https://biggbde.fr/actualites/">Actualités</a>
+                <a href="https://biggbde.fr/partenariats/">Partenariats</a>
+                <a href="https://biggbde.fr/liens-utiles/">Liens Utiles</a>
+                <a href="https://biggbde.fr/contact/" class="nav-contact-btn">Contact</a>
+            </nav>
+        </header>
+
+        <main class="container admin-dashboard">
+            <h1>Panneau d'Administration</h1>
+            <!-- BANDEAU COMPTE UTILISATEUR -->
+            <div class="user-bar" id="user-bar">
+                <div class="user-info">
+                    <div class="user-details">
+                        <span class="user-name" id="user-display-name">Chargement...</span>
+                        <span class="user-email" id="user-display-email">...</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="role-badge" id="user-display-role">...</span>
+                    <button id="btn-logout" class="btn-logout">Déconnexion</button>
+                </div>
+            </div>
+            <p>Gérez les contenus du site. Vos droits d'accès dépendent de votre rôle (RLS Supabase).</p><br>
+
+            <!-- FORMULAIRE : ÉVÉNEMENTS (Pôle Event / Admin) -->
+            <section class="admin-section hidden" id="section-events">
+                <h2>Créer / Modifier un Événement</h2>
+                <form id="form-evenement" class="admin-form">
+                    <div class="form-group">
+                        <label for="ev-titre">Titre de l'événement *</label>
+                        <input type="text" id="ev-titre" name="titre" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ev-date">Date *</label>
+                            <input type="date" id="ev-date" name="date_event" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ev-debut">Heure de début</label>
+                            <input type="time" id="ev-debut" name="heure_debut">
+                        </div>
+                        <div class="form-group">
+                            <label for="ev-fin">Heure de fin</label>
+                            <input type="time" id="ev-fin" name="heure_fin">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ev-lieu">Lieu</label>
+                        <input type="text" id="ev-lieu" name="lieu">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ev-desc">Description *</label>
+                        <textarea id="ev-desc" name="description" rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ev-image">URL de l'affiche / image</label>
+                        <input type="url" id="ev-image" name="image_url" placeholder="https://...">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="ev-orga">Organisateurs (séparés par des virgules)</label>
+                            <input type="text" id="ev-orga" name="organisateurs" placeholder="ex: Pôle Event, BDE Informatique">
+                        </div>
+                        <div class="form-group">
+                            <label for="ev-photo">Photographes (séparés par des virgules)</label>
+                            <input type="text" id="ev-photo" name="photographes">
+                        </div>
+                    </div>
+
+                    <div class="form-checkboxes">
+                        <label><input type="checkbox" name="a_venir" checked> Événement à venir</label>
+                        <label><input type="checkbox" name="est_publie"> Publier publiquement</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enregistrer l'événement</button>
+                </form>
+            </section>
+
+            <!-- FORMULAIRE : ACTUALITÉS (Pôle Comm / Admin) -->
+            <section class="admin-section hidden" id="section-actus">
+                <h2>Créer / Modifier une Actualité</h2>
+                <form id="form-actus" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="act-titre">Titre *</label>
+                            <input type="text" id="act-titre" name="titre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="act-slug">Slug (URL) *</label>
+                            <input type="text" id="act-slug" name="slug" placeholder="mon-super-article" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="act-contenu">Contenu de l'article *</label>
+                        <textarea id="act-contenu" name="contenu" rows="6" required></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="act-img">URL de l'image</label>
+                            <input type="url" id="act-img" name="image_url">
+                        </div>
+                        <div class="form-group">
+                            <label for="act-alt">Texte alternatif de l'image</label>
+                            <input type="text" id="act-alt" name="image_alt">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="act-auteur">Auteur</label>
+                            <input type="text" id="act-auteur" name="auteur">
+                        </div>
+                        <div class="form-group">
+                            <label for="act-cat">Catégorie</label>
+                            <input type="text" id="act-cat" name="categorie">
+                        </div>
+                        <div class="form-group">
+                            <label for="act-date">Date de publication</label>
+                            <input type="date" id="act-date" name="date_publication">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="act-tags">Tags (séparés par des virgules)</label>
+                        <input type="text" id="act-tags" name="tags" placeholder="ex: vie associative, campus">
+                    </div>
+
+                    <div class="form-checkboxes">
+                        <label><input type="checkbox" name="est_publie"> Publier l'article</label>
+                        <label><input type="checkbox" name="est_en_une"> Mettre en une (Accueil)</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enregistrer l'actualité</button>
+                </form>
+            </section>
+
+            <!-- FORMULAIRE : BILLETTERIE (Trésorerie / Admin) -->
+            <section class="admin-section hidden" id="section-treso">
+                <h2>Gestion de la Billetterie</h2>
+                <form id="form-billeterie" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bil-titre">Nom du ticket / produit *</label>
+                            <input type="text" id="bil-titre" name="titre" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bil-slug">Slug (URL) *</label>
+                            <input type="text" id="bil-slug" name="slug" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bil-desc">Description</label>
+                        <textarea id="bil-desc" name="description" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bil-url">Lien d'achat (HelloAsso, etc.) *</label>
+                            <input type="url" id="bil-url" name="url_achat" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="bil-img">URL de l'image (optionnel)</label>
+                            <input type="url" id="bil-img" name="image_url">
+                        </div>
+                    </div>
+
+                    <div class="form-checkboxes">
+                        <label><input type="checkbox" name="est_disponible" checked> Billetterie ouverte (disponible)</label>
+                        <label><input type="checkbox" name="est_publie"> Afficher sur le site</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Mettre à jour la billetterie</button>
+                </form>
+            </section>
+
+            <!-- FORMULAIRE : PARTENARIATS (Pôle Partenariats / Admin) -->
+            <section class="admin-section hidden" id="section-parts">
+                <h2>Créer / Modifier un Partenariat</h2>
+                <form id="form-partenariats" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="part-nom">Nom de l'entreprise *</label>
+                            <input type="text" id="part-nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="part-slug">Slug (URL) *</label>
+                            <input type="text" id="part-slug" name="slug" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="part-desc">Description de l'entreprise</label>
+                        <textarea id="part-desc" name="description" rows="2"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="part-offres">Offres dédiées aux étudiants *</label>
+                        <textarea id="part-offres" name="offres" rows="3" placeholder="-10% sur présentation de la carte..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="part-conditions">Conditions d'accès</label>
+                        <textarea id="part-conditions" name="conditions" rows="2"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="part-logo">URL du logo</label>
+                            <input type="url" id="part-logo" name="logo_url">
+                        </div>
+                        <div class="form-group">
+                            <label for="part-cat">Catégorie (ex: Restauration, Tech...)</label>
+                            <input type="text" id="part-cat" name="categorie">
+                        </div>
+                    </div>
+
+                    <fieldset>
+                        <legend>Coordonnées du partenaire</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="part-site">Site web</label>
+                                <input type="url" id="part-site" name="site_web">
+                            </div>
+                            <div class="form-group">
+                                <label for="part-adresse">Adresse physique</label>
+                                <input type="text" id="part-adresse" name="adresse">
+                            </div>
+                            <div class="form-group">
+                                <label for="part-tel">Téléphone</label>
+                                <input type="tel" id="part-tel" name="telephone">
+                            </div>
+                            <div class="form-group">
+                                <label for="part-email">Email contact</label>
+                                <input type="email" id="part-email" name="email">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-row mt-2">
+                        <div class="form-group">
+                            <label for="part-debut">Date de début du contrat</label>
+                            <input type="date" id="part-debut" name="date_debut">
+                        </div>
+                        <div class="form-group">
+                            <label for="part-fin">Date de fin du contrat</label>
+                            <input type="date" id="part-fin" name="date_fin">
+                        </div>
+                    </div>
+
+                    <div class="form-checkboxes">
+                        <label><input type="checkbox" name="est_actif" checked> Partenariat en cours (actif)</label>
+                        <label><input type="checkbox" name="est_publie"> Afficher publiquement</label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enregistrer le partenaire</button>
+                </form>
+            </section>
+
+            <!-- FORMULAIRE : PROFIL (Mon Compte / Admin) -->
+            <section class="admin-section hidden" id="section-profils">
+                <h2>Mon Profil Membre</h2>
+                <form id="form-profil" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prof-nom">Nom</label>
+                            <input type="text" id="prof-nom" name="nom">
+                        </div>
+                        <div class="form-group">
+                            <label for="prof-prenom">Prénom</label>
+                            <input type="text" id="prof-prenom" name="prenom">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prof-email">Email BDE</label>
+                            <input type="email" id="prof-email" name="email" readonly title="Modification réservée à l'administrateur">
+                        </div>
+                        <div class="form-group">
+                            <label for="prof-role">Rôle (Pôle)</label>
+                            <input type="text" id="prof-role" name="role" readonly title="Modification réservée à l'administrateur">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">Mettre à jour mon profil</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="https://biggbde.fr/mentions-legales/">Mentions Légales</a>
+                <a href="https://forms.gle/vN9Lwg2LAPLLNgcs6" target="_blank">Review du site</a>
+                <a href="https://biggbde.fr/faq/">FAQ</a>
+            </div>
+            <div class="footer-socials">
+                <span><a href="https://www.instagram.com/bigg_bde" target="_blank">Instagram</a></span>
+                <span><a href="https://www.facebook.com/profile.php?id=61569855328651" target="_blank">Facebook</a></span>
+                <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
+            </div>
+            <p>&copy; 2026 BIGG BDE - <a class="footer-admin-space" href="https://biggbde.fr/sign-in/">Espace Admin</a></p>
+
+            <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
+                <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
+            </button>
+        </footer>
+    </body>
+</html>

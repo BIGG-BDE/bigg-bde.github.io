@@ -1,0 +1,6 @@
+Pour ne pas faire passer de captcha quand un utilisateur envoie un formulaire
+Il suffit d'ajouter cette balise dans les inputs du formulaire
+<input type="hidden" name="_captcha" value="false">
+Mettre la valeur à "true" suffit pour les réactiver.
+
+Ladite balise n'a pas été ajoutée en commentaire html pour éviter que qqun modifie et l'ajoute facilement.

@@ -1,0 +1,43 @@
+name: "Génération et Déploiement des données Supabase"
+
+on:
+  repository_dispatch:
+    types: [update-data]
+  workflow_dispatch:
+
+# Permissions requises pour le déploiement natif GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Installation de Supabase
+        run: |
+          npm init -y
+          npm install @supabase/supabase-js
+
+      - name: Générer les fichiers JSON
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: node scripts/generate-data.js
+
+      - name: Préparer l'artefact pour GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Déployer sur GitHub Pages
+        uses: actions/deploy-pages@v4
