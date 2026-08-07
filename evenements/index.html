@@ -253,52 +253,126 @@
         </div>
 
         <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const container = document.getElementById('liste-evenements');
-
-            try {
-                // 1. On va lire le fichier JSON généré automatiquement
-                // Le chemin dépend de l'endroit où tu te trouves dans ton arborescence
+            document.addEventListener('DOMContentLoaded', async () => {
+                // 1. Récupération du fichier JSON
+                try {
                 const response = await fetch('/assets/json/data-events.json');
-                
-                if (!response.ok) throw new Error("Fichier introuvable");
-                
+                if (!response.ok) throw new Error('Fichier JSON introuvable');
                 const events = await response.json();
 
-                // 2. On vide le message de chargement
-                container.innerHTML = '';
-
-                // 3. S'il n'y a pas d'événements
-                if (events.length === 0) {
-                    container.innerHTML = '<p>Aucun événement prévu pour le moment.</p>';
-                    return;
+                // 2. Fonction utilitaire : créer un slug à partir du titre
+                function slugify(text) {
+                    return text
+                    .toLowerCase()
+                    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // enlève les accents
+                    .replace(/[^a-z0-9]+/g, '-') // remplace les espaces et symboles par -
+                    .replace(/^-+|-+$/g, '');    // supprime les tirets en début/fin
                 }
 
-                // 4. On génère le HTML pour chaque événement
-                events.forEach(event => {
-                    // Optionnel : formater la date proprement
-                    const dateStr = new Date(event.date_event).toLocaleDateString('fr-FR', {
-                        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                // 3. Séparer les événements en futurs / passés
+                const today = new Date();
+                today.setHours(0, 0, 0, 0); // pour comparer seulement la date
+
+                const futureEvents = events
+                    .filter(e => new Date(e.date_event) >= today)
+                    .sort((a, b) => new Date(a.date_event) - new Date(b.date_event)); // ordre chronologique
+
+                const pastEvents = events
+                    .filter(e => new Date(e.date_event) < today)
+                    .sort((a, b) => new Date(b.date_event) - new Date(a.date_event)); // du plus récent au plus ancien
+
+                // 4. Fonction pour générer le HTML d'un événement (identique à l'exemple)
+                function generateEventHTML(event, isPast = false) {
+                    const dateObj = new Date(event.date_event);
+                    const dateStr = dateObj.toLocaleDateString('fr-FR', {
+                    day: 'numeric', month: 'long', year: 'numeric'
                     });
+                    const slug = slugify(event.titre);
+                    const hasImage = event.image_url && event.image_url.trim() !== '';
 
-                    container.innerHTML += `
-                        <article class="event-card">
-                            ${event.image_url ? `<img src="${event.image_url}" alt="${event.titre}">` : ''}
-                            <div class="event-content">
-                                <h3>${event.titre}</h3>
-                                <p class="event-date">${dateStr}</p>
-                                <p class="event-desc">${event.description}</p>
+                    // Classes pour les boutons (past vs future)
+                    const btnClass = isPast ? 'btn btn-past-dark' : 'btn';
+                    const btnOutlineClass = isPast ? 'btn btn-outline-past' : 'btn btn-outline';
+
+                    // Construction du HTML du bloc texte
+                    let html = `
+                    <div class="event-split">
+                        <div class="event-text-side">
+                        <span class="timeline-date">${dateStr}</span>
+                        <h3>${event.titre}</h3>
+                        <p>${event.description || ''}</p>
+                        <div class="event-footer">
+                            <div class="event-buttons">
+                            <a href="/evenements/${slug}/" class="${btnClass}">Voir plus</a>
+                            <!-- Si tu as une colonne 'url_achat' dans ta table, décommente la ligne ci-dessous -->
+                            <!-- ${event.url_achat ? `<a href="${event.url_achat}" target="_blank" class="${btnOutlineClass}">Billetterie</a>` : ''} -->
                             </div>
-                        </article>
+                            <span class="event-location">${event.lieu || ''}</span>
+                        </div>
+                        </div>
                     `;
-                });
 
-            } catch (error) {
-                console.error("Erreur :", error);
-                container.innerHTML = '<p>Impossible de charger les événements.</p>';
-            }
-        });
-        </script>
+                    // Ajout de l'image si présente
+                    if (hasImage) {
+                    html += `
+                        <div class="event-image-side">
+                        <img src="${event.image_url}" alt="${event.titre}">
+                        </div>
+                    `;
+                    }
+
+                    html += `</div>`;
+                    return html;
+                }
+
+                // 5. Cibler les conteneurs
+                const futureContainer = document.querySelector('.timeline:not(.past)');
+                const pastContainer = document.querySelector('.timeline.past');
+
+                // 6. Vider les conteneurs (on efface le contenu existant)
+                if (futureContainer) futureContainer.innerHTML = '';
+                if (pastContainer) pastContainer.innerHTML = '';
+
+                // 7. Remplir les conteneurs
+                if (futureEvents.length === 0) {
+                    if (futureContainer) futureContainer.innerHTML = '<p>Aucun événement à venir.</p>';
+                } else {
+                    futureEvents.forEach(event => {
+                    const item = document.createElement('div');
+                    item.className = 'timeline-item' + (event.image_url ? ' has-pictures' : '');
+                    const content = document.createElement('div');
+                    content.className = 'timeline-content';
+                    content.innerHTML = generateEventHTML(event, false);
+                    item.appendChild(content);
+                    futureContainer.appendChild(item);
+                    });
+                }
+
+                if (pastEvents.length === 0) {
+                    if (pastContainer) pastContainer.innerHTML = '<p>Aucun événement passé.</p>';
+                } else {
+                    pastEvents.forEach(event => {
+                    const item = document.createElement('div');
+                    item.className = 'timeline-item' + (event.image_url ? ' has-pictures' : '');
+                    const content = document.createElement('div');
+                    content.className = 'timeline-content';
+                    content.innerHTML = generateEventHTML(event, true);
+                    item.appendChild(content);
+                    pastContainer.appendChild(item);
+                    });
+                }
+
+                // 8. Supprimer le message de chargement
+                const loadingContainer = document.getElementById('liste-evenements');
+                if (loadingContainer) loadingContainer.style.display = 'none';
+
+                } catch (error) {
+                console.error('Erreur de chargement des événements :', error);
+                document.getElementById('liste-evenements').innerHTML =
+                    '<p>⚠️ Impossible de charger les événements. Veuillez réessayer plus tard.</p>';
+                }
+            });
+            </script>
 
 
 
