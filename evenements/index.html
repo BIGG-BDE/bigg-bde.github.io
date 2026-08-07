@@ -252,7 +252,7 @@
             <p>Chargement des événements...</p>
         </div>
 
-        <script>
+        <!-- <script>
             document.addEventListener('DOMContentLoaded', async () => {
                 // 1. Récupération du fichier JSON
                 try {
@@ -304,8 +304,7 @@
                         <div class="event-footer">
                             <div class="event-buttons">
                             <a href="/evenements/${slug}/" class="${btnClass}">Voir plus</a>
-                            <!-- Si tu as une colonne 'url_achat' dans ta table, décommente la ligne ci-dessous -->
-                            <!-- ${event.url_achat ? `<a href="${event.url_achat}" target="_blank" class="${btnOutlineClass}">Billetterie</a>` : ''} -->
+                            ${event.url_achat ? `<a href="${event.url_achat}" target="_blank" class="${btnOutlineClass}">Billetterie</a>` : ''}
                             </div>
                             <span class="event-location">${event.lieu || ''}</span>
                         </div>
@@ -372,9 +371,7 @@
                     '<p>⚠️ Impossible de charger les événements. Veuillez réessayer plus tard.</p>';
                 }
             });
-            </script>
-
-
+            </script> -->
 
         <div class="header-event">
             <h2>Agenda des Événements</h2>
