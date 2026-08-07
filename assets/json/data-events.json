@@ -14,5 +14,21 @@
     "est_publie": true,
     "cree_le": "2026-08-05T03:49:32.21226",
     "modifie_le": "2026-08-05T03:49:32.21226"
+  },
+   {
+    "id": 6,
+    "titre": "test 6",
+    "date_event": "2026-09-04",
+    "heure_debut": null,
+    "heure_fin": null,
+    "description": "test d'event public",
+    "image_url": null,
+    "lieu": null,
+    "organisateurs": [],
+    "photographes": [],
+    "a_venir": true,
+    "est_publie": true,
+    "cree_le": "2026-08-05T03:49:32.21226",
+    "modifie_le": "2026-08-05T03:49:32.21226"
   }
 ]
