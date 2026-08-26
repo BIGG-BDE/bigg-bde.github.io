@@ -1,0 +1,77 @@
+.page-validation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 3rem 1rem;
+    background-color: var(--light, #f8f9fa);
+}
+
+.validation-card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.validation-logo {
+    width: 40%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.validation-title {
+    color: #28a745;
+    font-size: 1.8rem;
+    margin: 0 0 1rem 0;
+}
+
+.validation-status {
+    font-size: 1.05rem;
+    color: var(--dark, #222);
+    line-height: 1.5;
+    margin: 0 0 1.5rem 0;
+}
+
+.validation-year {
+    display: inline-block;
+    background-color: #f1f3f5;
+    color: #495057;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+.validation-warning {
+    border-top: 1px solid #eaeaea;
+    padding-top: 2rem;
+    text-align: left;
+    text-decoration: none;
+}
+
+.validation-warning h2 {
+    color: var(--primary, rgb(155, 34, 38));
+    border-bottom-color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.5px;
+}
+
+.validation-warning p {
+    color: var(--gray, #555);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 0.8rem 0;
+}
+
+.validation-thanks {
+    font-weight: bold;
+    color: var(--dark, #222) !important;
+    margin-top: 1.5rem !important;
+}
