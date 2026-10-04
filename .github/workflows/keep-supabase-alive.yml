@@ -1,0 +1,18 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    # Exécution à 12h00 UTC tous les 3 jours (pour respecter largement la fenêtre de 7 jours)
+    - cron: '0 12 */3 * *'
+  workflow_dispatch: # Ajout d'un déclenchement manuel pour faciliter les tests
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        run: |
+          curl -X GET "https://qchyaljicwhdeouajlbx.supabase.co/rest/v1/keepalive?select=*&limit=1" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
+            -H "Content-Type: application/json"
