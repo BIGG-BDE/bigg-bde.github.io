@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Codes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .qr-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .qr {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px #0002;
+        }
+
+        .qr a {
+            color: #0066cc;
+        }
+
+        .target {
+            margin-top: 5px;
+            color: #555;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        .error {
+            color: #c00;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>QR Codes</h1>
+
+<div id="qr-list" class="qr-list">
+    Chargement...
+</div>
+
+<script>
+const list = document.getElementById("qr-list");
+
+// Nombre maximum de dossiers à tester
+const MAX = 100;
+
+async function getRedirectTarget(url) {
+    try {
+        const response = await fetch(url, {
+            cache: "no-store",
+            redirect: "follow"
+        });
+
+        // Si c'est une vraie redirection HTTP (301/302/etc.)
+        if (response.url && response.url !== new URL(url, location.href).href) {
+            return response.url;
+        }
+
+        // Récupération du HTML de l'index
+        const html = await response.text();
+
+        // <meta http-equiv="refresh" content="0;url=https://...">
+        const meta = html.match(
+            /<meta[^>]+http-equiv=["']?refresh["']?[^>]+content=["'][^"']*url=([^"']+)["']/i
+        );
+
+        if (meta) {
+            return new URL(meta[1], url).href;
+        }
+
+        // window.location.href = "..."
+        let match = html.match(
+            /(?:window\.)?location(?:\.href)?\s*=\s*["']([^"']+)["']/i
+        );
+
+        if (match) {
+            return new URL(match[1], url).href;
+        }
+
+        // location.replace("...")
+        match = html.match(
+            /location\.replace\s*\(\s*["']([^"']+)["']\s*\)/i
+        );
+
+        if (match) {
+            return new URL(match[1], url).href;
+        }
+
+        // window.location = "..."
+        match = html.match(
+            /window\.location\s*=\s*["']([^"']+)["']/i
+        );
+
+        if (match) {
+            return new URL(match[1], url).href;
+        }
+
+        return null;
+
+    } catch (error) {
+        return null;
+    }
+}
+
+async function loadQRCodes() {
+    const results = [];
+
+    for (let i = 1; i <= MAX; i++) {
+
+        const indexUrl = `${i}/index.html`;
+
+        try {
+            const response = await fetch(indexUrl, {
+                method: "HEAD",
+                cache: "no-store"
+            });
+
+            if (!response.ok) {
+                continue;
+            }
+
+            const target = await getRedirectTarget(indexUrl);
+
+            results.push({
+                id: i,
+                url: indexUrl,
+                target: target
+            });
+
+        } catch (e) {
+            // Dossier inexistant, on passe au suivant
+        }
+    }
+
+    displayResults(results);
+}
+
+function displayResults(results) {
+
+    if (results.length === 0) {
+        document.getElementById("qr-list").innerHTML =
+            "<p>Aucun QR code trouvé.</p>";
+        return;
+    }
+
+    document.getElementById("qr-list").innerHTML =
+        results.map(qr => `
+            <div class="qr">
+                <strong>QR Code ${qr.id}</strong>
+
+                <div>
+                    <a href="${qr.url}" target="_blank">
+                        ${location.origin}${location.pathname.replace(/\/[^/]*$/, "")}/${qr.id}/
+                    </a>
+                </div>
+
+                <div class="target">
+                    ${
+                        qr.target
+                            ? `→ <a href="${escapeHtml(qr.target)}" target="_blank">
+                                ${escapeHtml(qr.target)}
+                               </a>`
+                            : `<span class="error">
+                                Cible impossible à déterminer
+                               </span>`
+                    }
+                </div>
+            </div>
+        `).join("");
+}
+
+function escapeHtml(str) {
+    return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+loadQRCodes();
+</script>
+
+</body>
+</html>

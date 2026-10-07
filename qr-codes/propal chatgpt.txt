@@ -1,0 +1,739 @@
+Oui. Si ton site est **100 % statique HTML/CSS/JS vanilla**, je te recommande **de ne pas essayer de détecter les dossiers depuis `index.html`**.
+
+ La meilleure architecture est :
+
+ > **détecter les dossiers au moment du build → générer un fichier `qr-manifest.json` → `index.html` le charge et l'affiche.**
+
+ C'est propre, rapide, compatible avec GitHub Pages / Netlify / Vercel / serveur Apache/Nginx statique, et tu n'as aucune dépendance côté navigateur.
+
+ ### Architecture
+
+```
+qr-codes/
+├── index.html
+├── qr-manifest.json        ← généré automatiquement
+│
+├── 1/
+│   └── index.html
+├── 2/
+│   └── index.html
+├── 3/
+│   └── index.html
+├── ...
+└── 10/
+    └── index.html
+
+scripts/
+└── generate-qr-manifest.mjs
+```
+
+ Le navigateur fait simplement :
+
+```
+index.html
+    ↓
+fetch("qr-manifest.json")
+    ↓
+[
+  { id: "1", target: "https://..." },
+  { id: "2", target: "https://..." },
+  ...
+]
+```
+
+---
+
+ # 1\. Le générateur automatique
+
+ À la racine de ton projet, crée :
+
+```
+scripts/generate-qr-manifest.mjs
+```
+
+ avec :
+
+```
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const QR_DIR = path.join(__dirname, "../qr-codes");
+const OUTPUT = path.join(QR_DIR, "qr-manifest.json");
+
+function extractTarget(html, indexUrl) {
+    let match;
+
+    // 1. Meta refresh
+    match = html.match(
+        /<meta[^>]*http-equiv\s*=\s*["']?refresh["']?[^>]*content\s*=\s*["'][^"']*url\s*=\s*([^"'>\s]+)[^"']*["'][^>]*>/i
+    );
+
+    if (match) {
+        return new URL(match[1], indexUrl).href;
+    }
+
+    // 2. location.replace("...")
+    match = html.match(
+        /(?:window\.)?location\.replace\s*\(\s*["'`]([^"'`]+)["'`]\s*\)/i
+    );
+
+    if (match) {
+        return new URL(match[1], indexUrl).href;
+    }
+
+    // 3. location.href = "..."
+    match = html.match(
+        /(?:window\.)?location\.href\s*=\s*["'`]([^"'`]+)["'`]/i
+    );
+
+    if (match) {
+        return new URL(match[1], indexUrl).href;
+    }
+
+    // 4. location = "..."
+    match = html.match(
+        /(?:window\.)?location\s*=\s*["'`]([^"'`]+)["'`]/i
+    );
+
+    if (match) {
+        return new URL(match[1], indexUrl).href;
+    }
+
+    // 5. location.assign("...")
+    match = html.match(
+        /(?:window\.)?location\.assign\s*\(\s*["'`]([^"'`]+)["'`]\s*\)/i
+    );
+
+    if (match) {
+        return new URL(match[1], indexUrl).href;
+    }
+
+    return null;
+}
+
+const entries = fs
+    .readdirSync(QR_DIR, { withFileTypes: true })
+    .filter(entry => {
+        if (!entry.isDirectory()) return false;
+
+        const indexPath = path.join(
+            QR_DIR,
+            entry.name,
+            "index.html"
+        );
+
+        return fs.existsSync(indexPath);
+    })
+    .map(entry => {
+        const id = entry.name;
+
+        const indexPath = path.join(
+            QR_DIR,
+            id,
+            "index.html"
+        );
+
+        const html = fs.readFileSync(indexPath, "utf8");
+
+        const target = extractTarget(
+            html,
+            `./${id}/index.html`
+        );
+
+        return {
+            id,
+            url: `./${id}/`,
+            target
+        };
+    })
+    .sort((a, b) =>
+        a.id.localeCompare(b.id, undefined, {
+            numeric: true
+        })
+    );
+
+fs.writeFileSync(
+    OUTPUT,
+    JSON.stringify(entries, null, 2) + "\n",
+    "utf8"
+);
+
+console.log(
+    `✓ ${entries.length} QR codes détectés`
+);
+
+console.log(
+    `✓ Manifest généré : ${OUTPUT}`
+);
+```
+
+---
+
+ # 2\. Ton `qr-codes/index.html`
+
+ Ensuite ton `index.html` devient uniquement responsable de l'affichage.
+
+```
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>QR Codes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: #f5f6f8;
+            color: #18181b;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+        }
+
+        .subtitle {
+            color: #71717a;
+            margin-bottom: 30px;
+        }
+
+        #qr-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .qr {
+            background: white;
+            border: 1px solid #e4e4e7;
+            border-radius: 10px;
+            padding: 18px 20px;
+
+            transition:
+                transform .15s,
+                box-shadow .15s;
+        }
+
+        .qr:hover {
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, .06);
+        }
+
+        .qr-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .qr-id {
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .qr-link {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .qr-link:hover {
+            text-decoration: underline;
+        }
+
+        .target {
+            margin-top: 10px;
+            padding: 10px 12px;
+
+            background: #f4f4f5;
+            border-radius: 6px;
+
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .target-label {
+            color: #71717a;
+            margin-right: 5px;
+        }
+
+        .target a {
+            color: #18181b;
+        }
+
+        .unknown {
+            color: #dc2626;
+        }
+
+        .loading,
+        .empty {
+            color: #71717a;
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <h1>QR Codes</h1>
+
+    <div class="subtitle">
+        Liste des QR codes et de leurs destinations.
+    </div>
+
+    <div id="qr-list">
+        <div class="loading">
+            Chargement...
+        </div>
+    </div>
+
+</main>
+
+<script>
+    const list = document.querySelector("#qr-list");
+
+    function escapeHTML(value) {
+        const div = document.createElement("div");
+        div.textContent = value;
+        return div.innerHTML;
+    }
+
+    async function loadQRCodes() {
+        try {
+            const response = await fetch(
+                "./qr-manifest.json",
+                {
+                    cache: "no-store"
+                }
+            );
+
+            if (!response.ok) {
+                throw new Error(
+                    `HTTP ${response.status}`
+                );
+            }
+
+            const qrCodes = await response.json();
+
+            if (!qrCodes.length) {
+                list.innerHTML = `
+                    <div class="empty">
+                        Aucun QR code trouvé.
+                    </div>
+                `;
+
+                return;
+            }
+
+            list.innerHTML = qrCodes
+                .map(qr => {
+
+                    const target = qr.target
+                        ? `
+                            <a
+                                href="${escapeHTML(qr.target)}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                ${escapeHTML(qr.target)}
+                            </a>
+                        `
+                        : `
+                            <span class="unknown">
+                                Destination non détectée
+                            </span>
+                        `;
+
+                    return `
+                        <article class="qr">
+
+                            <div class="qr-header">
+
+                                <div class="qr-id">
+                                    QR Code #${escapeHTML(qr.id)}
+                                </div>
+
+                                <a
+                                    class="qr-link"
+                                    href="${escapeHTML(qr.url)}"
+                                    target="_blank"
+                                >
+                                    Ouvrir →
+                                </a>
+
+                            </div>
+
+                            <div class="target">
+
+                                <span class="target-label">
+                                    Destination :
+                                </span>
+
+                                ${target}
+
+                            </div>
+
+                        </article>
+                    `;
+                })
+                .join("");
+
+        } catch (error) {
+
+            console.error(error);
+
+            list.innerHTML = `
+                <div class="unknown">
+                    Impossible de charger la liste des QR codes.
+                </div>
+            `;
+        }
+    }
+
+    loadQRCodes();
+</script>
+
+</body>
+</html>
+```
+
+---
+
+ # 3\. Ajouter une commande de génération
+
+ Si tu as un `package.json`, ajoute :
+
+```
+{
+    "scripts": {
+        "generate-qr": "node scripts/generate-qr-manifest.mjs"
+    }
+}
+```
+
+ Tu peux alors lancer :
+
+```
+npm run generate-qr
+```
+
+ Ça inspecte automatiquement :
+
+```
+qr-codes/1/index.html
+qr-codes/2/index.html
+qr-codes/3/index.html
+...
+```
+
+ et génère :
+
+```
+qr-codes/qr-manifest.json
+```
+
+ Par exemple :
+
+```
+[
+  {
+    "id": "1",
+    "url": "./1/",
+    "target": "https://example.com/produit/123"
+  },
+  {
+    "id": "2",
+    "url": "./2/",
+    "target": "https://example.com/produit/456"
+  },
+  {
+    "id": "3",
+    "url": "./3/",
+    "target": "https://example.com/contact"
+  }
+]
+```
+
+---
+
+ ## Et surtout : ça règle le problème de l'ajout de nouveaux QR codes
+
+ Tu crées simplement :
+
+```
+qr-codes/
+└── 11/
+    └── index.html
+```
+
+ puis :
+
+```
+npm run generate-qr
+```
+
+ Le `11` apparaît automatiquement.
+
+ Tu n'as **aucune liste à maintenir à la main**.
+
+---
+
+ ## Encore mieux : automatiser au déploiement
+
+ Si ton projet est par exemple :
+
+```
+package.json
+index.html
+css/
+js/
+qr-codes/
+scripts/
+```
+
+ tu peux faire en sorte que le manifest soit toujours régénéré avant le build/deploy :
+
+```
+{
+    "scripts": {
+        "generate-qr": "node scripts/generate-qr-manifest.mjs",
+        "build": "npm run generate-qr"
+    }
+}
+```
+
+ Ainsi :
+
+```
+npm run build
+```
+
+ s'occupe de mettre à jour la liste.
+
+ ### Pourquoi je préfère cette solution
+
+ | Solution | Verdict |
+| --- | --- |
+| JS qui teste `1/`, `2/`, `3/`... | ❌ bricolage |
+| JS qui essaie de lister le dossier | ❌ impossible en statique |
+| PHP | ❌ nécessite un backend |
+| Liste écrite à la main | ❌ maintenance |
+| `qr-manifest.json` généré automatiquement | **✅ meilleur choix** |
+| Génération du manifest au build/deploy | **✅✅ idéal** |
+
+**Point important :** le navigateur ne peut pas connaître « tous les dossiers qui existent » sur un hébergement statique. Le **manifest généré au build** est donc la solution propre pour un site vanilla.
+
+ Et si tes `index.html` utilisent une redirection du genre `window.location.href = "..."`, `location.replace(...)`, `<meta refresh>`, etc., le script ci-dessus la détecte déjà. Si tu me colles **un de tes vrais `index.html` de `1`, `2`, etc.**, je peux adapter le détecteur exactement à ton système et te donner la version finale prête à copier.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Oui — dans ce cas **GitHub Pages confirme que la solution `manifest.json` généré est la bonne**.
+
+ GitHub Pages ne permet pas à ton JavaScript de demander au serveur « quels dossiers existent ? ». Il faut donc que **Git lui-même connaisse les dossiers lors du développement/build**, puis qu'un petit script génère la liste avant le déploiement.
+
+ ### Je te conseille cette structure
+
+```
+qr-codes/
+├── index.html
+├── qr-manifest.json        ← généré, à ne pas modifier à la main
+│
+├── 1/
+│   └── index.html
+├── 2/
+│   └── index.html
+├── 3/
+│   └── index.html
+└── ...
+```
+
+ Puis :
+
+```
+scripts/
+└── generate-qr-manifest.mjs
+```
+
+ Ton site reste **100 % statique** une fois déployé.
+
+---
+
+ ### Le point que je changerais dans ma réponse précédente
+
+ Je ne ferais même pas faire la détection au navigateur.
+
+ Le workflow idéal est :
+
+```
+                 DÉVELOPPEMENT
+                       │
+                       ▼
+             dossiers 1, 2, 3...
+                       │
+                       ▼
+          generate-qr-manifest.mjs
+                       │
+                       ▼
+              qr-manifest.json
+                       │
+                       ▼
+                  git push
+                       │
+                       ▼
+                GitHub Pages
+                       │
+                       ▼
+              navigateur utilisateur
+                       │
+                       ▼
+             index.html + JSON
+```
+
+ Donc côté utilisateur, il n'y a **aucune détection**, aucun serveur, aucune requête bizarre.
+
+---
+
+ ## Et tu peux automatiser complètement GitHub
+
+ Si ton dépôt utilise GitHub Pages, tu peux même faire en sorte que **chaque push génère automatiquement `qr-manifest.json`**.
+
+ Par exemple avec GitHub Actions :
+
+```
+.github/
+└── workflows/
+    └── build.yml
+```
+
+ Le workflow peut :
+
+ 1. récupérer le repository ;
+2. exécuter `generate-qr-manifest.mjs` ;
+3. générer `qr-manifest.json` ;
+4. déployer le site.
+
+ Ainsi tu n'as même pas besoin de penser à générer le JSON.
+
+---
+
+ ### Mais il y a une autre possibilité intéressante
+
+ Si tes dossiers sont **toujours simplement `1`, `2`, `3`, ...**, on peut faire encore plus simple et **ne pas avoir de script Node du tout**.
+
+ Tu pourrais avoir un fichier statique :
+
+```
+{
+    "count": 10
+}
+```
+
+ et ton JS tester :
+
+```
+1/index.html
+2/index.html
+3/index.html
+...
+```
+
+ Mais je préfère largement le manifest généré, car tu peux ensuite avoir des dossiers comme :
+
+```
+1/
+2/
+5/
+10/
+42/
+promo-noel/
+restaurant/
+```
+
+ sans changer ton code.
+
+---
+
+ ### Encore un détail important concernant « la cible réelle »
+
+ Il faut distinguer deux choses.
+
+ Si `1/index.html` contient :
+
+```
+<script>
+    window.location.href = "https://example.com/foo";
+</script>
+```
+
+ on peut **lire le fichier et extraire la cible pendant le build**.
+
+ Mais si tu as :
+
+```
+<script>
+    window.location.href = getTargetFromSomewhere();
+</script>
+```
+
+ la cible ne peut pas forcément être connue statiquement.
+
+ Et si la redirection est une **redirection HTTP 301/302**, GitHub Pages ne permet pas à ton `index.html` de lire cette information directement avant navigation.
+
+ Dans ton cas, puisque tu dis que **chaque dossier possède un `index.html` qui redirige**, le plus propre est que le script de génération analyse directement ces fichiers.
+
+---
+
+ **Donc pour GitHub Pages : `index.html` \+ `qr-manifest.json` généré automatiquement au build, c'est clairement l'architecture que je choisirais.**
+
+ Si tu me donnes le contenu de **`qr-codes/1/index.html`**, je peux te fournir le trio complet **`generate-qr-manifest.mjs` \+ `index.html` \+ GitHub Actions**, adapté exactement à ta redirection et prêt à déposer dans ton repo.
