@@ -3,7 +3,7 @@ name: Keep Supabase Alive
 on:
   schedule:
     # Double exécution quotidienne à 8h et 16h
-    - cron: '0 8,16 * * *'
+    - cron: '0 8,16 */2 * *'
   workflow_dispatch: # Ajout d'un déclenchement manuel pour faciliter les tests
 
 jobs:
@@ -16,4 +16,3 @@ jobs:
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY }}" \
             -H "Content-Type: application/json"
-            -d '{"notes": "GitHub Actions KeepAlive ping"}'
