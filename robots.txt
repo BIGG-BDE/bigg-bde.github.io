@@ -33,6 +33,8 @@ Disallow: /
 
 # 4. Règles générales (Autoriser l'indexation SEO de toutes les pages HTML)
 User-agent: *
+Allow: /favicon.ico
+Allow: /assets/favicons/favicon.svg
 # Interdire le scan direct des fichiers images
 Disallow: /*.jpg$
 Disallow: /*.jpeg$
