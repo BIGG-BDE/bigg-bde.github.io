@@ -240,3 +240,61 @@
     border-color: #e74c3c;
     box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.15);
 }
+
+.map-embed { position: relative; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; }
+.map-embed iframe { width: 100%; height: 100%; border: 0; display: block; }
+.map-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 0.8rem; height: 100%; padding: 1.5rem; text-align: center;
+    background: rgba(0,0,0,.04); border: 1px dashed rgba(0,0,0,.15); border-radius: 12px;
+}
+.map-load-btn {
+    padding: .6rem 1.4rem; border-radius: 6px; border: 1px solid var(--primary);
+    background: var(--primary); color: #fff; font-weight: 600; cursor: pointer;
+}
+
+.map-embed {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Ajuste la hauteur selon tes besoins */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8f9fa; /* Couleur de fond en attendant le chargement */
+}
+
+.map-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+.map-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    height: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    background: rgba(0,0,0,.04);
+    border: 1px dashed rgba(0,0,0,.15);
+    border-radius: 12px;
+    color: var(--gray);
+}
+
+.map-load-btn {
+    padding: .6rem 1.4rem;
+    border-radius: 6px;
+    border: 1px solid var(--primary);
+    background: var(--primary);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.map-load-btn:hover {
+    opacity: 0.85;
+}

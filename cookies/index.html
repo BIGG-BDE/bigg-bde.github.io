@@ -1,0 +1,329 @@
+<!-- ┌─────────────────────────────────────────────────────────────────┐ -->
+<!-- │..██████╗.██╗.██████╗..██████╗.........██████╗.██████╗.███████╗..│ -->
+<!-- │..██╔══██╗██║██╔════╝.██╔════╝.........██╔══██╗██╔══██╗██╔════╝..│ -->
+<!-- │..██████╔╝██║██║..███╗██║..███╗..2026..██████╔╝██║..██║█████╗....│ -->
+<!-- │..██╔══██╗██║██║...██║██║...██║...--...██╔══██╗██║..██║██╔══╝....│ -->
+<!-- │..██████╔╝██║╚██████╔╝╚██████╔╝..2027..██████╔╝██████╔╝███████╗..│ -->
+<!-- │..╚═════╝.╚═╝.╚═════╝..╚═════╝.........╚═════╝.╚═════╝.╚══════╝..│ -->
+<!-- └─────────────────────────────────────────────────────────────────┘ -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gérer mes cookies - BIGG BDE</title>
+    <meta name="description" content="Personnalisez vos préférences de cookies sur le site du BIGG BDE : mesure d'audience et cookies strictement nécessaires.">
+    <link rel="canonical" href="https://biggbde.fr/cookies/">
+    <link rel="stylesheet" href="https://biggbde.fr/style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="theme-color" content="#9b2226">
+    <link rel="icon" type="image/svg+xml" href="https://biggbde.fr/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" href="https://biggbde.fr/assets/favicons/favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://biggbde.fr/assets/favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="BIGG BDE">
+    <link rel="manifest" href="https://biggbde.fr/assets/favicons/site.webmanifest">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
+    <meta name="twitter:image:alt" content="Logo BIGG BDE">
+    <meta name="twitter:title" content="Gérer mes cookies - BIGG BDE">
+    <meta name="twitter:site" content="@BIGGBDE">
+    <meta name="twitter:description" content="Personnalisez vos préférences de cookies sur le site du BIGG BDE.">
+
+    <!-- Open Graph Global -->
+    <meta property="og:title" content="Gérer mes cookies - BIGG BDE">
+    <meta property="og:url" content="https://biggbde.fr/cookies/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
+    <meta property="og:description" content="Personnalisez vos préférences de cookies sur le site du BIGG BDE.">
+
+    <!-- SEO Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BIGG BDE",
+        "url": "https://biggbde.fr",
+        "logo": "https://biggbde.fr/assets/favicons/favicon.svg",
+        "sameAs": ["https://www.instagram.com/bigg_bde"],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "webmaster@biggbde.fr",
+            "contactType": "technical support"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BIGG BDE",
+        "url": "https://biggbde.fr"
+    }
+    </script>
+</head>
+
+<body>
+    <header>
+        <a href="/" class="brand">
+            <img src="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png" alt="Logo BIGG BDE">
+            <h1>BIGG BDE</h1>
+        </a>
+
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Ouvrir le menu">☰</button>
+
+        <nav>
+            <a href="https://biggbde.fr/">Accueil</a>
+            <div class="nav-item has-dropdown">
+                <a href="https://biggbde.fr/a-propos/" class="dropdown-toggle">À propos</a>
+                <div class="dropdown-menu">
+                    <a href="https://biggbde.fr/a-propos/#objectifs">Nos Objectifs</a>
+                    <a href="https://biggbde.fr/a-propos/#documents">Nos Documents</a>
+                </div>
+            </div>
+            <div class="nav-item has-dropdown">
+                <a href="https://biggbde.fr/bureau/" class="dropdown-toggle">Le Bureau</a>
+                <div class="dropdown-menu">
+                    <a href="https://biggbde.fr/bureau/">Le Trombinoscope</a>
+                    <a href="https://biggbde.fr/bureau/roles-poles">Les Rôles & Pôles</a>
+                    <a href="https://biggbde.fr/bureau/#">Anciens Mandats</a>
+                </div>
+            </div>
+            <div class="nav-item has-dropdown">
+                <a href="https://biggbde.fr/evenements/" class="dropdown-toggle">Événements</a>
+                <div class="dropdown-menu">
+                    <a href="https://biggbde.fr/evenements/#a-venir">À venir</a>
+                    <a href="https://biggbde.fr/evenements/#passes">Passés</a>
+                    <a href="https://biggbde.fr/photos/">Les Photos</a>
+                </div>
+            </div>
+            <a href="https://biggbde.fr/actualites/">Actualités</a>
+            <a href="https://biggbde.fr/partenariats/">Partenariats</a>
+            <a href="https://biggbde.fr/liens-utiles/">Liens Utiles</a>
+            <a href="https://biggbde.fr/contact/" class="nav-contact-btn">Contact</a>
+        </nav>
+    </header>
+
+    <main class="legal-content">
+        <div class="cookie-prefs">
+            <h2>Gérer mes cookies</h2>
+
+            <p class="cookie-prefs__intro">
+                Vous pouvez choisir ici les cookies que vous acceptez sur le site du BIGG BDE.
+                Votre choix est conservé pendant <strong>6 mois</strong> sur ce navigateur.
+                Pour en savoir plus sur les cookies utilisés et vos droits, consultez notre
+                <a href="/mentions-legales/#cookies">politique de confidentialité</a>.
+            </p>
+
+            <!-- Catégorie 1 : Strictement nécessaires (obligatoire) -->
+            <div class="cookie-category">
+                <div class="cookie-category__header">
+                    <div class="cookie-category__info">
+                        <h3 class="cookie-category__title">Strictement nécessaires</h3>
+                        <p class="cookie-category__desc">
+                            Ces cookies sont indispensables au fonctionnement du site.
+                            Ils permettent notamment de maintenir votre <strong>session de connexion</strong>
+                            à l'espace administration (cookie de session) et de mémoriser votre choix
+                            de consentement. Sans eux, le site ne peut pas fonctionner correctement.
+                        </p>
+                        <span class="cookie-lock-note">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V11a2 2 0 0 0-2-2h-1V6a5 5 0 0 0-5-5zm-3 8V6a3 3 0 1 1 6 0v3H9z"/></svg>
+                            Toujours actifs
+                        </span>
+                    </div>
+                    <label class="toggle toggle--locked">
+                        <input type="checkbox" checked disabled aria-label="Cookies strictement nécessaires (toujours actifs)">
+                        <span class="toggle__slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Catégorie 2 : Mesure d'audience (optionnel) -->
+            <div class="cookie-category">
+                <div class="cookie-category__header">
+                    <div class="cookie-category__info">
+                        <h3 class="cookie-category__title">Mesure d'audience (Google Analytics)</h3>
+                        <p class="cookie-category__desc">
+                            Ces cookies nous aident à comprendre comment les visiteurs utilisent le site
+                            (pages consultées, provenance, type d'appareil) afin d'améliorer son contenu.
+                            Ils sont déposés par <strong>Google Analytics 4</strong> et entraînent un transfert
+                            de données vers Google LLC (États-Unis). Ils ne sont chargés que si vous les acceptez.
+                            Cookies concernés : <code>_ga</code>, <code>_ga_&lt;ID&gt;</code>.
+                        </p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" id="pref-analytics" aria-label="Activer la mesure d'audience Google Analytics">
+                        <span class="toggle__slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Catégorie 3 : Contenu embarqué -->
+            <div class="cookie-category">
+                <div class="cookie-category__header">
+                    <div class="cookie-category__info">
+                        <h3 class="cookie-category__title">Contenu embarqué</h3>
+                        <p class="cookie-category__desc">
+                            Certaines pages intègrent des contenus externes, comme la <strong>carte Google Maps</strong>
+                            sur la page Contact. Ces iframes déposent des cookies émis par Google et entraînent un
+                            transfert de données vers Google LLC (États-Unis). Ils ne sont chargés que si vous les acceptez.
+                        </p>
+                    </div>
+                    <label class="toggle">
+                        <input type="checkbox" id="pref-embeds" aria-label="Activer le contenu embarqué (Google Maps)">
+                        <span class="toggle__slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="cookie-prefs__actions">
+                <button type="button" id="save-prefs" class="cookie-prefs__btn cookie-prefs__btn--primary">
+                    Enregistrer mes préférences
+                </button>
+                <button type="button" id="accept-all" class="cookie-prefs__btn cookie-prefs__btn--secondary">
+                    Tout accepter
+                </button>
+                <button type="button" id="refuse-all" class="cookie-prefs__btn cookie-prefs__btn--ghost">
+                    Tout refuser
+                </button>
+            </div>
+
+            <div id="cookie-feedback" class="cookie-feedback" role="status" aria-live="polite">
+                Vos préférences ont bien été enregistrées.
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://biggbde.fr/mentions-legales/">Mentions Légales</a>
+            <a href="https://biggbde.fr/faq/">FAQ</a>
+            <a href="https://biggbde.fr/cookies/">Gérer mes cookies</a>
+            <a href="https://forms.gle/vN9Lwg2LAPLLNgcs6" target="_blank">Review du site</a>
+        </div>
+        <div class="footer-socials">
+            <span><a href="https://www.instagram.com/bigg_bde" target="_blank">Instagram</a></span>
+            <span><a href="https://www.facebook.com/profile.php?id=61569855328651" target="_blank">Facebook</a></span>
+            <span><a href="https://www.tiktok.com/@biggbde" target="_blank">Tiktok</a></span>
+        </div>
+        <p>&copy; 2026 BIGG BDE - <a class="footer-admin-space" href="https://biggbde.fr/sign-in/">Espace Admin</a></p>
+        <button id="scrollTopBtn" onclick="scrollToTop()" title="Remonter en haut">
+            <img src="https://biggbde.fr/assets/svg/angle-up-svgrepo-com.svg" alt="Angled Up Arrow SVG ; AUTHOR: FortAwesome" class="scroll-icon" />
+        </button>
+        <script src="https://biggbde.fr/script.js" async></script>
+    </footer>
+
+    <script>
+    (function () {
+        var STORAGE_KEY = 'cookie_consent_choice';
+        var EXPIRY_DAYS = 180;
+        var GA_ID       = 'G-84NVSBQ842';
+
+        var analyticsToggle = document.getElementById('pref-analytics');
+        var feedback        = document.getElementById('cookie-feedback');
+        var saveBtn         = document.getElementById('save-prefs');
+        var acceptAllBtn    = document.getElementById('accept-all');
+        var refuseAllBtn    = document.getElementById('refuse-all');
+        
+        var embedsToggle = document.getElementById('pref-embeds');
+
+        // ── Charger GA4 (une seule fois) ──
+        function loadAnalytics() {
+            if (window._gaLoaded) return;
+            window._gaLoaded = true;
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){ dataLayer.push(arguments); }
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', GA_ID);
+        }
+
+        // ── Sauvegarder le choix ──
+        function saveChoice(analyticsAccepted, embedsAccepted) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify({
+                choice: (analyticsAccepted && embedsAccepted) ? 'accepted'
+                    : (!analyticsAccepted && !embedsAccepted) ? 'refused'
+                    : 'custom',
+                analytics: analyticsAccepted,
+                embeds: embedsAccepted,
+                necessary: true,
+                timestamp: Date.now()
+            }));
+
+            if (analyticsAccepted) loadAnalytics();
+
+            feedback.classList.add('is-visible');
+            setTimeout(function () { feedback.classList.remove('is-visible'); }, 3000);
+        }
+
+        saveBtn.addEventListener('click', function () {
+            saveChoice(analyticsToggle.checked, embedsToggle.checked);
+        });
+        acceptAllBtn.addEventListener('click', function () {
+            analyticsToggle.checked = true;
+            embedsToggle.checked = true;
+            saveChoice(true, true);
+        });
+        refuseAllBtn.addEventListener('click', function () {
+            analyticsToggle.checked = false;
+            embedsToggle.checked = false;
+            saveChoice(false, false);
+        });
+
+        // ── Lire le choix actuel ──
+        function getCurrentChoice() {
+            var raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return { analytics: false };
+            try {
+                var data = JSON.parse(raw);
+                var ageDays = (Date.now() - data.timestamp) / (1000 * 60 * 60 * 24);
+                if (ageDays >= EXPIRY_DAYS) return { analytics: false };
+                return data;
+            } catch (e) {
+                return { analytics: false };
+            }
+        }
+
+        // ── Initialisation de la page ──
+        function init() {
+            var current = getCurrentChoice();
+            analyticsToggle.checked = !!current.analytics;
+            embedsToggle.checked = !!current.embeds;
+
+            // Si l'analytics était déjà accepté, on s'assure que GA4 est chargé
+            if (current.analytics) {
+                loadAnalytics();
+            }
+        }
+
+        // ── Écouteurs ──
+        saveBtn.addEventListener('click', function () {
+            saveChoice(analyticsToggle.checked);
+        });
+
+        acceptAllBtn.addEventListener('click', function () {
+            analyticsToggle.checked = true;
+            saveChoice(true);
+        });
+
+        refuseAllBtn.addEventListener('click', function () {
+            analyticsToggle.checked = false;
+            saveChoice(false);
+        });
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
+</body>
+</html>

@@ -80,3 +80,37 @@
         }
     });
 })();
+
+
+
+(function () {
+    var STORAGE_KEY = 'cookie_consent_choice';
+    var map = document.querySelector('.map-embed');
+    if (!map) return;
+
+    function consentEmbeds() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}').embeds === true; }
+        catch (e) { return false; }
+    }
+
+    function injectIframe() {
+        if (map.querySelector('iframe')) return;
+        var src = map.dataset.src;
+        if (!src) return;
+        map.innerHTML = '<iframe src="' + src + '" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps"></iframe>';
+    }
+
+    if (consentEmbeds()) {
+        injectIframe();
+    } else {
+        map.querySelector('.map-load-btn').addEventListener('click', function () {
+            // Charge l'iframe ET enregistre le consentement embeds:true
+            var raw = localStorage.getItem(STORAGE_KEY);
+            var data = raw ? JSON.parse(raw) : { choice: 'custom', analytics: false, embeds: false };
+            data.embeds = true;
+            data.timestamp = Date.now();
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+            injectIframe();
+        });
+    }
+})();

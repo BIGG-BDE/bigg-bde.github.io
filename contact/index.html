@@ -70,13 +70,65 @@
         </script>
 
     </head>
-    <!-- Google tag pour Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-84NVSBQ842"></script>
+
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-84NVSBQ842');
+    (function () {
+        var STORAGE_KEY = 'cookie_consent_choice';
+        var mapContainer = document.querySelector('.map-embed');
+        
+        // Si le conteneur n'existe pas sur la page, on arrête là
+        if (!mapContainer) return;
+
+        var mapSrc = mapContainer.dataset.src;
+
+        // 1. Vérifier si l'utilisateur a accepté le contenu embarqué
+        function hasConsent() {
+            try {
+                var data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+                return data.embeds === true;
+            } catch (e) {
+                return false;
+            }
+        }
+
+        // 2. Fonction pour injecter la carte
+        function loadMap() {
+            if (mapContainer.querySelector('iframe')) return; // Déjà chargée
+            mapContainer.innerHTML = '<iframe src="' + mapSrc + '" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Carte Google Maps"></iframe>';
+        }
+
+        // 3. Fonction pour afficher le message d'attente
+        function showPlaceholder() {
+            mapContainer.innerHTML = `
+                <div class="map-placeholder">
+                    <p>La carte Google Maps s'affiche uniquement si vous acceptez les cookies de contenu embarqué.</p>
+                    <button type="button" class="map-load-btn">Afficher la carte</button>
+                    <a href="/cookies/" style="color:var(--primary); font-weight:600; text-decoration:underline;">Gérer mes préférences</a>
+                </div>
+            `;
+
+            // Action quand on clique sur "Afficher la carte"
+            var btn = mapContainer.querySelector('.map-load-btn');
+            btn.addEventListener('click', function () {
+                // On enregistre l'accord
+                var raw = localStorage.getItem(STORAGE_KEY);
+                var data = raw ? JSON.parse(raw) : { choice: 'custom', analytics: false, embeds: false, timestamp: Date.now() };
+                data.embeds = true;
+                data.timestamp = Date.now();
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+                // On charge la carte
+                loadMap();
+            });
+        }
+
+        // 4. Exécution : Carte directe ou Placeholder ?
+        if (hasConsent()) {
+            loadMap();
+        } else {
+            showPlaceholder();
+        }
+    })();
     </script>
 
     <body>
@@ -185,12 +237,15 @@
                 </div>
             </div>
 
-
             <br>
             <h3 style="text-align: center;">Où se trouve le local du BDE ?</h3>
             <p style="text-align: center;">Viens nous voir ! Notre local se trouve directement sur le campus de l'IUT.</p>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1462.6638256629712!2d5.241316363062743!3d46.215263315804805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f35245b892436b%3A0x6dfdc508a80e26b7!2sBIGG%20BDE!5e0!3m2!1sfr!2sfr!4v1783031462587!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen=""   referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="map-embed" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1462.6638256629712!2d5.241316363062743!3d46.215263315804805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f35245b892436b%3A0x6dfdc508a80e26b7!2sBIGG%20BDE!5e0!3m2!1sfr!2sfr!4v1783031462587!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin">
+                <div class="map-placeholder">
+                    <p>La carte Google Maps s'affiche uniquement si vous acceptez les cookies de contenu embarqué.</p>
+                    <button type="button" class="map-load-btn">Afficher la carte</button>
+                    <a href="/cookies/">Gérer mes préférences</a>
+                </div>
             </div>
         </main>
 
@@ -199,6 +254,7 @@
                 <a href="https://biggbde.fr/mentions-legales/">Mentions Légales</a>
                 <a href="https://forms.gle/vN9Lwg2LAPLLNgcs6" target="_blank">Review du site</a>
                 <a href="https://biggbde.fr/faq/">FAQ</a>
+            <a href="https://biggbde.fr/cookies/">Gérer mes cookies</a>
             </div>
             <div class="footer-socials">
                 <span><a href="https://www.instagram.com/bigg_bde" target="_blank">Instagram</a></span>
@@ -211,5 +267,6 @@
             </button>
             <script src="https://biggbde.fr/script.js" async></script>
         </footer>  
+        <script src="https://biggbde.fr/cookies/cookies.js" async></script>
     </body>
 </html>
