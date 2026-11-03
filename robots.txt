@@ -24,26 +24,26 @@ Disallow: /
 User-agent: anthropic-ai
 Disallow: /
 
-# 3. Bloquer l'indexation des images (Google Images, Bing Images, etc.)
+# 3. Autoriser Googlebot-Image à accéder aux favicons (essentiel pour l'affichage dans les résultats)
 User-agent: Googlebot-Image
-Disallow: /
-
-User-agent: msnbot-media
-Disallow: /
-
-# 4. Règles générales (Autoriser l'indexation SEO de toutes les pages HTML)
-User-agent: *
 Allow: /favicon.ico
-Allow: /assets/favicons/favicon.svg
-# Interdire le scan direct des fichiers images
+Allow: /assets/favicons/
+Disallow: /
+
+# 4. Règles générales
+User-agent: *
+# Autoriser les favicons (règles Allow plus spécifiques que les Disallow génériques)
+Allow: /favicon.ico
+Allow: /assets/favicons/
+# Interdire le scan direct des autres fichiers images (hors favicons)
 Disallow: /*.jpg$
 Disallow: /*.jpeg$
 Disallow: /*.png$
 Disallow: /*.gif$
 Disallow: /*.webp$
 Disallow: /*.svg$
-# Autoriser expressément tout le reste du site
+# Autoriser tout le reste du site
 Allow: /
 
-# 5. Aider les moteurs de recherche à indexer le site (Sitemap)
+# 5. Sitemap
 Sitemap: https://biggbde.fr/sitemap.xml
