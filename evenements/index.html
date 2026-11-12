@@ -11,8 +11,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nos Événements - BIGG BDE</title>
-        <meta name="description" content="Retrouvez le calendrier complet et toutes les informations sur les prochains événements à ne pas manquer sur le campus de Bourg.">
+        <title>Nos Évènements - BIGG BDE</title>
+        <meta name="description" content="Retrouvez le calendrier complet et toutes les informations sur les prochains évènement à ne pas manquer sur le campus de Bourg.">
         <link rel="canonical" href="https://biggbde.fr/evenements/">
         <link rel="stylesheet" href="https://biggbde.fr/style.css">
         <link rel="stylesheet" href="style.css" async defer>
@@ -38,16 +38,16 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
     <meta name="twitter:image:alt" content="Logo BIGG BDE">
-    <meta name="twitter:title" content="Événements - BIGG BDE">
+    <meta name="twitter:title" content="Évènements - BIGG BDE">
     <meta name="twitter:site" content="@https://biggbde.fr/evenements/">
-    <meta name="twitter:description" content="Retrouvez le calendrier complet et toutes les informations sur les prochains événements à ne pas manquer sur le campus de Bourg.">
+    <meta name="twitter:description" content="Retrouvez le calendrier complet et toutes les informations sur les prochains évènement à ne pas manquer sur le campus de Bourg.">
 
     <!-- Open Graph Global -->
-    <meta property="og:title" content="Événements - BIGG BDE">
+    <meta property="og:title" content="Évènements - BIGG BDE">
     <meta property="og:url" content="https://biggbde.fr/evenements">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://biggbde.fr/assets/favicons/web-app-manifest-512x512.png">
-    <meta property="og:description" content="Retrouvez le calendrier complet et toutes les informations sur les prochains événements à ne pas manquer sur le campus de Bourg.">
+    <meta property="og:description" content="Retrouvez le calendrier complet et toutes les informations sur les prochains évènement à ne pas manquer sur le campus de Bourg.">
     <!-- SEO Schema.org -->
     <script type="application/ld+json">
         {
@@ -229,7 +229,7 @@
                 </div>
             </div>
             <div class="nav-item has-dropdown">
-                <a href="https://biggbde.fr/evenements/" class="dropdown-toggle active">Événements</a>
+                <a href="https://biggbde.fr/evenements/" class="dropdown-toggle active">Évènements</a>
                 <div class="dropdown-menu">
                     <a href="https://biggbde.fr/evenements/#a-venir">À venir</a>
                     <a href="https://biggbde.fr/evenements/#passes">Passés</a>
@@ -245,8 +245,8 @@
 
     <main>
         <div id="liste-evenements">
-            <!-- C'est ici que les événements vont apparaître -->
-            <p>Chargement des événements...</p>
+            <!-- C'est ici que les évènement vont apparaître -->
+            <p>Chargement des évènement...</p>
         </div>
 
         <!-- <script>
@@ -266,7 +266,7 @@
                     .replace(/^-+|-+$/g, '');    // supprime les tirets en début/fin
                 }
 
-                // 3. Séparer les événements en futurs / passés
+                // 3. Séparer les évènement en futurs / passés
                 const today = new Date();
                 today.setHours(0, 0, 0, 0); // pour comparer seulement la date
 
@@ -278,7 +278,7 @@
                     .filter(e => new Date(e.date_event) < today)
                     .sort((a, b) => new Date(b.date_event) - new Date(a.date_event)); // du plus récent au plus ancien
 
-                // 4. Fonction pour générer le HTML d'un événement (identique à l'exemple)
+                // 4. Fonction pour générer le HTML d'un évènement (identique à l'exemple)
                 function generateEventHTML(event, isPast = false) {
                     const dateObj = new Date(event.date_event);
                     const dateStr = dateObj.toLocaleDateString('fr-FR', {
@@ -331,7 +331,7 @@
 
                 // 7. Remplir les conteneurs
                 if (futureEvents.length === 0) {
-                    if (futureContainer) futureContainer.innerHTML = '<p>Aucun événement à venir.</p>';
+                    if (futureContainer) futureContainer.innerHTML = '<p>Aucun évènement à venir.</p>';
                 } else {
                     futureEvents.forEach(event => {
                     const item = document.createElement('div');
@@ -345,7 +345,7 @@
                 }
 
                 if (pastEvents.length === 0) {
-                    if (pastContainer) pastContainer.innerHTML = '<p>Aucun événement passé.</p>';
+                    if (pastContainer) pastContainer.innerHTML = '<p>Aucun évènement passé.</p>';
                 } else {
                     pastEvents.forEach(event => {
                     const item = document.createElement('div');
@@ -363,15 +363,15 @@
                 if (loadingContainer) loadingContainer.style.display = 'none';
 
                 } catch (error) {
-                console.error('Erreur de chargement des événements :', error);
+                console.error('Erreur de chargement des évènement :', error);
                 document.getElementById('liste-evenements').innerHTML =
-                    '<p>⚠️ Impossible de charger les événements. Veuillez réessayer plus tard.</p>';
+                    '<p>⚠️ Impossible de charger les évènement. Veuillez réessayer plus tard.</p>';
                 }
             });
             </script> -->
 
         <div class="header-event">
-            <h2>Agenda des Événements</h2>
+            <h2>Nos Évènements</h2>
             <a href="https://biggbde.fr/photos/" class="btn btn-outline">VOIR LES PHOTOS
             </a>
         </div>
@@ -390,9 +390,9 @@
                             <h3 class="custom-class-841">Le Grand Loto de Rentrée</h3>
 
                             <p class="custom-class-568">
-                                Au programme de cet événement exceptionnel : une ambiance survoltée,
+                                Au programme de cet évènement exceptionnel : une ambiance survoltée,
                                 de la convivialité, et surtout, une montagne de lots à remporter ! <br>Que vous veniez pour les gros lots, ou juste pour rigoler
-                                entre amis et/ou en famille, c'est un événement mémorable à ne pas rater en ce début d'année scolaire !<br>Plus d'informations sur la page de l'événement, ci-dessous.
+                                entre amis et/ou en famille, c'est un évènement mémorable à ne pas rater en ce début d'année scolaire !<br>Plus d'informations sur la page de l'évènement, ci-dessous.
                             </p>
 
                             <div class="event-footer">
@@ -420,7 +420,7 @@
                                 <span class="timeline-date">Du 9 au 11 Octobre 2026</span>
                                 <h3 style="margin: 0; color: var(--dark);">Week-end d'intégration : Alice au Pays des MerWEI</h3>
                                 <p style="color: var(--gray); margin: 0;">Que tu viennes d'arriver en première année, ou que tu sois un.e 
-                                    habitué.e de l'universitaire, ce WEI est l'événement immanquable de l'année ! <br>C'est l'occasion parfaite pour vous souder entre 1A, 
+                                    habitué.e de l'universitaire, ce WEI est l'évènement immanquable de l'année ! <br>C'est l'occasion parfaite pour vous souder entre 1A, 
                                     avec toutes les promos et les exté.e.s autour d'un week-end merveilleux ! 👥</p>
                                 <div class="event-footer">
                                     <div class="event-buttons">
@@ -449,7 +449,7 @@
         <!-- PASSE : Du plus récent au plus vieux -->
         <h3 class="custom-class-582" id="passes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="category-icon">
                 <path fill="rgb(108, 117, 125)" d="M236.3 107.1C247.9 96 265 92.9 279.7 99.2C294.4 105.5 304 120 304 136L304 272.3L476.3 107.2C487.9 96 505 92.9 519.7 99.2C534.4 105.5 544 120 544 136L544 504C544 520 534.4 534.5 519.7 540.8C505 547.1 487.9 544 476.3 532.9L304 367.7L304 504C304 520 294.4 534.5 279.7 540.8C265 547.1 247.9 544 236.3 532.9L44.3 348.9C36.5 341.3 32 330.9 32 320C32 309.1 36.5 298.7 44.3 291.1L236.3 107.1z"></path>
-            </svg> Événements Passés</h3>
+            </svg> Évènements Passés</h3>
         <div class="timeline past">
 
             <!-- Evénement 1 -->
@@ -531,7 +531,7 @@
                         <div class="event-text-side">
                             <span class="timeline-date">27 Février 2026</span>
                             <h3 class="custom-class-238">GALA du BIGG BDE 2026 - "Bal Masqué Vénitien"</h3>
-                            <p class="custom-class-696">Le plus gros événement de l'année ! Venez passer une superbe soirée dansante entre amis masqués.
+                            <p class="custom-class-696">Le plus gros évènement de l'année ! Venez passer une superbe soirée dansante entre amis masqués.
                                 Playlist dans le thème, alors soyez-le aussi ! <br>Le bar saura vous rafraîchir et la gigantesque salle vous permettra d'enflammer le dancefloor.
                             </p>
                             <div class="event-footer">
@@ -553,7 +553,7 @@
                     <span class="timeline-date">14 Février 2026</span>
                     <h3 class="custom-class-666">Soirée "Sans Valentin"</h3>
                     <p class="custom-class-917">En quête d'une relation durable ou d'une rencontre intéressante ? Cette soirée est faite pour toi !
-                        <br>Grâce aux bracelets colorés, tu peux directement annoncer ce que tu recherches (ou pas) ! Plus de détails dans la page de l'événement.
+                        <br>Grâce aux bracelets colorés, tu peux directement annoncer ce que tu recherches (ou pas) ! Plus de détails dans la page de l'évènement.
                     </p>
                     <div class="event-footer">
                         <div class="event-buttons">
@@ -625,7 +625,7 @@
                     <span class="timeline-date">13 Octobre 2025</span>
                     <h3 class="custom-class-295">Distribution de rubans pour "Octobre Rose"</h3>
                     <p class="custom-class-289">A l'occasion de l'Octobre rose, une distribution de rubans rose pour les
-                        étudiants arborant cette couleur à été réalisée, en face du RU de l'IUT. <br>Cet événement nous rappelle l'importance de la lutte contre
+                        étudiants arborant cette couleur à été réalisée, en face du RU de l'IUT. <br>Cet évènement nous rappelle l'importance de la lutte contre
                         les cancers du sein. <br>Chaque année en France, des milliers de femmes sont touchées par ces maladies, qui demeurent un enjeu majeur de santé publique.
                         <br>Le ruban symbolise l'espoir, la force et l'importance du dépistage précoce.
                     </p>
